@@ -1,5 +1,7 @@
 package com.example.dncinema.model.employee;
 
+import com.example.dncinema.model.Account;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,132 +9,72 @@ import javax.persistence.*;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @Column(name = "code")
-    private String code;
-    @Column(name = "name")
-    private String name;
-    @Column(name = "image")
-    private String image;
-    @Column(name = "account")
-    private String account;
-    @Column(name = "password")
-    private String password;
-    @Column(name = "check_password")
-    private String checkPassword;
-    @Column(name = "date_of_birth")
-    private String dateOfBirth;
-    @Column(name = "gender")
-    private String gender;
-    @Column(name = "identity_card")
-    private String identityCard;
-    @Column(name = "email")
+    @Column(name = "id_employee")
+    private Integer idEmployee;
+    @Column(name = "name_employee", columnDefinition = "varchar(45)")
+    private String nameEmployee;
+    @Column(name = "identity", columnDefinition = "varchar(15)")
+    private String identity;
+    @Column(name = "img", columnDefinition = "varchar(255)")
+    private String img;
+    @Column(name = "email", columnDefinition = "varchar(45)")
     private String email;
     @Column(name = "phone_number")
-    private String phoneNumber;
-    @Column(name = "address")
+    private Integer phoneNumber;
+    @Column(name = "gender", columnDefinition = "varchar(45)")
+    private String gender;
+    @Column(name = "address", columnDefinition = "varchar(45)")
     private String address;
-    @Column(name = "status")
-    private String status;
+
+    @ManyToOne
+    @JoinColumn(name = "id_account")
+    private Account account;
 
     public Employee() {
     }
 
-    public Employee(int id, String code, String name, String image, String account, String password, String checkPassword, String dateOfBirth, String gender, String identityCard, String email, String phoneNumber, String address, String status) {
-        this.id = id;
-        this.code = code;
-        this.name = name;
-        this.image = image;
-        this.account = account;
-        this.password = password;
-        this.checkPassword = checkPassword;
-        this.dateOfBirth = dateOfBirth;
-        this.gender = gender;
-        this.identityCard = identityCard;
+    public Employee(Integer idEmployee, String nameEmployee, String identity, String img, String email, Integer phoneNumber, String gender, String address, Account account) {
+        this.idEmployee = idEmployee;
+        this.nameEmployee = nameEmployee;
+        this.identity = identity;
+        this.img = img;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        this.gender = gender;
         this.address = address;
-        this.status = status;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public String getAccount() {
-        return account;
-    }
-
-    public void setAccount(String account) {
         this.account = account;
     }
 
-    public String getPassword() {
-        return password;
+    public Integer getIdEmployee() {
+        return idEmployee;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setIdEmployee(Integer idEmployee) {
+        this.idEmployee = idEmployee;
     }
 
-    public String getCheckPassword() {
-        return checkPassword;
+    public String getNameEmployee() {
+        return nameEmployee;
     }
 
-    public void setCheckPassword(String checkPassword) {
-        this.checkPassword = checkPassword;
+    public void setNameEmployee(String nameEmployee) {
+        this.nameEmployee = nameEmployee;
     }
 
-    public String getDateOfBirth() {
-        return dateOfBirth;
+    public String getIdentity() {
+        return identity;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setIdentity(String identity) {
+        this.identity = identity;
     }
 
-    public String getGender() {
-        return gender;
+    public String getImg() {
+        return img;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getIdentityCard() {
-        return identityCard;
-    }
-
-    public void setIdentityCard(String identityCard) {
-        this.identityCard = identityCard;
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public String getEmail() {
@@ -143,12 +85,20 @@ public class Employee {
         this.email = email;
     }
 
-    public String getPhoneNumber() {
+    public Integer getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(Integer phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getAddress() {
@@ -159,11 +109,11 @@ public class Employee {
         this.address = address;
     }
 
-    public String getStatus() {
-        return status;
+    public Account getAccount() {
+        return account;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setAccount(Account account) {
+        this.account = account;
     }
 }
