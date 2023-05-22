@@ -15,8 +15,8 @@ public class Promotion {
     private String dateStart;
     @Column(name = "date_end", columnDefinition = "varchar(45)")
     private String dateEnd;
-    @Column(name = "describe", columnDefinition = "varchar(45)")
-    private String describe;
+    @Column(name = "describe_promotion", columnDefinition = "varchar(45)")
+    private String describePromotion;
     @Column(name = "reduction_amount")
     private Double reductionAmount;
 
@@ -27,12 +27,12 @@ public class Promotion {
     public Promotion() {
     }
 
-    public Promotion(Integer idPromotion, String namePromotion, String dateStart, String dateEnd, String describe, Double reductionAmount, TypePromotion typePromotion) {
+    public Promotion(Integer idPromotion, String namePromotion, String dateStart, String dateEnd, String describePromotion, Double reductionAmount, TypePromotion typePromotion) {
         this.idPromotion = idPromotion;
         this.namePromotion = namePromotion;
         this.dateStart = dateStart;
         this.dateEnd = dateEnd;
-        this.describe = describe;
+        this.describePromotion = describePromotion;
         this.reductionAmount = reductionAmount;
         this.typePromotion = typePromotion;
     }
@@ -69,12 +69,12 @@ public class Promotion {
         this.dateEnd = dateEnd;
     }
 
-    public String getDescribe() {
-        return describe;
+    public String getDescribePromotion() {
+        return describePromotion;
     }
 
-    public void setDescribe(String describe) {
-        this.describe = describe;
+    public void setDescribePromotion(String describePromotion) {
+        this.describePromotion = describePromotion;
     }
 
     public Double getReductionAmount() {

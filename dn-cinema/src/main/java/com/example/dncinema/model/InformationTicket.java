@@ -7,7 +7,9 @@ import javax.persistence.*;
 public class InformationTicket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Column(name = "id_information_ticket")
+    private Integer idInformationTicket;
+
     @ManyToOne
     @JoinColumn(name = "id_ticket")
     private Ticket ticket;
