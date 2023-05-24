@@ -9,18 +9,15 @@ public class ShowRoom {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_show_room")
     private Integer idShowRoom;
-    @Column(name = "name_show_room", columnDefinition = "varchar(45)")
+    @Column(name = "name_show_room", columnDefinition = "varchar(255)")
     private String nameShowRoom;
-    @Column(name = "quantity_chair")
-    private Integer quantityChair;
 
     public ShowRoom() {
     }
 
-    public ShowRoom(Integer idShowRoom, String nameShowRoom, Integer quantityChair) {
+    public ShowRoom(Integer idShowRoom, String nameShowRoom) {
         this.idShowRoom = idShowRoom;
         this.nameShowRoom = nameShowRoom;
-        this.quantityChair = quantityChair;
     }
 
     public Integer getIdShowRoom() {
@@ -37,13 +34,5 @@ public class ShowRoom {
 
     public void setNameShowRoom(String nameShowRoom) {
         this.nameShowRoom = nameShowRoom;
-    }
-
-    public Integer getQuantityChair() {
-        return quantityChair;
-    }
-
-    public void setQuantityChair(Integer quantityChair) {
-        this.quantityChair = quantityChair;
     }
 }

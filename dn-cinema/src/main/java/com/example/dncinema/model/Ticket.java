@@ -1,8 +1,7 @@
 package com.example.dncinema.model;
 
-import com.example.dncinema.model.employee.Employee;
-
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "ticket")
@@ -11,10 +10,18 @@ public class Ticket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_ticket")
     private Integer idTicket;
-    @Column(name = "date_booking", columnDefinition = "varchar(45)")
-    private String dateBooking;
-    @Column(name = "price")
-    private Double price;
+    @Column(name = "status_ticket", columnDefinition = "varchar(255)")
+    private String statusTicket;
+    @Column(name = "price_after_discount")
+    private Double priceAfterDiscount;
+    @Column(name = "date_booking", columnDefinition = "date")
+    private LocalDate dateBooking;
+    @Column(name = "id_qr")
+    private Integer idQr;
+
+    @OneToOne
+    @JoinColumn(name = "id_discount")
+    private Discount discount;
 
     @ManyToOne
     @JoinColumn(name = "id_employee")
@@ -24,20 +31,23 @@ public class Ticket {
     @JoinColumn(name = "id_customer")
     private Customer customer;
 
-    @ManyToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(name = "id_promotion")
-    private Promotion promotion;
+    @OneToOne
+    @JoinColumn(name = "id_seat")
+    private Seat seat;
 
     public Ticket() {
     }
 
-    public Ticket(Integer idTicket, String dateBooking, Double price, Employee employee, Customer customer, Promotion promotion) {
+    public Ticket(Integer idTicket, String statusTicket, Double priceAfterDiscount, LocalDate dateBooking, Integer idQr, Discount discount, Employee employee, Customer customer, Seat seat) {
         this.idTicket = idTicket;
+        this.statusTicket = statusTicket;
+        this.priceAfterDiscount = priceAfterDiscount;
         this.dateBooking = dateBooking;
-        this.price = price;
+        this.idQr = idQr;
+        this.discount = discount;
         this.employee = employee;
         this.customer = customer;
-        this.promotion = promotion;
+        this.seat = seat;
     }
 
     public Integer getIdTicket() {
@@ -48,20 +58,44 @@ public class Ticket {
         this.idTicket = idTicket;
     }
 
-    public String getDateBooking() {
+    public String getStatusTicket() {
+        return statusTicket;
+    }
+
+    public void setStatusTicket(String statusTicket) {
+        this.statusTicket = statusTicket;
+    }
+
+    public Double getPriceAfterDiscount() {
+        return priceAfterDiscount;
+    }
+
+    public void setPriceAfterDiscount(Double priceAfterDiscount) {
+        this.priceAfterDiscount = priceAfterDiscount;
+    }
+
+    public LocalDate getDateBooking() {
         return dateBooking;
     }
 
-    public void setDateBooking(String dateBooking) {
+    public void setDateBooking(LocalDate dateBooking) {
         this.dateBooking = dateBooking;
     }
 
-    public Double getPrice() {
-        return price;
+    public Integer getIdQr() {
+        return idQr;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setIdQr(Integer idQr) {
+        this.idQr = idQr;
+    }
+
+    public Discount getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(Discount discount) {
+        this.discount = discount;
     }
 
     public Employee getEmployee() {
@@ -80,11 +114,11 @@ public class Ticket {
         this.customer = customer;
     }
 
-    public Promotion getPromotion() {
-        return promotion;
+    public Seat getSeat() {
+        return seat;
     }
 
-    public void setPromotion(Promotion promotion) {
-        this.promotion = promotion;
+    public void setSeat(Seat seat) {
+        this.seat = seat;
     }
 }
