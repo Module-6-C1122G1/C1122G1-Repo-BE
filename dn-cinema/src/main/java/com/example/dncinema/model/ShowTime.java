@@ -1,6 +1,7 @@
 package com.example.dncinema.model;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "show_time")
@@ -9,30 +10,16 @@ public class ShowTime {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_show_time")
     private Integer idShowTime;
-    @Column(name = "name_show_time", columnDefinition = "varchar(45)")
-    private String nameShowTime;
+    @Column(name = "show_date", columnDefinition = "date")
+    private LocalDate showDate;
+    @Column(name = "show_time", columnDefinition = "varchar(255)")
+    private String showTime;
 
-    public ShowTime() {
-    }
+    @ManyToOne
+    @JoinColumn(name = "id_show_room")
+    private ShowRoom showRoom;
 
-    public ShowTime(Integer idShowTime, String nameShowTime) {
-        this.idShowTime = idShowTime;
-        this.nameShowTime = nameShowTime;
-    }
-
-    public Integer getIdShowTime() {
-        return idShowTime;
-    }
-
-    public void setIdShowTime(Integer idShowTime) {
-        this.idShowTime = idShowTime;
-    }
-
-    public String getNameShowTime() {
-        return nameShowTime;
-    }
-
-    public void setNameShowTime(String nameShowTime) {
-        this.nameShowTime = nameShowTime;
-    }
+    @ManyToOne
+    @JoinColumn(name = "id_seat")
+    private Seat seat;
 }
