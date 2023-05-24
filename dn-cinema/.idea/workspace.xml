@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="&quot;update&quot;" />
+    <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="&quot;update&quot;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,7 +78,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/C0422G1-NguyenVanThanh/md6/dn-cinema-api/cinema/dn-cinema-api/customer/dn-cinema-api",
+    "last_opened_file_path": "E:/C0422G1-NguyenVanThanh/md6/dn-cinema-api/cinema/dn-cinema-api/customer/dn-cinema-api/dn-cinema",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -111,7 +113,8 @@
       <workItem from="1684894781635" duration="240000" />
       <workItem from="1684918773391" duration="4934000" />
       <workItem from="1684933669914" duration="2191000" />
-      <workItem from="1684944742158" duration="1368000" />
+      <workItem from="1684944742158" duration="1543000" />
+      <workItem from="1684946301294" duration="4000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;up&quot;">
       <created>1684944958750</created>

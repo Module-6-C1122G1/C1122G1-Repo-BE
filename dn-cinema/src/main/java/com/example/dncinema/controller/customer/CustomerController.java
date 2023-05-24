@@ -18,9 +18,9 @@ public class CustomerController {
     ICustomerService customerService;
 
     /**
-     * XEM DANH SÁCH
-     * Nguyễn Văn Thành
-     * Lấy danh sách khách hàng từ customerService
+     * @author ThanhNV
+     * @return customerService.findAll();
+     * Phương thức sử dụng để hiển thị danh sách thành viên
      */
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("")
@@ -37,10 +37,11 @@ public class CustomerController {
 //    }
 
     /**
-     * CHỈNH SỬA
-     * Nguyễn Văn Thành
-     *
-     * Lấy danh sách khách hàng từ customerService
+     * @author ThanhNV
+     * @param id
+     * @param customer
+     * @return ResponseEntity<>(HttpStatus.OK);
+     * Phương thức sử dụng để chỉnh sửa danh sách thành viên
      */
     @PutMapping("/{id}")
     public ResponseEntity<List<Customer>> edit(@PathVariable("id") int id, @RequestBody Customer customer) {
