@@ -18,7 +18,15 @@ public class MovieController {
     @Autowired
     private IMovieService movieService;
 
+    /**
+     * @author TruongDM
+     * @param pageable
+     * @param search
+     * @return PageImpl<>(filmList, pageable, films.getTotalElements());
+     * Phương thức sử dụng để tìm kiếm kết hợp xổ danh sách film
+     */
     @GetMapping
+    @ResponseStatus()
     public Page<Film> findAllFilm(@PageableDefault(size = 4)Pageable pageable,
                                   @RequestParam(required = false, defaultValue = "")String search){
         Page<Film> films = movieService.findAllFilm(search,pageable);
@@ -26,6 +34,12 @@ public class MovieController {
         return new PageImpl<>(filmList, pageable, films.getTotalElements());
     }
 
+    /**
+     * @author QuynhHTN
+     * @param id
+     * @return movieService.findFilmById(id);
+     * Phương thức sử dụng để tìm ra một bộ phim bằng id
+     */
     @GetMapping("/{id}")
     public Film findFilmById(@PathVariable Integer id){
         return movieService.findFilmById(id);
