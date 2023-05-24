@@ -20,7 +20,8 @@ public class MovieService implements IMovieService {
     }
 
     @Override
-    public Film findFilmById(Integer id) {
-        return movieRepository.findFilmById(id);
+    public Film findFilmById(Integer idFilm) {
+        return movieRepository.findFilmById(idFilm);
     }
+
 }
