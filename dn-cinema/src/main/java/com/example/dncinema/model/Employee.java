@@ -25,7 +25,7 @@ public class Employee {
     private String identityCard;
 
     @OneToOne
-    @JoinColumn(name = "name_account")
+    @JoinColumn(name = "id")
     private AccountUser accountUser;
 
     public Employee() {
