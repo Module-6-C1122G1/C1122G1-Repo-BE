@@ -28,7 +28,7 @@ public class Customer {
     @JoinColumn(name = "id_type_customer")
     private TypeCustomer typeCustomer;
     @ManyToOne
-    @JoinColumn(name = "name_account")
+    @JoinColumn(name = "id")
     private AccountUser accountUser;
 
     public Customer() {
