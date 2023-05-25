@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
 
+
     <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="update ticket and movie detail">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+
 
     </list>
 
@@ -29,6 +31,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand />
@@ -88,6 +93,7 @@
     ]
   }
 }</component>
+
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
@@ -99,6 +105,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+
     </configuration>
     <configuration name="DnCinemaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="dn-cinema.main" />
@@ -107,6 +114,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.MovieController_getAllFilm.findAllFilm_11" />
+        <item itemvalue="Gradle.MovieController_getAllFilm.findAllFilm_10" />
+        <item itemvalue="Gradle.MovieController_getAllFilm.findAllFilm_9" />
+        <item itemvalue="Gradle.MovieController_getAllFilm.findAllFilm_8" />
+        <item itemvalue="Gradle.MovieController_getAllFilm.findAllFilm_7" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -122,8 +138,10 @@
 
       <workItem from="1684918773391" duration="4934000" />
 
+
       <workItem from="1684933669914" duration="2191000" />
       <workItem from="1684938158388" duration="5964000" />
+
     </task>
     <task id="LOCAL-00001" summary="update ticket and movie detail">
       <created>1684943344442</created>
