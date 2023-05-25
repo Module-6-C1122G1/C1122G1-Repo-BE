@@ -11,6 +11,7 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,5 +51,47 @@ public class DiscountService implements IDiscountService {
         Discount discount = discountRepository.findById(id);
         discount.setDeleted(true);
         discountRepository.save(discount);
+    }
+    /**
+     * Create by: HoangPT,
+     * Date create : 24/05/2023
+     * Function : Add new discount
+     *
+     * @Param("nameDiscount") String nameDiscount,
+     * @Param("dateStart") LocalDate dateStart,
+     * @Param("dateEnd") LocalDate dateEnd,
+     * @Param("describeDiscount") String describeDiscount,
+     * @Param("percentDiscount") Double percentDiscount
+     */
+    @Override
+    public void createDiscount(String nameDiscount, LocalDate dateStart, LocalDate dateEnd, String describeDiscount, Double percentDiscount) {
+        discountRepository.createDiscount(nameDiscount, dateStart, dateEnd, describeDiscount, percentDiscount);
+    }
+    /**
+     * Create by: HoangPT,
+     * Date create : 24/05/2023
+     * Function : Find discount information by id
+     *
+     * @param idDiscount
+     */
+    @Override
+    public Discount findDiscountById(int idDiscount) {
+        return discountRepository.findDiscountById(idDiscount);
+    }
+    /**
+     * Create by: HoangPT,
+     * Date create : 24/05/2023
+     * Function : Edit information a discount in database
+     *
+     * @Param("idDiscount") Integer idDiscount
+     * @Param("nameDiscount") String nameDiscount
+     * @Param("dateStart") LocalDate dateStart
+     * @Param("dateEnd") LocalDate dateEnd
+     * @Param("describeDiscount") String describeDiscount
+     * @Param("percentDiscount") String percentDiscount
+     */
+    @Override
+    public void updateDiscount(Integer idDiscount, String nameDiscount, LocalDate dateStart, LocalDate dateEnd, String describeDiscount, Double percentDiscount) {
+        discountRepository.updateDiscount(idDiscount, nameDiscount, dateStart, dateEnd, describeDiscount, percentDiscount);
     }
 }

@@ -1,19 +1,29 @@
 package com.example.dncinema.dto.discount;
 
+import org.hibernate.validator.constraints.Length;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.*;
 import java.time.LocalDate;
 
 public class DiscountDTO implements Validator {
     private Integer idDiscount;
-    @NotBlank(message = "Discount name cannot be left blank")
+    @NotBlank(message = "Tên khuyến mãi không được để trống")
+    @Length(max = 255,message = "Tên khuyến mãi không dài quá 255 từ")
     private String nameDiscount;
+    @NotNull(message = "Ngày bắt đầu không được để trống")
+    @DateTimeFormat(fallbackPatterns = "yyyy-MM-dd")
     private LocalDate dateStart;
+    @NotNull(message = "Ngày kết thúc không được để trống")
+    @DateTimeFormat(fallbackPatterns = "yyyy-MM-dd")
     private LocalDate dateEnd;
-    @NotBlank(message = "Describe cannot be left blank")
+    @NotBlank(message = "Chi tiết khuyến mãi không được để trống")
     private String describeDiscount;
+    @NotNull(message = "Phần trăm giảm giá không được để trống")
+    @Max(value = 100,message = "Phần trăm giảm giá không được quá 100")
+    @DecimalMin(value = "0.0", inclusive = false,message = "Phần trăm giảm giá phải lớn hơn 0")
     private Double percentDiscount;
 
     public DiscountDTO() {
