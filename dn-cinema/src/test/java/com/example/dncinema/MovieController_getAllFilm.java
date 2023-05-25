@@ -17,30 +17,46 @@ public class MovieController_getAllFilm {
     @Autowired
     private MockMvc mockMvc;
 
+    /**
+     * This method is used to check the return list which param = null
+     * @throws Exception
+     */
     @Test
     public void findAllFilm_7() throws Exception {
         this.mockMvc.perform(
                 MockMvcRequestBuilders.get("/movie/null")).andDo(print()).andExpect(status().is4xxClientError());
     }
-
+    /**
+     * This method is used to check the return list which param = ""
+     * @throws Exception
+     */
     @Test
     public void findAllFilm_8() throws Exception {
         this.mockMvc.perform(
                 MockMvcRequestBuilders.get("/movie/''")).andDo(print()).andExpect(status().is4xxClientError());
     }
-
+    /**
+     * This method is used to check the return list which param does not exist
+     * @throws Exception
+     */
     @Test
     public void findAllFilm_9() throws Exception {
         this.mockMvc.perform(
                 MockMvcRequestBuilders.get("/movie/10")).andDo(print()).andExpect(status().is4xxClientError());
     }
-
+    /**
+     * This method is used to check the return list has size = 0 which param exist but
+     * @throws Exception
+     */
     @Test
     public void findAllFilm_10() throws Exception {
         this.mockMvc.perform(
                 MockMvcRequestBuilders.get("/movie?search=@")).andDo(print()).andExpect(status().is4xxClientError());
     }
-
+    /**
+     * This method is used to check the return list has size > 0 which param exist but
+     * @throws Exception
+     */
     @Test
     public void findAllFilm_11() throws Exception {
         this.mockMvc.perform(
