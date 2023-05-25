@@ -13,8 +13,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class CustomerController_findAllCustomerTicket {
-
+public class CustomerController_findAllCustomerPointHistory {
     @Autowired
     private MockMvc mockMvc;
 
@@ -24,8 +23,8 @@ public class CustomerController_findAllCustomerTicket {
      * @throws Exception
      */
     @Test
-    public void findAllCustomerTicket_7() throws Exception {
-        this.mockMvc.perform(MockMvcRequestBuilders.get("/customer/ticket/null"))
+    public void findAllCustomerPointHistory_7() throws Exception {
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/customer/ticket/history/null"))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
@@ -36,8 +35,8 @@ public class CustomerController_findAllCustomerTicket {
      * @throws Exception
      */
     @Test
-    public void findAllCustomerTicket_8() throws Exception {
-        this.mockMvc.perform(MockMvcRequestBuilders.get("/customer/ticket/''"))
+    public void findAllCustomerPointHistory_8() throws Exception {
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/customer/ticket/history/''"))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
@@ -48,8 +47,8 @@ public class CustomerController_findAllCustomerTicket {
      * @throws Exception
      */
     @Test
-    public void findAllCustomerTicket_9() throws Exception {
-        this.mockMvc.perform(MockMvcRequestBuilders.get("/customer/ticket/10"))
+    public void findAllCustomerPointHistory_9() throws Exception {
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/customer/ticket/history/10"))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
@@ -60,8 +59,8 @@ public class CustomerController_findAllCustomerTicket {
      * @throws Exception
      */
     @Test
-    public void findAllCustomerTicket_11() throws Exception {
-        this.mockMvc.perform(MockMvcRequestBuilders.get("/customer/ticket?page=0"))
+    public void findAllCustomerPointHistory_11() throws Exception {
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/customer/ticket/history?page=0"))
                 .andDo(print())
                 .andExpect(status().is2xxSuccessful())
                 .andExpect(jsonPath("totalPages").value(1))

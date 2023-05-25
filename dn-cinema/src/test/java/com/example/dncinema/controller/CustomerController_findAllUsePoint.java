@@ -13,7 +13,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class CustomerController_findAllCustomerTicket {
+public class CustomerController_findAllUsePoint {
 
     @Autowired
     private MockMvc mockMvc;
@@ -24,8 +24,8 @@ public class CustomerController_findAllCustomerTicket {
      * @throws Exception
      */
     @Test
-    public void findAllCustomerTicket_7() throws Exception {
-        this.mockMvc.perform(MockMvcRequestBuilders.get("/customer/ticket/null"))
+    public void findAllUserPoint_7() throws Exception {
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/customer/ticket/use-point/null"))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
@@ -36,8 +36,8 @@ public class CustomerController_findAllCustomerTicket {
      * @throws Exception
      */
     @Test
-    public void findAllCustomerTicket_8() throws Exception {
-        this.mockMvc.perform(MockMvcRequestBuilders.get("/customer/ticket/''"))
+    public void findAllUserPoint_8() throws Exception {
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/customer/ticket/use-point/''"))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
@@ -48,8 +48,20 @@ public class CustomerController_findAllCustomerTicket {
      * @throws Exception
      */
     @Test
-    public void findAllCustomerTicket_9() throws Exception {
-        this.mockMvc.perform(MockMvcRequestBuilders.get("/customer/ticket/10"))
+    public void findAllUserPoint_9() throws Exception {
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/customer/ticket/use-point/10"))
+                .andDo(print())
+                .andExpect(status().is4xxClientError());
+    }
+
+    /**
+     * This method is used to check the return list has size = 0 which param exist
+     *
+     * @throws Exception
+     */
+    @Test
+    public void findAllUserPoint_10() throws Exception {
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/customer/ticket/use-point?search=2223/04/15"))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
@@ -60,19 +72,16 @@ public class CustomerController_findAllCustomerTicket {
      * @throws Exception
      */
     @Test
-    public void findAllCustomerTicket_11() throws Exception {
-        this.mockMvc.perform(MockMvcRequestBuilders.get("/customer/ticket?page=0"))
+    public void findAllUserPoint_11() throws Exception {
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/customer/ticket/use-point?page=0"))
                 .andDo(print())
                 .andExpect(status().is2xxSuccessful())
                 .andExpect(jsonPath("totalPages").value(1))
                 .andExpect(jsonPath("totalElements").value(3))
-                .andExpect(jsonPath("content[0].nameCustomer").value("Trường"))
-                .andExpect(jsonPath("content[0].pointCustomer").value("7000.0"))
-                .andExpect(jsonPath("content[0].gender").value("Nam"))
-                .andExpect(jsonPath("content[0].phone").value("096452199"))
-                .andExpect(jsonPath("content[0].address").value("Hải Lăng"))
-                .andExpect(jsonPath("content[0].email").value("gdfgfd@gmail.com"))
-                .andExpect(jsonPath("content[0].identityCard").value("646478452122"))
-                .andExpect(jsonPath("content[0].typeCustomer.idTypeCustomer").value(1));
+                .andExpect(jsonPath("content[0].date_booking").value("2023-04-15"))
+                .andExpect(jsonPath("content[0].price_after_discount").value("123"))
+                .andExpect(jsonPath("content[0].status_ticket").value(0))
+                .andExpect(jsonPath("content[0].id_customer").value(1))
+                .andExpect(jsonPath("content[0].id_seat").value(1));
     }
 }
