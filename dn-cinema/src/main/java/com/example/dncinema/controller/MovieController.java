@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpStatus;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,8 +20,6 @@ import java.util.List;
 public class MovieController {
     @Autowired
     private IMovieService movieService;
-    @Autowired
-    private ITypeFilmService iTypeFilmService;
 
     @GetMapping
     public Page<Film> findAllFilm(@PageableDefault(size = 4) Pageable pageable,
@@ -31,21 +30,18 @@ public class MovieController {
     }
 
     @GetMapping("/{id}")
+
     public Film findFilmById(@PathVariable Integer id) {
         return movieService.findFilmById(id);
     }
 
-    /**
-     * Create: QuynhHTN
-     * Date create: 24/05/2023
-     * @param idFilm
-     * @param model
-     * @return detail
-     */
-    @GetMapping("/detail/{idFilm}")
-    public String detail(@PathVariable Integer idFilm, Model model) {
-        model.addAttribute("typeFilmList", iTypeFilmService.findAll());
-        model.addAttribute("film", movieService.findFilmById(idFilm));
-        return "detail";
+
+    @GetMapping("/detail/{id}")
+    public ResponseStatus<?> findFilmById(@PathVariable Integer id) {
+        Film film = movieService.findFilmById(id);
+        if (film == null) {
+            return new ResponseStatus<>(HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseStatus<>(film, HttpStatus.OK);
     }
 }

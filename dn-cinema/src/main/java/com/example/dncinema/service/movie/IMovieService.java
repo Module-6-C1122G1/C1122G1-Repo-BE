@@ -9,5 +9,5 @@ import org.springframework.stereotype.Service;
 public interface IMovieService {
     Page<Film> findAllFilm(String search, Pageable pageable);
 
-    Film findFilmById(Integer idFilm);
+    Film findFilmById(Integer id);
 }
