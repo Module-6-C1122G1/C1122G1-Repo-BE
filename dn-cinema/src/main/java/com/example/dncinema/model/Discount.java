@@ -20,6 +20,11 @@ public class Discount {
     @Column(name = "percent_discount")
     private Double percentDiscount;
 
+
+
+    @Column(columnDefinition = "boolean default false")
+    private boolean isDeleted;
+
     public Discount() {
     }
 
@@ -78,5 +83,13 @@ public class Discount {
 
     public void setPercentDiscount(Double percentDiscount) {
         this.percentDiscount = percentDiscount;
+    }
+
+    public boolean isDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
     }
 }
