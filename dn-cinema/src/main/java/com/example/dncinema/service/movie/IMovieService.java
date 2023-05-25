@@ -10,4 +10,5 @@ public interface IMovieService {
     Page<Film> findAllFilm(String search, Pageable pageable);
 
     Film findFilmById(Integer id);
+
 }

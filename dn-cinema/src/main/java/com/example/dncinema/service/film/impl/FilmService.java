@@ -5,6 +5,8 @@ import com.example.dncinema.repository.film.IFilmRepository;
 import com.example.dncinema.service.film.IFilmService;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class FilmService implements IFilmService {
     private final IFilmRepository iFilmRepository;
@@ -14,17 +16,25 @@ public class FilmService implements IFilmService {
     }
 
 //    @Override
-//    public void save(Film film) {
-//        iFilmRepository.insertFilm(film.getActor(), film.getDateEndFilm(), film.getDateStartFilm(),film.getDescribeFilm(),film.getDirector(),film.getImgFilm(),film.getMovieLabel(),film.getNameFilm(),film.getNormalSeatPrice(),film.getStudioFilm(),film.getTimeFilm(),film.getTrailer(),film.getVipSeatPrice(),film.getShowTime().getIdShowTime(), film.getTypeFilm().getIdTypeFilm());
+//    public Film save(Film film) {
+//        return iFilmRepository.save(film);
 //    }
 
     @Override
-    public Film save(Film film) {
-        return iFilmRepository.save(film);
+    public void save(Film film) {
+       iFilmRepository.insertFilm(film);
     }
 
     @Override
     public Film updateFilm(Film film) {
-        return iFilmRepository.updateFilm(film);
+        return iFilmRepository.save(film);
     }
+
+
+    @Override
+    public Optional<Film> findById(Integer idFilm) {
+        return iFilmRepository.findFilmByIdFilm(idFilm);
+    }
+
+
 }

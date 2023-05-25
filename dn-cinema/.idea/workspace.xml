@@ -5,22 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/film/FilmController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/FilmDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/UserRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/film/IFilmRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/IMovieService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/film/IFilmService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/impl/FilmService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/MovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/AccountUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/AccountUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Film.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/ShowTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/ShowTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/IMovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/IMovieRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/film/FilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/film/FilmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/film/IFilmRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/film/IFilmRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/film/IFilmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/film/IFilmService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/film/impl/FilmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/film/impl/FilmService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/movie/IMovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/movie/IMovieService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +114,7 @@
       <workItem from="1684918773391" duration="4934000" />
       <workItem from="1684933669914" duration="2191000" />
       <workItem from="1684938421420" duration="2324000" />
-      <workItem from="1684977565782" duration="1071000" />
+      <workItem from="1684977565782" duration="5620000" />
     </task>
     <servers />
   </component>
