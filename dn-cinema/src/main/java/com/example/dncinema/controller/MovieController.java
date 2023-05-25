@@ -1,6 +1,7 @@
 package com.example.dncinema.controller;
 
 import com.example.dncinema.model.Film;
+import com.example.dncinema.model.ShowTime;
 import com.example.dncinema.service.movie.IMovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -32,6 +33,24 @@ public class MovieController {
             return new ResponseEntity<>(films,HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity<>(films,HttpStatus.OK);
+    }
+
+    /**
+     * @Author QuynhHTN
+     * @Param id
+     * @Return new ResponseEntity<>
+     * @Usage_method findById to show detail film
+     */
+    @GetMapping("/detail/{id}")
+    public ResponseEntity<?> findFilmById(@PathVariable Integer id) {
+        Film film = movieService.findFilmById(id);
+        ShowTime showTime = film.getShowTime();
+
+        if (film == null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>(film, HttpStatus.OK);
+
     }
 
 }

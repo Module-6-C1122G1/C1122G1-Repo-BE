@@ -14,6 +14,8 @@ public class Film {
     private String nameFilm;
     @Column(name = "director", columnDefinition = "varchar(255)")
     private String director;
+    @Column(name = "studio_film", columnDefinition = "varchar(255)")
+    private String studioFilm;
     @Column(name = "trailer", columnDefinition = "varchar(255)")
     private String trailer;
     @Column(name = "describe_film", columnDefinition = "varchar(255)")
@@ -30,21 +32,26 @@ public class Film {
     private LocalDate dateEndFilm;
     @Column(name = "img_film", columnDefinition = "varchar(255)")
     private String imgFilm;
+    @Column(name = "time_film")
+    private Integer timeFilm;
+    @Column(name = "movie_label", columnDefinition = "varchar(255)")
+    private String movieLabel;
     @ManyToOne
     @JoinColumn(name = "id_type_film")
     private TypeFilm typeFilm;
 
-    @ManyToOne
+    @ManyToOne (fetch = FetchType.EAGER)
     @JoinColumn(name = "id_show_time")
     private ShowTime showTime;
 
     public Film() {
     }
 
-    public Film(Integer idFilm, String nameFilm, String director, String trailer, String describeFilm, String actor, Double normalSeatPrice, Double vipSeatPrice, LocalDate dateStartFilm, LocalDate dateEndFilm, String imgFilm, TypeFilm typeFilm, ShowTime showTime) {
+    public Film(Integer idFilm, String nameFilm, String director, String studioFilm, String trailer, String describeFilm, String actor, Double normalSeatPrice, Double vipSeatPrice, LocalDate dateStartFilm, LocalDate dateEndFilm, String imgFilm, Integer timeFilm, String movieLabel, TypeFilm typeFilm, ShowTime showTime) {
         this.idFilm = idFilm;
         this.nameFilm = nameFilm;
         this.director = director;
+        this.studioFilm = studioFilm;
         this.trailer = trailer;
         this.describeFilm = describeFilm;
         this.actor = actor;
@@ -53,6 +60,8 @@ public class Film {
         this.dateStartFilm = dateStartFilm;
         this.dateEndFilm = dateEndFilm;
         this.imgFilm = imgFilm;
+        this.timeFilm = timeFilm;
+        this.movieLabel = movieLabel;
         this.typeFilm = typeFilm;
         this.showTime = showTime;
     }
@@ -79,6 +88,14 @@ public class Film {
 
     public void setDirector(String director) {
         this.director = director;
+    }
+
+    public String getStudioFilm() {
+        return studioFilm;
+    }
+
+    public void setStudioFilm(String studioFilm) {
+        this.studioFilm = studioFilm;
     }
 
     public String getTrailer() {
@@ -143,6 +160,22 @@ public class Film {
 
     public void setImgFilm(String imgFilm) {
         this.imgFilm = imgFilm;
+    }
+
+    public Integer getTimeFilm() {
+        return timeFilm;
+    }
+
+    public void setTimeFilm(Integer timeFilm) {
+        this.timeFilm = timeFilm;
+    }
+
+    public String getMovieLabel() {
+        return movieLabel;
+    }
+
+    public void setMovieLabel(String movieLabel) {
+        this.movieLabel = movieLabel;
     }
 
     public TypeFilm getTypeFilm() {

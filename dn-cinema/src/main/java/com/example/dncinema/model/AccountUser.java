@@ -1,25 +1,46 @@
 package com.example.dncinema.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Table(name = "account_user")
+@Table(name = "account_user", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"name_account"})
+})
 public class AccountUser {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     @Column(name = "name_account", columnDefinition = "varchar(255)")
     private String nameAccount;
     @Column(name = "password_account", columnDefinition = "varchar(255)")
     private String passwordAccount;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "account_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    Set<Roles> roles = new HashSet<>();
 
     public AccountUser() {
     }
 
-    public AccountUser(String nameAccount, String passwordAccount) {
+    public AccountUser(int id, String nameAccount, String passwordAccount, Set<Roles> roles) {
+        this.id = id;
         this.nameAccount = nameAccount;
         this.passwordAccount = passwordAccount;
+        this.roles = roles;
+    }
+
+    public AccountUser(String username, String encode) {
+        this.nameAccount = username;
+        this.passwordAccount = encode;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNameAccount() {
@@ -36,5 +57,13 @@ public class AccountUser {
 
     public void setPasswordAccount(String passwordAccount) {
         this.passwordAccount = passwordAccount;
+    }
+
+    public Set<Roles> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Roles> roles) {
+        this.roles = roles;
     }
 }
