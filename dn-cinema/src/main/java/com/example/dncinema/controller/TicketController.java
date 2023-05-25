@@ -1,6 +1,6 @@
 package com.example.dncinema.controller;
 
-import com.example.dncinema.model.Ticket;
+import com.example.dncinema.dto.ListTicketDTO;
 import com.example.dncinema.service.ticket.ITicketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -25,10 +25,10 @@ public class TicketController {
      * @author DatLVP
      */
 
-    @GetMapping("")
+    @GetMapping("/list")
     public ResponseEntity<?> findAllTicket(@PageableDefault Pageable pageable,
                                            @RequestParam(required = false, defaultValue = "") String search) {
-        Page<Ticket> tickets = ticketService.findAllTicket(search, pageable);
+        Page<ListTicketDTO> tickets = ticketService.findAllTicket(search, pageable);
         if (tickets.isEmpty()) {
             return new ResponseEntity<>(tickets, HttpStatus.BAD_REQUEST);
         }
@@ -37,13 +37,13 @@ public class TicketController {
 
     /**
      * @param id
-     * @return HttpStatus.OK;
+     * @return HttpStatus.NO_CONTENT;
      * Phương thức sử dụng để id để huỷ vé
      * @author DatLVP
      */
-    @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.OK)
-    public void deleteBook(@PathVariable Integer id) {
+    @PutMapping("/cancelTicket/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void cancelTicket(@PathVariable("id") Integer id) {
         ticketService.cancelTicket(id);
     }
 }

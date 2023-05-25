@@ -1,6 +1,6 @@
 package com.example.dncinema.service.ticket.impl;
 
-import com.example.dncinema.model.Ticket;
+import com.example.dncinema.dto.ListTicketDTO;
 import com.example.dncinema.repository.ITicketRepository;
 import com.example.dncinema.service.ticket.ITicketService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +14,8 @@ public class TicketService implements ITicketService {
     private ITicketRepository ticketRepository;
 
     @Override
-    public Page<Ticket> findAllTicket(String search, Pageable pageable) {
-        return ticketRepository.findAllTicket(search, pageable);
+    public Page<ListTicketDTO> findAllTicket(String search, Pageable pageable) {
+        return ticketRepository.find_list_ticket(search, pageable);
     }
 
     @Override
