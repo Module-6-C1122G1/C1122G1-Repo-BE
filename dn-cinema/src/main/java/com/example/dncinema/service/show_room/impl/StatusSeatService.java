@@ -9,11 +9,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
 public class StatusSeatService implements IStatusSeatService {
-
-    @Autowired
-    private IStatusSeatRepository iStatusSeatRepository;
-    @Override
-    public List<StatusSeat> findAllStatusSeat() {
-        return iStatusSeatRepository.findAllStatusSeat();
-    }
+//
+//    @Autowired
+//    private IStatusSeatRepository iStatusSeatRepository;
+//    @Override
+//    public List<StatusSeat> findAllStatusSeat() {
+//        return iStatusSeatRepository.findAllStatusSeat();
+//    }
 }

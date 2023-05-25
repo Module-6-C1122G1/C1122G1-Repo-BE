@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface ITypeSeatRepository extends JpaRepository<TypeSeat,Integer> {
 
-    @Query(value = "select * from type_seat", nativeQuery = true)
-    List<TypeSeat> findAllTypeSeat();
+//    @Query(value = "select * from type_seat", nativeQuery = true)
+//    List<TypeSeat> findAllTypeSeat();
 
 }

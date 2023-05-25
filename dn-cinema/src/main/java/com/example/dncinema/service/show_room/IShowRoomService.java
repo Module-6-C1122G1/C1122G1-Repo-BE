@@ -7,15 +7,15 @@ import org.springframework.data.domain.Pageable;
 
 public interface IShowRoomService {
 
-    Page<ShowRoomDTO> findShowRoomByName(Pageable pageable, String name);
-
-
-    void addShowRoom(ShowRoomDTO showRoomDTO);
-
-    void deleteShowRoom(Integer id);
-
-    ShowRoomDTO findShowRoomById(Integer id);
-
-    void updateShowRoom(ShowRoomDTO showRoomDTO);
+//    Page<ShowRoomDTO> findShowRoomByName(Pageable pageable, String name);
+//
+//
+//    void addShowRoom(ShowRoomDTO showRoomDTO);
+//
+//    void deleteShowRoom(Integer id);
+//
+//    ShowRoomDTO findShowRoomById(Integer id);
+//
+//    void updateShowRoom(ShowRoomDTO showRoomDTO);
 
 }

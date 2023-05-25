@@ -10,18 +10,18 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MovieService implements IMovieService {
-    @Autowired
-    private IMovieRepository movieRepository;
-
-
-    @Override
-    public Page<Film> findAllFilm(String search, Pageable pageable) {
-        return movieRepository.findAllFilm(search,pageable);
-    }
-
-    @Override
-    public Film findFilmById(Integer id) {
-        return movieRepository.findFilmById(id);
-    }
+//    @Autowired
+//    private IMovieRepository movieRepository;
+//
+//
+//    @Override
+//    public Page<Film> findAllFilm(String search, Pageable pageable) {
+//        return movieRepository.findAllFilm(search,pageable);
+//    }
+//
+//    @Override
+//    public Film findFilmById(Integer id) {
+//        return movieRepository.findFilmById(id);
+//    }
 
 }

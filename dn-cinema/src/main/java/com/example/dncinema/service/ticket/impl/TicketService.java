@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class TicketService implements ITicketService {
-    @Autowired
-    private ITicketRepository iTicketRepository;
-
-    @Override
-    public Ticket findTicketById(Integer id) {
-        return iTicketRepository.findTicketById(id);
-    }
+//    @Autowired
+//    private ITicketRepository iTicketRepository;
+//
+//    @Override
+//    public Ticket findTicketById(Integer id) {
+//        return iTicketRepository.findTicketById(id);
+//    }
 }

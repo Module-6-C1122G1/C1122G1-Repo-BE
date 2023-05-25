@@ -17,36 +17,36 @@ import java.util.List;
 @RequestMapping("/movie")
 @CrossOrigin("*")
 public class MovieController {
-    @Autowired
-    private IMovieService movieService;
-
-    /**
-     * @author TruongDM
-     * @param pageable
-     * @param search
-     * @return PageImpl<>(filmList, pageable, films.getTotalElements());
-     * Phương thức sử dụng để tìm kiếm kết hợp xổ danh sách film
-     */
-    @GetMapping
-    @ResponseStatus()
-    public Page<Film> findAllFilm(@PageableDefault(size = 4)Pageable pageable,
-                                  @RequestParam(required = false, defaultValue = "")String search){
-        Page<Film> films = movieService.findAllFilm(search,pageable);
-        List<Film> filmList = films.toList();
-        return new PageImpl<>(filmList, pageable, films.getTotalElements());
-    }
-
-
-
-
-
-    @GetMapping("/detail/{id}")
-    public ResponseEntity<?> findFilmById(@PathVariable Integer id) {
-        Film film = movieService.findFilmById(id);
-        if (film == null) {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-        }
-        return new ResponseEntity<>(film, HttpStatus.OK);
-
-    }
+//    @Autowired
+//    private IMovieService movieService;
+//
+//    /**
+//     * @author TruongDM
+//     * @param pageable
+//     * @param search
+//     * @return PageImpl<>(filmList, pageable, films.getTotalElements());
+//     * Phương thức sử dụng để tìm kiếm kết hợp xổ danh sách film
+//     */
+//    @GetMapping
+//    @ResponseStatus()
+//    public Page<Film> findAllFilm(@PageableDefault(size = 4)Pageable pageable,
+//                                  @RequestParam(required = false, defaultValue = "")String search){
+//        Page<Film> films = movieService.findAllFilm(search,pageable);
+//        List<Film> filmList = films.toList();
+//        return new PageImpl<>(filmList, pageable, films.getTotalElements());
+//    }
+//
+//
+//
+//
+//
+//    @GetMapping("/detail/{id}")
+//    public ResponseEntity<?> findFilmById(@PathVariable Integer id) {
+//        Film film = movieService.findFilmById(id);
+//        if (film == null) {
+//            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+//        }
+//        return new ResponseEntity<>(film, HttpStatus.OK);
+//
+//    }
 }

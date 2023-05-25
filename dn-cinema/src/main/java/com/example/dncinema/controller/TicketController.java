@@ -11,20 +11,20 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/ticket")
 @CrossOrigin("*")
 public class TicketController {
-    @Autowired
-    ITicketService iTicketService;
-
-    /**
-     * Create: QuynhHTN
-     * Date create: 24/05/2023
-     * @param id
-     * @return
-     */
-    @GetMapping("/detail/{id}")
-    public ResponseEntity<?> findTicketById(@PathVariable Integer id) {
-        Ticket ticket=iTicketService.findTicketById(id);
-        if(ticket==null){
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-        }return new ResponseEntity<>(ticket,HttpStatus.OK);
-    }
+//    @Autowired
+//    ITicketService iTicketService;
+//
+//    /**
+//     * Create: QuynhHTN
+//     * Date create: 24/05/2023
+//     * @param id
+//     * @return
+//     */
+//    @GetMapping("/detail/{id}")
+//    public ResponseEntity<?> findTicketById(@PathVariable Integer id) {
+//        Ticket ticket=iTicketService.findTicketById(id);
+//        if(ticket==null){
+//            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+//        }return new ResponseEntity<>(ticket,HttpStatus.OK);
+//    }
 }

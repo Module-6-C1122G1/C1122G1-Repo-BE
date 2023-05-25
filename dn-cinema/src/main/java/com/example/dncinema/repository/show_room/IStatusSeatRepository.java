@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface IStatusSeatRepository extends JpaRepository<StatusSeat,Integer> {
-    @Query(value = "select * from status_seat", nativeQuery = true)
-    List<StatusSeat> findAllStatusSeat();
+//    @Query(value = "select * from status_seat", nativeQuery = true)
+//    List<StatusSeat> findAllStatusSeat();
 
 }
