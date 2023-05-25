@@ -15,4 +15,6 @@ public interface ICustomerService {
     Page<Customer> searchPlusPoint(Pageable pageable , LocalDate dateStart,LocalDate dateEnd);
 
     Page<Customer> searchUsePoint(Pageable pageable , LocalDate dateStart , LocalDate dateEnd);
+
+
 }
