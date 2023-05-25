@@ -21,11 +21,17 @@ public class EmployeeController {
     public List<Employee> findAll() {
         return iEmployeeService.findAll();
     }
+
     @ResponseStatus(HttpStatus.CREATED)
     @PatchMapping("/create")
-    public void createEmployeeWithAccount(@RequestBody EmployeeDTO employeeDTO ,
-                                          @RequestParam("nameAccount") String nameAccount,
-                                          @RequestParam("passwordAccount") String passwordAccount) {
-        iEmployeeService.create(employeeDTO, nameAccount, passwordAccount);
+    public void createEmployeeWithAccount(@RequestBody EmployeeDTO employeeDTO) {
+        iEmployeeService.create(employeeDTO, employeeDTO.getAccountUser().getNameAccount(), employeeDTO.getAccountUser().getPasswordAccount());
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @PutMapping("/update")
+    public void updateEmployeeWithAccount(@RequestBody EmployeeDTO employeeDTO,
+                                          @PathVariable("id") Integer id) {
+        iEmployeeService.updateEmployee(employeeDTO, id);
     }
 }

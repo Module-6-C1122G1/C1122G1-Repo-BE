@@ -12,6 +12,16 @@ import javax.transaction.Transactional;
 @Repository
 public interface IEmployeeRepository extends JpaRepository<Employee, Integer> {
 
+    /**
+     * @param nameEmployee
+     * @param phone
+     * @param address
+     * @param gender
+     * @param img
+     * @param email
+     * @param identityCard
+     * @param id
+     */
     @Modifying
     @Transactional
     @Query(value = "insert into employee(name_employee , phone , address , gender , img_employee , email , identity_card , id) values (:name_employee,:phone,:address,:gender , :img_employee , :email , :identity_card , :id)", nativeQuery = true)
@@ -25,6 +35,18 @@ public interface IEmployeeRepository extends JpaRepository<Employee, Integer> {
             , @Param("id") Integer id
     );
 
+
+    /**
+     * @param nameEmployee
+     * @param phone
+     * @param address
+     * @param gender
+     * @param img
+     * @param email
+     * @param identityCard
+     * @param idAccount
+     * @param employeeId
+     */
     @Modifying
     @Query(value = "update employee set name_employee = :name_employee, phone = :phone , address = :address ,gender = :gender,img_employee = :img_employee ,email = :email,identity_card = :identity_card, id = :id WHERE id_employee = :id_employee", nativeQuery = true)
     void updateEmployeeWithAccount(
@@ -37,4 +59,12 @@ public interface IEmployeeRepository extends JpaRepository<Employee, Integer> {
             , @Param("identity_card") String identityCard
             , @Param("id") Integer idAccount
             , @Param("id_employee") Integer employeeId);
+
+    /**
+     * @param employeeId
+     * @return
+     */
+    @Modifying
+    @Query(value = "select * from employee where id_employee = :id_employee", nativeQuery = true)
+    Employee findByIdEmployee(@Param("id_employee") Integer employeeId);
 }

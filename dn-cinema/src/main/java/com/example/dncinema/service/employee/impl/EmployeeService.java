@@ -17,8 +17,18 @@ public class EmployeeService implements IEmployeeService {
     private IEmployeeRepository iEmployeeRepository;
 
     @Override
-    public void updateEmployee(Employee employee, int id) {
-
+    public void updateEmployee(EmployeeDTO employeeDTO, Integer id) {
+        Employee employee = iEmployeeRepository.findByIdEmployee(id);
+        BeanUtils.copyProperties(employeeDTO, employee);
+        iEmployeeRepository.updateEmployeeWithAccount(employeeDTO.getNameEmployee()
+                , employee.getPhone()
+                , employeeDTO.getAddress()
+                , employee.getGender()
+                , employee.getImgEmployee()
+                , employee.getEmail()
+                , employee.getIdentityCard()
+                , employee.getAccountUser().getId()
+                , employee.getIdEmployee());
     }
 
     @Override
@@ -36,14 +46,19 @@ public class EmployeeService implements IEmployeeService {
         BeanUtils.copyProperties(employeeDTO, employee);
         iEmployeeRepository.saveEmployee(
                 employee.getNameEmployee(),
-                employeeDTO.getPhone(),
-                employeeDTO.getAddress(),
-                employeeDTO.getGender(),
-                employeeDTO.getImgEmployee(),
-                employeeDTO.getEmail(),
-                employeeDTO.getIdentityCard(),
+                employee.getPhone(),
+                employee.getAddress(),
+                employee.getGender(),
+                employee.getImgEmployee(),
+                employee.getEmail(),
+                employee.getIdentityCard(),
                 employee.getAccountUser().getId()
         );
+    }
+
+    @Override
+    public Employee findById(int id) {
+        return iEmployeeRepository.findByIdEmployee(id);
     }
 
 }
