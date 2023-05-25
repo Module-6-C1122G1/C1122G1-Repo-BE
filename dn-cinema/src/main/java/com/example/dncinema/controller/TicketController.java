@@ -35,6 +35,12 @@ public class TicketController {
         return new ResponseEntity<>(tickets, HttpStatus.OK);
     }
 
+    /**
+     * @param id
+     * @return HttpStatus.OK;
+     * Phương thức sử dụng để id để huỷ vé
+     * @author DatLVP
+     */
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void deleteBook(@PathVariable Integer id) {
