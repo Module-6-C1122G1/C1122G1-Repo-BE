@@ -5,27 +5,22 @@
   </component>
   <component name="ChangeListManager">
 
-    <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="">
-
-
+    <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="update ticket and movie detail">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/AccountUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/AccountUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/UserRole.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-
 
     </list>
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeInsightWorkspaceSettings">
-    <option name="optimizeImportsOnTheFly" value="true" />
+
+  <component name="TaskManager">
+    <servers />
   </component>
+
+
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -78,9 +73,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-
-    "last_opened_file_path": "C:/CodeGym/movie-theater/dn-cinema-api/dn-cinema",
-
+    "last_opened_file_path": "C:/Users/DELL/Desktop/CODEGYM/module_4/ss7_jpa/exercise/blog",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -96,6 +89,17 @@
   }
 }</component>
   <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DnCinemaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="dn-cinema.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.dncinema.DnCinemaApplication" />
@@ -114,16 +118,40 @@
       <updated>1684725035536</updated>
       <workItem from="1684725037272" duration="2620000" />
       <workItem from="1684894781635" duration="240000" />
+
+
       <workItem from="1684918773391" duration="4934000" />
 
-
-
       <workItem from="1684933669914" duration="2191000" />
+      <workItem from="1684938158388" duration="5964000" />
+    </task>
+    <task id="LOCAL-00001" summary="update ticket and movie detail">
+      <created>1684943344442</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684943344442</updated>
 
     </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update ticket and movie detail" />
+    <option name="LAST_COMMIT_MESSAGE" value="update ticket and movie detail" />
   </component>
 </project>
