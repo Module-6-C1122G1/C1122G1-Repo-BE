@@ -4,12 +4,11 @@ import com.example.dncinema.model.Ticket;
 import com.example.dncinema.service.ticket.ITicketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/ticket")
@@ -21,17 +20,24 @@ public class TicketController {
     /**
      * @param pageable
      * @param search
-     * @return PageImpl<>(ticketList, pageable, tickets.getTotalElements());
-     * Phương thức sử dụng để tìm kiếm kết hợp xổ danh sách vé đặt
+     * @return ResponseEntity<>(tickets, HttpStatus.OK;
+     * Phương thức sử dụng để tìm kiếm kết hợp danh sách vé đặt
      * @author DatLVP
      */
 
     @GetMapping("")
-    @ResponseStatus()
-    public Page<Ticket> findAllTicket(@PageableDefault(size = 7) Pageable pageable,
-                                      @RequestParam(required = false, defaultValue = "") String search) {
+    public ResponseEntity<?> findAllTicket(@PageableDefault Pageable pageable,
+                                           @RequestParam(required = false, defaultValue = "") String search) {
         Page<Ticket> tickets = ticketService.findAllTicket(search, pageable);
-        List<Ticket> ticketList = tickets.toList();
-        return new PageImpl<>(ticketList, pageable, tickets.getTotalElements());
+        if (tickets.isEmpty()) {
+            return new ResponseEntity<>(tickets, HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>(tickets, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void deleteBook(@PathVariable Integer id) {
+        ticketService.cancelTicket(id);
     }
 }

@@ -17,4 +17,9 @@ public class TicketService implements ITicketService {
     public Page<Ticket> findAllTicket(String search, Pageable pageable) {
         return ticketRepository.findAllTicket(search, pageable);
     }
+
+    @Override
+    public void cancelTicket(Integer id) {
+        ticketRepository.cancelTicket(id);
+    }
 }
