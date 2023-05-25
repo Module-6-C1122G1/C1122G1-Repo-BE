@@ -83,7 +83,7 @@
       &quot;mysql&quot;
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="DnCinemaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="dn-cinema.main" />
