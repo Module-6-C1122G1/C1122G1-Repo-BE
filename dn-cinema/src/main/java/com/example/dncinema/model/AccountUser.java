@@ -5,7 +5,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "account_user")
+@Table(name = "account_user", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"name_account"})
+})
 public class AccountUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +28,11 @@ public class AccountUser {
         this.nameAccount = nameAccount;
         this.passwordAccount = passwordAccount;
         this.roles = roles;
+    }
+
+    public AccountUser(String username, String encode) {
+        this.nameAccount = username;
+        this.passwordAccount = encode;
     }
 
     public int getId() {
