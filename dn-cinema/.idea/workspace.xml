@@ -80,13 +80,14 @@
     "nodejs_package_manager_path": "npm",
     "spring.configuration.checksum": "d788013c1d5834ba3ba288e3511a87d2",
     "vue.rearranger.settings.migration": "true"
+
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
@@ -118,7 +119,9 @@
       <workItem from="1684725037272" duration="2620000" />
       <workItem from="1684894781635" duration="240000" />
 
+
       <workItem from="1684918773391" duration="4934000" />
+
       <workItem from="1684933669914" duration="2191000" />
       <workItem from="1684938158388" duration="5964000" />
     </task>
