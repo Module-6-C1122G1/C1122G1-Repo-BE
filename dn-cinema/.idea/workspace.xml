@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
 
-    <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="update authentication feature for application">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/config/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/TicketControllerMinh.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/TicketDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/ITicketRepositoryMinh.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ITicketServiceMinh.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/impl/TicketServiceMinh.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/ShowTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/ShowTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/dncinema/MovieController_getAllFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/MovieController_getAllFilm.java" afterDir="false" />
 
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,7 +127,13 @@
       <workItem from="1684894781635" duration="240000" />
       <workItem from="1684918773391" duration="4934000" />
 
-      <workItem from="1684932746560" duration="17532000" />
+      <workItem from="1684928763049" duration="8698000" />
+      <workItem from="1684940849214" duration="111000" />
+      <workItem from="1684978160331" duration="53000" />
+      <workItem from="1684984181807" duration="3085000" />
+      <workItem from="1684996359463" duration="5391000" />
+      <workItem from="1685003483531" duration="2647000" />
+      <workItem from="1685007274519" duration="57000" />
 
     </task>
     <task id="LOCAL-00001" summary="update ticket and movie detail">
