@@ -4,7 +4,6 @@ import com.example.dncinema.model.*;
 
 public class TicketDTO {
     private Customer customer;
-    private Employee employee;
     private Film film;
     private Integer[] listSeat;
     private Discount discount;
@@ -13,9 +12,8 @@ public class TicketDTO {
     public TicketDTO() {
     }
 
-    public TicketDTO(Customer customer, Employee employee, Film film, Integer[] listSeat, Discount discount, long price) {
+    public TicketDTO(Customer customer, Film film, Integer[] listSeat, Discount discount, long price) {
         this.customer = customer;
-        this.employee = employee;
         this.film = film;
         this.listSeat = listSeat;
         this.discount = discount;
@@ -38,13 +36,6 @@ public class TicketDTO {
         this.customer = customer;
     }
 
-    public Employee getEmployee() {
-        return employee;
-    }
-
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
 
     public Film getFilm() {
         return film;

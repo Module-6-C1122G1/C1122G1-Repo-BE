@@ -15,6 +15,10 @@ public class ShowRoom {
     public ShowRoom() {
     }
 
+    public ShowRoom(Integer idShowRoom) {
+        this.idShowRoom = idShowRoom;
+    }
+
     public ShowRoom(Integer idShowRoom, String nameShowRoom) {
         this.idShowRoom = idShowRoom;
         this.nameShowRoom = nameShowRoom;

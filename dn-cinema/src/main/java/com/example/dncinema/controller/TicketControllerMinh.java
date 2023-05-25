@@ -16,15 +16,16 @@ public class TicketControllerMinh {
     @Autowired
     ITicketServiceMinh iTicketServiceMinh;
 
-    @GetMapping(name = "/discount")
+    @GetMapping("/discount")
     public ResponseEntity<Discount> checkDiscount(@RequestParam String discount) {
         Discount discount1 = iTicketServiceMinh.findDiscount(discount);
         if (discount1 == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(discount1, HttpStatus.OK);
+
     }
-    @PostMapping("/create")
+    @PostMapping("create")
     public ResponseEntity<?> saveTicket(@RequestBody TicketDTO ticketDTO) throws UnsupportedEncodingException {
         iTicketServiceMinh.saveTicket(ticketDTO);
         return new ResponseEntity<>(HttpStatus.CREATED);

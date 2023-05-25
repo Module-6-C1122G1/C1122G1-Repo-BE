@@ -1,10 +1,10 @@
 package com.example.dncinema.service.impl;
 
 import com.example.dncinema.config.Config;
+import com.example.dncinema.dto.SeatDTO;
 import com.example.dncinema.dto.TicketDTO;
-import com.example.dncinema.model.Discount;
-import com.example.dncinema.model.Seat;
-import com.example.dncinema.model.Ticket;
+import com.example.dncinema.model.*;
+import com.example.dncinema.repository.ICustomerRepository;
 import com.example.dncinema.repository.ITicketRepositoryMinh;
 import com.example.dncinema.service.ITicketServiceMinh;
 import com.google.zxing.BarcodeFormat;
@@ -37,22 +37,34 @@ TicketServiceMinh implements ITicketServiceMinh {
     @Autowired
     private ITicketRepositoryMinh iTicketRepository;
     @Autowired
+    private ICustomerRepository iCustomerRepository;
+    @Autowired
     JavaMailSender javaMailSender;
 
     @Override
     public void saveTicket(TicketDTO ticketDTO) throws UnsupportedEncodingException {
         int a = 0;
         a++;
+        String seats = "";
+        for (int i = 0; i < ticketDTO.getListSeat().length; i++) {
+            seats += ticketDTO.getListSeat()[i].toString()+" ";
+        }
+        String data = "Seat" + " "+seats;
         String path = "C:\\Users\\ADMIN\\Desktop\\du_an_be\\dn-cinema-api\\dn-cinema\\src\\main\\resources\\qr\\QR" + a + ".png";
-        createQR(ticketDTO.toString(), a, path);
+        createQR(data, a, path);
         Ticket ticket;
         for (int i = 0; i < ticketDTO.getListSeat().length; i++) {
-            Seat seat = iTicketRepository.findByIdSeat(ticketDTO.getListSeat()[i]);
-            ticket = new Ticket(1, "", false, ticketDTO.getPrice(), LocalDate.now(), path, ticketDTO.getDiscount(), null, ticketDTO.getCustomer(), seat);
-            iTicketRepository.saveTicket(ticket);
+            SeatDTO seatDTO = iTicketRepository.getFromSeatId(ticketDTO.getListSeat()[i]);
+            Seat seat = new Seat(seatDTO.getIdSeat(), seatDTO.getNameSeat(), new StatusSeat(seatDTO.getIdStatusSeat()), new TypeSeat(seatDTO.getIdTypeSeat()),
+                    new ShowRoom(seatDTO.getIdShowRoom()));
+
+            ticket = new Ticket("45", false, ticketDTO.getPrice(), LocalDate.now(), path, ticketDTO.getDiscount(), null, ticketDTO.getCustomer(), seat);
+
+            iTicketRepository.save(ticket);
         }
+        List<Customer> list = iCustomerRepository.getByIdCus(ticketDTO.getCustomer().getIdCustomer());
         pay(ticketDTO.getPrice());
-        sendEmail(ticketDTO.getCustomer().getEmail(), path);
+        sendEmail(list.get(0).getEmail(), path);
     }
 
     public void createQR(String data, int a, String path) {
@@ -104,8 +116,8 @@ TicketServiceMinh implements ITicketServiceMinh {
         }
     }
 
-    public Discount findDiscount(String nameDiscount) {
-        return iTicketRepository.findByNameDiscount(nameDiscount);
+    public Discount findDiscount(String name) {
+        return iTicketRepository.findByNameDiscount(name);
     }
 
     public String pay(long amount) throws UnsupportedEncodingException {
