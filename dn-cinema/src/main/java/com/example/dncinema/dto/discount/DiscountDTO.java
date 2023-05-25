@@ -10,6 +10,8 @@ public class DiscountDTO implements Validator {
     private Integer idDiscount;
     @NotBlank(message = "Discount name cannot be left blank")
     private String nameDiscount;
+    @NotBlank(message = "Cannot be left blank")
+    private String imageDiscount;
     private LocalDate dateStart;
     private LocalDate dateEnd;
     @NotBlank(message = "Describe cannot be left blank")
@@ -29,6 +31,14 @@ public class DiscountDTO implements Validator {
 
     public String getNameDiscount() {
         return nameDiscount;
+    }
+
+    public String getImageDiscount() {
+        return imageDiscount;
+    }
+
+    public void setImageDiscount(String imageDiscount) {
+        this.imageDiscount = imageDiscount;
     }
 
     public void setNameDiscount(String nameDiscount) {
