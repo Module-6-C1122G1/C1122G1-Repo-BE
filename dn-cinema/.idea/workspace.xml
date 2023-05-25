@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="update entity in model and relationship in database">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/config/WebSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/SecurityController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/IAccountUserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/IRolesRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/security/jwt/JwtEntryPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/security/jwt/JwtProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/security/jwt/JwtTokenFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/security/request/SignInForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/security/request/SignUpForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/security/response/JwtResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/security/response/ResponseMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/security/userPrincipal/UserDetailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/security/userPrincipal/UserPrinciple.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/accountUser/IAccountUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/accountUser/impl/accountUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/roles/IRolesService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/roles/impl/RolesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/AccountUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/AccountUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="update authentication feature for application" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -118,11 +97,23 @@
       <workItem from="1684894781635" duration="240000" />
       <workItem from="1684918773391" duration="4934000" />
       <workItem from="1684933669914" duration="2191000" />
-      <workItem from="1684977549445" duration="5457000" />
+      <workItem from="1684977549445" duration="5820000" />
     </task>
+    <task id="LOCAL-00001" summary="update authentication feature for application">
+      <created>1684987536411</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684987536411</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update authentication feature for application" />
+    <option name="LAST_COMMIT_MESSAGE" value="update authentication feature for application" />
   </component>
 </project>
