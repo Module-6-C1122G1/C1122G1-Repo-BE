@@ -23,6 +23,11 @@ public class CustomerController {
     @Autowired
     private ICustomerService iCustomerService;
 
+    /**
+     * @author DongPV
+     * @param pageable
+     * @return list customer , status OK
+     */
     @GetMapping("")
     public ResponseEntity<?> findAllCustomerTicket(@PageableDefault(size = 3) Pageable pageable) {
         Page<Customer> customers = iCustomerService.findAllCustomerTicket(pageable);
@@ -32,6 +37,11 @@ public class CustomerController {
         return new ResponseEntity<>(customers, HttpStatus.OK);
     }
 
+    /**
+     * @author DongPV
+     * @param pageable
+     * @return list customer point history , status OK
+     */
     @GetMapping("/history")
     public ResponseEntity<?> findAllCustomerPointHistory(@PageableDefault(size = 3) Pageable pageable) {
         Page<Customer> customers = iCustomerService.findAllCustomerPointHistory(pageable);

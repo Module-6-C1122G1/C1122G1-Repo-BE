@@ -23,5 +23,5 @@ public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
             "join show_time on show_time.id_seat = seat.id_seat\n" +
             "join film on film.id_show_time = show_time.id_show_time" , nativeQuery = true)
     Page<Customer> findAllCustomerPointHistory(Pageable pageable);
-    
+
 }
