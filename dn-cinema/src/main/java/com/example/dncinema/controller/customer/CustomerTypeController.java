@@ -15,6 +15,10 @@ public class CustomerTypeController {
     @Autowired
     ICustomerTypeService customerTypeService;
 
+    /** Create by: ThanhNV
+     * Function to display all types of customers
+     * @return customerTypeService.findAllTypeCustomer();
+     */
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("")
     public List<TypeCustomer> showAll() {
