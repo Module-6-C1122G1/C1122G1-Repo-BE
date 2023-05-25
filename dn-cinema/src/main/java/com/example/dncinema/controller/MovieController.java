@@ -2,14 +2,13 @@ package com.example.dncinema.controller;
 
 import com.example.dncinema.model.Film;
 import com.example.dncinema.service.movie.IMovieService;
-import com.example.dncinema.service.typeFilm.ITypeFilmService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
-import org.springframework.ui.Model;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,19 +28,19 @@ public class MovieController {
         return new PageImpl<>(filmList, pageable, films.getTotalElements());
     }
 
-    @GetMapping("/{id}")
+//    @GetMapping("/{id}")
 
-    public Film findFilmById(@PathVariable Integer id) {
-        return movieService.findFilmById(id);
-    }
+//    public Film findFilmById(@PathVariable Integer id) {
+//        return movieService.findFilmById(id);
+//    }
 
 
     @GetMapping("/detail/{id}")
-    public ResponseStatus<?> findFilmById(@PathVariable Integer id) {
+    public ResponseEntity<?> findFilmById(@PathVariable Integer id) {
         Film film = movieService.findFilmById(id);
         if (film == null) {
-            return new ResponseStatus<>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-        return new ResponseStatus<>(film, HttpStatus.OK);
+        return new ResponseEntity<>(film, HttpStatus.OK);
     }
 }

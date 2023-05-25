@@ -12,7 +12,7 @@ public class TicketService implements ITicketService {
     private ITicketRepository iTicketRepository;
 
     @Override
-    public Ticket findTicketById(Integer idTicket) {
-        return iTicketRepository.findTicketById(idTicket);
+    public Ticket findTicketById(Integer id) {
+        return iTicketRepository.findTicketById(id);
     }
 }
