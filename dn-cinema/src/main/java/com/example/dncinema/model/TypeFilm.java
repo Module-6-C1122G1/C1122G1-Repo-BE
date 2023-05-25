@@ -9,7 +9,7 @@ public class TypeFilm {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_type_film")
     private Integer idTypeFilm;
-    @Column(name = "name_type_film", columnDefinition = "varchar(45)")
+    @Column(name = "name_type_film", columnDefinition = "varchar(255)")
     private String nameTypeFilm;
 
     public TypeFilm() {

@@ -9,46 +9,42 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_customer")
     private Integer idCustomer;
-    @Column(name = "name_customer", columnDefinition = "varchar(45)")
+    @Column(name = "name_customer",columnDefinition = "varchar(255)")
     private String nameCustomer;
-    @Column(name = "phone")
-    private Integer phone;
-    @Column(name = "gender", columnDefinition = "varchar(45)")
+    @Column(name = "point_customer")
+    private Double pointCustomer;
+    @Column(name = "gender",columnDefinition = "varchar(45)")
     private String gender;
-    @Column(name = "point")
-    private Double point;
-    @Column(name = "email", columnDefinition = "varchar(45)")
-    private String email;
-    @Column(name = "address", columnDefinition = "varchar(45)")
+    @Column(name = "phone",columnDefinition = "varchar(25)")
+    private String phone;
+    @Column(name = "address",columnDefinition = "varchar(255)")
     private String address;
-    @Column(name = "total_amount")
-    private Double totalAmount;
-    @Column(name = "identity_card", columnDefinition = "varchar(45)")
+    @Column(name = "email",columnDefinition = "varchar(255)")
+    private String email;
+    @Column(name = "identity_card",columnDefinition = "varchar(45)")
     private String identityCard;
 
     @ManyToOne
     @JoinColumn(name = "id_type_customer")
     private TypeCustomer typeCustomer;
-
     @ManyToOne
-    @JoinColumn(name = "id_account")
-    private Account account;
+    @JoinColumn(name = "id")
+    private AccountUser accountUser;
 
     public Customer() {
     }
 
-    public Customer(Integer idCustomer, String nameCustomer, Integer phone, String gender, Double point, String email, String address, Double totalAmount, String identityCard, TypeCustomer typeCustomer, Account account) {
+    public Customer(Integer idCustomer, String nameCustomer, Double pointCustomer, String gender, String phone, String address, String email, String identityCard, TypeCustomer typeCustomer, AccountUser accountUser) {
         this.idCustomer = idCustomer;
         this.nameCustomer = nameCustomer;
-        this.phone = phone;
+        this.pointCustomer = pointCustomer;
         this.gender = gender;
-        this.point = point;
-        this.email = email;
+        this.phone = phone;
         this.address = address;
-        this.totalAmount = totalAmount;
+        this.email = email;
         this.identityCard = identityCard;
         this.typeCustomer = typeCustomer;
-        this.account = account;
+        this.accountUser = accountUser;
     }
 
     public Integer getIdCustomer() {
@@ -67,12 +63,12 @@ public class Customer {
         this.nameCustomer = nameCustomer;
     }
 
-    public Integer getPhone() {
-        return phone;
+    public Double getPointCustomer() {
+        return pointCustomer;
     }
 
-    public void setPhone(Integer phone) {
-        this.phone = phone;
+    public void setPointCustomer(Double pointCustomer) {
+        this.pointCustomer = pointCustomer;
     }
 
     public String getGender() {
@@ -83,20 +79,12 @@ public class Customer {
         this.gender = gender;
     }
 
-    public Double getPoint() {
-        return point;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPoint(Double point) {
-        this.point = point;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getAddress() {
@@ -107,12 +95,12 @@ public class Customer {
         this.address = address;
     }
 
-    public Double getTotalAmount() {
-        return totalAmount;
+    public String getEmail() {
+        return email;
     }
 
-    public void setTotalAmount(Double totalAmount) {
-        this.totalAmount = totalAmount;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getIdentityCard() {
@@ -131,11 +119,11 @@ public class Customer {
         this.typeCustomer = typeCustomer;
     }
 
-    public Account getAccount() {
-        return account;
+    public AccountUser getAccountUser() {
+        return accountUser;
     }
 
-    public void setAccount(Account account) {
-        this.account = account;
+    public void setAccountUser(AccountUser accountUser) {
+        this.accountUser = accountUser;
     }
 }
