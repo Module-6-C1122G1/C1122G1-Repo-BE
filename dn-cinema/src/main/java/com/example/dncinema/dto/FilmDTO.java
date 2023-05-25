@@ -1,53 +1,32 @@
-package com.example.dncinema.model;
+package com.example.dncinema.dto;
 
-import javax.persistence.*;
+import com.example.dncinema.model.ShowTime;
+import com.example.dncinema.model.TypeFilm;
+
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "film")
-public class Film {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_film")
+public class FilmDTO {
     private Integer idFilm;
-    @Column(name = "name_film", columnDefinition = "varchar(255)")
     private String nameFilm;
-    @Column(name = "director", columnDefinition = "varchar(255)")
     private String director;
-    @Column(name = "studio_film", columnDefinition = "varchar(255)")
     private String studioFilm;
-    @Column(name = "trailer", columnDefinition = "varchar(255)")
     private String trailer;
-    @Column(name = "describe_film", columnDefinition = "varchar(255)")
     private String describeFilm;
-    @Column(name = "actor", columnDefinition = "varchar(255)")
     private String actor;
-    @Column(name = "normal_seat_price")
     private Double normalSeatPrice;
-    @Column(name = "vip_seat_price")
     private Double vipSeatPrice;
-    @Column(name = "date_start_film", columnDefinition = "date")
     private LocalDate dateStartFilm;
-    @Column(name = "date_end_film", columnDefinition = "date")
     private LocalDate dateEndFilm;
-    @Column(name = "img_film", columnDefinition = "varchar(255)")
     private String imgFilm;
-    @Column(name = "time_film")
     private Integer timeFilm;
-    @Column(name = "movie_label", columnDefinition = "varchar(255)")
     private String movieLabel;
-    @ManyToOne
-    @JoinColumn(name = "id_type_film")
     private TypeFilm typeFilm;
-
-    @ManyToOne
-    @JoinColumn(name = "id_show_time")
     private ShowTime showTime;
 
-    public Film() {
+    public FilmDTO() {
     }
 
-    public Film(Integer idFilm, String nameFilm, String director, String studioFilm, String trailer, String describeFilm, String actor, Double normalSeatPrice, Double vipSeatPrice, LocalDate dateStartFilm, LocalDate dateEndFilm, String imgFilm, Integer timeFilm, String movieLabel, TypeFilm typeFilm, ShowTime showTime) {
+    public FilmDTO(Integer idFilm, String nameFilm, String director, String studioFilm, String trailer, String describeFilm, String actor, Double normalSeatPrice, Double vipSeatPrice, LocalDate dateStartFilm, LocalDate dateEndFilm, String imgFilm, Integer timeFilm, String movieLabel, TypeFilm typeFilm, ShowTime showTime) {
         this.idFilm = idFilm;
         this.nameFilm = nameFilm;
         this.director = director;
