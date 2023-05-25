@@ -17,7 +17,7 @@ public class TicketController {
     /**
      * Create: QuynhHTN
      * Date create: 24/05/2023
-     * @param id
+     * @Param id
      * @return
      */
     @GetMapping("/detail/{id}")
