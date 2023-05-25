@@ -4,26 +4,23 @@ import com.example.dncinema.model.Customer;
 import com.example.dncinema.repository.ICustomerRepository;
 import com.example.dncinema.service.customer.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 @Service
 public class CustomerService implements ICustomerService {
+
     @Autowired
-    ICustomerRepository customerRepository;
+    private ICustomerRepository iCustomerRepository;
 
     @Override
-    public List<Customer> findAll() {
-        return customerRepository.findAll();
+    public Page<Customer> findAllCustomerTicket(Pageable pageable) {
+        return iCustomerRepository.findAllCustomerTicket(pageable);
     }
 
     @Override
-    public Customer findById(int id) {
-        return customerRepository.getById(id);
-    }
-
-    @Override
-    public void save(Customer customer) {
-        customerRepository.save(customer);
+    public Page<Customer> findAllCustomerPointHistory(Pageable pageable) {
+        return iCustomerRepository.findAllCustomerPointHistory(pageable);
     }
 }
