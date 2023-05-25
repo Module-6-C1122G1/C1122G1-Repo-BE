@@ -13,11 +13,11 @@ public class Ticket {
     @Column(name = "status_ticket", columnDefinition = "varchar(255)")
     private String statusTicket;
     @Column(name = "price_after_discount")
-    private Double priceAfterDiscount;
+    private Long priceAfterDiscount;
     @Column(name = "date_booking", columnDefinition = "date")
     private LocalDate dateBooking;
     @Column(name = "id_qr")
-    private Integer idQr;
+    private String idQr;
 
     @OneToOne
     @JoinColumn(name = "id_discount")
@@ -38,7 +38,7 @@ public class Ticket {
     public Ticket() {
     }
 
-    public Ticket(Integer idTicket, String statusTicket, Double priceAfterDiscount, LocalDate dateBooking, Integer idQr, Discount discount, Employee employee, Customer customer, Seat seat) {
+    public Ticket(Integer idTicket, String statusTicket, Long priceAfterDiscount, LocalDate dateBooking, String idQr, Discount discount, Employee employee, Customer customer, Seat seat) {
         this.idTicket = idTicket;
         this.statusTicket = statusTicket;
         this.priceAfterDiscount = priceAfterDiscount;
@@ -66,11 +66,11 @@ public class Ticket {
         this.statusTicket = statusTicket;
     }
 
-    public Double getPriceAfterDiscount() {
+    public Long getPriceAfterDiscount() {
         return priceAfterDiscount;
     }
 
-    public void setPriceAfterDiscount(Double priceAfterDiscount) {
+    public void setPriceAfterDiscount(Long priceAfterDiscount) {
         this.priceAfterDiscount = priceAfterDiscount;
     }
 
@@ -82,11 +82,11 @@ public class Ticket {
         this.dateBooking = dateBooking;
     }
 
-    public Integer getIdQr() {
+    public String getIdQr() {
         return idQr;
     }
 
-    public void setIdQr(Integer idQr) {
+    public void setIdQr(String idQr) {
         this.idQr = idQr;
     }
 
