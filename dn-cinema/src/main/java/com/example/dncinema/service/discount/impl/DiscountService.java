@@ -40,6 +40,11 @@ public class DiscountService implements IDiscountService {
         return new PageImpl<>(discountDTOList, discountPage.getPageable(), discountPage.getTotalElements());
     }
 
+    @Override
+    public void save(Discount discount) {
+        discountRepository.save(discount);
+    }
+
     /**
      * Create: TuanLT.
      * Date: 24/05/2023.

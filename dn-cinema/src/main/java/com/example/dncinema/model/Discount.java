@@ -8,8 +8,8 @@ import java.time.LocalDate;
 public class Discount {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_discount")
-    private Integer idDiscount;
+    @Column(name = "id")
+    private Long id;
     @Column(name = "name_discount", columnDefinition = "varchar(255)")
     private String nameDiscount;
     @Column(name = "image_discount", columnDefinition = "varchar(255)")
@@ -28,21 +28,12 @@ public class Discount {
     public Discount() {
     }
 
-    public Discount(Integer idDiscount, String nameDiscount, LocalDate dateStart, LocalDate dateEnd, String describeDiscount, Double percentDiscount) {
-        this.idDiscount = idDiscount;
-        this.nameDiscount = nameDiscount;
-        this.dateStart = dateStart;
-        this.dateEnd = dateEnd;
-        this.describeDiscount = describeDiscount;
-        this.percentDiscount = percentDiscount;
+    public Long getId() {
+        return id;
     }
 
-    public Integer getIdDiscount() {
-        return idDiscount;
-    }
-
-    public void setIdDiscount(Integer idDiscount) {
-        this.idDiscount = idDiscount;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNameDiscount() {

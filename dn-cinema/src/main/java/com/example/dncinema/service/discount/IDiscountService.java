@@ -1,6 +1,7 @@
 package com.example.dncinema.service.discount;
 
 import com.example.dncinema.dto.discount.DiscountDTO;
+import com.example.dncinema.model.Discount;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -9,7 +10,7 @@ public interface IDiscountService {
 
 //    Discount findById(Long id);
 //
-//    void save(Discount discount);
+    void save(Discount discount);
 
     void delete(Long id);
 }
