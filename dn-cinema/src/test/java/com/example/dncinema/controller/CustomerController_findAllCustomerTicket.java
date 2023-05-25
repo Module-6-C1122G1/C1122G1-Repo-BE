@@ -20,7 +20,7 @@ public class CustomerController_findAllCustomerTicket {
 
     /**
      * this method is used to check the return list which param = null
-     *
+     * @author DongPV
      * @throws Exception
      */
     @Test
@@ -32,7 +32,7 @@ public class CustomerController_findAllCustomerTicket {
 
     /**
      * This method is used to check the return list which param = ""
-     *
+     * @author DongPV
      * @throws Exception
      */
     @Test
@@ -44,7 +44,7 @@ public class CustomerController_findAllCustomerTicket {
 
     /**
      * This method is used to check the return list which param does not exist
-     *
+     * @author DongPV
      * @throws Exception
      */
     @Test
@@ -56,7 +56,7 @@ public class CustomerController_findAllCustomerTicket {
 
     /**
      * This method is used to check the return list has size > 0 which param exist
-     *
+     * @author DongPV
      * @throws Exception
      */
     @Test

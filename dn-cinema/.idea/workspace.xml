@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/CustomerController_findAllCustomerPointHistory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/CustomerController_findAllPlusPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/CustomerController_findAllUsePoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/ICustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/ICustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/CustomerController_findAllCustomerPointHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/CustomerController_findAllCustomerPointHistory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/CustomerController_findAllCustomerTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/CustomerController_findAllCustomerTicket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/CustomerController_findAllPlusPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/CustomerController_findAllPlusPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/CustomerController_findAllUsePoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/CustomerController_findAllUsePoint.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +227,7 @@
       <workItem from="1684918773391" duration="4934000" />
       <workItem from="1684933669914" duration="2191000" />
       <workItem from="1684936561099" duration="2475000" />
-      <workItem from="1684977356415" duration="18474000" />
+      <workItem from="1684977356415" duration="19181000" />
     </task>
     <task id="LOCAL-00001" summary="service repository">
       <created>1684988654791</created>
