@@ -15,16 +15,19 @@ public class TicketController {
     ITicketService iTicketService;
 
     /**
-     * Create: QuynhHTN
+     * @Author QuynhHTN
      * Date create: 24/05/2023
      * @Param id
-     * @return
+     * @Return new ResponseEntity<>
+     * @Usage_method findById to show detail ticket and update ticket when customers change ticket
      */
     @GetMapping("/detail/{id}")
     public ResponseEntity<?> findTicketById(@PathVariable Integer id) {
+
         Ticket ticket=iTicketService.findTicketById(id);
         if(ticket==null){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }return new ResponseEntity<>(ticket,HttpStatus.OK);
     }
+
 }

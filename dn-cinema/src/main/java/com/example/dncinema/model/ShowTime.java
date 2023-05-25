@@ -33,7 +33,6 @@ public class ShowTime {
         this.showRoom = showRoom;
         this.seat = seat;
     }
-
     public Integer getIdShowTime() {
         return idShowTime;
     }

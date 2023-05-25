@@ -5,4 +5,5 @@ import com.example.dncinema.model.Ticket;
 public interface ITicketService {
     Ticket findTicketById(Integer id);
 
+
 }

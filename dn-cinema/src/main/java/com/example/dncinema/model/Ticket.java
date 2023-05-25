@@ -40,7 +40,6 @@ public class Ticket {
 
     public Ticket() {
     }
-
     public Ticket(Integer idTicket, String codeTicket, boolean statusTicket, long priceAfterDiscount, LocalDate dateBooking, String idQr, Discount discount, Employee employee, Customer customer, Seat seat) {
         this.idTicket = idTicket;
         this.codeTicket = codeTicket;

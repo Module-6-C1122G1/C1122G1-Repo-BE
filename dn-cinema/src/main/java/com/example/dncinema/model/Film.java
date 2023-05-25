@@ -40,7 +40,7 @@ public class Film {
     @JoinColumn(name = "id_type_film")
     private TypeFilm typeFilm;
 
-    @ManyToOne
+    @ManyToOne (fetch = FetchType.EAGER)
     @JoinColumn(name = "id_show_time")
     private ShowTime showTime;
 
