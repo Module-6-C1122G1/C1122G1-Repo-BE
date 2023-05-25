@@ -4,10 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-
-    <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="update ticket and movie detail">
+    <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/config/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/TicketControllerMinh.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/TicketDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/ITicketRepositoryMinh.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ITicketServiceMinh.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/impl/TicketServiceMinh.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/ShowTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/ShowTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
 
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +66,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Q8ArGhjGOeUdfIvtFuDfptmx86" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -73,21 +81,20 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/DELL/Desktop/CODEGYM/module_4/ss7_jpa/exercise/blog",
+    "last_opened_file_path": "E:/codegym/thi",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "spring.configuration.checksum": "d788013c1d5834ba3ba288e3511a87d2",
     "vue.rearranger.settings.migration": "true"
-
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
@@ -122,8 +129,8 @@
 
       <workItem from="1684918773391" duration="4934000" />
 
-      <workItem from="1684933669914" duration="2191000" />
-      <workItem from="1684938158388" duration="5964000" />
+      <workItem from="1684932746560" duration="17532000" />
+
     </task>
     <task id="LOCAL-00001" summary="update ticket and movie detail">
       <created>1684943344442</created>
