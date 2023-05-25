@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/DiscountRestController_getDeleteDiscount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/DiscountRestController_getListDiscount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/discount/DiscountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/discount/DiscountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/dncinema/DnCinemaApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/DnCinemaApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/ITicketRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/ITicketRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/dncinema/DiscountRestController_getDeleteDiscount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/DiscountRestController_getDeleteDiscount.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +22,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand />
@@ -98,12 +99,75 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RunManager" selected="Gradle.DiscountRestController_getListDiscount.getListDiscount_6">
-    <configuration name="DiscountRestController_getListDiscount.getListDiscount_5" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DiscountRestController_getDeleteDiscount.delete_id_25" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.DiscountRestController_getListDiscount.getListDiscount_5&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.DiscountRestController_getDeleteDiscount.delete_id_25&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DiscountRestController_getDeleteDiscount.delete_id_26" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.DiscountRestController_getDeleteDiscount.delete_id_26&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DiscountRestController_getDeleteDiscount.delete_id_27" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.DiscountRestController_getDeleteDiscount.delete_id_27&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DiscountRestController_getDeleteDiscount.delete_id_28" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.DiscountRestController_getDeleteDiscount.delete_id_28&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -161,7 +225,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.DiscountRestController_getListDiscount.getListDiscount_6" />
-        <item itemvalue="Gradle.DiscountRestController_getListDiscount.getListDiscount_5" />
+        <item itemvalue="Gradle.DiscountRestController_getDeleteDiscount.delete_id_27" />
+        <item itemvalue="Gradle.DiscountRestController_getDeleteDiscount.delete_id_26" />
+        <item itemvalue="Gradle.DiscountRestController_getDeleteDiscount.delete_id_25" />
+        <item itemvalue="Gradle.DiscountRestController_getDeleteDiscount.delete_id_28" />
       </list>
     </recent_temporary>
   </component>
@@ -179,7 +246,7 @@
       <workItem from="1684933669914" duration="2191000" />
       <workItem from="1684938158388" duration="5964000" />
       <workItem from="1684986171761" duration="354000" />
-      <workItem from="1684997833504" duration="2676000" />
+      <workItem from="1684997833504" duration="4635000" />
     </task>
     <task id="LOCAL-00001" summary="update ticket and movie detail">
       <created>1684943344442</created>
@@ -209,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684987265253</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="TuanLT - Update JUnit5 - Test Discount List">
+      <created>1685004575936</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1685004575936</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,6 +305,7 @@
     <MESSAGE value="update develop/discount" />
     <MESSAGE value="update ticket and movie detail" />
     <MESSAGE value="update entity Discount.imageDiscount" />
-    <option name="LAST_COMMIT_MESSAGE" value="update entity Discount.imageDiscount" />
+    <MESSAGE value="TuanLT - Update JUnit5 - Test Discount List" />
+    <option name="LAST_COMMIT_MESSAGE" value="TuanLT - Update JUnit5 - Test Discount List" />
   </component>
 </project>

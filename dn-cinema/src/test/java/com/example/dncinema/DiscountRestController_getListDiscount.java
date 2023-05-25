@@ -19,6 +19,12 @@ public class DiscountRestController_getListDiscount {
     @Autowired
     private MockMvc mockMvc;
 
+    /**
+     * Author: TuanLT
+     * Date: 25/05/2023
+     * Test case returns List Discount with size = 0;
+     * @throws Exception
+     */
     @Test
     public void getListDiscount_5() throws Exception {
         this.mockMvc.perform(MockMvcRequestBuilders.get("/discount/list"))
@@ -27,6 +33,12 @@ public class DiscountRestController_getListDiscount {
 
     }
 
+    /**
+     * Author: TuanLT
+     * Date: 25/05/2023
+     * Test case returns List Discount with size > 0;
+     * @throws Exception
+     */
     @Test
     public void getListDiscount_6() throws Exception {
         this.mockMvc.perform(MockMvcRequestBuilders.get("/discount/list?page=1"))
