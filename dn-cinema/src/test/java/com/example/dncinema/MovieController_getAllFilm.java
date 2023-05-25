@@ -45,7 +45,7 @@ public class MovieController_getAllFilm {
                 MockMvcRequestBuilders.get("/movie/10")).andDo(print()).andExpect(status().is4xxClientError());
     }
     /**
-     * This method is used to check the return list has size = 0 which param exist but
+     * This method is used to check the return list has size = 0 which param exist
      * @throws Exception
      */
     @Test
@@ -54,7 +54,7 @@ public class MovieController_getAllFilm {
                 MockMvcRequestBuilders.get("/movie?search=@")).andDo(print()).andExpect(status().is4xxClientError());
     }
     /**
-     * This method is used to check the return list has size > 0 which param exist but
+     * This method is used to check the return list has size > 0 which param exist
      * @throws Exception
      */
     @Test
