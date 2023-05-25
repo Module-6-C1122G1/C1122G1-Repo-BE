@@ -34,18 +34,4 @@ public class MovieController {
         return new ResponseEntity<>(films,HttpStatus.OK);
     }
 
-    /**
-     * @author QuynhHTN
-     * @param id
-     * @return new ResponseEntity<>(film,HttpStatus.BAD_REQUEST);
-     * Phương thức sử dụng để tìm ra một bộ phim bằng id
-     */
-    @GetMapping("/{id}")
-    public ResponseEntity<?> findFilmById(@PathVariable Integer id){
-        Film film = movieService.findFilmById(id);
-        if (film == null){
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-        }
-        return new ResponseEntity<>(film,HttpStatus.BAD_REQUEST);
-    }
 }
