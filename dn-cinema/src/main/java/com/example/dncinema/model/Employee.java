@@ -9,20 +9,29 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_employee")
     private Integer idEmployee;
+
     @Column(name = "name_employee", columnDefinition = "varchar(255)")
     private String nameEmployee;
+
     @Column(name = "phone", columnDefinition = "varchar(25)")
     private String phone;
+
     @Column(name = "address", columnDefinition = "varchar(255)")
     private String address;
+
     @Column(name = "gender", columnDefinition = "varchar(45)")
     private String gender;
+
     @Column(name = "img_employee", columnDefinition = "varchar(255)")
     private String imgEmployee;
+
     @Column(name = "email", columnDefinition = "varchar(255)")
     private String email;
+
     @Column(name = "identity_card", columnDefinition = "varchar(255)")
     private String identityCard;
+
+    private Boolean isDelete = false;
 
     @OneToOne
     @JoinColumn(name = "id")
@@ -31,7 +40,7 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(Integer idEmployee, String nameEmployee, String phone, String address, String gender, String imgEmployee, String email, String identityCard, AccountUser accountUser) {
+    public Employee(Integer idEmployee, String nameEmployee, String phone, String address, String gender, String imgEmployee, String email, String identityCard, Boolean isDelete, AccountUser accountUser) {
         this.idEmployee = idEmployee;
         this.nameEmployee = nameEmployee;
         this.phone = phone;
@@ -40,6 +49,7 @@ public class Employee {
         this.imgEmployee = imgEmployee;
         this.email = email;
         this.identityCard = identityCard;
+        this.isDelete = isDelete;
         this.accountUser = accountUser;
     }
 
@@ -113,5 +123,13 @@ public class Employee {
 
     public void setAccountUser(AccountUser accountUser) {
         this.accountUser = accountUser;
+    }
+
+    public Boolean getDelete() {
+        return isDelete;
+    }
+
+    public void setDelete(Boolean delete) {
+        isDelete = delete;
     }
 }

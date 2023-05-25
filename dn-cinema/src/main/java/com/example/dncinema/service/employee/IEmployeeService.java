@@ -1,14 +1,14 @@
 package com.example.dncinema.service.employee;
 
-import com.example.dncinema.dto.EmployeeDTO;
-import com.example.dncinema.model.Employee;
 
-import java.util.List;
+import com.example.dncinema.dto.EmployeeDTO;
+import com.example.dncinema.service.employee.impl.EmployeeService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public interface IEmployeeService {
-    void updateEmployee(Employee employee, int id);
 
-    List<Employee> findAll();
+    Page<EmployeeDTO> searchEmployee(Pageable pageable, String searchCode, String searchName, String searchPhoneNumber);
 
-    void create(EmployeeDTO employeeDTO , String userName, String password);
+    void deleteEmployee(Integer id);
 }

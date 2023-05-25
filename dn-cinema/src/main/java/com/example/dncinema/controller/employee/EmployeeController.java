@@ -1,13 +1,16 @@
 package com.example.dncinema.controller.employee;
 
 import com.example.dncinema.dto.EmployeeDTO;
-import com.example.dncinema.model.Employee;
 import com.example.dncinema.service.employee.IEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/employee")
@@ -18,14 +21,25 @@ public class EmployeeController {
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("")
-    public List<Employee> findAll() {
-        return iEmployeeService.findAll();
+    public ResponseEntity<Page<EmployeeDTO>> search(@PageableDefault(sort = {"id"},direction = Sort.Direction.DESC, size = 5) Pageable pageable,
+                                                    @RequestParam(required = false, defaultValue = "") String searchCode,
+                                                    @RequestParam(required = false, defaultValue = "") String searchName,
+                                                    @RequestParam(required = false, defaultValue = "") String searchPhoneNumber) {
+
+        Page<EmployeeDTO> employeeDTOS = this.iEmployeeService.searchEmployee(pageable, searchCode, searchName, searchPhoneNumber);
+
+        if (employeeDTOS.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<>(employeeDTOS, HttpStatus.OK);
     }
-    @ResponseStatus(HttpStatus.CREATED)
-    @PatchMapping("/create")
-    public void createEmployeeWithAccount(@RequestBody EmployeeDTO employeeDTO ,
-                                          @RequestParam("nameAccount") String nameAccount,
-                                          @RequestParam("passwordAccount") String passwordAccount) {
-        iEmployeeService.create(employeeDTO, nameAccount, passwordAccount);
+
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteEmployee(@PathVariable Integer id) {
+        iEmployeeService.deleteEmployee(id);
     }
+
 }

@@ -7,8 +7,12 @@ import com.example.dncinema.repository.IEmployeeRepository;
 import com.example.dncinema.service.employee.IEmployeeService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -16,34 +20,27 @@ public class EmployeeService implements IEmployeeService {
     @Autowired
     private IEmployeeRepository iEmployeeRepository;
 
-    @Override
-    public void updateEmployee(Employee employee, int id) {
 
+    @Override
+    public Page<EmployeeDTO> searchEmployee(Pageable pageable, String searchCode, String searchName, String searchPhoneNumber) {
+        List<EmployeeDTO> employeeDTOList = new ArrayList<>();
+        Page<Employee> employeePage = iEmployeeRepository
+                .searchEmployeeInfo(pageable,searchCode,searchName,searchPhoneNumber);
+        EmployeeDTO employeeDTO;
+        for (Employee employee : employeePage) {
+            employeeDTO = new EmployeeDTO();
+            employeeDTO.setAccountUser(new AccountUser());
+            BeanUtils.copyProperties(employee.getAccountUser(), employeeDTO.getAccountUser());
+            BeanUtils.copyProperties(employee, employeeDTO);
+            employeeDTOList.add(employeeDTO);
+        }
+        return new PageImpl<>(employeeDTOList, pageable, employeePage.getTotalElements());
     }
 
     @Override
-    public List<Employee> findAll() {
-        return iEmployeeRepository.findAll();
+    public void deleteEmployee(Integer id) {
+        Employee employee = iEmployeeRepository.findByEmployeeId(id);
+        employee.setDelete(true);
+        iEmployeeRepository.save(employee);
     }
-
-    @Override
-    public void create(EmployeeDTO employeeDTO, String userName, String password) {
-        AccountUser accountUser = new AccountUser();
-        accountUser.setNameAccount(userName);
-        accountUser.setPasswordAccount(password);
-        Employee employee = new Employee();
-        employee.setAccountUser(accountUser);
-        BeanUtils.copyProperties(employeeDTO, employee);
-        iEmployeeRepository.saveEmployee(
-                employee.getNameEmployee(),
-                employeeDTO.getPhone(),
-                employeeDTO.getAddress(),
-                employeeDTO.getGender(),
-                employeeDTO.getImgEmployee(),
-                employeeDTO.getEmail(),
-                employeeDTO.getIdentityCard(),
-                employee.getAccountUser().getId()
-        );
-    }
-
 }
