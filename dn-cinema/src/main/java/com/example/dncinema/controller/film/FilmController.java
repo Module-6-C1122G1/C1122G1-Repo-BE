@@ -26,6 +26,12 @@ public class FilmController {
         this.iFilmService = iFilmService;
     }
 
+    /**
+     * @Author: AnhNQ
+     * @param filmDTO
+     * @param bindingResult
+     * @return HttpStatus.OK, newFilm
+     */
     @PostMapping("/create")
     public ResponseEntity<List<FieldError>> createFilm(@RequestBody @Valid FilmDTO filmDTO, BindingResult bindingResult){
         if (bindingResult.hasErrors()){
@@ -40,6 +46,13 @@ public class FilmController {
         iFilmService.save(film);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    /**
+     * @Author AnhNQ
+     * @param idFilm
+     * @param film
+     * @return newFilm, HttpStatus.OK
+     */
     @PutMapping("/{idFilm}")
     @ResponseBody
     public ResponseEntity<Film> updateProduct(@PathVariable int idFilm, @RequestBody Film film) {
