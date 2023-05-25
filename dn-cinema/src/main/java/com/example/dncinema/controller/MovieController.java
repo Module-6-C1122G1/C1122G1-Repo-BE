@@ -20,19 +20,24 @@ public class MovieController {
     @Autowired
     private IMovieService movieService;
 
+    /**
+     * @author TruongDM
+     * @param pageable
+     * @param search
+     * @return PageImpl<>(filmList, pageable, films.getTotalElements());
+     * Phương thức sử dụng để tìm kiếm kết hợp xổ danh sách film
+     */
     @GetMapping
-    public Page<Film> findAllFilm(@PageableDefault(size = 4) Pageable pageable,
-                                  @RequestParam(required = false, defaultValue = "") String search) {
-        Page<Film> films = movieService.findAllFilm(search, pageable);
+    @ResponseStatus()
+    public Page<Film> findAllFilm(@PageableDefault(size = 4)Pageable pageable,
+                                  @RequestParam(required = false, defaultValue = "")String search){
+        Page<Film> films = movieService.findAllFilm(search,pageable);
         List<Film> filmList = films.toList();
         return new PageImpl<>(filmList, pageable, films.getTotalElements());
     }
 
-//    @GetMapping("/{id}")
 
-//    public Film findFilmById(@PathVariable Integer id) {
-//        return movieService.findFilmById(id);
-//    }
+
 
 
     @GetMapping("/detail/{id}")
@@ -42,5 +47,6 @@ public class MovieController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity<>(film, HttpStatus.OK);
+
     }
 }
