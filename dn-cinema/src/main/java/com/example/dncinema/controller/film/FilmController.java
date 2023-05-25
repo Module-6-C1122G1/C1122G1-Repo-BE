@@ -55,7 +55,7 @@ public class FilmController {
      */
     @PutMapping("/{idFilm}")
     @ResponseBody
-    public ResponseEntity<Film> updateProduct(@PathVariable int idFilm, @RequestBody Film film) {
+    public ResponseEntity<Film> updateFilm(@PathVariable int idFilm, @RequestBody Film film) {
         Optional<Film> filmOptional = iFilmService.findById(idFilm);
         if (!filmOptional.isPresent()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

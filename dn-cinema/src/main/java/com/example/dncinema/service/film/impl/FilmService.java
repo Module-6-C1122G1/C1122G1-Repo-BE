@@ -20,10 +20,10 @@ public class FilmService implements IFilmService {
 //        return iFilmRepository.save(film);
 //    }
 
-    @Override
-    public void save(Film film) {
-       iFilmRepository.insertFilm(film);
-    }
+//    @Override
+//    public void createFilm(Film film) {
+//       iFilmRepository.insertFilm(film);
+//    }
 
     @Override
     public Film updateFilm(Film film) {
@@ -34,6 +34,11 @@ public class FilmService implements IFilmService {
     @Override
     public Optional<Film> findById(Integer idFilm) {
         return iFilmRepository.findFilmByIdFilm(idFilm);
+    }
+
+    @Override
+    public void save(Film film) {
+        iFilmRepository.save(film);
     }
 
 
