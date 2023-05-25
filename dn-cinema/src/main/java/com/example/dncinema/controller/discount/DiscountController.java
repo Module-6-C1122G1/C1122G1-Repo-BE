@@ -25,7 +25,7 @@ public class DiscountController {
      * @return "Trả về Page hiển thị danh sách khuyến mãi, nếu người dùng tiến hành tìm kiếm thì Page này sẽ hiển thị danh sách được tìm kiếm theo tên".
      */
 
-    @GetMapping("")
+    @GetMapping("/list")
     @ResponseStatus(HttpStatus.OK)
     public Page<DiscountDTO> showList(@RequestParam(required = false, defaultValue = "") String name,
                                       @PageableDefault(direction = Sort.Direction.DESC, size = 5) Pageable pageable){
