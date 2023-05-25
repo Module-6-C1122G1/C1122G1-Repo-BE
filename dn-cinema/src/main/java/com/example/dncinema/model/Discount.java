@@ -2,6 +2,7 @@ package com.example.dncinema.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+
 @Entity
 @Table(name = "discount")
 public class Discount {
@@ -11,6 +12,8 @@ public class Discount {
     private Integer idDiscount;
     @Column(name = "name_discount", columnDefinition = "varchar(255)")
     private String nameDiscount;
+    @Column(name = "image_discount", columnDefinition = "varchar(255)")
+    private String imageDiscount;
     @Column(name = "date_start", columnDefinition = "date")
     private LocalDate dateStart;
     @Column(name = "date_end", columnDefinition = "date")
@@ -19,9 +22,6 @@ public class Discount {
     private String describeDiscount;
     @Column(name = "percent_discount")
     private Double percentDiscount;
-
-
-
     @Column(columnDefinition = "boolean default false")
     private boolean isDeleted;
 
@@ -51,6 +51,14 @@ public class Discount {
 
     public void setNameDiscount(String nameDiscount) {
         this.nameDiscount = nameDiscount;
+    }
+
+    public String getImageDiscount() {
+        return imageDiscount;
+    }
+
+    public void setImageDiscount(String imageDiscount) {
+        this.imageDiscount = imageDiscount;
     }
 
     public LocalDate getDateStart() {
