@@ -1,6 +1,7 @@
 package com.example.dncinema.security.jwt;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -40,6 +41,9 @@ public class JwtTokenFilter extends OncePerRequestFilter {
             if (StringUtils.hasText(token) && jwtProvider.validateToken(token)) {
                 String username = jwtProvider.getUserNameFromToken(token);
                 UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+                if (userDetails == null) {
+                    response.setStatus(HttpStatus.NOT_FOUND.value());
+                }
                 UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                 authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(authenticationToken);
