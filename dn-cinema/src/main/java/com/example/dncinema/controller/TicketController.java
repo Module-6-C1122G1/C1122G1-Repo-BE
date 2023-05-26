@@ -1,3 +1,4 @@
+
 package com.example.dncinema.controller;
 
 import com.example.dncinema.model.Ticket;
@@ -28,3 +29,4 @@ public class TicketController {
         }return new ResponseEntity<>(ticket,HttpStatus.OK);
     }
 }
+
