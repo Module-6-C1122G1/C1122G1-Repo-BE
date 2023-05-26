@@ -35,4 +35,20 @@ public class MovieController {
     }
 
 
+
+    @GetMapping("/detail/{id}")
+    public ResponseEntity<?> findFilmById(@PathVariable Integer id) {
+        Film film = movieService.findFilmById(id);
+        if (film == null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>(film, HttpStatus.OK);
+
+    }
+
+    @GetMapping("/list")
+    public ResponseEntity<List<Film>> getAllFilms(){
+        return new ResponseEntity<>(movieService.findAllListFilm(),HttpStatus.OK);
+    }
+
 }

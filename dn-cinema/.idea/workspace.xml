@@ -5,20 +5,40 @@
   </component>
   <component name="ChangeListManager">
 
-    <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="update authentication feature for application">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/config/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/TicketControllerMinh.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/TicketDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/ITicketRepositoryMinh.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ITicketServiceMinh.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/impl/TicketServiceMinh.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="update">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/ShowTimeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/seat/SeatController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/seat/ISeatRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/seat/ISeatService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/seat/impl/SeatService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/MovieRestController_getAllFilms.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/SeatRestController_getAllListSeatByIdRoom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/ShowTimeRestController_getAllDateByIdFilm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/ShowTimeRestController_getAllTimeByIdFilmAndShowDate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/CustomerController_findAllCustomerPointHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/CustomerController_findAllCustomerPointHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/CustomerController_findAllCustomerTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/CustomerController_findAllCustomerTicket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/CustomerController_findAllPlusPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/CustomerController_findAllPlusPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/CustomerController_findAllUsePoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/CustomerController_findAllUsePoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/MovieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/TicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/TicketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/film/FilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/film/FilmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Film.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/ShowTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/ShowTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/IMovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/IMovieRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/ITicketRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/ITicketRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/film/IFilmRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/film/IFilmRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/showtime/IShowTimeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/showtime/IShowTimeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ICustomerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/IMovieService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/film/IFilmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/film/IFilmService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/film/impl/FilmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/film/impl/FilmService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/impl/CustomerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/impl/MovieService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/movie/IMovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/movie/IMovieService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/movie/impl/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/movie/impl/MovieService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/showtime/IShowTimeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/showtime/IShowTimeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/showtime/impl/ShowTimeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/showtime/impl/ShowTimeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ticket/ITicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ticket/ITicketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ticket/impl/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ticket/impl/TicketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
 
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,11 +80,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$/.." value="develop" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -78,13 +93,17 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2Q8ArGhjGOeUdfIvtFuDfptmx86" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+
+  <component name="ProjectId" id="2QGnxBC818waB1MASIz4gkcr7BH" />
+  <component name="ProjectLevelVcsManager">
+
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
@@ -103,17 +122,25 @@
   </component>
   <component name="RunManager" selected="Gradle.CustomerController_findAllUsePoint.findAllUserPoint_7">
     <configuration name="CustomerController_findAllPlusPoint.findAllCustomerPointHistory_11" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.controller.CustomerController_findAllPlusPoint.findAllCustomerPointHistory_11&quot;" />
+
+        <option name="scriptParameters" value="" />
+
+
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
             <option value=":test" />
+
+            <option value="--tests" />
+            <option value="&quot;com.example.dncinema.MovieRestController_getAllFilms&quot;" />
+
           </list>
         </option>
         <option name="vmOptions" />
@@ -123,18 +150,26 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="CustomerController_findAllPlusPoint.findAllPlusPoint_10" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+
+    <configuration name="SeatRestController_getAllListSeatByIdRoom" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.controller.CustomerController_findAllPlusPoint.findAllPlusPoint_10&quot;" />
+
+        <option name="scriptParameters" value="" />
+
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
             <option value=":test" />
+
+            <option value="--tests" />
+            <option value="&quot;com.example.dncinema.SeatRestController_getAllListSeatByIdRoom&quot;" />
+
           </list>
         </option>
         <option name="vmOptions" />
@@ -144,18 +179,26 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="CustomerController_findAllPlusPoint.findAllPlusPoint_8" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+
+    <configuration name="SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_11" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.controller.CustomerController_findAllPlusPoint.findAllPlusPoint_8&quot;" />
+
+        <option name="scriptParameters" value="" />
+
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
             <option value=":test" />
+
+            <option value="--tests" />
+            <option value="&quot;com.example.dncinema.SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_11&quot;" />
+
           </list>
         </option>
         <option name="vmOptions" />
@@ -165,18 +208,28 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+
+    <configuration name="SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_9" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+
     <configuration name="CustomerController_findAllPlusPoint.findAllPlusPoint_9" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.controller.CustomerController_findAllPlusPoint.findAllPlusPoint_9&quot;" />
+
+        <option name="scriptParameters" value="" />
+
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
             <option value=":test" />
+
+            <option value="--tests" />
+            <option value="&quot;com.example.dncinema.SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_9&quot;" />
+
           </list>
         </option>
         <option name="vmOptions" />
@@ -186,18 +239,26 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="CustomerController_findAllUsePoint.findAllUserPoint_7" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+
+    <configuration name="ShowTimeRestController_getAllDateByIdFilm.getAllDateByIdFilm_11" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.controller.CustomerController_findAllUsePoint.findAllUserPoint_7&quot;" />
+
+        <option name="scriptParameters" value="" />
+
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
             <option value=":test" />
+
+            <option value="--tests" />
+            <option value="&quot;com.example.dncinema.ShowTimeRestController_getAllDateByIdFilm.getAllDateByIdFilm_11&quot;" />
+
           </list>
         </option>
         <option name="vmOptions" />
@@ -217,11 +278,12 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.CustomerController_findAllUsePoint.findAllUserPoint_7" />
-        <item itemvalue="Gradle.CustomerController_findAllPlusPoint.findAllCustomerPointHistory_11" />
-        <item itemvalue="Gradle.CustomerController_findAllPlusPoint.findAllPlusPoint_10" />
-        <item itemvalue="Gradle.CustomerController_findAllPlusPoint.findAllPlusPoint_9" />
-        <item itemvalue="Gradle.CustomerController_findAllPlusPoint.findAllPlusPoint_8" />
+
+        <item itemvalue="Gradle.ShowTimeRestController_getAllDateByIdFilm.getAllDateByIdFilm_11" />
+        <item itemvalue="Gradle.MovieRestController_getAllFilms" />
+        <item itemvalue="Gradle.SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_11" />
+        <item itemvalue="Gradle.SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_9" />
+        <item itemvalue="Gradle.SeatRestController_getAllListSeatByIdRoom" />
 
       </list>
     </recent_temporary>
@@ -229,37 +291,40 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="" />
-      <created>1684725035536</created>
+      <changelist id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="update" />
+      <created>1684989030611</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1684725035536</updated>
-      <workItem from="1684725037272" duration="2620000" />
-      <workItem from="1684894781635" duration="240000" />
-      <workItem from="1684918773391" duration="4934000" />
 
-      <workItem from="1684933669914" duration="2191000" />
-      <workItem from="1684936561099" duration="2475000" />
-      <workItem from="1684977356415" duration="19181000" />
-    </task>
-    <task id="LOCAL-00001" summary="service repository">
-      <created>1684988654791</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1684988654791</updated>
+      <updated>1684989030611</updated>
+      <workItem from="1684989032737" duration="82000" />
+      <workItem from="1684989299290" duration="13247000" />
+      <workItem from="1685017076929" duration="599000" />
+      <workItem from="1685022211690" duration="1744000" />
+      <workItem from="1685032790808" duration="13339000" />
+      <workItem from="1685065408635" duration="8957000" />
 
     </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
 
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="service repository" />
-    <option name="LAST_COMMIT_MESSAGE" value="service repository" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/com/example/dncinema/ShowTimeRestController_getAllDateByIdFilm.java</url>
+          <line>48</line>
+          <properties class="com.example.dncinema.ShowTimeRestController_getAllDateByIdFilm" method="getAllDateByIdFilm_9">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
 
   </component>
 </project>
