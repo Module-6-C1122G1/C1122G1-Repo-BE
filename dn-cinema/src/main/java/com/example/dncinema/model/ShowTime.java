@@ -23,6 +23,7 @@ public class ShowTime {
     @JoinColumn(name = "id_seat")
     private Seat seat;
 
+
     @ManyToOne
     @JoinColumn(name = "id_film")
     private Film film;
@@ -31,12 +32,15 @@ public class ShowTime {
     }
 
     public ShowTime(Integer idShowTime, LocalDate showDate, String showTime, ShowRoom showRoom, Seat seat, Film film) {
+
         this.idShowTime = idShowTime;
         this.showDate = showDate;
         this.showTime = showTime;
         this.showRoom = showRoom;
         this.seat = seat;
+
         this.film = film;
+
     }
 
     public Integer getIdShowTime() {
@@ -86,4 +90,5 @@ public class ShowTime {
     public void setFilm(Film film) {
         this.film = film;
     }
+
 }

@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+
     <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="update">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/ShowTimeController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/seat/SeatController.java" afterDir="false" />
@@ -38,6 +39,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ticket/ITicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ticket/ITicketService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ticket/impl/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ticket/impl/TicketService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,54 +82,65 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+
   <component name="ProjectId" id="2QGnxBC818waB1MASIz4gkcr7BH" />
   <component name="ProjectLevelVcsManager">
+
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/DELL/Downloads/cxxg-spring-boot-junit-5/cxxg-spring-boot-junit-5&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;d788013c1d5834ba3ba288e3511a87d2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
-    ]
-  }
-}</component>
-  <component name="RunManager" selected="Gradle.ShowTimeRestController_getAllDateByIdFilm.getAllDateByIdFilm_11">
-    <configuration name="MovieRestController_getAllFilms" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager" selected="Gradle.CustomerController_findAllUsePoint.findAllUserPoint_7">
+    <configuration name="CustomerController_findAllPlusPoint.findAllCustomerPointHistory_11" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
+
         <option name="scriptParameters" value="" />
+
+
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
             <option value=":test" />
+
             <option value="--tests" />
             <option value="&quot;com.example.dncinema.MovieRestController_getAllFilms&quot;" />
+
           </list>
         </option>
         <option name="vmOptions" />
@@ -137,20 +150,26 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+
     <configuration name="SeatRestController_getAllListSeatByIdRoom" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
+
         <option name="scriptParameters" value="" />
+
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
             <option value=":test" />
+
             <option value="--tests" />
             <option value="&quot;com.example.dncinema.SeatRestController_getAllListSeatByIdRoom&quot;" />
+
           </list>
         </option>
         <option name="vmOptions" />
@@ -160,20 +179,26 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+
     <configuration name="SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_11" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
+
         <option name="scriptParameters" value="" />
+
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
             <option value=":test" />
+
             <option value="--tests" />
             <option value="&quot;com.example.dncinema.SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_11&quot;" />
+
           </list>
         </option>
         <option name="vmOptions" />
@@ -183,20 +208,28 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+
     <configuration name="SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_9" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+
+    <configuration name="CustomerController_findAllPlusPoint.findAllPlusPoint_9" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
+
         <option name="scriptParameters" value="" />
+
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
             <option value=":test" />
+
             <option value="--tests" />
             <option value="&quot;com.example.dncinema.SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_9&quot;" />
+
           </list>
         </option>
         <option name="vmOptions" />
@@ -206,20 +239,26 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+
     <configuration name="ShowTimeRestController_getAllDateByIdFilm.getAllDateByIdFilm_11" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
+
         <option name="scriptParameters" value="" />
+
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
             <option value=":test" />
+
             <option value="--tests" />
             <option value="&quot;com.example.dncinema.ShowTimeRestController_getAllDateByIdFilm.getAllDateByIdFilm_11&quot;" />
+
           </list>
         </option>
         <option name="vmOptions" />
@@ -228,6 +267,7 @@
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
+
     </configuration>
     <configuration name="DnCinemaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="dn-cinema.main" />
@@ -238,11 +278,13 @@
     </configuration>
     <recent_temporary>
       <list>
+
         <item itemvalue="Gradle.ShowTimeRestController_getAllDateByIdFilm.getAllDateByIdFilm_11" />
         <item itemvalue="Gradle.MovieRestController_getAllFilms" />
         <item itemvalue="Gradle.SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_11" />
         <item itemvalue="Gradle.SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_9" />
         <item itemvalue="Gradle.SeatRestController_getAllListSeatByIdRoom" />
+
       </list>
     </recent_temporary>
   </component>
@@ -253,6 +295,7 @@
       <created>1684989030611</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+
       <updated>1684989030611</updated>
       <workItem from="1684989032737" duration="82000" />
       <workItem from="1684989299290" duration="13247000" />
@@ -260,12 +303,14 @@
       <workItem from="1685022211690" duration="1744000" />
       <workItem from="1685032790808" duration="13339000" />
       <workItem from="1685065408635" duration="8957000" />
+
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -280,5 +325,6 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+
   </component>
 </project>
