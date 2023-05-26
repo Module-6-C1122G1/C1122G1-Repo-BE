@@ -43,7 +43,7 @@ TicketServiceMinh implements ITicketServiceMinh {
     public void saveTicket(TicketDTO ticketDTO) throws UnsupportedEncodingException {
         int a = 0;
         a++;
-        String path = "C:\\Users\\ADMIN\\Desktop\\du_an_be\\dn-cinema-api\\dn-cinema\\src\\main\\resources\\qr\\QR" + a + ".png";
+        String path = "\\src\\main\\resources\\qr\\QR" + a + ".png";
         createQR(ticketDTO.toString(), a, path);
         Ticket ticket;
         for (int i = 0; i < ticketDTO.getListSeat().length; i++) {
