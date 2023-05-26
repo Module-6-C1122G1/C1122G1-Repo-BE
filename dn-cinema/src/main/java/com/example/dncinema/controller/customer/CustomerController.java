@@ -42,6 +42,12 @@ public class CustomerController {
     }
 
 
+    /**
+     * Search and return customer information based on id.
+     * @author ThanhNV
+     * @param id
+     * @return ResponseEntity<Customer>;
+     */
     @GetMapping("list/{id}")
     public ResponseEntity<Customer> findByCustomerId(@PathVariable Integer id) {
         Customer customer = customerService.findById(id);
@@ -51,13 +57,7 @@ public class CustomerController {
         return new ResponseEntity<>(customer, HttpStatus.OK);
     }
 
-    /**
-     * @author ThanhNV
-     * @param id
-     * @param customerDTO
-     * @return ResponseEntity<>(HttpStatus.OK);
-     * Phương thức sử dụng để chỉnh sửa danh sách thành viên
-     */
+
 //    @ResponseStatus(HttpStatus.OK)
 //    @PutMapping("/{id}")
 //    public void updateCustomer(@RequestBody CustomerDTO customerDTO,

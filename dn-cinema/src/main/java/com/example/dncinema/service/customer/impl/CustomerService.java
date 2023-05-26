@@ -42,7 +42,11 @@ public class CustomerService implements ICustomerService {
 //        );
     }
 
-
+    /**
+     * @author ThanhNV
+     * @param id
+     * @return iCustomerRepository.findByIdCustomer(id);
+     */
     @Override
     public Customer findById(int id) {
         return iCustomerRepository.findByIdCustomer(id);

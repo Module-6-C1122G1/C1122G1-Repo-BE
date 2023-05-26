@@ -80,6 +80,13 @@ public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
 //            ;
 //
 //
+
+    /**
+     * @author ThanhNV
+     * Search for customers based on customer ID.
+     * @param idCustomer ID of the customer to search.
+     * @return The client corresponds to the provided ID.
+     */
     @Transactional
     @Query(value = "select * from dn_cinema.customer where id_customer = :id_customer", nativeQuery = true)
     Customer findByIdCustomer(@Param("id_customer") Integer idCustomer);
