@@ -49,4 +49,9 @@ public class MovieController {
         return new ResponseEntity<>(film, HttpStatus.OK);
 
     }
+
+    @GetMapping("/list")
+    public ResponseEntity<List<Film>> getAllFilms(){
+        return new ResponseEntity<>(movieService.findAllListFilm(),HttpStatus.OK);
+    }
 }
