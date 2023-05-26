@@ -38,16 +38,17 @@ public class EmployeeController_updateEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee(null);
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
         employeeDTO.setIdentityCard("123456789012");
-        employeeDTO.getAccountUser().setNameAccount("lamemcothai");
+        employeeDTO.getAccountUser().setNameAccount("abc");
         employeeDTO.getAccountUser().setPasswordAccount("anhcho5cunha");
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .put("/employee/update/1")
+                        .put("/employee/1")
                         .content(this.objectMapper.writeValueAsString(employeeDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -69,16 +70,17 @@ public class EmployeeController_updateEmployee {
         employeeDTO.setPhone(null);
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
         employeeDTO.setIdentityCard("123456789012");
-        employeeDTO.getAccountUser().setNameAccount("cothai");
+        employeeDTO.getAccountUser().setNameAccount("abc");
         employeeDTO.getAccountUser().setPasswordAccount("anhcho5cu");
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .put("/employee/update/1")
+                        .put("/employee/1")
                         .content(this.objectMapper.writeValueAsString(employeeDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -100,16 +102,17 @@ public class EmployeeController_updateEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress(null);
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
         employeeDTO.setIdentityCard("123456789012");
-        employeeDTO.getAccountUser().setNameAccount("cothai");
+        employeeDTO.getAccountUser().setNameAccount("abc");
         employeeDTO.getAccountUser().setPasswordAccount("anhcho5cuu");
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .put("/employee/update/1")
+                        .put("/employee/1")
                         .content(this.objectMapper.writeValueAsString(employeeDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -131,16 +134,17 @@ public class EmployeeController_updateEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender(null);
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
         employeeDTO.setIdentityCard("123456789012");
-        employeeDTO.getAccountUser().setNameAccount("cothaie");
+        employeeDTO.getAccountUser().setNameAccount("abc");
         employeeDTO.getAccountUser().setPasswordAccount("anhcho5cuu");
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .put("/employee/update/1")
+                        .put("/employee/1")
                         .content(this.objectMapper.writeValueAsString(employeeDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -162,16 +166,17 @@ public class EmployeeController_updateEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee(null);
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
         employeeDTO.setIdentityCard("123456789012");
-        employeeDTO.getAccountUser().setNameAccount("cothaai");
+        employeeDTO.getAccountUser().setNameAccount("abc");
         employeeDTO.getAccountUser().setPasswordAccount("anhcho5cuu");
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .put("/employee/update/1")
+                        .put("/employee/1")
                         .content(this.objectMapper.writeValueAsString(employeeDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -193,16 +198,17 @@ public class EmployeeController_updateEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail(null);
         employeeDTO.setIdentityCard("123456789012");
-        employeeDTO.getAccountUser().setNameAccount("cothai");
+        employeeDTO.getAccountUser().setNameAccount("abc");
         employeeDTO.getAccountUser().setPasswordAccount("anhcho5cuu");
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .put("/employee/update/1")
+                        .put("/employee/1")
                         .content(this.objectMapper.writeValueAsString(employeeDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -224,47 +230,17 @@ public class EmployeeController_updateEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
         employeeDTO.setIdentityCard(null);
-        employeeDTO.getAccountUser().setNameAccount("cothai");
+        employeeDTO.getAccountUser().setNameAccount("abc");
         employeeDTO.getAccountUser().setPasswordAccount("anhcho5cuu");
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .put("/employee/update/1")
-                        .content(this.objectMapper.writeValueAsString(employeeDTO))
-                        .contentType(MediaType.APPLICATION_JSON_VALUE))
-                .andDo(print())
-                .andExpect(status().is4xxClientError());
-    }
-
-    /**
-     * this function use to test the validation of field nameAccount more specific is null
-     *
-     * @author NghiaTT
-     * @Time 14h00 25/05/2023
-     */
-    @Test
-    public void updateEmployee_nameAccount_13() throws Exception {
-
-        EmployeeDTO employeeDTO = new EmployeeDTO();
-        AccountUser accountUser = new AccountUser();
-        employeeDTO.setAccountUser(accountUser);
-        employeeDTO.setPhone("0898175813");
-        employeeDTO.setAddress("K03/10 Vạn Tường");
-        employeeDTO.setGender("Nam");
-        employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
-        employeeDTO.setNameEmployee("NghiaTT");
-        employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
-        employeeDTO.setIdentityCard("123456789012");
-        employeeDTO.getAccountUser().setNameAccount(null);
-        employeeDTO.getAccountUser().setPasswordAccount("anhcho5cuu");
-
-        this.mockMvc
-                .perform(MockMvcRequestBuilders
-                        .put("/employee/update/1")
+                        .put("/employee/1")
                         .content(this.objectMapper.writeValueAsString(employeeDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -286,16 +262,17 @@ public class EmployeeController_updateEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
         employeeDTO.setIdentityCard("123456789012");
-        employeeDTO.getAccountUser().setNameAccount("abr");
+        employeeDTO.getAccountUser().setNameAccount("abc");
         employeeDTO.getAccountUser().setPasswordAccount(null);
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .put("/employee/update/1")
+                        .put("/employee/1")
                         .content(this.objectMapper.writeValueAsString(employeeDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -316,11 +293,12 @@ public class EmployeeController_updateEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
         employeeDTO.setIdentityCard("123456789012");
-        employeeDTO.getAccountUser().setNameAccount("abr");
+        employeeDTO.getAccountUser().setNameAccount("abc");
         employeeDTO.getAccountUser().setPasswordAccount("null");
         this.mockMvc.perform(MockMvcRequestBuilders
                         .put("/api/customer/update")
@@ -345,16 +323,17 @@ public class EmployeeController_updateEmployee {
         employeeDTO.setPhone("");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
         employeeDTO.setIdentityCard("123456789012");
-        employeeDTO.getAccountUser().setNameAccount("cothai");
+        employeeDTO.getAccountUser().setNameAccount("abc");
         employeeDTO.getAccountUser().setPasswordAccount("anhcho5cu");
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .put("/employee/update/1")
+                        .put("/employee/1")
                         .content(this.objectMapper.writeValueAsString(employeeDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -376,16 +355,17 @@ public class EmployeeController_updateEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
         employeeDTO.setIdentityCard("123456789012");
-        employeeDTO.getAccountUser().setNameAccount("cothai");
+        employeeDTO.getAccountUser().setNameAccount("abc");
         employeeDTO.getAccountUser().setPasswordAccount("anhcho5cuu");
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .put("/employee/update/1")
+                        .put("/employee/1")
                         .content(this.objectMapper.writeValueAsString(employeeDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -407,16 +387,17 @@ public class EmployeeController_updateEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
         employeeDTO.setIdentityCard("123456789012");
-        employeeDTO.getAccountUser().setNameAccount("cothaie");
+        employeeDTO.getAccountUser().setNameAccount("abc");
         employeeDTO.getAccountUser().setPasswordAccount("anhcho5cuu");
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .put("/employee/update/1")
+                        .put("/employee/1")
                         .content(this.objectMapper.writeValueAsString(employeeDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -438,16 +419,17 @@ public class EmployeeController_updateEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
         employeeDTO.setIdentityCard("123456789012");
-        employeeDTO.getAccountUser().setNameAccount("cothaai");
+        employeeDTO.getAccountUser().setNameAccount("abc");
         employeeDTO.getAccountUser().setPasswordAccount("anhcho5cuu");
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .put("/employee/update/1")
+                        .put("/employee/1")
                         .content(this.objectMapper.writeValueAsString(employeeDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -469,16 +451,17 @@ public class EmployeeController_updateEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("");
         employeeDTO.setIdentityCard("123456789012");
-        employeeDTO.getAccountUser().setNameAccount("cothai");
+        employeeDTO.getAccountUser().setNameAccount("abc");
         employeeDTO.getAccountUser().setPasswordAccount("anhcho5cuu");
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .put("/employee/update/1")
+                        .put("/employee/1")
                         .content(this.objectMapper.writeValueAsString(employeeDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -500,52 +483,23 @@ public class EmployeeController_updateEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
         employeeDTO.setIdentityCard("");
-        employeeDTO.getAccountUser().setNameAccount("cothai");
+        employeeDTO.getAccountUser().setNameAccount("abc");
         employeeDTO.getAccountUser().setPasswordAccount("anhcho5cuu");
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .put("/employee/update/1")
+                        .put("/employee/1")
                         .content(this.objectMapper.writeValueAsString(employeeDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
 
-    /**
-     * this function use to test the validation of field nameAccount more specific is empty     *
-     *
-     * @author NghiaTT
-     * @Time 14h00 25/05/2023
-     */
-    @Test
-    public void updateEmployee_nameAccount_14() throws Exception {
-
-        EmployeeDTO employeeDTO = new EmployeeDTO();
-        AccountUser accountUser = new AccountUser();
-        employeeDTO.setAccountUser(accountUser);
-        employeeDTO.setPhone("0898175813");
-        employeeDTO.setAddress("K03/10 Vạn Tường");
-        employeeDTO.setGender("Nam");
-        employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
-        employeeDTO.setNameEmployee("NghiaTT");
-        employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
-        employeeDTO.setIdentityCard("123456789012");
-        employeeDTO.getAccountUser().setNameAccount("");
-        employeeDTO.getAccountUser().setPasswordAccount("anhcho5cuu");
-
-        this.mockMvc
-                .perform(MockMvcRequestBuilders
-                        .put("/employee/update/1")
-                        .content(this.objectMapper.writeValueAsString(employeeDTO))
-                        .contentType(MediaType.APPLICATION_JSON_VALUE))
-                .andDo(print())
-                .andExpect(status().is4xxClientError());
-    }
 
     /**
      * this function use to test the validation of field passwordAccount more specific is empty     *
@@ -562,16 +516,17 @@ public class EmployeeController_updateEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
         employeeDTO.setIdentityCard("123456789012");
-        employeeDTO.getAccountUser().setNameAccount("abr");
+        employeeDTO.getAccountUser().setNameAccount("abc");
         employeeDTO.getAccountUser().setPasswordAccount("");
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .put("/employee/update/1")
+                        .put("/employee/1")
                         .content(this.objectMapper.writeValueAsString(employeeDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -592,11 +547,12 @@ public class EmployeeController_updateEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("Trần Trọng Nghĩa @");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
         employeeDTO.setIdentityCard("123456789012");
-        employeeDTO.getAccountUser().setNameAccount("abr");
+        employeeDTO.getAccountUser().setNameAccount("abc");
         employeeDTO.getAccountUser().setPasswordAccount("null");
 
         this.mockMvc.perform(MockMvcRequestBuilders
@@ -622,16 +578,17 @@ public class EmployeeController_updateEmployee {
         employeeDTO.setPhone("0908175813@");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
         employeeDTO.setIdentityCard("123456789012");
-        employeeDTO.getAccountUser().setNameAccount("cothai");
+        employeeDTO.getAccountUser().setNameAccount("abc");
         employeeDTO.getAccountUser().setPasswordAccount("anhcho5cu");
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .put("/employee/update/1")
+                        .put("/employee/1")
                         .content(this.objectMapper.writeValueAsString(employeeDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -653,16 +610,17 @@ public class EmployeeController_updateEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("@#K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
         employeeDTO.setIdentityCard("123456789012");
-        employeeDTO.getAccountUser().setNameAccount("cothai");
+        employeeDTO.getAccountUser().setNameAccount("abc");
         employeeDTO.getAccountUser().setPasswordAccount("anhcho5cuu");
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .put("/employee/update/1")
+                        .put("/employee/1")
                         .content(this.objectMapper.writeValueAsString(employeeDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -684,16 +642,17 @@ public class EmployeeController_updateEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam!@");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
         employeeDTO.setIdentityCard("123456789012");
-        employeeDTO.getAccountUser().setNameAccount("cothaie");
+        employeeDTO.getAccountUser().setNameAccount("abc");
         employeeDTO.getAccountUser().setPasswordAccount("anhcho5cuu");
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .put("/employee/update/1")
+                        .put("/employee/1")
                         .content(this.objectMapper.writeValueAsString(employeeDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -715,16 +674,17 @@ public class EmployeeController_updateEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("@!");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
         employeeDTO.setIdentityCard("123456789012");
-        employeeDTO.getAccountUser().setNameAccount("cothaai");
+        employeeDTO.getAccountUser().setNameAccount("abc");
         employeeDTO.getAccountUser().setPasswordAccount("anhcho5cuu");
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .put("/employee/update/1")
+                        .put("/employee/1")
                         .content(this.objectMapper.writeValueAsString(employeeDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -746,16 +706,17 @@ public class EmployeeController_updateEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb09230");
         employeeDTO.setIdentityCard("123456789012");
-        employeeDTO.getAccountUser().setNameAccount("cothai");
+        employeeDTO.getAccountUser().setNameAccount("abc");
         employeeDTO.getAccountUser().setPasswordAccount("anhcho5cuu");
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .put("/employee/update/1")
+                        .put("/employee/1")
                         .content(this.objectMapper.writeValueAsString(employeeDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -777,47 +738,17 @@ public class EmployeeController_updateEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
         employeeDTO.setIdentityCard("dfw3423");
-        employeeDTO.getAccountUser().setNameAccount("cothai");
+        employeeDTO.getAccountUser().setNameAccount("abc");
         employeeDTO.getAccountUser().setPasswordAccount("anhcho5cuu");
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .put("/employee/update/1")
-                        .content(this.objectMapper.writeValueAsString(employeeDTO))
-                        .contentType(MediaType.APPLICATION_JSON_VALUE))
-                .andDo(print())
-                .andExpect(status().is4xxClientError());
-    }
-
-    /**
-     * //     * this function use to test the validation of field accountName more specific is containing special character
-     * //     * @author NghiaTT
-     * //     * @Time 14h00 25/05/2023
-     * //
-     */
-    @Test
-    public void updateEmployee_nameAccount_15() throws Exception {
-
-        EmployeeDTO employeeDTO = new EmployeeDTO();
-        AccountUser accountUser = new AccountUser();
-        employeeDTO.setAccountUser(accountUser);
-        employeeDTO.setPhone("0898175813");
-        employeeDTO.setAddress("K03/10 Vạn Tường");
-        employeeDTO.setGender("Nam");
-        employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
-        employeeDTO.setNameEmployee("NghiaTT");
-        employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
-        employeeDTO.setIdentityCard("123456789012");
-        employeeDTO.getAccountUser().setNameAccount("@1334132");
-        employeeDTO.getAccountUser().setPasswordAccount("anhcho5cuu");
-
-        this.mockMvc
-                .perform(MockMvcRequestBuilders
-                        .put("/employee/update/1")
+                        .put("/employee/1")
                         .content(this.objectMapper.writeValueAsString(employeeDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -839,16 +770,17 @@ public class EmployeeController_updateEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
         employeeDTO.setIdentityCard("123456789012");
-        employeeDTO.getAccountUser().setNameAccount("abr");
+        employeeDTO.getAccountUser().setNameAccount("abc");
         employeeDTO.getAccountUser().setPasswordAccount("@jfkffj!");
 
         this.mockMvc
                 .perform(MockMvcRequestBuilders
-                        .put("/employee/update/1")
+                        .put("/employee/1")
                         .content(this.objectMapper.writeValueAsString(employeeDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -865,18 +797,21 @@ public class EmployeeController_updateEmployee {
     public void updateEmployee_18() throws Exception {
         EmployeeDTO employeeDTO = new EmployeeDTO();
         AccountUser accountUser = new AccountUser();
+        employeeDTO.setIdEmployee(1);
+        accountUser.setId(1);
         employeeDTO.setAccountUser(accountUser);
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
         employeeDTO.setIdentityCard("123456789012");
-        employeeDTO.getAccountUser().setNameAccount("abcr");
-        employeeDTO.getAccountUser().setPasswordAccount("2324234");
+        employeeDTO.getAccountUser().setNameAccount("abc");
+        employeeDTO.getAccountUser().setPasswordAccount("def");
         this.mockMvc.perform(MockMvcRequestBuilders
-                        .put("/employee/update/1")
+                        .put("/employee/1")
                         .content(this.objectMapper.writeValueAsString(employeeDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())

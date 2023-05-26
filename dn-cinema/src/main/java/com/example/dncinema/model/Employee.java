@@ -19,13 +19,15 @@ public class Employee {
     private String address;
     @Column(name = "gender", columnDefinition = "varchar(45)")
     private String gender;
+    @Column(name = "date_of_birth", columnDefinition = "varchar(45)")
+    private String dateOfBirth;
     @Column(name = "img_employee", columnDefinition = "varchar(255)")
     private String imgEmployee;
     @Column(name = "email", columnDefinition = "varchar(255)")
     private String email;
     @Column(name = "identity_card", columnDefinition = "varchar(255)")
     private String identityCard;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.MERGE )
     @JoinColumn(name = "id")
     @JsonManagedReference
     private AccountUser accountUser;
@@ -33,12 +35,13 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(Integer idEmployee, String nameEmployee, String phone, String address, String gender, String imgEmployee, String email, String identityCard, AccountUser accountUser) {
+    public Employee(Integer idEmployee, String nameEmployee, String phone, String address, String gender, String dateOfBirth, String imgEmployee, String email, String identityCard, AccountUser accountUser) {
         this.idEmployee = idEmployee;
         this.nameEmployee = nameEmployee;
         this.phone = phone;
         this.address = address;
         this.gender = gender;
+        this.dateOfBirth = dateOfBirth;
         this.imgEmployee = imgEmployee;
         this.email = email;
         this.identityCard = identityCard;
@@ -115,5 +118,13 @@ public class Employee {
 
     public void setAccountUser(AccountUser accountUser) {
         this.accountUser = accountUser;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 }

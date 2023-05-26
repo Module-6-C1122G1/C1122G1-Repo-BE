@@ -19,17 +19,26 @@ public class EmployeeService implements IEmployeeService {
     @Autowired
     private IAccountUserRepository iAccountUserRepository;
 
+    /**
+     * Created by: NghiaTT
+     * Date created: 24/05/2023
+     * function: Update employee
+     *
+     * @param employeeDTO
+     * @param id
+     */
     @Override
     public void updateEmployee(EmployeeDTO employeeDTO, Integer id) {
         AccountUser accountUser = iAccountUserRepository
                 .findAccountUserByNameAccount(employeeDTO.getAccountUser().getNameAccount());
-        iAccountUserRepository.updateAccount(accountUser.getNameAccount(), accountUser.getPasswordAccount(), accountUser.getId());
+        iAccountUserRepository.updateAccount(employeeDTO.getAccountUser().getNameAccount(), employeeDTO.getAccountUser().getPasswordAccount(), accountUser.getId());
         Employee employee = iEmployeeRepository.findByIdEmployee(id);
         BeanUtils.copyProperties(employeeDTO, employee);
         iEmployeeRepository.updateEmployeeWithAccount(employeeDTO.getNameEmployee()
                 , employee.getPhone()
                 , employee.getAddress()
                 , employee.getGender()
+                , employee.getDateOfBirth()
                 , employee.getImgEmployee()
                 , employee.getEmail()
                 , employee.getIdentityCard()
@@ -42,6 +51,13 @@ public class EmployeeService implements IEmployeeService {
         return iEmployeeRepository.findAll();
     }
 
+    /**
+     * Created by: NghiaTT
+     * Date created: 24/05/2023
+     * function: Create employee
+     *
+     * @param employeeDTO
+     */
     @Override
     public void create(EmployeeDTO employeeDTO) {
         iAccountUserRepository.createAccountUser(employeeDTO.getAccountUser().getNameAccount(),
@@ -56,6 +72,7 @@ public class EmployeeService implements IEmployeeService {
                 employee.getPhone(),
                 employee.getAddress(),
                 employee.getGender(),
+                employee.getDateOfBirth(),
                 employee.getImgEmployee(),
                 employee.getEmail(),
                 employee.getIdentityCard(),
@@ -63,6 +80,14 @@ public class EmployeeService implements IEmployeeService {
         );
     }
 
+    /**
+     * Created by: NghiaTT
+     * Date created: 24/05/2023
+     * function: Find employee by id
+     *
+     * @param id
+     * @return
+     */
     @Override
     public Employee findById(int id) {
         return iEmployeeRepository.findByIdEmployee(id);

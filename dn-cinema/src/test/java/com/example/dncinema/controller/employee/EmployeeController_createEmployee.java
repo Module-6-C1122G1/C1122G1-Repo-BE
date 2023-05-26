@@ -38,6 +38,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee(null);
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
@@ -69,6 +70,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone(null);
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
@@ -100,6 +102,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress(null);
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
@@ -131,6 +134,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender(null);
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
@@ -148,6 +152,37 @@ public class EmployeeController_createEmployee {
     }
 
     /**
+     * this function use to test the validation of field dateOfBirth more specific is null
+     *
+     * @author NghiaTT
+     * @Time 14h00 25/05/2023
+     */
+    @Test
+    public void createEmployee_dateOfBirth_13() throws Exception {
+
+        EmployeeDTO employeeDTO = new EmployeeDTO();
+        AccountUser accountUser = new AccountUser();
+        employeeDTO.setAccountUser(accountUser);
+        employeeDTO.setPhone("0898175813");
+        employeeDTO.setAddress("K03/10 Vạn Tường");
+        employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth(null);
+        employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
+        employeeDTO.setNameEmployee("NghiaTT");
+        employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
+        employeeDTO.setIdentityCard("123456789012");
+        employeeDTO.getAccountUser().setNameAccount("cothaie");
+        employeeDTO.getAccountUser().setPasswordAccount("anhcho5cuu");
+
+        this.mockMvc
+                .perform(MockMvcRequestBuilders
+                        .post("/employee/create")
+                        .content(this.objectMapper.writeValueAsString(employeeDTO))
+                        .contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andDo(print())
+                .andExpect(status().is4xxClientError());
+    }
+    /**
      * this function use to test the validation of field image more specific is null
      *
      * @author NghiaTT
@@ -162,6 +197,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee(null);
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
@@ -193,6 +229,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail(null);
@@ -224,6 +261,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
@@ -255,6 +293,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
@@ -286,6 +325,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
@@ -316,6 +356,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
@@ -345,6 +386,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
@@ -376,6 +418,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
@@ -407,6 +450,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
@@ -438,6 +482,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
@@ -469,6 +514,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("");
@@ -500,6 +546,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
@@ -531,6 +578,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
@@ -562,6 +610,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
@@ -592,6 +641,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("Trần Trọng Nghĩa @");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
@@ -622,6 +672,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("0908175813@");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
@@ -653,6 +704,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("@#K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
@@ -684,6 +736,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam!@");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
@@ -715,6 +768,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("@!");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
@@ -746,6 +800,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb09230");
@@ -777,6 +832,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
@@ -808,6 +864,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
@@ -839,6 +896,7 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
@@ -869,11 +927,12 @@ public class EmployeeController_createEmployee {
         employeeDTO.setPhone("0898175813");
         employeeDTO.setAddress("K03/10 Vạn Tường");
         employeeDTO.setGender("Nam");
+        employeeDTO.setDateOfBirth("2004-05-01");
         employeeDTO.setImgEmployee("https://tse4.mm.bing.net/th?id=OIP.BiCKfwDo53OAWNYYcHF_RwAAAA&pid=Api&P=0&h=180");
         employeeDTO.setNameEmployee("NghiaTT");
         employeeDTO.setEmail("ttn.hdttb152004@gmail.com");
         employeeDTO.setIdentityCard("123456789012");
-        employeeDTO.getAccountUser().setNameAccount("abcr");
+        employeeDTO.getAccountUser().setNameAccount("abcrafsdfsd");
         employeeDTO.getAccountUser().setPasswordAccount("2324234");
         this.mockMvc.perform(MockMvcRequestBuilders
                         .post("/employee/create")

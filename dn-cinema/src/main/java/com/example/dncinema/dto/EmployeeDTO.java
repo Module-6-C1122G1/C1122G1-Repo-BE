@@ -15,6 +15,8 @@ public class EmployeeDTO {
     @NotBlank(message = "Không được để trống")
     private String gender;
     @NotBlank(message = "Không được để trống")
+    private String dateOfBirth;
+    @NotBlank(message = "Không được để trống")
     private String imgEmployee;
     @NotBlank(message = "Không được để trống")
     private String email;
@@ -25,12 +27,13 @@ public class EmployeeDTO {
     public EmployeeDTO() {
     }
 
-    public EmployeeDTO(Integer idEmployee, String nameEmployee, String phone, String address, String gender, String imgEmployee, String email, String identityCard, AccountUser accountUser) {
+    public EmployeeDTO(Integer idEmployee, String nameEmployee, String phone, String address, String gender, String dateOfBirth, String imgEmployee, String email, String identityCard, AccountUser accountUser) {
         this.idEmployee = idEmployee;
         this.nameEmployee = nameEmployee;
         this.phone = phone;
         this.address = address;
         this.gender = gender;
+        this.dateOfBirth = dateOfBirth;
         this.imgEmployee = imgEmployee;
         this.email = email;
         this.identityCard = identityCard;
@@ -107,5 +110,13 @@ public class EmployeeDTO {
 
     public void setAccountUser(AccountUser accountUser) {
         this.accountUser = accountUser;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 }
