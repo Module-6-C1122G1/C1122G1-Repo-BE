@@ -23,7 +23,7 @@ public class TicketController_cancelTicket {
      */
 
     @Test
-    public void cancelTicket_1() throws Exception {
+    public void cancelTicket_19() throws Exception {
         this.mockMvc.perform(
                 MockMvcRequestBuilders.put("/ticket/cancelTicket/null")).andDo(print()).andExpect(status().is4xxClientError());
     }
@@ -34,7 +34,7 @@ public class TicketController_cancelTicket {
      */
 
     @Test
-    public void cancelTicket_2() throws Exception {
+    public void cancelTicket_20() throws Exception {
         this.mockMvc.perform(
                 MockMvcRequestBuilders.put("/ticket/cancelTicket/''")).andDo(print()).andExpect(status().is4xxClientError());
     }
@@ -44,7 +44,7 @@ public class TicketController_cancelTicket {
      * This method is used to check ticket cancellation where param which valid param
      */
     @Test
-    public void cancelTicket_3() throws Exception {
+    public void cancelTicket_24() throws Exception {
         this.mockMvc.perform(
                 MockMvcRequestBuilders.put("/ticket/cancelTicket/1")).andDo(print()).andExpect(status().is2xxSuccessful());
     }

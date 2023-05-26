@@ -24,7 +24,7 @@ public class TicketController_findAllTicket {
      */
 
     @Test
-    public void findAllTicket_1() throws Exception {
+    public void findAllTicket_7() throws Exception {
         this.mockMvc.perform(
                 MockMvcRequestBuilders.get("/ticket/list/null")).andDo(print()).andExpect(status().is4xxClientError());
     }
@@ -35,7 +35,7 @@ public class TicketController_findAllTicket {
      * This method is used to check the return list which param = ""
      */
     @Test
-    public void findAllTicket_2() throws Exception {
+    public void findAllTicket_8() throws Exception {
         this.mockMvc.perform(
                 MockMvcRequestBuilders.get("/ticket/list/''")).andDo(print()).andExpect(status().is4xxClientError());
     }
@@ -46,7 +46,7 @@ public class TicketController_findAllTicket {
      * This method is used to check the return list which param does not exist in the database
      */
     @Test
-    public void findAllTicket_3() throws Exception {
+    public void findAllTicket_9() throws Exception {
         this.mockMvc.perform(
                 MockMvcRequestBuilders.get("/ticket/list/7")).andDo(print()).andExpect(status().is4xxClientError());
     }
@@ -57,9 +57,9 @@ public class TicketController_findAllTicket {
      * This method is used to check the return list has size = 0 which param exist
      */
     @Test
-    public void findAllTicket_4() throws Exception {
+    public void findAllTicket_10() throws Exception {
         this.mockMvc.perform(
-                MockMvcRequestBuilders.get("/ticket/list/search=abcxyz")).andDo(print()).andExpect(status().is4xxClientError());
+                MockMvcRequestBuilders.get("/ticket/list?search=abcxyz")).andDo(print()).andExpect(status().is4xxClientError());
     }
 
     /**
@@ -68,7 +68,7 @@ public class TicketController_findAllTicket {
      * This method is used to check the return list has size > 0 which param exist
      */
     @Test
-    public void findAllTicket_5() throws Exception {
+    public void findAllTicket_11() throws Exception {
         this.mockMvc.perform(
                         MockMvcRequestBuilders.get("/ticket/list?page=0"))
                 .andDo(print())
