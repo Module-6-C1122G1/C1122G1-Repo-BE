@@ -1,9 +1,9 @@
 package com.example.dncinema.controller.film;
 
 import com.example.dncinema.dto.FilmDTO;
+import com.example.dncinema.dto.TypeFilmDTO;
 import com.example.dncinema.model.Film;
 import com.example.dncinema.model.ShowTime;
-import com.example.dncinema.model.TypeFilm;
 import com.example.dncinema.service.film.IFilmService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
@@ -28,20 +28,24 @@ public class FilmController {
 
     /**
      * @Author: AnhNQ
+     * @DateCreated  25/05/2023
      * @param filmDTO
      * @param bindingResult
      * @return HttpStatus.OK, newFilm
      */
     @PostMapping("/create")
-    public ResponseEntity<List<FieldError>> createFilm(@RequestBody @Valid FilmDTO filmDTO, BindingResult bindingResult){
+    public ResponseEntity<List<FieldError>> createFilm(@Valid @RequestBody  FilmDTO filmDTO, BindingResult bindingResult){
+        if (filmDTO.getShowTime() == null || filmDTO.getTypeFilm() == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
         if (bindingResult.hasErrors()){
             return new ResponseEntity<>(bindingResult.getFieldErrors(),HttpStatus.NOT_ACCEPTABLE);
         }
         Film film = new Film();
         BeanUtils.copyProperties(filmDTO,film);
-        TypeFilm typeFilm = new TypeFilm();
+        TypeFilmDTO typeFilmDTO = new TypeFilmDTO();
         ShowTime showTime = new ShowTime();
-        typeFilm.setIdTypeFilm(filmDTO.getTypeFilm().getIdTypeFilm());
+        typeFilmDTO.setIdTypeFilm(filmDTO.getTypeFilm().getIdTypeFilm());
         showTime.setIdShowTime(filmDTO.getShowTime().getIdShowTime());
         iFilmService.save(film);
         return new ResponseEntity<>(HttpStatus.OK);
@@ -49,18 +53,28 @@ public class FilmController {
 
     /**
      * @Author AnhNQ
+     * @DateCreated  25/05/2023
      * @param idFilm
-     * @param film
-     * @return newFilm, HttpStatus.OK
+     * @param filmDTO
+     * @return film, HttpStatus.OK
      */
     @PutMapping("/{idFilm}")
     @ResponseBody
-    public ResponseEntity<Film> updateFilm(@PathVariable int idFilm, @RequestBody Film film) {
-        Optional<Film> filmOptional = iFilmService.findById(idFilm);
-        if (!filmOptional.isPresent()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    public ResponseEntity<List<FieldError>> updateFilm(@Valid @RequestBody FilmDTO filmDTO, @PathVariable("idFilm") int idFilm, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()){
+            return new ResponseEntity<>(bindingResult.getFieldErrors(),HttpStatus.NOT_ACCEPTABLE);
         }
-        film.setIdFilm(filmOptional.get().getIdFilm());
-        return new ResponseEntity<>(iFilmService.updateFilm(film), HttpStatus.OK);
+        Optional<Film> filmOptional = iFilmService.findById(idFilm);
+        Film film = new Film();
+        BeanUtils.copyProperties(filmOptional,filmDTO);
+        System.out.println(filmDTO.getIdFilm());
+        BeanUtils.copyProperties(filmDTO,film);
+        TypeFilmDTO typeFilmDTO = new TypeFilmDTO();
+        ShowTime showTime = new ShowTime();
+        typeFilmDTO.setIdTypeFilm(filmDTO.getTypeFilm().getIdTypeFilm());
+        showTime.setIdShowTime(filmDTO.getShowTime().getIdShowTime());
+        iFilmService.save(film);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
+
 }

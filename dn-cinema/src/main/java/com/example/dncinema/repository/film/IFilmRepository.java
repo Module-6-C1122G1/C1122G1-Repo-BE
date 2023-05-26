@@ -2,8 +2,6 @@ package com.example.dncinema.repository.film;
 
 import com.example.dncinema.model.Film;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
@@ -33,7 +31,8 @@ public interface IFilmRepository extends JpaRepository<Film,Integer> {
 //            "f.id_type_film = :?" +
 //            "where f.id_film = :id_film",nativeQuery = true)
 //    void updateFilm(Film film);
-    @Modifying
-    @Query(value = "SELECT * from film f where f.id_film = id_film ", nativeQuery = true)
+//    @Modifying
+//    @Query(value = "SELECT * from film f where f.id_film = id_film ", nativeQuery = true)
+//    Optional<Film> findFilmByIdFilm(Integer idFilm);
     Optional<Film> findFilmByIdFilm(Integer idFilm);
 }

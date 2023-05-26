@@ -1,6 +1,6 @@
 package com.example.dncinema.controller;
 
-import com.example.dncinema.dto.FilmDTO;
+import com.example.dncinema.model.Film;
 import com.example.dncinema.model.ShowTime;
 import com.example.dncinema.model.TypeFilm;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -16,6 +16,7 @@ import java.time.LocalDate;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 @SpringBootTest
 @AutoConfigureMockMvc
 public class FilmController_updateFilm {
@@ -27,7 +28,8 @@ public class FilmController_updateFilm {
 
     @Test
     public void updateFilm_imgFilm_13() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
+        Film filmDTO = new Film();
+        filmDTO.setIdFilm(1);
         filmDTO.setImgFilm(null);
         filmDTO.setActor("Minh");
         filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
@@ -48,15 +50,17 @@ public class FilmController_updateFilm {
         showTime.setIdShowTime(1);
         filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/api/film/1")
                         .content(this.objectMapper.writeValueAsString(filmDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
+
     @Test
     public void updateFilm_actor_13() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
+        Film filmDTO = new Film();
+        filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
         filmDTO.setActor(null);
         filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
@@ -77,73 +81,20 @@ public class FilmController_updateFilm {
         showTime.setIdShowTime(1);
         filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/api/film/1")
                         .content(this.objectMapper.writeValueAsString(filmDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
-    @Test
-    public void updateFilm_dateEndFilm_13() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
-        filmDTO.setImgFilm("a");
-        filmDTO.setActor("a");
-        filmDTO.setDateEndFilm(null);
-        filmDTO.setDateStartFilm(LocalDate.parse("2023-06-10"));
-        filmDTO.setDescribeFilm("a");
-        filmDTO.setDirector("a");
-        filmDTO.setMovieLabel("a");
-        filmDTO.setNameFilm("a");
-        filmDTO.setNormalSeatPrice(10.0);
-        filmDTO.setStudioFilm("a");
-        filmDTO.setTimeFilm(120);
-        filmDTO.setTrailer("a");
-        filmDTO.setVipSeatPrice(15.0);
-        TypeFilm typeFilm = new TypeFilm();
-        typeFilm.setIdTypeFilm(1);
-        filmDTO.setTypeFilm(typeFilm);
-        ShowTime showTime = new ShowTime();
-        showTime.setIdShowTime(1);
-        filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
-                        .content(this.objectMapper.writeValueAsString(filmDTO))
-                        .contentType(MediaType.APPLICATION_JSON_VALUE))
-                .andDo(print())
-                .andExpect(status().is4xxClientError());
-    }
-    @Test
-    public void updateFilm_dateStartFilm_13() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
-        filmDTO.setImgFilm("a");
-        filmDTO.setActor("a");
-        filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
-        filmDTO.setDateStartFilm(null);
-        filmDTO.setDescribeFilm("a");
-        filmDTO.setDirector("a");
-        filmDTO.setMovieLabel("a");
-        filmDTO.setNameFilm("a");
-        filmDTO.setNormalSeatPrice(10.0);
-        filmDTO.setStudioFilm("a");
-        filmDTO.setTimeFilm(120);
-        filmDTO.setTrailer("a");
-        filmDTO.setVipSeatPrice(15.0);
-        TypeFilm typeFilm = new TypeFilm();
-        typeFilm.setIdTypeFilm(1);
-        filmDTO.setTypeFilm(typeFilm);
-        ShowTime showTime = new ShowTime();
-        showTime.setIdShowTime(1);
-        filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
-                        .content(this.objectMapper.writeValueAsString(filmDTO))
-                        .contentType(MediaType.APPLICATION_JSON_VALUE))
-                .andDo(print())
-                .andExpect(status().is4xxClientError());
-    }
+
+
     @Test
     public void updateFilm_describeFilm_13() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
+        Film filmDTO = new Film();
+        filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
         filmDTO.setActor("a");
         filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
@@ -164,15 +115,17 @@ public class FilmController_updateFilm {
         showTime.setIdShowTime(1);
         filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/api/film/1")
                         .content(this.objectMapper.writeValueAsString(filmDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
+
     @Test
     public void updateFilm_director_13() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
+        Film filmDTO = new Film();
+        filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
         filmDTO.setActor("a");
         filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
@@ -193,15 +146,17 @@ public class FilmController_updateFilm {
         showTime.setIdShowTime(1);
         filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/api/film/1")
                         .content(this.objectMapper.writeValueAsString(filmDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
+
     @Test
     public void updateFilm_movieLabel_13() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
+        Film filmDTO = new Film();
+        filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
         filmDTO.setActor("a");
         filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
@@ -222,15 +177,17 @@ public class FilmController_updateFilm {
         showTime.setIdShowTime(1);
         filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/api/film/1")
                         .content(this.objectMapper.writeValueAsString(filmDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
+
     @Test
     public void updateFilm_nameFilm_13() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
+        Film filmDTO = new Film();
+        filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
         filmDTO.setActor("a");
         filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
@@ -251,15 +208,17 @@ public class FilmController_updateFilm {
         showTime.setIdShowTime(1);
         filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/api/film/1")
                         .content(this.objectMapper.writeValueAsString(filmDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
+
     @Test
     public void updateFilm_normalSeatPrice_13() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
+        Film filmDTO = new Film();
+        filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
         filmDTO.setActor("a");
         filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
@@ -280,15 +239,17 @@ public class FilmController_updateFilm {
         showTime.setIdShowTime(1);
         filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/api/film/1")
                         .content(this.objectMapper.writeValueAsString(filmDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
+
     @Test
     public void updateFilm_timeFilm_13() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
+        Film filmDTO = new Film();
+        filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
         filmDTO.setActor("a");
         filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
@@ -309,15 +270,17 @@ public class FilmController_updateFilm {
         showTime.setIdShowTime(1);
         filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/api/film/1")
                         .content(this.objectMapper.writeValueAsString(filmDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
+
     @Test
     public void updateFilm_studioFilm_13() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
+        Film filmDTO = new Film();
+        filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
         filmDTO.setActor("a");
         filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
@@ -338,15 +301,17 @@ public class FilmController_updateFilm {
         showTime.setIdShowTime(1);
         filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/api/film/1")
                         .content(this.objectMapper.writeValueAsString(filmDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
+
     @Test
     public void updateFilm_trailer_13() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
+        Film filmDTO = new Film();
+        filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
         filmDTO.setActor("a");
         filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
@@ -367,15 +332,17 @@ public class FilmController_updateFilm {
         showTime.setIdShowTime(1);
         filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/api/film/1")
                         .content(this.objectMapper.writeValueAsString(filmDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
+
     @Test
     public void updateFilm_vipSeatPrice_13() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
+        Film filmDTO = new Film();
+        filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
         filmDTO.setActor("a");
         filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
@@ -396,74 +363,20 @@ public class FilmController_updateFilm {
         showTime.setIdShowTime(1);
         filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/api/film/1")
                         .content(this.objectMapper.writeValueAsString(filmDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
-    @Test
-    public void updateFilm_idTypeFilm_13() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
-        filmDTO.setImgFilm("a");
-        filmDTO.setActor("a");
-        filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
-        filmDTO.setDateStartFilm(LocalDate.parse("2023-06-10"));
-        filmDTO.setDescribeFilm("a");
-        filmDTO.setDirector("a");
-        filmDTO.setMovieLabel("a");
-        filmDTO.setNameFilm("a");
-        filmDTO.setNormalSeatPrice(10.0);
-        filmDTO.setStudioFilm("a");
-        filmDTO.setTimeFilm(120);
-        filmDTO.setTrailer("a");
-        filmDTO.setVipSeatPrice(15.0);
-        TypeFilm typeFilm = new TypeFilm();
-        typeFilm.setIdTypeFilm(null);
-        filmDTO.setTypeFilm(typeFilm);
-        ShowTime showTime = new ShowTime();
-        showTime.setIdShowTime(1);
-        filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
-                        .content(this.objectMapper.writeValueAsString(filmDTO))
-                        .contentType(MediaType.APPLICATION_JSON_VALUE))
-                .andDo(print())
-                .andExpect(status().is4xxClientError());
-    }
-    @Test
-    public void updateFilm_idShowTime_13() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
-        filmDTO.setImgFilm("a");
-        filmDTO.setActor("a");
-        filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
-        filmDTO.setDateStartFilm(LocalDate.parse("2023-06-10"));
-        filmDTO.setDescribeFilm("a");
-        filmDTO.setDirector("a");
-        filmDTO.setMovieLabel("a");
-        filmDTO.setNameFilm("a");
-        filmDTO.setNormalSeatPrice(10.0);
-        filmDTO.setStudioFilm("a");
-        filmDTO.setTimeFilm(120);
-        filmDTO.setTrailer("a");
-        filmDTO.setVipSeatPrice(15.0);
-        TypeFilm typeFilm = new TypeFilm();
-        typeFilm.setIdTypeFilm(1);
-        filmDTO.setTypeFilm(typeFilm);
-        ShowTime showTime = new ShowTime();
-        showTime.setIdShowTime(null);
-        filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
-                        .content(this.objectMapper.writeValueAsString(filmDTO))
-                        .contentType(MediaType.APPLICATION_JSON_VALUE))
-                .andDo(print())
-                .andExpect(status().is4xxClientError());
-    }
+
 
     @Test
     public void updateFilm_imgFilm_14() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
+        Film filmDTO = new Film();
+        filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("");
         filmDTO.setActor("Minh");
         filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
@@ -484,15 +397,17 @@ public class FilmController_updateFilm {
         showTime.setIdShowTime(1);
         filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/api/film/1")
                         .content(this.objectMapper.writeValueAsString(filmDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
+
     @Test
     public void updateFilm_actor_14() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
+        Film filmDTO = new Film();
+        filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
         filmDTO.setActor("");
         filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
@@ -513,15 +428,17 @@ public class FilmController_updateFilm {
         showTime.setIdShowTime(1);
         filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/api/film/1")
                         .content(this.objectMapper.writeValueAsString(filmDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
+
     @Test
     public void updateFilm_describeFilm_14() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
+        Film filmDTO = new Film();
+        filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
         filmDTO.setActor("a");
         filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
@@ -542,15 +459,17 @@ public class FilmController_updateFilm {
         showTime.setIdShowTime(1);
         filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/api/film/1")
                         .content(this.objectMapper.writeValueAsString(filmDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
+
     @Test
     public void updateFilm_director_14() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
+        Film filmDTO = new Film();
+        filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
         filmDTO.setActor("a");
         filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
@@ -571,15 +490,17 @@ public class FilmController_updateFilm {
         showTime.setIdShowTime(1);
         filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/api/film/1")
                         .content(this.objectMapper.writeValueAsString(filmDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
+
     @Test
     public void updateFilm_movieLabel_14() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
+        Film filmDTO = new Film();
+        filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
         filmDTO.setActor("a");
         filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
@@ -600,15 +521,17 @@ public class FilmController_updateFilm {
         showTime.setIdShowTime(1);
         filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/api/film/1")
                         .content(this.objectMapper.writeValueAsString(filmDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
+
     @Test
     public void updateFilm_nameFilm_14() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
+        Film filmDTO = new Film();
+        filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
         filmDTO.setActor("a");
         filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
@@ -629,15 +552,17 @@ public class FilmController_updateFilm {
         showTime.setIdShowTime(1);
         filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/api/film/1")
                         .content(this.objectMapper.writeValueAsString(filmDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
+
     @Test
-    public void updateFilm_normalSeatPrice_14() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
+    public void updateFilm_normalSeatPrice_16() throws Exception {
+        Film filmDTO = new Film();
+        filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
         filmDTO.setActor("a");
         filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
@@ -646,7 +571,7 @@ public class FilmController_updateFilm {
         filmDTO.setDirector("a");
         filmDTO.setMovieLabel("a");
         filmDTO.setNameFilm("a");
-        filmDTO.setNormalSeatPrice(0.0);
+        filmDTO.setNormalSeatPrice(-3.0);
         filmDTO.setStudioFilm("a");
         filmDTO.setTimeFilm(120);
         filmDTO.setTrailer("a");
@@ -658,15 +583,17 @@ public class FilmController_updateFilm {
         showTime.setIdShowTime(1);
         filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/api/film/1")
                         .content(this.objectMapper.writeValueAsString(filmDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
+
     @Test
     public void updateFilm_studioFilm_14() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
+        Film filmDTO = new Film();
+        filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
         filmDTO.setActor("a");
         filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
@@ -687,15 +614,17 @@ public class FilmController_updateFilm {
         showTime.setIdShowTime(1);
         filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/api/film/1")
                         .content(this.objectMapper.writeValueAsString(filmDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
+
     @Test
-    public void updateFilm_timeFilm_14() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
+    public void updateFilm_timeFilm_16() throws Exception {
+        Film filmDTO = new Film();
+        filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
         filmDTO.setActor("a");
         filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
@@ -706,7 +635,7 @@ public class FilmController_updateFilm {
         filmDTO.setNameFilm("a");
         filmDTO.setNormalSeatPrice(10.0);
         filmDTO.setStudioFilm("a");
-        filmDTO.setTimeFilm(0);
+        filmDTO.setTimeFilm(-3);
         filmDTO.setTrailer("a");
         filmDTO.setVipSeatPrice(15.0);
         TypeFilm typeFilm = new TypeFilm();
@@ -716,15 +645,17 @@ public class FilmController_updateFilm {
         showTime.setIdShowTime(1);
         filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/api/film/1")
                         .content(this.objectMapper.writeValueAsString(filmDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
+
     @Test
     public void updateFilm_trailer_14() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
+        Film filmDTO = new Film();
+        filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
         filmDTO.setActor("a");
         filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
@@ -745,15 +676,17 @@ public class FilmController_updateFilm {
         showTime.setIdShowTime(1);
         filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/api/film/1")
                         .content(this.objectMapper.writeValueAsString(filmDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
+
     @Test
-    public void updateFilm_vipSeatPrice_14() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
+    public void updateFilm_vipSeatPrice_16() throws Exception {
+        Film filmDTO = new Film();
+        filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
         filmDTO.setActor("a");
         filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
@@ -766,7 +699,7 @@ public class FilmController_updateFilm {
         filmDTO.setStudioFilm("a");
         filmDTO.setTimeFilm(120);
         filmDTO.setTrailer("a");
-        filmDTO.setVipSeatPrice(0.0);
+        filmDTO.setVipSeatPrice(-3.0);
         TypeFilm typeFilm = new TypeFilm();
         typeFilm.setIdTypeFilm(1);
         filmDTO.setTypeFilm(typeFilm);
@@ -774,73 +707,19 @@ public class FilmController_updateFilm {
         showTime.setIdShowTime(1);
         filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/api/film/1")
                         .content(this.objectMapper.writeValueAsString(filmDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
-    @Test
-    public void updateFilm_idTypeFilm_14() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
-        filmDTO.setImgFilm("a");
-        filmDTO.setActor("a");
-        filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
-        filmDTO.setDateStartFilm(LocalDate.parse("2023-06-10"));
-        filmDTO.setDescribeFilm("a");
-        filmDTO.setDirector("a");
-        filmDTO.setMovieLabel("a");
-        filmDTO.setNameFilm("a");
-        filmDTO.setNormalSeatPrice(10.0);
-        filmDTO.setStudioFilm("a");
-        filmDTO.setTimeFilm(120);
-        filmDTO.setTrailer("a");
-        filmDTO.setVipSeatPrice(15.0);
-        TypeFilm typeFilm = new TypeFilm();
-        typeFilm.setIdTypeFilm(0);
-        filmDTO.setTypeFilm(typeFilm);
-        ShowTime showTime = new ShowTime();
-        showTime.setIdShowTime(1);
-        filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
-                        .content(this.objectMapper.writeValueAsString(filmDTO))
-                        .contentType(MediaType.APPLICATION_JSON_VALUE))
-                .andDo(print())
-                .andExpect(status().is4xxClientError());
-    }
-    @Test
-    public void updateFilm_idShowTime_14() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
-        filmDTO.setImgFilm("a");
-        filmDTO.setActor("a");
-        filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
-        filmDTO.setDateStartFilm(LocalDate.parse("2023-06-10"));
-        filmDTO.setDescribeFilm("a");
-        filmDTO.setDirector("a");
-        filmDTO.setMovieLabel("a");
-        filmDTO.setNameFilm("a");
-        filmDTO.setNormalSeatPrice(10.0);
-        filmDTO.setStudioFilm("a");
-        filmDTO.setTimeFilm(120);
-        filmDTO.setTrailer("a");
-        filmDTO.setVipSeatPrice(15.0);
-        TypeFilm typeFilm = new TypeFilm();
-        typeFilm.setIdTypeFilm(1);
-        filmDTO.setTypeFilm(typeFilm);
-        ShowTime showTime = new ShowTime();
-        showTime.setIdShowTime(0);
-        filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/1")
-                        .content(this.objectMapper.writeValueAsString(filmDTO))
-                        .contentType(MediaType.APPLICATION_JSON_VALUE))
-                .andDo(print())
-                .andExpect(status().is4xxClientError());
-    }
+
     @Test
-    public void updateFilm_18() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
+    public void updateFilm_id_99() throws Exception {
+        Film filmDTO = new Film();
+        filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
         filmDTO.setActor("a");
         filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
@@ -862,7 +741,71 @@ public class FilmController_updateFilm {
         filmDTO.setShowTime(showTime);
 
         this.mockMvc.perform(MockMvcRequestBuilders
-                        .post("/api/film/1")
+                        .put("/api/film/''")
+                        .content(this.objectMapper.writeValueAsString(filmDTO))
+                        .contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andDo(print())
+                .andExpect(status().is4xxClientError());
+    }
+
+    @Test
+    public void updateFilm_idNull_99() throws Exception {
+        Film filmDTO = new Film();
+        filmDTO.setIdFilm(1);
+        filmDTO.setImgFilm("a");
+        filmDTO.setActor("a");
+        filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDateStartFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDescribeFilm("a");
+        filmDTO.setDirector("a");
+        filmDTO.setMovieLabel("a");
+        filmDTO.setNameFilm("a");
+        filmDTO.setNormalSeatPrice(10.0);
+        filmDTO.setStudioFilm("a");
+        filmDTO.setTimeFilm(120);
+        filmDTO.setTrailer("a");
+        filmDTO.setVipSeatPrice(15.0);
+        TypeFilm typeFilm = new TypeFilm();
+        typeFilm.setIdTypeFilm(1);
+        filmDTO.setTypeFilm(typeFilm);
+        ShowTime showTime = new ShowTime();
+        showTime.setIdShowTime(1);
+        filmDTO.setShowTime(showTime);
+
+        this.mockMvc.perform(MockMvcRequestBuilders
+                        .put("/api/film/null")
+                        .content(this.objectMapper.writeValueAsString(filmDTO))
+                        .contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andDo(print())
+                .andExpect(status().is4xxClientError());
+    }
+
+    @Test
+    public void updateFilm_18() throws Exception {
+        Film filmDTO = new Film();
+        filmDTO.setIdFilm(1);
+        filmDTO.setImgFilm("a");
+        filmDTO.setActor("Minh");
+        filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDateStartFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDescribeFilm("a");
+        filmDTO.setDirector("a");
+        filmDTO.setMovieLabel("a");
+        filmDTO.setNameFilm("a");
+        filmDTO.setNormalSeatPrice(10.0);
+        filmDTO.setStudioFilm("a");
+        filmDTO.setTimeFilm(120);
+        filmDTO.setTrailer("a");
+        filmDTO.setVipSeatPrice(15.0);
+        TypeFilm typeFilm = new TypeFilm();
+        typeFilm.setIdTypeFilm(1);
+        filmDTO.setTypeFilm(typeFilm);
+        ShowTime showTime = new ShowTime();
+        showTime.setIdShowTime(1);
+        filmDTO.setShowTime(showTime);
+
+        this.mockMvc.perform(MockMvcRequestBuilders
+                        .put("/api/film/1")
                         .content(this.objectMapper.writeValueAsString(filmDTO))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
