@@ -5,8 +5,11 @@ import com.example.dncinema.model.Employee;
 import com.example.dncinema.service.employee.IEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -23,13 +26,17 @@ public class EmployeeController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PatchMapping("/create")
-    public void createEmployeeWithAccount(@RequestBody EmployeeDTO employeeDTO) {
-        iEmployeeService.create(employeeDTO, employeeDTO.getAccountUser().getNameAccount(), employeeDTO.getAccountUser().getPasswordAccount());
+    @PostMapping("/create")
+    public ResponseEntity<?> createEmployeeWithAccount(@Valid @RequestBody EmployeeDTO employeeDTO , BindingResult bindingResult) {
+       if (bindingResult.hasErrors()){
+           return new ResponseEntity<>(bindingResult.getAllErrors(), HttpStatus.BAD_REQUEST);
+       }
+        iEmployeeService.create(employeeDTO);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @PutMapping("/update")
+    @PutMapping("/{id}")
     public void updateEmployeeWithAccount(@RequestBody EmployeeDTO employeeDTO,
                                           @PathVariable("id") Integer id) {
         iEmployeeService.updateEmployee(employeeDTO, id);

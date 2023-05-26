@@ -48,6 +48,7 @@ public interface IEmployeeRepository extends JpaRepository<Employee, Integer> {
      * @param employeeId
      */
     @Modifying
+    @Transactional
     @Query(value = "update employee set name_employee = :name_employee, phone = :phone , address = :address ,gender = :gender,img_employee = :img_employee ,email = :email,identity_card = :identity_card, id = :id WHERE id_employee = :id_employee", nativeQuery = true)
     void updateEmployeeWithAccount(
             @Param("name_employee") String nameEmployee
@@ -64,7 +65,7 @@ public interface IEmployeeRepository extends JpaRepository<Employee, Integer> {
      * @param employeeId
      * @return
      */
-    @Modifying
+    @Transactional
     @Query(value = "select * from employee where id_employee = :id_employee", nativeQuery = true)
     Employee findByIdEmployee(@Param("id_employee") Integer employeeId);
 }

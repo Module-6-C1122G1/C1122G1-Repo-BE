@@ -10,7 +10,7 @@ public interface IEmployeeService {
 
     List<Employee> findAll();
 
-    void create(EmployeeDTO employeeDTO , String userName, String password);
+    void create(EmployeeDTO employeeDTO);
 
     Employee findById(int id);
 }

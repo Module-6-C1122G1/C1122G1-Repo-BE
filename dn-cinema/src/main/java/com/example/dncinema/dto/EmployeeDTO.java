@@ -2,14 +2,23 @@ package com.example.dncinema.dto;
 
 import com.example.dncinema.model.AccountUser;
 
+import javax.validation.constraints.NotBlank;
+
 public class EmployeeDTO {
     private Integer idEmployee;
+    @NotBlank(message = "Không được để trống")
     private String nameEmployee;
+    @NotBlank(message = "Không được để trống")
     private String phone;
+    @NotBlank(message = "Không được để trống")
     private String address;
+    @NotBlank(message = "Không được để trống")
     private String gender;
+    @NotBlank(message = "Không được để trống")
     private String imgEmployee;
+    @NotBlank(message = "Không được để trống")
     private String email;
+    @NotBlank(message = "Không được để trống")
     private String identityCard;
     private AccountUser accountUser;
 

@@ -3,6 +3,7 @@ package com.example.dncinema.service.employee.impl;
 import com.example.dncinema.dto.EmployeeDTO;
 import com.example.dncinema.model.AccountUser;
 import com.example.dncinema.model.Employee;
+import com.example.dncinema.repository.IAccountUserRepository;
 import com.example.dncinema.repository.IEmployeeRepository;
 import com.example.dncinema.service.employee.IEmployeeService;
 import org.springframework.beans.BeanUtils;
@@ -15,19 +16,24 @@ import java.util.List;
 public class EmployeeService implements IEmployeeService {
     @Autowired
     private IEmployeeRepository iEmployeeRepository;
+    @Autowired
+    private IAccountUserRepository iAccountUserRepository;
 
     @Override
     public void updateEmployee(EmployeeDTO employeeDTO, Integer id) {
+        AccountUser accountUser = iAccountUserRepository
+                .findAccountUserByNameAccount(employeeDTO.getAccountUser().getNameAccount());
+        iAccountUserRepository.updateAccount(accountUser.getNameAccount(), accountUser.getPasswordAccount(), accountUser.getId());
         Employee employee = iEmployeeRepository.findByIdEmployee(id);
         BeanUtils.copyProperties(employeeDTO, employee);
         iEmployeeRepository.updateEmployeeWithAccount(employeeDTO.getNameEmployee()
                 , employee.getPhone()
-                , employeeDTO.getAddress()
+                , employee.getAddress()
                 , employee.getGender()
                 , employee.getImgEmployee()
                 , employee.getEmail()
                 , employee.getIdentityCard()
-                , employee.getAccountUser().getId()
+                , accountUser.getId()
                 , employee.getIdEmployee());
     }
 
@@ -37,10 +43,11 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
-    public void create(EmployeeDTO employeeDTO, String userName, String password) {
-        AccountUser accountUser = new AccountUser();
-        accountUser.setNameAccount(userName);
-        accountUser.setPasswordAccount(password);
+    public void create(EmployeeDTO employeeDTO) {
+        iAccountUserRepository.createAccountUser(employeeDTO.getAccountUser().getNameAccount(),
+                employeeDTO.getAccountUser().getPasswordAccount());
+        AccountUser accountUser = iAccountUserRepository
+                .findAccountUserByNameAccount(employeeDTO.getAccountUser().getNameAccount());
         Employee employee = new Employee();
         employee.setAccountUser(accountUser);
         BeanUtils.copyProperties(employeeDTO, employee);
@@ -52,7 +59,7 @@ public class EmployeeService implements IEmployeeService {
                 employee.getImgEmployee(),
                 employee.getEmail(),
                 employee.getIdentityCard(),
-                employee.getAccountUser().getId()
+                accountUser.getId()
         );
     }
 

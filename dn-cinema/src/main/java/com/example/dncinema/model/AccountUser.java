@@ -1,5 +1,7 @@
 package com.example.dncinema.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -16,10 +18,13 @@ public class AccountUser {
     private String nameAccount;
     @Column(name = "password_account", columnDefinition = "varchar(255)")
     private String passwordAccount;
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "account_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    @ManyToMany(fetch = FetchType.EAGER , cascade = CascadeType.ALL)
+    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "account_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
     Set<Roles> roles = new HashSet<>();
-
+    @OneToOne(mappedBy = "accountUser" , cascade = CascadeType.ALL)
+    @JsonBackReference
+    private Employee employee;
     public AccountUser() {
     }
 
@@ -65,5 +70,13 @@ public class AccountUser {
 
     public void setRoles(Set<Roles> roles) {
         this.roles = roles;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 }

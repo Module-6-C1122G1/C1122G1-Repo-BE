@@ -47,17 +47,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity.cors().and()
-                .csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/api/public/**").permitAll()
-                .antMatchers("/api/employee/**").hasAnyAuthority("EMPLOYEE", "ADMIN")
-                .antMatchers("/api/admin/**").hasAuthority("ADMIN")
+        httpSecurity.cors().and().csrf().disable()
+                .authorizeRequests().antMatchers("/**").permitAll()
                 .anyRequest().authenticated()
-                .and()
-                .exceptionHandling().authenticationEntryPoint(jwtEntryPoint)
-                .and()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+                .and().exceptionHandling()
+                .authenticationEntryPoint(jwtEntryPoint)
+                .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         httpSecurity.addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 }
