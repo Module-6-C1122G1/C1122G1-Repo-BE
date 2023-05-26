@@ -42,6 +42,15 @@ public class CustomerController {
     }
 
 
+    @GetMapping("list/{id}")
+    public ResponseEntity<Customer> findByCustomerId(@PathVariable Integer id) {
+        Customer customer = customerService.findById(id);
+        if (customer == null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>(customer, HttpStatus.OK);
+    }
+
     /**
      * @author ThanhNV
      * @param id

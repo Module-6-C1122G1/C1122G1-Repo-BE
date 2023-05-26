@@ -28,9 +28,9 @@ public class CustomerRestController_getListCustomer {
     public void getListCustomer_5() throws Exception {
         this.mockMvc.perform(
                         MockMvcRequestBuilders
-                                .get("/customer/list"))
+                                .get("/customer/list/null"))
                 .andDo(print())
-                .andExpect(status().is2xxSuccessful());
+                .andExpect(status().is4xxClientError());
     }
 
     /**
@@ -78,3 +78,5 @@ public class CustomerRestController_getListCustomer {
         ;
     }
 }
+
+
