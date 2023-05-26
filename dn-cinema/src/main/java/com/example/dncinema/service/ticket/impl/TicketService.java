@@ -22,4 +22,5 @@ public class TicketService implements ITicketService {
     public void cancelTicket(Integer id) {
         ticketRepository.cancelTicket(id);
     }
+
 }

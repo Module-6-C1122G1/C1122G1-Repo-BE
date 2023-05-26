@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="DatLVP up">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/ListTicketDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/TicketController_findAllTicket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/TicketController_cancelTicket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/TicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/TicketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Ticket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/ITicketRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/ITicketRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ticket/ITicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ticket/ITicketService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ticket/impl/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ticket/impl/TicketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/dncinema/TicketController_findAllTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/TicketController_findAllTicket.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +28,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand />
@@ -92,7 +92,7 @@
   }
 }</component>
   <component name="RunManager" selected="Spring Boot.DnCinemaApplication">
-    <configuration name="TicketController_findAllTicket.findAllTicket_1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TicketController_cancelTicket.cancelTicket_1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -105,7 +105,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.dncinema.TicketController_findAllTicket.findAllTicket_1&quot;" />
+            <option value="&quot;com.example.dncinema.TicketController_cancelTicket.cancelTicket_1&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -115,7 +115,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TicketController_findAllTicket.findAllTicket_2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TicketController_cancelTicket.cancelTicket_2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -128,7 +128,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.dncinema.TicketController_findAllTicket.findAllTicket_2&quot;" />
+            <option value="&quot;com.example.dncinema.TicketController_cancelTicket.cancelTicket_2&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -138,7 +138,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TicketController_findAllTicket.findAllTicket_3" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TicketController_cancelTicket.cancelTicket_3" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -151,7 +151,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.dncinema.TicketController_findAllTicket.findAllTicket_3&quot;" />
+            <option value="&quot;com.example.dncinema.TicketController_cancelTicket.cancelTicket_3&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -161,7 +161,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TicketController_findAllTicket.findAllTicket_4" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TicketController_cancelTicket.cancelTicket_4" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -174,7 +174,30 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.dncinema.TicketController_findAllTicket.findAllTicket_4&quot;" />
+            <option value="&quot;com.example.dncinema.TicketController_cancelTicket.cancelTicket_4&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TicketController_findAllTicket.findAllTicket_5" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.dncinema.TicketController_findAllTicket.findAllTicket_5&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -193,10 +216,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.TicketController_findAllTicket.findAllTicket_4" />
-        <item itemvalue="Gradle.TicketController_findAllTicket.findAllTicket_3" />
-        <item itemvalue="Gradle.TicketController_findAllTicket.findAllTicket_2" />
-        <item itemvalue="Gradle.TicketController_findAllTicket.findAllTicket_1" />
+        <item itemvalue="Gradle.TicketController_cancelTicket.cancelTicket_4" />
+        <item itemvalue="Gradle.TicketController_cancelTicket.cancelTicket_3" />
+        <item itemvalue="Gradle.TicketController_cancelTicket.cancelTicket_1" />
+        <item itemvalue="Gradle.TicketController_cancelTicket.cancelTicket_2" />
+        <item itemvalue="Gradle.TicketController_findAllTicket.findAllTicket_5" />
       </list>
     </recent_temporary>
   </component>
@@ -217,7 +241,8 @@
       <workItem from="1684987191689" duration="2722000" />
       <workItem from="1684999609049" duration="173000" />
       <workItem from="1685000841533" duration="7454000" />
-      <workItem from="1685025666837" duration="6114000" />
+      <workItem from="1685025666837" duration="9931000" />
+      <workItem from="1685064492705" duration="722000" />
     </task>
     <task id="LOCAL-00001" summary="DatLVP up">
       <created>1684977293169</created>
@@ -240,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684997708032</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="DatLVP up">
+      <created>1685031834334</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685031834334</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

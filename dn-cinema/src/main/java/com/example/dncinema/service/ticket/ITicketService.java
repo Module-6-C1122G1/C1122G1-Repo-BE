@@ -6,5 +6,6 @@ import org.springframework.data.domain.Pageable;
 
 public interface ITicketService {
     Page<ListTicketDTO> findAllTicket(String search, Pageable pageable);
+
     void cancelTicket(Integer id);
 }

@@ -68,23 +68,21 @@ public class TicketController_findAllTicket {
      * This method is used to check the return list has size > 0 which param exist
      */
     @Test
-    public void findAllFilm_11() throws Exception {
+    public void findAllTicket_5() throws Exception {
         this.mockMvc.perform(
-                        MockMvcRequestBuilders.get("/movie?page=0"))
+                        MockMvcRequestBuilders.get("/ticket/list?page=0"))
                 .andDo(print())
                 .andExpect(status().is2xxSuccessful())
                 .andExpect(jsonPath("totalPages").value(1))
                 .andExpect(jsonPath("totalElements").value(2))
-                .andExpect(jsonPath("content[0].nameFilm").value("Fast X"))
-                .andExpect(jsonPath("content[0].director").value("TruongDr"))
-                .andExpect(jsonPath("content[0].trailer").value("abc"))
-                .andExpect(jsonPath("content[0].describeFilm").value("abc"))
-                .andExpect(jsonPath("content[0].actor").value("Truong"))
-                .andExpect(jsonPath("content[0].normalSeatPrice").value(50000))
-                .andExpect(jsonPath("content[0].vipSeatPrice").value(80000))
-                .andExpect(jsonPath("content[0].dateStartFilm").value("2023-05-26"))
-                .andExpect(jsonPath("content[0].dateEndFilm").value("2023-05-31"))
-                .andExpect(jsonPath("content[0].imgFilm").value("abc"))
-                .andExpect(jsonPath("content[0].typeFilm.idTypeFilm").value(1));
+                .andExpect(jsonPath("content[0].id_ticket").value(1))
+                .andExpect(jsonPath("content[0].id_customer").value(1))
+                .andExpect(jsonPath("content[0].name_customer").value("Đạt"))
+                .andExpect(jsonPath("content[0].phone").value("0935555123"))
+                .andExpect(jsonPath("content[0].identity_card").value("191912312"))
+                .andExpect(jsonPath("content[0].name_film").value("Harry Potter"))
+                .andExpect(jsonPath("content[0].show_date").value("2023-11-11"))
+                .andExpect(jsonPath("content[0].show_time").value("2023-11-11"))
+                .andExpect(jsonPath("content[0].is_delete").value(false));
     }
 }
