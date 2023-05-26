@@ -1,4 +1,4 @@
-package com.example.dncinema;
+package com.example.dncinema.controller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,7 @@ public class TicketController_findAllTicket {
     @Test
     public void findAllTicket_7() throws Exception {
         this.mockMvc.perform(
-                MockMvcRequestBuilders.get("/ticket/list/null")).andDo(print()).andExpect(status().is4xxClientError());
+                MockMvcRequestBuilders.get("/ticket/list?search=null")).andDo(print()).andExpect(status().is4xxClientError());
     }
 
     /**
@@ -37,7 +37,7 @@ public class TicketController_findAllTicket {
     @Test
     public void findAllTicket_8() throws Exception {
         this.mockMvc.perform(
-                MockMvcRequestBuilders.get("/ticket/list/''")).andDo(print()).andExpect(status().is4xxClientError());
+                MockMvcRequestBuilders.get("/ticket/list?search=")).andDo(print()).andExpect(status().is2xxSuccessful());
     }
 
     /**
@@ -48,7 +48,7 @@ public class TicketController_findAllTicket {
     @Test
     public void findAllTicket_9() throws Exception {
         this.mockMvc.perform(
-                MockMvcRequestBuilders.get("/ticket/list/7")).andDo(print()).andExpect(status().is4xxClientError());
+                MockMvcRequestBuilders.get("/ticket/list?search=abc123")).andDo(print()).andExpect(status().is4xxClientError());
     }
 
     /**

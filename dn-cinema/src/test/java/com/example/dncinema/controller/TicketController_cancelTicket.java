@@ -1,4 +1,4 @@
-package com.example.dncinema;
+package com.example.dncinema.controller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
