@@ -3,7 +3,6 @@ package com.example.dncinema.dto;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import javax.persistence.Column;
 
 public class CustomerDTO implements Validator {
 
@@ -17,6 +16,21 @@ public class CustomerDTO implements Validator {
     private String identityCard;
 
     private CustomerTypeDTO customerTypeDTO;
+
+    public CustomerDTO() {
+    }
+
+    public CustomerDTO(Integer idCustomer, String nameCustomer, Double pointCustomer, String gender, String phone, String address, String email, String identityCard, CustomerTypeDTO customerTypeDTO) {
+        this.idCustomer = idCustomer;
+        this.nameCustomer = nameCustomer;
+        this.pointCustomer = pointCustomer;
+        this.gender = gender;
+        this.phone = phone;
+        this.address = address;
+        this.email = email;
+        this.identityCard = identityCard;
+        this.customerTypeDTO = customerTypeDTO;
+    }
 
     public Integer getIdCustomer() {
         return idCustomer;

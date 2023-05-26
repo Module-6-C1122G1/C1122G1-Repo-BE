@@ -3,11 +3,12 @@ package com.example.dncinema.dto;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import javax.persistence.Column;
-
 public class CustomerTypeDTO implements Validator {
     private Integer idTypeCustomer;
     private String nameTypeCustomer;
+
+    public CustomerTypeDTO() {
+    }
 
     public Integer getIdTypeCustomer() {
         return idTypeCustomer;
