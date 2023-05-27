@@ -1,5 +1,7 @@
 package com.example.dncinema.security.request;
 
+import com.example.dncinema.model.AccountUser;
+
 import java.util.Set;
 
 public class SignUpForm {
