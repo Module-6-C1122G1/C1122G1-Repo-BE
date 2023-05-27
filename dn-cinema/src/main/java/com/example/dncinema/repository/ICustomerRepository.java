@@ -42,7 +42,7 @@ public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
      */
     @Modifying
     @Transactional
-    @Query(value = "insert into customer(name_customer , point_customer , gender , phone , address , email , identity_card , id_type, id_account)" +
+    @Query(value = "insert into customer(name_customer , point_customer , gender , phone , address , email , identity_card , id_type_customer, id)" +
             " values (:name_customer,:point_customer,:gender,:phone , :address , :email , :identity_card , :id_type, :id_account)", nativeQuery = true)
     void saveCustomer(@Param("name_customer") String nameCustomer,
                       @Param("point_customer") Double point_customer,
@@ -67,9 +67,10 @@ public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
      * @param id_account
      */
     @Modifying
+    @Transactional
     @Query(value = "update customer set name_customer = :name_customer, point_customer = :point_customer ," +
             " gender = :gender ,phone = :phone,address = :address ,email = :email,identity_card = :identity_card," +
-            "id_type=:id_type,id_account=:id_account WHERE id_employee = :id_employee", nativeQuery = true)
+            "id_type_customer=:id_type,id=:id_account WHERE id_customer = :id_customer", nativeQuery = true)
     void updateCustomerAccount(@Param("name_customer") String nameCustomer,
                                @Param("point_customer") Double point_customer,
                                @Param("gender") String gender,
@@ -77,15 +78,16 @@ public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
                                @Param("address") String address,
                                @Param("email") String email,
                                @Param("identity_card") String identity_card,
-                               @Param("id_type") Integer id_type,
-                               @Param("id_account") Integer id_account);
+                               @Param("id_type") int id_type,
+                               @Param("id_account") int id_account,
+                               @Param("id_customer") int id_customer);
 
     /**
      * @param customerId
      * @return
      */
-    @Modifying
-    @Query(value = "select * from employee where id_customer = :id_customer", nativeQuery = true)
+    @Transactional
+    @Query(value = "select * from customer where id_customer = :id_customer", nativeQuery = true)
     Customer findByIdCustomer(@Param("id_customer") Integer customerId);
 };
 

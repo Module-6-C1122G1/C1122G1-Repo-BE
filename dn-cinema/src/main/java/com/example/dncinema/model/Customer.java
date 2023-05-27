@@ -11,7 +11,7 @@ public class Customer {
     private Integer idCustomer;
     @Column(name = "name_customer",columnDefinition = "varchar(255)")
     private String nameCustomer;
-    @Column(name = "point_customer")
+    @Column(name = "point_customer" , columnDefinition = "varchar(45)")
     private Double pointCustomer;
     @Column(name = "gender",columnDefinition = "varchar(45)")
     private String gender;
@@ -27,7 +27,7 @@ public class Customer {
     @ManyToOne
     @JoinColumn(name = "id_type_customer")
     private TypeCustomer typeCustomer;
-    @ManyToOne
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "id")
     private AccountUser accountUser;
 

@@ -33,13 +33,19 @@ public class CustomerService implements ICustomerService {
         return iCustomerRepository.findAllCustomerPointHistory(pageable);
     }
 
+    /**
+     * Created by: TruongNN
+     * Date created: 24/05/2023
+     * function: create customer
+     *
+     * @param customerDTO
+     */
     @Override
-    public void createCustomer(CustomerDTO customerDTO, String userName, String password) {
-        AccountUser accountUser = new AccountUser();
-        accountUser.setNameAccount(userName);
-        accountUser.setPasswordAccount(password);
-        iAccountRepository.save(accountUser);
-
+    public void createCustomer(CustomerDTO customerDTO) {
+        iAccountRepository.createAccountUser(customerDTO.getAccountUser().getNameAccount(),
+                customerDTO.getAccountUser().getPasswordAccount());
+        AccountUser accountUser = iAccountRepository
+                .findAccountUserByNameAccount(customerDTO.getAccountUser().getNameAccount());
         Customer customer = new Customer();
         customer.setAccountUser(accountUser);
         BeanUtils.copyProperties(customerDTO, customer);
@@ -52,12 +58,24 @@ public class CustomerService implements ICustomerService {
                 customer.getEmail(),
                 customer.getIdentityCard(),
                 customer.getTypeCustomer().getIdTypeCustomer(),
-                customer.getAccountUser().getId()
+                accountUser.getId()
         );
     }
-
+    /**
+     * Created by: TruongNN
+     * Date created: 24/05/2023
+     * function: Update customer
+     *
+     * @param customerDTO
+     * @param id
+     */
     @Override
     public void updateRegisterCustomer(CustomerDTO customerDTO, Integer id) {
+        AccountUser accountUser = iAccountRepository
+                .findAccountUserByNameAccount(customerDTO.getAccountUser().getNameAccount());
+
+        iAccountRepository.updateAccount(customerDTO.getAccountUser().getNameAccount(), customerDTO.getAccountUser().getPasswordAccount(),
+                accountUser.getId());
         Customer customer = iCustomerRepository.findByIdCustomer(id);
         BeanUtils.copyProperties(customerDTO, customer);
         iCustomerRepository.updateCustomerAccount(
@@ -69,15 +87,23 @@ public class CustomerService implements ICustomerService {
                 customerDTO.getEmail(),
                 customerDTO.getIdentityCard(),
                 customerDTO.getTypeCustomer().getIdTypeCustomer(),
-                customerDTO.getAccountUser().getId()
+                accountUser.getId(),
+                customerDTO.getIdCustomer()
         );
     }
 
+    /**
+     * Created by: TruongNN
+     * Date created: 24/05/2023
+     * function: Find customer by id
+     *
+     * @param id
+     * @return
+     */
     @Override
     public Customer findById(int id) {
         return iCustomerRepository.findByIdCustomer(id);
     }
-
     @Override
     public List<Customer> findAll() {
         return iCustomerRepository.findAll();
