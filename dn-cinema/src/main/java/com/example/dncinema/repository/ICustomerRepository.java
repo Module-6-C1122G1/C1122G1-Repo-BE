@@ -10,5 +10,5 @@ import java.util.List;
 
 public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
     @Query(value = "select * from customer where id_customer= :id",nativeQuery = true)
-    List<Customer> getByIdCus(@Param("id") Integer id);
+    Customer getByIdCus(@Param("id") Integer id);
 }
