@@ -18,7 +18,8 @@ public class Ticket {
     private LocalDate dateBooking;
     @Column(name = "id_qr")
     private String idQr;
-
+    @Column(name = "is_delete")
+    private Boolean isDelete;
     @OneToOne
     @JoinColumn(name = "id_discount")
     private Discount discount;
@@ -50,12 +51,33 @@ public class Ticket {
         this.seat = seat;
     }
 
+    public Ticket(Integer idTicket, String statusTicket, Long priceAfterDiscount, LocalDate dateBooking, String idQr, Boolean isDelete, Discount discount, Employee employee, Customer customer, Seat seat) {
+        this.idTicket = idTicket;
+        this.statusTicket = statusTicket;
+        this.priceAfterDiscount = priceAfterDiscount;
+        this.dateBooking = dateBooking;
+        this.idQr = idQr;
+        this.isDelete = isDelete;
+        this.discount = discount;
+        this.employee = employee;
+        this.customer = customer;
+        this.seat = seat;
+    }
+
     public Integer getIdTicket() {
         return idTicket;
     }
 
     public void setIdTicket(Integer idTicket) {
         this.idTicket = idTicket;
+    }
+
+    public Boolean getDelete() {
+        return isDelete;
+    }
+
+    public void setDelete(Boolean delete) {
+        isDelete = delete;
     }
 
     public String getStatusTicket() {

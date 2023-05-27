@@ -35,6 +35,9 @@ public class Seat {
         this.showRoom = showRoom;
     }
 
+    public Seat(Integer idSeat) {
+    }
+
     public Integer getIdSeat() {
         return idSeat;
     }

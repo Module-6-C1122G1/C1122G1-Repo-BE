@@ -19,6 +19,13 @@ public class MovieService implements IMovieService {
         return movieRepository.findAllFilm(search,pageable);
     }
 
+    /**
+     * @Author QuynhHTN
+     * Date create: 24/05/2023
+     * @param id
+     * @return findFilmById
+     * @Usage_method findById to show detail film
+     */
     @Override
     public Film findFilmById(Integer id) {
         return movieRepository.findFilmById(id);

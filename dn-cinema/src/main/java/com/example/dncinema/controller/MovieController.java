@@ -31,9 +31,9 @@ public class MovieController {
      */
     @GetMapping
     @ResponseStatus()
-    public Page<Film> findAllFilm(@PageableDefault(size = 4)Pageable pageable,
-                                  @RequestParam(required = false, defaultValue = "")String search){
-        Page<Film> films = movieService.findAllFilm(search,pageable);
+    public Page<Film> findAllFilm(@PageableDefault(size = 4) Pageable pageable,
+                                  @RequestParam(required = false, defaultValue = "") String search) {
+        Page<Film> films = movieService.findAllFilm(search, pageable);
         List<Film> filmList = films.toList();
         return new PageImpl<>(filmList, pageable, films.getTotalElements());
     }
@@ -47,11 +47,10 @@ public class MovieController {
     @GetMapping("/detail/{id}")
     public ResponseEntity<?> findFilmById(@PathVariable Integer id) {
         Film film = movieService.findFilmById(id);
-        ShowTime showTime = film.getShowTime();
-
         if (film == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
+        ShowTime showTime = film.getShowTime();
         return new ResponseEntity<>(film, HttpStatus.OK);
 
     }
