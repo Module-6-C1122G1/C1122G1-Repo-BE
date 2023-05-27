@@ -46,6 +46,13 @@ TicketServiceMinh implements ITicketServiceMinh {
     @Autowired
     ISeatRepositoryMinh iSeatRepository;
 
+    /**
+     * save ticket information to the database
+     * @author MinhNV
+     * @param ticketDTO
+     * @throws UnsupportedEncodingException
+     */
+
     @Override
     public void saveTicket(TicketDTO ticketDTO) throws UnsupportedEncodingException {
         UUID uuid = UUID.randomUUID();
@@ -73,6 +80,14 @@ TicketServiceMinh implements ITicketServiceMinh {
 
     }
 
+    /**
+     * Create the Qr code through the input data and save it in the path
+     * @author MinhNV
+     * @param data
+     * @param path
+     * @since 27/05/2023
+     */
+
     public void createQR(String data, String path) {
         try {
             Map<EncodeHintType, ErrorCorrectionLevel> hashMap
@@ -92,6 +107,14 @@ TicketServiceMinh implements ITicketServiceMinh {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * Get QRCode and send email to param email passed in
+     * @author MinhNV
+     * @param email
+     * @param path
+     * @since 27/05/2023
+     */
 
     public void sendEmail(String email, String path) {
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
@@ -122,10 +145,23 @@ TicketServiceMinh implements ITicketServiceMinh {
         }
     }
 
+    /**
+     * @Author MinhNV
+     * @param name
+     * @return object Discount
+     * @since 27/05/2023
+     */
     public Discount findDiscount(String name) {
         return iDiscountRepository.findByNameDiscount(name);
     }
 
+    /**
+     * @author MinhNV
+     * @param ticketDTO
+     * @return Return url to check out page
+     * @throws UnsupportedEncodingException
+     * @since 27/05/2023
+     */
     public String pay(TicketDTO ticketDTO) throws UnsupportedEncodingException {
         StringBuilder seat = new StringBuilder();
         for (int i = 0; i < ticketDTO.getListSeat().length; i++) {
