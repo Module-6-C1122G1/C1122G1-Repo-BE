@@ -23,6 +23,16 @@ public class ShowTime {
     @JoinColumn(name = "id_seat")
     private Seat seat;
 
+    public ShowTime() {
+    }
+
+    public ShowTime(Integer idShowTime, LocalDate showDate, String showTime, ShowRoom showRoom, Seat seat) {
+        this.idShowTime = idShowTime;
+        this.showDate = showDate;
+        this.showTime = showTime;
+        this.showRoom = showRoom;
+        this.seat = seat;
+    }
     public Integer getIdShowTime() {
         return idShowTime;
     }
