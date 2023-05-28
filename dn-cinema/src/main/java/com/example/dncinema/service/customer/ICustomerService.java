@@ -8,11 +8,19 @@ import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
+import java.time.LocalDate;
+
 public interface ICustomerService {
 
     Page<Customer> findAllCustomerTicket(Pageable pageable);
 
     Page<Customer> findAllCustomerPointHistory(Pageable pageable);
+
+    Page<Customer> searchPlusPoint(Pageable pageable , LocalDate dateStart,LocalDate dateEnd);
+
+    Page<Customer> searchUsePoint(Pageable pageable , LocalDate dateStart , LocalDate dateEnd);
+
+
     /**
      * Created by: TruongNN
      * Date created: 24/05/2023

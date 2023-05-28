@@ -12,6 +12,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+
 import java.util.List;
 
 @Service
@@ -31,6 +33,16 @@ public class CustomerService implements ICustomerService {
     @Override
     public Page<Customer> findAllCustomerPointHistory(Pageable pageable) {
         return iCustomerRepository.findAllCustomerPointHistory(pageable);
+    }
+
+    @Override
+    public Page<Customer> searchPlusPoint(Pageable pageable, LocalDate dateStart, LocalDate dateEnd) {
+        return iCustomerRepository.findAllPlusPoint(pageable,dateStart,dateEnd);
+    }
+
+    @Override
+    public Page<Customer> searchUsePoint(Pageable pageable, LocalDate dateStart, LocalDate dateEnd) {
+        return iCustomerRepository.findAllUsePoint(pageable,dateStart,dateEnd);
     }
 
     /**
