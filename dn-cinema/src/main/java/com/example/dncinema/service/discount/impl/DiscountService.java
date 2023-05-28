@@ -41,6 +41,11 @@ public class DiscountService implements IDiscountService {
     }
 
     @Override
+    public Discount findById(int id) {
+        return discountRepository.findById(id).get();
+    }
+
+    @Override
     public void save(Discount discount) {
         discountRepository.save(discount);
     }
@@ -51,9 +56,11 @@ public class DiscountService implements IDiscountService {
      * @param id "Tham số id - Nhằm tìm kiếm id của khuyến mãi mà người dùng muốn xóa".
      */
     @Override
-    public void delete(Long id) {
-        Discount discount = discountRepository.findById(id);
-        discount.setDeleted(true);
-        discountRepository.save(discount);
+    public boolean delete(int id) {
+        try {
+          discountRepository.deleteById(id);
+        } catch (IllegalArgumentException e) {
+            return false;
+        } return true;
     }
 }
