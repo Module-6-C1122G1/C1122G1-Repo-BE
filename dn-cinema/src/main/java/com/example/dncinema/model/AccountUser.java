@@ -6,7 +6,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "account_user")
+@Table(name = "account_user", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"name_account"})
+})
 public class AccountUser {
     @Id
     @Column(name = "name_account", columnDefinition = "varchar(255)")
@@ -20,6 +22,22 @@ public class AccountUser {
     public AccountUser(String nameAccount, String passwordAccount) {
         this.nameAccount = nameAccount;
         this.passwordAccount = passwordAccount;
+
+        this.roles = roles;
+    }
+
+    public AccountUser(String username, String encode) {
+        this.nameAccount = username;
+        this.passwordAccount = encode;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+
     }
 
     public String getNameAccount() {
