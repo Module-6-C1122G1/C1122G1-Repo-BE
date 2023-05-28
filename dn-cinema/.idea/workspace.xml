@@ -4,10 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="">
+    <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="update ticket and movie detail">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/discount/DiscountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/discount/DiscountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/discount/DiscountDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/discount/DiscountDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Discount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Discount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/discount/IDiscountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/discount/IDiscountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/discount/IDiscountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/discount/IDiscountService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/discount/impl/DiscountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/discount/impl/DiscountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/DiscountRestController_createDiscount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/DiscountRestController_createDiscount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/DiscountRestController_findDiscountById.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/DiscountRestController_findDiscountById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/DiscountRestController_updateDiscount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/DiscountRestController_updateDiscount.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,41 +53,10 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="feature/discount" />
+        <entry key="$PROJECT_DIR$/.." value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
-  <component name="GithubProjectSettings">
-    <option name="branchProtectionPatterns">
-      <list>
-        <option value="main" />
-      </list>
-    </option>
-  </component>
-  <component name="JpbToolWindowState">
-    <option name="myId2FirstActivated">
-      <map>
-        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
-        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
-      </map>
-    </option>
-    <option name="myId2Visible">
-      <map>
-        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
-        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
-      </map>
-    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -91,22 +68,7 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../cxxg-spring-boot-junit-5" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-  </component>
-  <component name="RunManager" selected="Gradle.DiscountRestController_getListDiscount.getListDiscount_6">
+  <component name="RunManager" selected="Spring Boot.DnCinemaApplication">
     <configuration name="DiscountRestController_getDeleteDiscount.delete_id_25" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -212,17 +174,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DnCinemaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="dn-cinema.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.dncinema.DnCinemaApplication" />
@@ -251,10 +202,10 @@
       <workItem from="1684725037272" duration="2620000" />
       <workItem from="1684894781635" duration="240000" />
       <workItem from="1684918773391" duration="4934000" />
-      <workItem from="1684933669914" duration="2191000" />
-      <workItem from="1684938158388" duration="5964000" />
-      <workItem from="1684986171761" duration="354000" />
-      <workItem from="1684997833504" duration="4635000" />
+      <workItem from="1684932746560" duration="17532000" />
+      <workItem from="1685017539540" duration="3000" />
+      <workItem from="1685064516492" duration="12945000" />
+      <workItem from="1685084511005" duration="3270000" />
     </task>
     <task id="LOCAL-00001" summary="update ticket and movie detail">
       <created>1684943344442</created>
@@ -263,49 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684943344442</updated>
     </task>
-    <task id="LOCAL-00002" summary="update develop/discount">
-      <created>1684986400497</created>
+    <task id="LOCAL-00002" summary="update ticket and movie detail">
+      <created>1684997099784</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1684986400497</updated>
+      <updated>1684997099784</updated>
     </task>
-    <task id="LOCAL-00003" summary="update ticket and movie detail">
-      <created>1684986826188</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1684986826188</updated>
-    </task>
-    <task id="LOCAL-00004" summary="update ticket and movie detail">
-      <created>1684987265253</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1684987265253</updated>
-    </task>
-    <task id="LOCAL-00005" summary="TuanLT - Update JUnit5 - Test Discount List">
-      <created>1685004575936</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1685004575936</updated>
-    </task>
-    <task id="LOCAL-00006" summary="TuanLT - Update JUnit5 - Test Discount List and Delete Discount">
-      <created>1685006767505</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1685006767505</updated>
-    </task>
-    <task id="LOCAL-00007" summary="TuanLT - Update JUnit5 - Test Discount List and Delete Discount">
-      <created>1685006806282</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1685006806282</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,14 +237,25 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update develop/discount" />
     <MESSAGE value="update ticket and movie detail" />
-    <MESSAGE value="update entity Discount.imageDiscount" />
-    <MESSAGE value="TuanLT - Update JUnit5 - Test Discount List" />
-    <MESSAGE value="TuanLT - Update JUnit5 - Test Discount List and Delete Discount" />
-    <option name="LAST_COMMIT_MESSAGE" value="TuanLT - Update JUnit5 - Test Discount List and Delete Discount" />
+    <option name="LAST_COMMIT_MESSAGE" value="update ticket and movie detail" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/DiscountRestController_updateDiscount.java</url>
+          <line>258</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.example.dncinema.dto.discount.DiscountDTO" memberName="dateStart" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
