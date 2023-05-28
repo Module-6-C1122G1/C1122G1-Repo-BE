@@ -106,13 +106,13 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="Gradle.DiscountRestController_getListDiscount.getListDiscount_6">
+  <component name="RunManager" selected="Spring Boot.DnCinemaApplication">
     <configuration name="DiscountRestController_getDeleteDiscount.delete_id_25" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.DiscountRestController_getDeleteDiscount.delete_id_25&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.discount.DiscountRestController_getDeleteDiscount.delete_id_25&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -133,7 +133,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.DiscountRestController_getDeleteDiscount.delete_id_26&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.discount.DiscountRestController_getDeleteDiscount.delete_id_26&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -154,7 +154,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.DiscountRestController_getDeleteDiscount.delete_id_27&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.discount.DiscountRestController_getDeleteDiscount.delete_id_27&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -175,7 +175,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.DiscountRestController_getDeleteDiscount.delete_id_28&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.discount.DiscountRestController_getDeleteDiscount.delete_id_28&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -196,7 +196,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.DiscountRestController_getListDiscount.getListDiscount_6&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.discount.DiscountRestController_getListDiscount.getListDiscount_6&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
