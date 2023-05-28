@@ -12,6 +12,9 @@ import java.time.LocalDate;
 public interface IDiscountService {
     Page<DiscountDTO> findByName(String name, Pageable pageable);
 
+    Discount findById(int id);
+
+    void save(Discount discount);
 //    void delete(Long id);
     /**
      * Create by: HoangPT,
@@ -37,6 +40,7 @@ public interface IDiscountService {
             "from discount where id_discount = :idDiscount", nativeQuery = true)
     Discount findDiscountById(@Param("idDiscount") int idDiscount);
 
+    boolean delete(int id);
     /**
      * Create by: HoangPT,
      * Date create : 24/05/2023

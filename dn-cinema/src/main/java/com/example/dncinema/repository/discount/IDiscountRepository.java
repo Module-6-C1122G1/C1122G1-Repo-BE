@@ -14,9 +14,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.time.LocalDate;
 @Repository
 public interface IDiscountRepository extends JpaRepository<Discount, Integer> {
-    @Query(value = "SELECT * FROM Discount WHERE name_discount like concat('%',:name,'%') and is_deleted = false order by id_discount asc", nativeQuery = true)
+    /**
+     * Author: TuanLT
+     * Date: 24/05/2023
+     * @param name
+     * @param pageable
+     * @return
+     */
+
+    @Query(value = "SELECT * FROM Discount WHERE name_discount like concat('%',:name,'%') and is_deleted = false", nativeQuery = true)
     Page<Discount> searchName(@Param("name") String name, Pageable pageable);
 
+//    Discount findById(int id);
 //    Discount findById(Long id);
     /**
      * Create by: HoangPT,

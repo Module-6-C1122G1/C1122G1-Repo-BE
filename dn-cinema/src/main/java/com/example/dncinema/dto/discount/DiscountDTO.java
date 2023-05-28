@@ -8,10 +8,17 @@ import org.springframework.validation.Validator;
 import javax.validation.constraints.*;
 
 public class DiscountDTO implements Validator {
+    private int id;
+    @NotBlank(message = "Discount name cannot be left blank")
     private Integer idDiscount;
     @NotBlank(message = "Tên khuyến mãi không được để trống")
     @Length(max = 255,message = "Tên khuyến mãi không dài quá 255 từ")
     private String nameDiscount;
+    @NotBlank(message = "Cannot be left blank")
+    private String imageDiscount;
+    private LocalDate dateStart;
+    private LocalDate dateEnd;
+    @NotBlank(message = "Describe cannot be left blank")
     @NotNull(message = "Ngày bắt đầu không được để trống")
     @DateTimeFormat(fallbackPatterns = "yyyy-MM-dd")
     private String dateStart;
@@ -28,35 +35,43 @@ public class DiscountDTO implements Validator {
     public DiscountDTO() {
     }
 
-    public Integer getIdDiscount() {
-        return idDiscount;
+    public int getId() {
+        return id;
     }
 
-    public void setIdDiscount(Integer idDiscount) {
-        this.idDiscount = idDiscount;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNameDiscount() {
         return nameDiscount;
     }
 
+    public String getImageDiscount() {
+        return imageDiscount;
+    }
+
+    public void setImageDiscount(String imageDiscount) {
+        this.imageDiscount = imageDiscount;
+    }
+
     public void setNameDiscount(String nameDiscount) {
         this.nameDiscount = nameDiscount;
     }
 
-    public String getDateStart() {
+    public LocalDate getDateStart() {
         return dateStart;
     }
 
-    public void setDateStart(String dateStart) {
+    public void setDateStart(LocalDate dateStart) {
         this.dateStart = dateStart;
     }
 
-    public String getDateEnd() {
+    public LocalDate getDateEnd() {
         return dateEnd;
     }
 
-    public void setDateEnd(String dateEnd) {
+    public void setDateEnd(LocalDate dateEnd) {
         this.dateEnd = dateEnd;
     }
 

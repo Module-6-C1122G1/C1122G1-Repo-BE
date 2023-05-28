@@ -2,48 +2,38 @@ package com.example.dncinema.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+
 @Entity
 @Table(name = "discount")
 public class Discount {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_discount")
-    private Integer idDiscount;
+    @Column(name = "id")
+    private int id;
     @Column(name = "name_discount", columnDefinition = "varchar(255)")
     private String nameDiscount;
-    @Column(name = "date_start", columnDefinition = "varchar(255)")
-    private String dateStart;
-    @Column(name = "date_end", columnDefinition = "varchar(255)")
-    private String dateEnd;
+    @Column(name = "image_discount", columnDefinition = "varchar(255)")
+    private String imageDiscount;
+    @Column(name = "date_start", columnDefinition = "date")
+    private LocalDate dateStart;
+    @Column(name = "date_end", columnDefinition = "date")
+    private LocalDate dateEnd;
     @Column(name = "describe_discount", columnDefinition = "varchar(255)")
     private String describeDiscount;
     @Column(name = "percent_discount")
     private Double percentDiscount;
-
-
-
     @Column(columnDefinition = "boolean default false")
     private boolean isDeleted;
 
     public Discount() {
     }
 
-    public Discount(Integer idDiscount, String nameDiscount, String dateStart, String dateEnd, String describeDiscount, Double percentDiscount, boolean isDeleted) {
-        this.idDiscount = idDiscount;
-        this.nameDiscount = nameDiscount;
-        this.dateStart = dateStart;
-        this.dateEnd = dateEnd;
-        this.describeDiscount = describeDiscount;
-        this.percentDiscount = percentDiscount;
-        this.isDeleted = isDeleted;
+    public int getId() {
+        return id;
     }
 
-    public Integer getIdDiscount() {
-        return idDiscount;
-    }
-
-    public void setIdDiscount(Integer idDiscount) {
-        this.idDiscount = idDiscount;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNameDiscount() {
@@ -54,19 +44,27 @@ public class Discount {
         this.nameDiscount = nameDiscount;
     }
 
-    public String getDateStart() {
+    public String getImageDiscount() {
+        return imageDiscount;
+    }
+
+    public void setImageDiscount(String imageDiscount) {
+        this.imageDiscount = imageDiscount;
+    }
+
+    public LocalDate getDateStart() {
         return dateStart;
     }
 
-    public void setDateStart(String dateStart) {
+    public void setDateStart(LocalDate dateStart) {
         this.dateStart = dateStart;
     }
 
-    public String getDateEnd() {
+    public LocalDate getDateEnd() {
         return dateEnd;
     }
 
-    public void setDateEnd(String dateEnd) {
+    public void setDateEnd(LocalDate dateEnd) {
         this.dateEnd = dateEnd;
     }
 

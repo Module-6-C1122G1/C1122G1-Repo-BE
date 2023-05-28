@@ -21,7 +21,7 @@ public class DiscountService implements IDiscountService {
     private IDiscountRepository discountRepository;
 
     /**
-     * Create: TuanLT.
+     * Author: TuanLT.
      * Date: 24/05/2023.
      * @param name "Tham số name dùng để tìm kiếm trong danh sách khuyến mãi".
      * @param pageable "Tham số pageable dùng để phân trang".
@@ -41,8 +41,18 @@ public class DiscountService implements IDiscountService {
         return new PageImpl<>(discountDTOList, discountPage.getPageable(), discountPage.getTotalElements());
     }
 
+    @Override
+    public Discount findById(int id) {
+        return discountRepository.findById(id).get();
+    }
+
+    @Override
+    public void save(Discount discount) {
+        discountRepository.save(discount);
+    }
+
     /**
-     * Create: TuanLT.
+     * Author: TuanLT.
      * Date: 24/05/2023.
      * @param id "Tham số id - Nhằm tìm kiếm id của khuyến mãi mà người dùng muốn xóa".
      */
@@ -75,6 +85,12 @@ public class DiscountService implements IDiscountService {
      * @param idDiscount
      */
     @Override
+    public boolean delete(int id) {
+        try {
+          discountRepository.deleteById(id);
+        } catch (IllegalArgumentException e) {
+            return false;
+        } return true;
     public Discount findDiscountById(int idDiscount) {
         return discountRepository.findDiscountById(idDiscount);
     }
