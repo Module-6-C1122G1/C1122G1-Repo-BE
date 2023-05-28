@@ -4,16 +4,20 @@ import com.example.dncinema.model.Discount;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.time.LocalDate;
-
+@Repository
 public interface IDiscountRepository extends JpaRepository<Discount, Integer> {
     @Query(value = "SELECT * FROM Discount WHERE name_discount like concat('%',:name,'%') and is_deleted = false order by id_discount asc", nativeQuery = true)
     Page<Discount> searchName(@Param("name") String name, Pageable pageable);
 
-    Discount findById(Long id);
+//    Discount findById(Long id);
     /**
      * Create by: HoangPT,
      * Date create : 24/05/2023
@@ -25,13 +29,15 @@ public interface IDiscountRepository extends JpaRepository<Discount, Integer> {
      * @Param("describeDiscount") String describeDiscount,
      * @Param("percentDiscount") Double percentDiscount
      */
-    @Query(value = "insert into discount( name_discount, date_start,date_end, describe_discount, percent_discount) " +
-            "value (:nameDiscount,:dateStart,:dateEnd,:describeDiscount,:percentDiscount)",
+    @Transactional
+    @Modifying
+    @Query(value = "insert into discount(name_discount, date_start,date_end, describe_discount, percent_discount) " +
+            "values (:nameDiscount,:dateStart,:dateEnd,:describeDiscount,:percentDiscount)",
             nativeQuery = true)
     void createDiscount(
             @Param("nameDiscount") String nameDiscount,
-            @Param("dateStart") LocalDate dateStart,
-            @Param("dateEnd") LocalDate dateEnd,
+            @Param("dateStart") String dateStart,
+            @Param("dateEnd") String dateEnd,
             @Param("describeDiscount") String describeDiscount,
             @Param("percentDiscount") Double percentDiscount
     );
@@ -43,9 +49,9 @@ public interface IDiscountRepository extends JpaRepository<Discount, Integer> {
      *
      * @param idDiscount
      */
-    @Query(value = "select name_discount, date_start,date_end, describe_discount, percent_discount " +
+    @Query(value = "select id_discount, name_discount, date_start,date_end, describe_discount, percent_discount,is_deleted " +
             "from discount where id_discount = :idDiscount", nativeQuery = true)
-    Discount findDiscountById(@Param("idDiscount") int idDiscount);
+    Discount findDiscountById(int idDiscount);
 
     /**
      * Create by: HoangPT,
@@ -59,8 +65,9 @@ public interface IDiscountRepository extends JpaRepository<Discount, Integer> {
      * @Param("describeDiscount") String describeDiscount
      * @Param("percentDiscount") String percentDiscount
      */
-    @Query(value = "update discount " +
-            "set idDiscount = :idDiscount," +
+    @Modifying
+    @Transactional
+    @Query(value = "update discount set " +
             "name_discount = :nameDiscount," +
             "date_start = :dateStart," +
             "date_end = :dateEnd," +
@@ -69,11 +76,7 @@ public interface IDiscountRepository extends JpaRepository<Discount, Integer> {
             " WHERE id_discount = :idDiscount",
             nativeQuery = true)
     void updateDiscount(
-            @Param("idDiscount") Integer idDiscount,
-            @Param("nameDiscount") String nameDiscount,
-            @Param("dateStart") LocalDate dateStart,
-            @Param("dateEnd") LocalDate dateEnd,
-            @Param("describeDiscount") String describeDiscount,
-            @Param("percentDiscount") Double percentDiscount
+             Integer idDiscount,String nameDiscount,String dateStart, String dateEnd,
+             String describeDiscount, Double percentDiscount
     );
 }

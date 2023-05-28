@@ -46,12 +46,12 @@ public class DiscountService implements IDiscountService {
      * Date: 24/05/2023.
      * @param id "Tham số id - Nhằm tìm kiếm id của khuyến mãi mà người dùng muốn xóa".
      */
-    @Override
-    public void delete(Long id) {
-        Discount discount = discountRepository.findById(id);
-        discount.setDeleted(true);
-        discountRepository.save(discount);
-    }
+//    @Override
+//    public void delete(Long id) {
+//        Discount discount = discountRepository.findById(id);
+//        discount.setDeleted(true);
+//        discountRepository.save(discount);
+//    }
     /**
      * Create by: HoangPT,
      * Date create : 24/05/2023
@@ -64,7 +64,7 @@ public class DiscountService implements IDiscountService {
      * @Param("percentDiscount") Double percentDiscount
      */
     @Override
-    public void createDiscount(String nameDiscount, LocalDate dateStart, LocalDate dateEnd, String describeDiscount, Double percentDiscount) {
+    public void createDiscount(String nameDiscount, String dateStart, String dateEnd, String describeDiscount, Double percentDiscount) {
         discountRepository.createDiscount(nameDiscount, dateStart, dateEnd, describeDiscount, percentDiscount);
     }
     /**
@@ -91,7 +91,7 @@ public class DiscountService implements IDiscountService {
      * @Param("percentDiscount") String percentDiscount
      */
     @Override
-    public void updateDiscount(Integer idDiscount, String nameDiscount, LocalDate dateStart, LocalDate dateEnd, String describeDiscount, Double percentDiscount) {
+    public void updateDiscount(Integer idDiscount, String nameDiscount, String dateStart, String dateEnd, String describeDiscount, Double percentDiscount) {
         discountRepository.updateDiscount(idDiscount, nameDiscount, dateStart, dateEnd, describeDiscount, percentDiscount);
     }
 }

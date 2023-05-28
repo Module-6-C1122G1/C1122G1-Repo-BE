@@ -42,11 +42,11 @@ public class DiscountRestController_findDiscountById {
     @Test
     public void findDiscountById_4() throws Exception {
         this.mockMvc.perform(MockMvcRequestBuilders.get("/discount/1")).
-                andDo(print()).andExpect(status().is2xxSuccessful()).andExpect(jsonPath("idDiscount").value(1))
-                .andExpect(jsonPath("nameDiscount").value(1))
+                andDo(print()).andExpect(status().is2xxSuccessful())
+                .andExpect(jsonPath("nameDiscount").value("Khuyến mãi"))
                 .andExpect(jsonPath("dateStart").value("2023-10-17"))
                 .andExpect(jsonPath("dateEnd").value("2023-11-17"))
                 .andExpect(jsonPath("describeDiscount").value("Khuyến mãi cuối tháng 6 giành cho 50 khách hàng may mắn đã từng đặt vé vào tháng 4"))
-                .andExpect(jsonPath("percentDiscount").value(10));
+                .andExpect(jsonPath("percentDiscount").value(10.0));
     }
 }

@@ -12,7 +12,7 @@ import java.time.LocalDate;
 public interface IDiscountService {
     Page<DiscountDTO> findByName(String name, Pageable pageable);
 
-    void delete(Long id);
+//    void delete(Long id);
     /**
      * Create by: HoangPT,
      * Date create : 24/05/2023
@@ -24,7 +24,7 @@ public interface IDiscountService {
      * @Param("describeDiscount") String describeDiscount,
      * @Param("percentDiscount") Double percentDiscount
      */
-    void createDiscount(String nameDiscount, LocalDate dateStart, LocalDate dateEnd, String describeDiscount,
+    void createDiscount(String nameDiscount, String dateStart, String dateEnd, String describeDiscount,
                         Double percentDiscount);
     /**
      * Create by: HoangPT,
@@ -58,6 +58,6 @@ public interface IDiscountService {
             "percent_discount = :percentDiscount" +
             " WHERE id_discount = :idDiscount",
             nativeQuery = true)
-    void updateDiscount(Integer idDiscount, String nameDiscount, LocalDate dateStart, LocalDate dateEnd,
+    void updateDiscount(Integer idDiscount, String nameDiscount, String dateStart, String dateEnd,
                         String describeDiscount, Double percentDiscount);
 }

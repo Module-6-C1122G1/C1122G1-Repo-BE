@@ -6,7 +6,6 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import javax.validation.constraints.*;
-import java.time.LocalDate;
 
 public class DiscountDTO implements Validator {
     private Integer idDiscount;
@@ -15,10 +14,10 @@ public class DiscountDTO implements Validator {
     private String nameDiscount;
     @NotNull(message = "Ngày bắt đầu không được để trống")
     @DateTimeFormat(fallbackPatterns = "yyyy-MM-dd")
-    private LocalDate dateStart;
+    private String dateStart;
     @NotNull(message = "Ngày kết thúc không được để trống")
     @DateTimeFormat(fallbackPatterns = "yyyy-MM-dd")
-    private LocalDate dateEnd;
+    private String dateEnd;
     @NotBlank(message = "Chi tiết khuyến mãi không được để trống")
     private String describeDiscount;
     @NotNull(message = "Phần trăm giảm giá không được để trống")
@@ -45,19 +44,19 @@ public class DiscountDTO implements Validator {
         this.nameDiscount = nameDiscount;
     }
 
-    public LocalDate getDateStart() {
+    public String getDateStart() {
         return dateStart;
     }
 
-    public void setDateStart(LocalDate dateStart) {
+    public void setDateStart(String dateStart) {
         this.dateStart = dateStart;
     }
 
-    public LocalDate getDateEnd() {
+    public String getDateEnd() {
         return dateEnd;
     }
 
-    public void setDateEnd(LocalDate dateEnd) {
+    public void setDateEnd(String dateEnd) {
         this.dateEnd = dateEnd;
     }
 

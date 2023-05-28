@@ -11,10 +11,10 @@ public class Discount {
     private Integer idDiscount;
     @Column(name = "name_discount", columnDefinition = "varchar(255)")
     private String nameDiscount;
-    @Column(name = "date_start", columnDefinition = "date")
-    private LocalDate dateStart;
-    @Column(name = "date_end", columnDefinition = "date")
-    private LocalDate dateEnd;
+    @Column(name = "date_start", columnDefinition = "varchar(255)")
+    private String dateStart;
+    @Column(name = "date_end", columnDefinition = "varchar(255)")
+    private String dateEnd;
     @Column(name = "describe_discount", columnDefinition = "varchar(255)")
     private String describeDiscount;
     @Column(name = "percent_discount")
@@ -28,13 +28,14 @@ public class Discount {
     public Discount() {
     }
 
-    public Discount(Integer idDiscount, String nameDiscount, LocalDate dateStart, LocalDate dateEnd, String describeDiscount, Double percentDiscount) {
+    public Discount(Integer idDiscount, String nameDiscount, String dateStart, String dateEnd, String describeDiscount, Double percentDiscount, boolean isDeleted) {
         this.idDiscount = idDiscount;
         this.nameDiscount = nameDiscount;
         this.dateStart = dateStart;
         this.dateEnd = dateEnd;
         this.describeDiscount = describeDiscount;
         this.percentDiscount = percentDiscount;
+        this.isDeleted = isDeleted;
     }
 
     public Integer getIdDiscount() {
@@ -53,19 +54,19 @@ public class Discount {
         this.nameDiscount = nameDiscount;
     }
 
-    public LocalDate getDateStart() {
+    public String getDateStart() {
         return dateStart;
     }
 
-    public void setDateStart(LocalDate dateStart) {
+    public void setDateStart(String dateStart) {
         this.dateStart = dateStart;
     }
 
-    public LocalDate getDateEnd() {
+    public String getDateEnd() {
         return dateEnd;
     }
 
-    public void setDateEnd(LocalDate dateEnd) {
+    public void setDateEnd(String dateEnd) {
         this.dateEnd = dateEnd;
     }
 

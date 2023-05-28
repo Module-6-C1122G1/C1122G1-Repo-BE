@@ -28,11 +28,11 @@ public class DiscountRestController_updateDiscount {
         DiscountDTO discountDTO=new DiscountDTO();
         discountDTO.setIdDiscount(1);
         discountDTO.setNameDiscount(null);
-        discountDTO.setDateStart(LocalDate.parse("2023-10-17"));
-        discountDTO.setDateEnd(LocalDate.parse("2023-10-17"));
+        discountDTO.setDateStart("2023-10-17");
+        discountDTO.setDateEnd("2023-10-17");
         discountDTO.setDescribeDiscount("Khuyến mãi tháng 10");
         discountDTO.setPercentDiscount(10.0);
-        this.mockMvc.perform(MockMvcRequestBuilders.patch("discount/update/1").
+        this.mockMvc.perform(MockMvcRequestBuilders.patch("/discount/update/1").
                         content(this.objectMapper.writeValueAsString(discountDTO)).contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print()).andExpect(status().is4xxClientError());
     }
@@ -45,11 +45,11 @@ public class DiscountRestController_updateDiscount {
         DiscountDTO discountDTO=new DiscountDTO();
         discountDTO.setIdDiscount(1);
         discountDTO.setNameDiscount("");
-        discountDTO.setDateStart(LocalDate.parse("2023-10-17"));
-        discountDTO.setDateEnd(LocalDate.parse("2023-10-17"));
+        discountDTO.setDateStart("2023-10-17");
+        discountDTO.setDateEnd("2023-10-17");
         discountDTO.setDescribeDiscount("Khuyến mãi tháng 10");
         discountDTO.setPercentDiscount(10.0);
-        this.mockMvc.perform(MockMvcRequestBuilders.patch("discount/update/1").
+        this.mockMvc.perform(MockMvcRequestBuilders.patch("/discount/update/1").
                         content(this.objectMapper.writeValueAsString(discountDTO)).contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print()).andExpect(status().is4xxClientError());
     }
@@ -62,11 +62,11 @@ public class DiscountRestController_updateDiscount {
         DiscountDTO discountDTO=new DiscountDTO();
         discountDTO.setIdDiscount(1);
         discountDTO.setNameDiscount("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-        discountDTO.setDateStart(LocalDate.parse("2023-10-17"));
-        discountDTO.setDateEnd(LocalDate.parse("2023-10-17"));
+        discountDTO.setDateStart("2023-10-17");
+        discountDTO.setDateEnd("2023-10-17");
         discountDTO.setDescribeDiscount("Khuyến mãi tháng 10");
         discountDTO.setPercentDiscount(10.0);
-        this.mockMvc.perform(MockMvcRequestBuilders.patch("discount/update/1").
+        this.mockMvc.perform(MockMvcRequestBuilders.patch("/discount/update/1").
                         content(this.objectMapper.writeValueAsString(discountDTO)).contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print()).andExpect(status().is4xxClientError());
     }
@@ -80,10 +80,10 @@ public class DiscountRestController_updateDiscount {
         discountDTO.setIdDiscount(1);
         discountDTO.setNameDiscount("Khuyến mãi");
         discountDTO.setDateStart(null);
-        discountDTO.setDateEnd(LocalDate.parse("2023-10-17"));
+        discountDTO.setDateEnd("2023-10-17");
         discountDTO.setDescribeDiscount("Khuyến mãi tháng 10");
         discountDTO.setPercentDiscount(10.0);
-        this.mockMvc.perform(MockMvcRequestBuilders.patch("discount/update/1").
+        this.mockMvc.perform(MockMvcRequestBuilders.patch("/discount/update/1").
                         content(this.objectMapper.writeValueAsString(discountDTO)).contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print()).andExpect(status().is4xxClientError());
     }
@@ -96,11 +96,11 @@ public class DiscountRestController_updateDiscount {
         DiscountDTO discountDTO=new DiscountDTO();
         discountDTO.setIdDiscount(1);
         discountDTO.setNameDiscount("Khuyến mãi");
-        discountDTO.setDateStart(LocalDate.parse("2023917"));
-        discountDTO.setDateEnd(LocalDate.parse("2023-10-17"));
+        discountDTO.setDateStart("2023917");
+        discountDTO.setDateEnd("2023-10-17");
         discountDTO.setDescribeDiscount("Khuyến mãi tháng 10");
         discountDTO.setPercentDiscount(10.0);
-        this.mockMvc.perform(MockMvcRequestBuilders.patch("discount/update/1").
+        this.mockMvc.perform(MockMvcRequestBuilders.patch("/discount/update/1").
                         content(this.objectMapper.writeValueAsString(discountDTO)).contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print()).andExpect(status().is4xxClientError());
     }
@@ -113,11 +113,11 @@ public class DiscountRestController_updateDiscount {
         DiscountDTO discountDTO=new DiscountDTO();
         discountDTO.setIdDiscount(1);
         discountDTO.setNameDiscount("Khuyến mãi");
-        discountDTO.setDateStart(LocalDate.parse("2023-10-17"));
+        discountDTO.setDateStart("2023-10-17");
         discountDTO.setDateEnd(null);
         discountDTO.setDescribeDiscount("Khuyến mãi tháng 10");
         discountDTO.setPercentDiscount(10.0);
-        this.mockMvc.perform(MockMvcRequestBuilders.patch("discount/update/1").
+        this.mockMvc.perform(MockMvcRequestBuilders.patch("/discount/update/1").
                         content(this.objectMapper.writeValueAsString(discountDTO)).contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print()).andExpect(status().is4xxClientError());
     }
@@ -131,11 +131,11 @@ public class DiscountRestController_updateDiscount {
         DiscountDTO discountDTO=new DiscountDTO();
         discountDTO.setIdDiscount(1);
         discountDTO.setNameDiscount("Khuyến mãi");
-        discountDTO.setDateStart(LocalDate.parse("2023-9-17"));
-        discountDTO.setDateEnd(LocalDate.parse("20231017"));
+        discountDTO.setDateStart("2023-9-17");
+        discountDTO.setDateEnd("20231017");
         discountDTO.setDescribeDiscount("Khuyến mãi tháng 10");
         discountDTO.setPercentDiscount(10.0);
-        this.mockMvc.perform(MockMvcRequestBuilders.patch("discount/update/1").
+        this.mockMvc.perform(MockMvcRequestBuilders.patch("/discount/update/1").
                         content(this.objectMapper.writeValueAsString(discountDTO)).contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print()).andExpect(status().is4xxClientError());
     }
@@ -148,11 +148,11 @@ public class DiscountRestController_updateDiscount {
         DiscountDTO discountDTO=new DiscountDTO();
         discountDTO.setIdDiscount(1);
         discountDTO.setNameDiscount("Khuyến mãi");
-        discountDTO.setDateStart(LocalDate.parse("2023-10-17"));
-        discountDTO.setDateEnd(LocalDate.parse("2023-11-17"));
+        discountDTO.setDateStart("2023-10-17");
+        discountDTO.setDateEnd("2023-11-17");
         discountDTO.setDescribeDiscount("");
         discountDTO.setPercentDiscount(10.0);
-        this.mockMvc.perform(MockMvcRequestBuilders.patch("discount/update/1").
+        this.mockMvc.perform(MockMvcRequestBuilders.patch("/discount/update/1").
                         content(this.objectMapper.writeValueAsString(discountDTO)).contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print()).andExpect(status().is4xxClientError());
     }
@@ -165,11 +165,11 @@ public class DiscountRestController_updateDiscount {
         DiscountDTO discountDTO=new DiscountDTO();
         discountDTO.setIdDiscount(1);
         discountDTO.setNameDiscount("Khuyến mãi");
-        discountDTO.setDateStart(LocalDate.parse("2023-10-17"));
-        discountDTO.setDateEnd(LocalDate.parse("2023-11-17"));
+        discountDTO.setDateStart("2023-10-17");
+        discountDTO.setDateEnd("2023-11-17");
         discountDTO.setDescribeDiscount(null);
         discountDTO.setPercentDiscount(10.0);
-        this.mockMvc.perform(MockMvcRequestBuilders.patch("discount/update/1").
+        this.mockMvc.perform(MockMvcRequestBuilders.patch("/discount/update/1").
                         content(this.objectMapper.writeValueAsString(discountDTO)).contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print()).andExpect(status().is4xxClientError());
     }
@@ -182,11 +182,11 @@ public class DiscountRestController_updateDiscount {
         DiscountDTO discountDTO=new DiscountDTO();
         discountDTO.setIdDiscount(1);
         discountDTO.setNameDiscount("Khuyến mãi");
-        discountDTO.setDateStart(LocalDate.parse("2023-10-17"));
-        discountDTO.setDateEnd(LocalDate.parse("2023-11-17"));
+        discountDTO.setDateStart("2023-10-17");
+        discountDTO.setDateEnd("2023-11-17");
         discountDTO.setDescribeDiscount("Khuyến mãi tháng 10");
         discountDTO.setPercentDiscount(null);
-        this.mockMvc.perform(MockMvcRequestBuilders.patch("discount/update/1").
+        this.mockMvc.perform(MockMvcRequestBuilders.patch("/discount/update/1").
                         content(this.objectMapper.writeValueAsString(discountDTO)).contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print()).andExpect(status().is4xxClientError());
     }
@@ -199,13 +199,14 @@ public class DiscountRestController_updateDiscount {
         DiscountDTO discountDTO=new DiscountDTO();
         discountDTO.setIdDiscount(1);
         discountDTO.setNameDiscount("Khuyến mãi");
-        discountDTO.setDateStart(LocalDate.parse("2023-10-17"));
-        discountDTO.setDateEnd(LocalDate.parse("2023-11-17"));
+        discountDTO.setDateStart("2023-10-17");
+        discountDTO.setDateEnd("2023-11-17");
         discountDTO.setDescribeDiscount("Khuyến mãi tháng 10");
-        discountDTO.setPercentDiscount(Double.valueOf("asd"));
-        this.mockMvc.perform(MockMvcRequestBuilders.patch("discount/update/1").
-                        content(this.objectMapper.writeValueAsString(discountDTO)).contentType(MediaType.APPLICATION_JSON_VALUE))
-                .andDo(print()).andExpect(status().is4xxClientError());
+        try{discountDTO.setPercentDiscount(Double.valueOf("asd"));} catch (Exception e){
+            this.mockMvc.perform(MockMvcRequestBuilders.patch("/discount/update/1").
+                            content(this.objectMapper.writeValueAsString(discountDTO)).contentType(MediaType.APPLICATION_JSON_VALUE))
+                    .andDo(print()).andExpect(status().is4xxClientError());
+        }
     }
     /**
      * test the validation of field percentDiscount is not higher than 100
@@ -216,11 +217,11 @@ public class DiscountRestController_updateDiscount {
         DiscountDTO discountDTO=new DiscountDTO();
         discountDTO.setIdDiscount(1);
         discountDTO.setNameDiscount("Khuyến mãi");
-        discountDTO.setDateStart(LocalDate.parse("2023-10-17"));
-        discountDTO.setDateEnd(LocalDate.parse("2023-11-17"));
+        discountDTO.setDateStart("2023-10-17");
+        discountDTO.setDateEnd("2023-11-17");
         discountDTO.setDescribeDiscount("Khuyến mãi tháng 10");
         discountDTO.setPercentDiscount(101.0);
-        this.mockMvc.perform(MockMvcRequestBuilders.patch("discount/update/1").
+        this.mockMvc.perform(MockMvcRequestBuilders.patch("/discount/update/1").
                         content(this.objectMapper.writeValueAsString(discountDTO)).contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print()).andExpect(status().is4xxClientError());
     }
@@ -233,11 +234,11 @@ public class DiscountRestController_updateDiscount {
         DiscountDTO discountDTO=new DiscountDTO();
         discountDTO.setIdDiscount(1);
         discountDTO.setNameDiscount("Khuyến mãi");
-        discountDTO.setDateStart(LocalDate.parse("2023-10-17"));
-        discountDTO.setDateEnd(LocalDate.parse("2023-11-17"));
+        discountDTO.setDateStart("2023-10-17");
+        discountDTO.setDateEnd("2023-11-17");
         discountDTO.setDescribeDiscount("Khuyến mãi tháng 10");
         discountDTO.setPercentDiscount(0.0);
-        this.mockMvc.perform(MockMvcRequestBuilders.patch("discount/update/1").
+        this.mockMvc.perform(MockMvcRequestBuilders.patch("/discount/update/1").
                         content(this.objectMapper.writeValueAsString(discountDTO)).contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print()).andExpect(status().is4xxClientError());
     }
@@ -248,13 +249,12 @@ public class DiscountRestController_updateDiscount {
     @Test
     public void updateDiscount() throws Exception{
         DiscountDTO discountDTO=new DiscountDTO();
-        discountDTO.setIdDiscount(1);
         discountDTO.setNameDiscount("Khuyến mãi");
-        discountDTO.setDateStart(LocalDate.parse("2023-10-17"));
-        discountDTO.setDateEnd(LocalDate.parse("2023-11-17"));
+        discountDTO.setDateStart("2023-10-17");
+        discountDTO.setDateEnd("2023-11-17");
         discountDTO.setDescribeDiscount("Khuyến mãi tháng 10");
         discountDTO.setPercentDiscount(10.0);
-        this.mockMvc.perform(MockMvcRequestBuilders.patch("discount/update/1").
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/discount/update/1").
                         content(this.objectMapper.writeValueAsString(discountDTO)).contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print()).andExpect(status().is2xxSuccessful());
     }

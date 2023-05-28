@@ -14,6 +14,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.time.LocalDate;
 
 @RestController
 @RequestMapping("/discount")
@@ -43,11 +44,11 @@ public class DiscountController {
      * @param id "Tìm kiếm id của 1 khuyến mãi và xóa nó".
      */
 
-    @DeleteMapping("")
-    @ResponseStatus(HttpStatus.OK)
-    public void delete(@RequestParam(required = false) Long id) {
-        discountService.delete(id);
-    }
+//    @DeleteMapping("")
+//    @ResponseStatus(HttpStatus.OK)
+//    public void delete(@RequestParam(required = false) Long id) {
+//        discountService.delete(id);
+//    }
 
     /**
      * Create by: HoangPT,
@@ -79,7 +80,7 @@ public class DiscountController {
      * @param idDiscount
      */
     @GetMapping("/{idDiscount}")
-    public ResponseEntity<Discount> findDiscountByID(@PathVariable Integer idDiscount) {
+    public ResponseEntity<Discount> findDiscountByID(@PathVariable("idDiscount") Integer idDiscount) {
         Discount discount = discountService.findDiscountById(idDiscount);
         if (discount == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -99,8 +100,8 @@ public class DiscountController {
      * @Param("describeDiscount") String describeDiscount
      * @Param("percentDiscount") String percentDiscount
      */
-    @PatchMapping("/update/{idDiscount}")
-    public ResponseEntity<?> updateDiscount(@PathVariable("idDiscount") Integer idDiscount ,@ModelAttribute DiscountDTO discountDTO, BindingResult bindingResult) {
+    @PutMapping("/update/{idDiscount}")
+    public ResponseEntity<?> updateDiscount(@PathVariable Integer idDiscount ,@Valid @ModelAttribute DiscountDTO discountDTO, BindingResult bindingResult) {
         new DiscountDTO().validate(discountDTO,bindingResult);
         discountDTO.setIdDiscount(idDiscount);
         if (bindingResult.hasErrors()) {
