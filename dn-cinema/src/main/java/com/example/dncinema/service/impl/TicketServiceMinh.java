@@ -55,6 +55,7 @@ TicketServiceMinh implements ITicketServiceMinh {
 
     @Override
     public void saveTicket(TicketDTO ticketDTO) throws UnsupportedEncodingException {
+<<<<<<< HEAD
         UUID uuid = UUID.randomUUID();
         String seats = "";
         for (int i = 0; i < ticketDTO.getListSeat().length; i++) {
@@ -63,6 +64,12 @@ TicketServiceMinh implements ITicketServiceMinh {
         String data = "Seat" + " " + seats;
         String path = "C:\\Users\\ADMIN\\Desktop\\du_an_be\\dn-cinema-api\\dn-cinema\\src\\main\\resources\\qr\\QR" + uuid + ".png";
         createQR(data, path);
+=======
+        int a = 0;
+        a++;
+        String path = "\\src\\main\\resources\\qr\\QR" + a + ".png";
+        createQR(ticketDTO.toString(), a, path);
+>>>>>>> 49a1c67a5c5b36af56d0d58eed6b4e4ca883eb8e
         Ticket ticket;
         for (int i = 0; i < ticketDTO.getListSeat().length; i++) {
 

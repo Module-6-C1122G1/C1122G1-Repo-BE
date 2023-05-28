@@ -1,4 +1,4 @@
 package com.example.dncinema.controller;
 
-public class CustomerController {
+public class BookingController {
 }
