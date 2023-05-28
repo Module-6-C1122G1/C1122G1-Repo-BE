@@ -53,6 +53,18 @@ public class Ticket {
         this.customer = customer;
         this.seat = seat;
     }
+    public Ticket(String codeTicket, boolean statusTicket, long priceAfterDiscount, LocalDate dateBooking, String idQr, Discount discount, Employee employee, Customer customer, Seat seat) {
+        this.codeTicket = codeTicket;
+        this.statusTicket = statusTicket;
+        this.priceAfterDiscount = priceAfterDiscount;
+        this.dateBooking = dateBooking;
+        this.idQr = idQr;
+        this.discount = discount;
+        this.employee = employee;
+        this.customer = customer;
+        this.seat = seat;
+    }
+
 
     public String getCodeTicket() {
         return codeTicket;

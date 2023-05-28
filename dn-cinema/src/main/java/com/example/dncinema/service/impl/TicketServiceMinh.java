@@ -2,9 +2,10 @@ package com.example.dncinema.service.impl;
 
 import com.example.dncinema.config.Config;
 import com.example.dncinema.dto.TicketDTO;
-import com.example.dncinema.model.Discount;
-import com.example.dncinema.model.Seat;
-import com.example.dncinema.model.Ticket;
+import com.example.dncinema.model.*;
+import com.example.dncinema.repository.ICustomerRepository;
+import com.example.dncinema.repository.IDiscountRepositoryMinh;
+import com.example.dncinema.repository.ISeatRepositoryMinh;
 import com.example.dncinema.repository.ITicketRepositoryMinh;
 import com.example.dncinema.service.ITicketServiceMinh;
 import com.google.zxing.BarcodeFormat;
@@ -37,25 +38,64 @@ TicketServiceMinh implements ITicketServiceMinh {
     @Autowired
     private ITicketRepositoryMinh iTicketRepository;
     @Autowired
+    private ICustomerRepository iCustomerRepository;
+    @Autowired
     JavaMailSender javaMailSender;
+    @Autowired
+    IDiscountRepositoryMinh iDiscountRepository;
+    @Autowired
+    ISeatRepositoryMinh iSeatRepository;
+
+    /**
+     * save ticket information to the database
+     * @author MinhNV
+     * @param ticketDTO
+     * @throws UnsupportedEncodingException
+     */
 
     @Override
     public void saveTicket(TicketDTO ticketDTO) throws UnsupportedEncodingException {
+<<<<<<< HEAD
+        UUID uuid = UUID.randomUUID();
+        String seats = "";
+        for (int i = 0; i < ticketDTO.getListSeat().length; i++) {
+            seats += ticketDTO.getListSeat()[i].toString() + " ";
+        }
+        String data = "Seat" + " " + seats;
+        String path = "C:\\Users\\ADMIN\\Desktop\\du_an_be\\dn-cinema-api\\dn-cinema\\src\\main\\resources\\qr\\QR" + uuid + ".png";
+        createQR(data, path);
+=======
         int a = 0;
         a++;
         String path = "\\src\\main\\resources\\qr\\QR" + a + ".png";
         createQR(ticketDTO.toString(), a, path);
+>>>>>>> 49a1c67a5c5b36af56d0d58eed6b4e4ca883eb8e
         Ticket ticket;
         for (int i = 0; i < ticketDTO.getListSeat().length; i++) {
-            Seat seat = iTicketRepository.findByIdSeat(ticketDTO.getListSeat()[i]);
-            ticket = new Ticket(1, "", false, ticketDTO.getPrice(), LocalDate.now(), path, ticketDTO.getDiscount(), null, ticketDTO.getCustomer(), seat);
-            iTicketRepository.saveTicket(ticket);
+
+            Seat seat = iSeatRepository.getByIdSeat(ticketDTO.getListSeat()[i]);
+
+            Customer customer = iCustomerRepository.getByIdCus(ticketDTO.getIdCustomer());
+
+            ticket = new Ticket("45", false, ticketDTO.getPrice(), LocalDate.now(), path, ticketDTO.getDiscount(), null, customer, seat);
+
+            iTicketRepository.save(ticket);
         }
-        pay(ticketDTO.getPrice());
-        sendEmail(ticketDTO.getCustomer().getEmail(), path);
+        Customer cus = iCustomerRepository.getByIdCus(ticketDTO.getIdCustomer());
+        pay(ticketDTO);
+        sendEmail(cus.getEmail(), path);
+
     }
 
-    public void createQR(String data, int a, String path) {
+    /**
+     * Create the Qr code through the input data and save it in the path
+     * @author MinhNV
+     * @param data
+     * @param path
+     * @since 27/05/2023
+     */
+
+    public void createQR(String data, String path) {
         try {
             Map<EncodeHintType, ErrorCorrectionLevel> hashMap
                     = new HashMap<EncodeHintType,
@@ -74,6 +114,14 @@ TicketServiceMinh implements ITicketServiceMinh {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * Get QRCode and send email to param email passed in
+     * @author MinhNV
+     * @param email
+     * @param path
+     * @since 27/05/2023
+     */
 
     public void sendEmail(String email, String path) {
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
@@ -104,11 +152,29 @@ TicketServiceMinh implements ITicketServiceMinh {
         }
     }
 
-    public Discount findDiscount(String nameDiscount) {
-        return iTicketRepository.findByNameDiscount(nameDiscount);
+    /**
+     * @Author MinhNV
+     * @param name
+     * @return object Discount
+     * @since 27/05/2023
+     */
+    public Discount findDiscount(String name) {
+        return iDiscountRepository.findByNameDiscount(name);
     }
 
-    public String pay(long amount) throws UnsupportedEncodingException {
+    /**
+     * @author MinhNV
+     * @param ticketDTO
+     * @return Return url to check out page
+     * @throws UnsupportedEncodingException
+     * @since 27/05/2023
+     */
+    public String pay(TicketDTO ticketDTO) throws UnsupportedEncodingException {
+        StringBuilder seat = new StringBuilder();
+        for (int i = 0; i < ticketDTO.getListSeat().length; i++) {
+            seat.append(ticketDTO.getListSeat()[i]);
+        }
+
         String vnp_Version = "2.1.0";
         String vnp_Command = "pay";
         String vnp_TxnRef = Config.getRandomNumber(8);
@@ -119,14 +185,15 @@ TicketServiceMinh implements ITicketServiceMinh {
         vnp_Params.put("vnp_Version", vnp_Version);
         vnp_Params.put("vnp_Command", vnp_Command);
         vnp_Params.put("vnp_TmnCode", vnp_TmnCode);
-        vnp_Params.put("vnp_Amount", String.valueOf(amount));
+        vnp_Params.put("vnp_Amount", String.valueOf(ticketDTO.getPrice()));
         vnp_Params.put("vnp_CurrCode", "VND");
         vnp_Params.put("vnp_BankCode", "NCB");
 
         vnp_Params.put("vnp_TxnRef", vnp_TxnRef);
         vnp_Params.put("vnp_OrderInfo", "Thanh toan don hang:" + vnp_TxnRef);
         vnp_Params.put("vnp_Locale", "vn");
-
+        vnp_Params.put("vnp_ReturnUrl", Config.vnp_Returnurl + "?idCus=" + ticketDTO.getIdCustomer() + "&idFilm="
+                + ticketDTO.getIdFilm() + "&idDiscount=" + ticketDTO.getDiscount().getIdDiscount() + "&seat=" +seat + "&price=" + ticketDTO.getPrice());
         Calendar cld = Calendar.getInstance(TimeZone.getTimeZone("Etc/GMT+7"));
         SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
         String vnp_CreateDate = formatter.format(cld.getTime());
@@ -162,7 +229,6 @@ TicketServiceMinh implements ITicketServiceMinh {
         String queryUrl = query.toString();
         String vnp_SecureHash = Config.hmacSHA512(Config.vnp_HashSecret, hashData.toString());
         queryUrl += "&vnp_SecureHash=" + vnp_SecureHash;
-        String paymentUrl = Config.vnp_PayUrl + "?" + queryUrl;
-        return paymentUrl;
+        return Config.vnp_PayUrl + "?" + queryUrl;
     }
 }
