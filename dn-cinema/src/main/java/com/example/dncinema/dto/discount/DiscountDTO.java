@@ -7,7 +7,7 @@ import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
 
 public class DiscountDTO implements Validator {
-    private Long id;
+    private int id;
     @NotBlank(message = "Discount name cannot be left blank")
     private String nameDiscount;
     @NotBlank(message = "Cannot be left blank")
@@ -21,11 +21,11 @@ public class DiscountDTO implements Validator {
     public DiscountDTO() {
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

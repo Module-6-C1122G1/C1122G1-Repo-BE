@@ -9,7 +9,7 @@ public class Discount {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id;
+    private int id;
     @Column(name = "name_discount", columnDefinition = "varchar(255)")
     private String nameDiscount;
     @Column(name = "image_discount", columnDefinition = "varchar(255)")
@@ -28,11 +28,11 @@ public class Discount {
     public Discount() {
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

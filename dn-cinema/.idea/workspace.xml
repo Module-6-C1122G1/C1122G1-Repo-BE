@@ -6,13 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/discount/DiscountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/discount/DiscountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/discount/DiscountDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/discount/DiscountDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Discount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Discount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/discount/IDiscountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/discount/IDiscountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/discount/IDiscountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/discount/IDiscountService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/discount/impl/DiscountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/discount/impl/DiscountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/dncinema/discount/DiscountRestController_getDeleteDiscount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/discount/DiscountRestController_getDeleteDiscount.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -27,7 +35,12 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="dn-cinema" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -106,13 +119,13 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="Gradle.DiscountRestController_getListDiscount.getListDiscount_6">
+  <component name="RunManager" selected="Spring Boot.DnCinemaApplication">
     <configuration name="DiscountRestController_getDeleteDiscount.delete_id_25" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.DiscountRestController_getDeleteDiscount.delete_id_25&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.discount.DiscountRestController_getDeleteDiscount.delete_id_25&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -133,7 +146,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.DiscountRestController_getDeleteDiscount.delete_id_26&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.discount.DiscountRestController_getDeleteDiscount.delete_id_26&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -154,7 +167,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.DiscountRestController_getDeleteDiscount.delete_id_27&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.discount.DiscountRestController_getDeleteDiscount.delete_id_27&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -175,7 +188,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.DiscountRestController_getDeleteDiscount.delete_id_28&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.discount.DiscountRestController_getDeleteDiscount.delete_id_28&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -196,7 +209,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.DiscountRestController_getListDiscount.getListDiscount_6&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.discount.DiscountRestController_getListDiscount.getListDiscount_6&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -232,11 +245,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.DiscountRestController_getListDiscount.getListDiscount_6" />
         <item itemvalue="Gradle.DiscountRestController_getDeleteDiscount.delete_id_28" />
         <item itemvalue="Gradle.DiscountRestController_getDeleteDiscount.delete_id_27" />
         <item itemvalue="Gradle.DiscountRestController_getDeleteDiscount.delete_id_26" />
         <item itemvalue="Gradle.DiscountRestController_getDeleteDiscount.delete_id_25" />
+        <item itemvalue="Gradle.DiscountRestController_getListDiscount.getListDiscount_6" />
       </list>
     </recent_temporary>
   </component>

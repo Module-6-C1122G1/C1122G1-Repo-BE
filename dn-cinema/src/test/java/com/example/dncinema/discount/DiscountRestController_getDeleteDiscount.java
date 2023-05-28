@@ -25,7 +25,7 @@ public class DiscountRestController_getDeleteDiscount {
 
     @Test
     public void delete_id_25() throws Exception {
-        this.mockMvc.perform(MockMvcRequestBuilders.delete("/discount?id=null"))
+        this.mockMvc.perform(MockMvcRequestBuilders.delete("/discount/"))
                 .andDo(print())
                 .andExpect(MockMvcResultMatchers.status().is4xxClientError());
     }
@@ -39,7 +39,7 @@ public class DiscountRestController_getDeleteDiscount {
     @Test
     public void delete_id_26() throws Exception {
         this.mockMvc.perform(
-                        MockMvcRequestBuilders.delete("/discount?id=''"))
+                        MockMvcRequestBuilders.delete("/discount/''"))
                 .andDo(print())
                 .andExpect(MockMvcResultMatchers.status().is4xxClientError());
     }
@@ -53,7 +53,7 @@ public class DiscountRestController_getDeleteDiscount {
     @Test
     public void delete_id_27() throws Exception {
         this.mockMvc.perform(
-                        MockMvcRequestBuilders.delete("/discount/id=999"))
+                        MockMvcRequestBuilders.delete("/discount/999"))
                 .andDo(print())
                 .andExpect(MockMvcResultMatchers.status().is4xxClientError());
     }

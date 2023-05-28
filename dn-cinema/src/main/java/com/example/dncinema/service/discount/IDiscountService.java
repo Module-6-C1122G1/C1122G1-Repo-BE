@@ -8,9 +8,9 @@ import org.springframework.data.domain.Pageable;
 public interface IDiscountService {
     Page<DiscountDTO> findByName(String name, Pageable pageable);
 
-//    Discount findById(Long id);
+    Discount findById(int id);
 //
     void save(Discount discount);
 
-    void delete(Long id);
+    boolean delete(int id);
 }
