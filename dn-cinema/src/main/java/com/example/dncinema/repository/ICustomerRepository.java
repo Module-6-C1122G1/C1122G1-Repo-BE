@@ -1,5 +1,6 @@
 package com.example.dncinema.repository;
 
+import com.example.dncinema.model.AccountUser;
 import com.example.dncinema.model.Customer;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -35,7 +36,6 @@ public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
 
     @Query(value = "select date_booking from ticket where date_booking between '2023-01-01' and '2023-12-30'" , nativeQuery = true)
     Page<Customer> findAllUsePoint (Pageable pageable , LocalDate startDate , LocalDate dateEnd);
-}
 
     /**
      * @param nameCustomer
@@ -97,6 +97,9 @@ public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
     @Transactional
     @Query(value = "select * from customer where id_customer = :id_customer", nativeQuery = true)
     Customer findByIdCustomer(@Param("id_customer") Integer customerId);
+
+    @Query(value = "select * from customer where email like :email", nativeQuery = true)
+    Customer findByEmail(String email);
 };
 
 

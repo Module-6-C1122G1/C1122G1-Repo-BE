@@ -1,7 +1,11 @@
 package com.example.dncinema.controller.customer;
 
+import com.example.dncinema.dto.accounUserDTO.AccountUserDTO;
 import com.example.dncinema.dto.customerDTO.CustomerDTO;
+import com.example.dncinema.model.AccountUser;
 import com.example.dncinema.model.Customer;
+import com.example.dncinema.security.response.ResponseMessage;
+import com.example.dncinema.service.accountUser.IAccountUserService;
 import com.example.dncinema.service.customer.ICustomerService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +23,8 @@ import java.util.List;
 public class RegisterCustomerController {
     @Autowired
     private ICustomerService customerService;
+    @Autowired
+    private IAccountUserService accountUserService;
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("")
@@ -33,16 +39,17 @@ public class RegisterCustomerController {
      * Function: add data customer  into Database
      *
      * @param customerDTO
-     * @param bindingResult
      * @return
      */
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/create")
-    public ResponseEntity<?> createCustomerAccount(@Valid @RequestBody CustomerDTO customerDTO,
-                                                   BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            return new ResponseEntity<>(bindingResult.getAllErrors(), HttpStatus.BAD_REQUEST);
+    public ResponseEntity<?> createCustomerAccount(@Valid @RequestBody CustomerDTO customerDTO) {
+        if (accountUserService.existByNameAccount(customerDTO.getAccountUser().getNameAccount())) {
+            return new ResponseEntity<>(new ResponseMessage("The username existed !!, Try again"), HttpStatus.OK);
+        }
+        if (customerService.existByEmail(customerDTO.getEmail())){
+            return new ResponseEntity<>(new ResponseMessage("The email existed!!, Try again"), HttpStatus.OK);
         }
         customerService.createCustomer(customerDTO);
         return new ResponseEntity<>(HttpStatus.OK);
@@ -51,7 +58,7 @@ public class RegisterCustomerController {
     /**
      * Created by: TruongNN
      * Date created: 24/05/2023
-     * Function: Update data employee  into Database
+     * Function: Update data customer  into Database
      *
      * @param customerDTO
      * @param id
@@ -68,6 +75,29 @@ public class RegisterCustomerController {
         Customer customer = customerService.findById(id);
         BeanUtils.copyProperties(customerDTO, customer);
         customerService.updateRegisterCustomer(customerDTO, id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    /**
+     * Created by: TruongNN
+     * Date created: 25/05/2023
+     * Function: Update password  into Database
+     *
+     * @param accountUserDTO
+     * @param id
+     * @param bindingResult
+     * @return
+     */
+    @ResponseStatus(HttpStatus.OK)
+    @PatchMapping("/resetPassword/{id}")
+    public ResponseEntity<?> resetPasswordAccount(@Valid @RequestBody AccountUserDTO accountUserDTO,
+                                                   @PathVariable("id") Integer id, BindingResult bindingResult) {
+        if(bindingResult.hasErrors()){
+            return new ResponseEntity<>(bindingResult.getAllErrors(),HttpStatus.BAD_REQUEST);
+        }
+        AccountUser accountUser = accountUserService.findById(id);
+        BeanUtils.copyProperties(accountUserDTO, accountUser);
+        accountUserService.updatePassword(accountUserDTO,id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

@@ -47,9 +47,9 @@ public interface ICustomerService {
      *
      * @param id
      */
-
-
     Customer findById(int id);
     List<Customer> findAll();
+
+    Boolean existByEmail(String email);
 
 }

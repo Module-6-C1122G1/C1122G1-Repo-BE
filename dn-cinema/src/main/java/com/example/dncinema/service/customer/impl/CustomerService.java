@@ -3,13 +3,14 @@ package com.example.dncinema.service.customer.impl;
 import com.example.dncinema.dto.customerDTO.CustomerDTO;
 import com.example.dncinema.model.AccountUser;
 import com.example.dncinema.model.Customer;
-import com.example.dncinema.repository.IAccountRepository;
+import com.example.dncinema.repository.IAccountUserRepository;
 import com.example.dncinema.repository.ICustomerRepository;
 import com.example.dncinema.service.customer.ICustomerService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -22,7 +23,9 @@ public class CustomerService implements ICustomerService {
     @Autowired
     private ICustomerRepository iCustomerRepository;
     @Autowired
-    private IAccountRepository iAccountRepository;
+    private IAccountUserRepository iAccountUserRepository;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
 
     @Override
@@ -54,9 +57,9 @@ public class CustomerService implements ICustomerService {
      */
     @Override
     public void createCustomer(CustomerDTO customerDTO) {
-        iAccountRepository.createAccountUser(customerDTO.getAccountUser().getNameAccount(),
-                customerDTO.getAccountUser().getPasswordAccount());
-        AccountUser accountUser = iAccountRepository
+        iAccountUserRepository.createAccountUser(customerDTO.getAccountUser().getNameAccount(),
+                passwordEncoder.encode(customerDTO.getAccountUser().getPasswordAccount()));
+        AccountUser accountUser = iAccountUserRepository
                 .findAccountUserByNameAccount(customerDTO.getAccountUser().getNameAccount());
         Customer customer = new Customer();
         customer.setAccountUser(accountUser);
@@ -83,11 +86,11 @@ public class CustomerService implements ICustomerService {
      */
     @Override
     public void updateRegisterCustomer(CustomerDTO customerDTO, Integer id) {
-        AccountUser accountUser = iAccountRepository
+        AccountUser accountUser = iAccountUserRepository
                 .findAccountUserByNameAccount(customerDTO.getAccountUser().getNameAccount());
 
-        iAccountRepository.updateAccount(customerDTO.getAccountUser().getNameAccount(), customerDTO.getAccountUser().getPasswordAccount(),
-                accountUser.getId());
+//        iAccountUserRepository.updateAccount(customerDTO.getAccountUser().getNameAccount(), customerDTO.getAccountUser().getPasswordAccount(),
+//                accountUser.getId());
         Customer customer = iCustomerRepository.findByIdCustomer(id);
         BeanUtils.copyProperties(customerDTO, customer);
         iCustomerRepository.updateCustomerAccount(
@@ -119,5 +122,14 @@ public class CustomerService implements ICustomerService {
     @Override
     public List<Customer> findAll() {
         return iCustomerRepository.findAll();
+    }
+
+    @Override
+    public Boolean existByEmail(String email) {
+        Customer customer = iCustomerRepository.findByEmail(email);
+        if (customer != null) {
+            return true;
+        }
+        return false;
     }
 }

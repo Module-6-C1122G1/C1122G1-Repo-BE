@@ -1,8 +1,12 @@
 package com.example.dncinema.service.accountUser.impl;
 
+import com.example.dncinema.dto.accounUserDTO.AccountUserDTO;
+import com.example.dncinema.dto.customerDTO.CustomerDTO;
 import com.example.dncinema.model.AccountUser;
+import com.example.dncinema.model.Customer;
 import com.example.dncinema.repository.IAccountUserRepository;
 import com.example.dncinema.service.accountUser.IAccountUserService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -88,4 +92,21 @@ public class accountUserService implements IAccountUserService {
         }
         return numberRandom;
     }
+
+    @Override
+    public void updatePassword(AccountUserDTO accountUserDTO, Integer id) {
+        AccountUser accountUser = accountUserRepository.findAccountUserById(id);
+        BeanUtils.copyProperties(accountUserDTO, accountUser);
+        accountUserRepository.savePassword(
+                accountUserDTO.getPasswordAccount(),
+                accountUserDTO.getId()
+        );
+    }
+
+
+    @Override
+    public AccountUser findById(int id) {
+        return accountUserRepository.findAccountUserById(id);
+    }
+
 }
