@@ -45,8 +45,8 @@ public class Ticket {
     public Ticket() {
     }
 
-    public Ticket(Integer idTicket, String codeTicket, boolean statusTicket, long priceAfterDiscount, LocalDate dateBooking, String idQr, Boolean isDelete, Discount discount, Employee employee, Customer customer, Seat seat) {
-        this.idTicket = idTicket;
+
+    public Ticket(String codeTicket, Boolean statusTicket, long priceAfterDiscount, LocalDate dateBooking, String idQr,Boolean isDelete, Discount discount, Employee employee, Customer customer, Seat seat) {
         this.codeTicket = codeTicket;
         this.statusTicket = statusTicket;
         this.priceAfterDiscount = priceAfterDiscount;
@@ -59,8 +59,9 @@ public class Ticket {
         this.seat = seat;
     }
 
-    public Ticket(String codeTicket, boolean statusTicket, long priceAfterDiscount, LocalDate dateBooking, String idQr, Boolean isDelete, Discount discount, Employee employee, Customer customer, Seat seat) {
-        this.codeTicket = codeTicket;
+
+    public Ticket(Integer idTicket, Boolean statusTicket, Long priceAfterDiscount, LocalDate dateBooking, String idQr, Boolean isDelete, Discount discount, Employee employee, Customer customer, Seat seat) {
+        this.idTicket = idTicket;
         this.statusTicket = statusTicket;
         this.priceAfterDiscount = priceAfterDiscount;
         this.dateBooking = dateBooking;
@@ -88,7 +89,8 @@ public class Ticket {
         isDelete = delete;
     }
 
-    public boolean getStatusTicket() {
+
+    public Boolean getStatusTicket() {
         return statusTicket;
     }
 

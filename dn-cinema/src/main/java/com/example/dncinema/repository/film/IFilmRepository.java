@@ -8,12 +8,13 @@
 //import org.springframework.stereotype.Repository;
 //
 //import java.time.LocalDate;
+//import java.util.Optional;
 //
 //@Repository
 //public interface IFilmRepository extends JpaRepository<Film,Integer> {
 //    @Modifying
 //    @Query(value = "insert into film(actor, date_end_film, date_start_film, describe_film, director, img_film, movie_label, name_film, normal_seat_price, studio_film, time_film, trailer, vip_seat_price, id_show_time, id_type_film)" +
-//            "values(:actor, :date_end_film, :date_start_film, :describe_film, :director, :img_film, :movie_label, :name_film, :normal_seat_price, :studio_film, :time_film, :trailer, :vip_seat_price, :id_show_time, :id_type_film);", nativeQuery = true)
+//            "values(:actor, :date_end_film, :date_start_film, :describe_film, :director, :img_film, :movie_label, :name_film, :normal_seat_price, :studio_film, :time_film, :trailer, :vip_seat_price, :id_show_time, :id_type_film)", nativeQuery = true)
 //    void insertFilm(@Param("actor") String actor,
 //                    @Param("dateEndFilm")LocalDate dateEndFilm,
 //                    @Param("dateStartFilm") LocalDate dateStartFilm,
@@ -47,7 +48,7 @@
 //            "f.id_show_time = :?," +
 //            "f.id_type_film = :?" +
 //            "where f.id_film = :id_film",nativeQuery = true)
-////    Film updateFilm(String actor,LocalDate dateEndFilm,LocalDate dateStartFilm,String describeFilm, String director, String imgFilm, String movieLabel, String nameFilm, Double normalSeatPrice,
-////                    String studioFilm, Integer timeFilm, String trailer, Double vipSeatPrice, Integer idShowTime,Integer idTypeFilm);
-//    Film updateFilm(Film film);
+//    Film updateFilm(String actor,LocalDate dateEndFilm,LocalDate dateStartFilm,String describeFilm, String director, String imgFilm, String movieLabel, String nameFilm, Double normalSeatPrice,
+//                    String studioFilm, Integer timeFilm, String trailer, Double vipSeatPrice, Integer idShowTime,Integer idTypeFilm);
+//    void updateFilm(Film film);
 //}
