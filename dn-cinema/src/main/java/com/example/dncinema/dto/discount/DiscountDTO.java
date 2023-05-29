@@ -4,16 +4,13 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import javax.validation.constraints.NotBlank;
-import java.time.LocalDate;
 
 public class DiscountDTO implements Validator {
-    private int id;
+    private int idDiscount;
     @NotBlank(message = "Discount name cannot be left blank")
     private String nameDiscount;
     @NotBlank(message = "Cannot be left blank")
     private String imageDiscount;
-    private LocalDate dateStart;
-    private LocalDate dateEnd;
     @NotBlank(message = "Describe cannot be left blank")
     private String describeDiscount;
     private Double percentDiscount;
@@ -21,12 +18,12 @@ public class DiscountDTO implements Validator {
     public DiscountDTO() {
     }
 
-    public int getId() {
-        return id;
+    public int getIdDiscount() {
+        return idDiscount;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdDiscount(int idDiscount) {
+        this.idDiscount = idDiscount;
     }
 
     public String getNameDiscount() {
@@ -43,22 +40,6 @@ public class DiscountDTO implements Validator {
 
     public void setNameDiscount(String nameDiscount) {
         this.nameDiscount = nameDiscount;
-    }
-
-    public LocalDate getDateStart() {
-        return dateStart;
-    }
-
-    public void setDateStart(LocalDate dateStart) {
-        this.dateStart = dateStart;
-    }
-
-    public LocalDate getDateEnd() {
-        return dateEnd;
-    }
-
-    public void setDateEnd(LocalDate dateEnd) {
-        this.dateEnd = dateEnd;
     }
 
     public String getDescribeDiscount() {
