@@ -33,8 +33,7 @@ import java.time.LocalDate;
 import java.util.*;
 
 @Service
-public class
-TicketServiceMinh implements ITicketServiceMinh {
+public class TicketServiceMinh implements ITicketServiceMinh {
     @Autowired
     private ITicketRepositoryMinh iTicketRepository;
     @Autowired

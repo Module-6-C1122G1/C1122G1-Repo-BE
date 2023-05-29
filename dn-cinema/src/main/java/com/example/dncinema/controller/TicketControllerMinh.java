@@ -5,7 +5,6 @@ import com.example.dncinema.model.Customer;
 import com.example.dncinema.model.Discount;
 import com.example.dncinema.model.Seat;
 import com.example.dncinema.repository.ICustomerRepository;
-import com.example.dncinema.repository.IDiscountRepositoryMinh;
 import com.example.dncinema.repository.ISeatRepositoryMinh;
 import com.example.dncinema.service.ITicketServiceMinh;
 import org.springframework.beans.factory.annotation.Autowired;
