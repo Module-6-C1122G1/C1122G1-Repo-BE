@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/movie")
+@RequestMapping("/api/public/movie")
 @CrossOrigin("*")
 public class MovieController {
     @Autowired
@@ -44,13 +44,9 @@ public class MovieController {
     @GetMapping("/detail/{id}")
     public ResponseEntity<?> findFilmById(@PathVariable Integer id) {
         Film film = movieService.findFilmById(id);
-        ShowTime showTime = film.getShowTime();
-
         if (film == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity<>(film, HttpStatus.OK);
-
     }
-
 }
