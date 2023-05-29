@@ -86,7 +86,6 @@ public class CustomerDTO {
         return typeCustomerDTO;
     }
 
-
     public void setTypeCustomerDTO(TypeCustomerDTO typeCustomerDTO) {
         this.typeCustomerDTO = typeCustomerDTO;
     }
