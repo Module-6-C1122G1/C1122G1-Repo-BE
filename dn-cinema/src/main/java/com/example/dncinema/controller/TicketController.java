@@ -1,6 +1,7 @@
 package com.example.dncinema.controller;
 
 import com.example.dncinema.dto.TicketDetailDTO;
+import com.example.dncinema.dto.TicketUpdateDTO;
 import com.example.dncinema.model.Ticket;
 import com.example.dncinema.service.ticket.ITicketService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/ticket")
+@RequestMapping("/api/ticket")
 @CrossOrigin("*")
 public class TicketController {
     @Autowired
@@ -63,11 +64,11 @@ public class TicketController {
      * @Return new ResponseEntity
      * @Usage_method use method update ticket when customers change ticket
      */
-    @PatchMapping("update/{id}")
-    public ResponseEntity<?> updateTicket(@Validated @RequestBody TicketDetailDTO ticketDetailDTO, BindingResult bindingResult, @PathVariable Integer id) {
+    @PutMapping("/update")
+    public ResponseEntity<?> updateTicket(@Validated @RequestBody TicketUpdateDTO ticketUpdateDTO, BindingResult bindingResult) {
         if (!bindingResult.hasErrors()) {
-            ticketDetailDTO.setIdTicket(id);
-            iTicketService.update(ticketDetailDTO);
+            ticketUpdateDTO.setIdTicket(ticketUpdateDTO.getIdTicket());
+            iTicketService.update(ticketUpdateDTO);
         } else {
             Map<String, String> map = new LinkedHashMap<>();
             List<FieldError> err = bindingResult.getFieldErrors();

@@ -4,23 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-
     <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="update ticket and movie detail">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/TicketUpdateDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/MovieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/SecurityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/SecurityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/TicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/TicketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/TicketControllerMinh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/TicketControllerMinh.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Film.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Seat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Seat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/ShowTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/ShowTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/IMovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/IMovieRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/ITicketRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/ITicketRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/security/jwt/JwtEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/security/jwt/JwtEntryPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/security/jwt/JwtProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/security/jwt/JwtProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/security/jwt/JwtTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/security/jwt/JwtTokenFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/security/response/JwtResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/security/response/JwtResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/security/userPrincipal/UserDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/security/userPrincipal/UserDetailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/security/userPrincipal/UserPrinciple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/security/userPrincipal/UserPrinciple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/impl/TicketServiceMinh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/impl/TicketServiceMinh.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ticket/ITicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ticket/ITicketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ticket/impl/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ticket/impl/TicketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/dncinema/DnCinemaApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/DnCinemaApplicationTests.java" afterDir="false" />
     </list>
-
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-
-  <component name="TaskManager">
-    <servers />
-  </component>
-
-
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -29,9 +43,17 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="dn-cinema" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -49,7 +71,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="develop" />
+        <entry key="$PROJECT_DIR$/.." value="feature/movie" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -58,35 +80,35 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Q8ArGhjGOeUdfIvtFuDfptmx86" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/DELL/Desktop/CODEGYM/module_4/ss7_jpa/exercise/blog",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "d788013c1d5834ba3ba288e3511a87d2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/codegym/thi&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;d788013c1d5834ba3ba288e3511a87d2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
@@ -117,10 +139,16 @@
       <updated>1684725035536</updated>
       <workItem from="1684725037272" duration="2620000" />
       <workItem from="1684894781635" duration="240000" />
-
       <workItem from="1684918773391" duration="4934000" />
-      <workItem from="1684933669914" duration="2191000" />
-      <workItem from="1684938158388" duration="5964000" />
+      <workItem from="1684928763049" duration="8698000" />
+      <workItem from="1684940849214" duration="111000" />
+      <workItem from="1684978160331" duration="53000" />
+      <workItem from="1684984181807" duration="3085000" />
+      <workItem from="1684996359463" duration="5391000" />
+      <workItem from="1685003483531" duration="2647000" />
+      <workItem from="1685007274519" duration="57000" />
+      <workItem from="1685179283342" duration="5000" />
+      <workItem from="1685179392739" duration="21268000" />
     </task>
     <task id="LOCAL-00001" summary="update ticket and movie detail">
       <created>1684943344442</created>
@@ -128,7 +156,6 @@
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
       <updated>1684943344442</updated>
-
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />

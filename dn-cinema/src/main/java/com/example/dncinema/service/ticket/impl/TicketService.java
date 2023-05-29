@@ -1,15 +1,13 @@
 package com.example.dncinema.service.ticket.impl;
 
-import com.example.dncinema.dto.CustomerDTO;
-import com.example.dncinema.dto.EmployeeDTO;
-import com.example.dncinema.dto.SeatDTO;
-import com.example.dncinema.dto.TicketDetailDTO;
+import com.example.dncinema.dto.*;
 import com.example.dncinema.model.Customer;
 import com.example.dncinema.model.Seat;
 import com.example.dncinema.model.StatusSeat;
 import com.example.dncinema.model.Ticket;
 import com.example.dncinema.repository.ICustomerRepository;
 import com.example.dncinema.repository.ISeatRepository;
+
 import com.example.dncinema.repository.ITicketRepository;
 import com.example.dncinema.repository.show_room.IStatusSeatRepository;
 import com.example.dncinema.service.ticket.ITicketService;
@@ -44,19 +42,19 @@ public class TicketService implements ITicketService {
     }
 
     /**
-     * @param ticketDetailDTO
+     * @param ticketUpdateDTO
      * @Author QuynhHTN
      * Date create: 24/05/2023
      * @Return
      * @Usage_method use method update ticket when customers change ticket
      */
     @Override
-    public void update(TicketDetailDTO ticketDetailDTO) {
-        Ticket tickets = iTicketRepository.findTicketById(ticketDetailDTO.getIdTicket());
-        Customer customer = customerRepository.findById(ticketDetailDTO.getCustomerDTO().getIdCustomer()).get();
-        Seat seat = seatRepository.findById(ticketDetailDTO.getSeatDTO().getIdSeat()).get();
-        customer.setPointCustomer(ticketDetailDTO.getCustomerDTO().getPointCustomer());
-        StatusSeat statusSeat = statusSeatRepository.findById(1).get();
+    public void update(TicketUpdateDTO ticketUpdateDTO) {
+        Ticket tickets = iTicketRepository.findTicketById(ticketUpdateDTO.getIdTicket());
+        Customer customer = customerRepository.findById(ticketUpdateDTO.getIdCustomer()).get();
+        Seat seat = seatRepository.findById(ticketUpdateDTO.getIdSeat()).get();
+        customer.setPointCustomer(customer.getPointCustomer()-100);
+        StatusSeat statusSeat = statusSeatRepository.findById(2).get();
         seat.setSeat(statusSeat);
         seatRepository.save(seat);
         customerRepository.save(customer);
