@@ -18,7 +18,7 @@ public class Film {
     private String studioFilm;
     @Column(name = "trailer", columnDefinition = "varchar(255)")
     private String trailer;
-    @Column(name = "describe_film", columnDefinition = "varchar(255)")
+    @Column(name = "describe_film", columnDefinition = "text")
     private String describeFilm;
     @Column(name = "actor", columnDefinition = "varchar(255)")
     private String actor;

@@ -1,5 +1,6 @@
 package com.example.dncinema.controller;
 
+import com.example.dncinema.dto.FilmDTO;
 import com.example.dncinema.model.Film;
 import com.example.dncinema.model.ShowTime;
 import com.example.dncinema.model.TypeFilm;
@@ -27,7 +28,7 @@ public class FilmController_updateFilm {
     private ObjectMapper objectMapper;
 
     @Test
-    public void updateFilm_imgFilm_13() throws Exception {
+    public void updateFilm_imgFilm_19() throws Exception {
         Film filmDTO = new Film();
         filmDTO.setIdFilm(1);
         filmDTO.setImgFilm(null);
@@ -58,7 +59,7 @@ public class FilmController_updateFilm {
     }
 
     @Test
-    public void updateFilm_actor_13() throws Exception {
+    public void updateFilm_actor_19() throws Exception {
         Film filmDTO = new Film();
         filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
@@ -92,7 +93,7 @@ public class FilmController_updateFilm {
 
 
     @Test
-    public void updateFilm_describeFilm_13() throws Exception {
+    public void updateFilm_describeFilm_19() throws Exception {
         Film filmDTO = new Film();
         filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
@@ -123,7 +124,7 @@ public class FilmController_updateFilm {
     }
 
     @Test
-    public void updateFilm_director_13() throws Exception {
+    public void updateFilm_director_19() throws Exception {
         Film filmDTO = new Film();
         filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
@@ -154,7 +155,7 @@ public class FilmController_updateFilm {
     }
 
     @Test
-    public void updateFilm_movieLabel_13() throws Exception {
+    public void updateFilm_movieLabel_19() throws Exception {
         Film filmDTO = new Film();
         filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
@@ -185,7 +186,7 @@ public class FilmController_updateFilm {
     }
 
     @Test
-    public void updateFilm_nameFilm_13() throws Exception {
+    public void updateFilm_nameFilm_19() throws Exception {
         Film filmDTO = new Film();
         filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
@@ -216,7 +217,7 @@ public class FilmController_updateFilm {
     }
 
     @Test
-    public void updateFilm_normalSeatPrice_13() throws Exception {
+    public void updateFilm_normalSeatPrice_19() throws Exception {
         Film filmDTO = new Film();
         filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
@@ -247,7 +248,7 @@ public class FilmController_updateFilm {
     }
 
     @Test
-    public void updateFilm_timeFilm_13() throws Exception {
+    public void updateFilm_timeFilm_19() throws Exception {
         Film filmDTO = new Film();
         filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
@@ -278,7 +279,7 @@ public class FilmController_updateFilm {
     }
 
     @Test
-    public void updateFilm_studioFilm_13() throws Exception {
+    public void updateFilm_studioFilm_19() throws Exception {
         Film filmDTO = new Film();
         filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
@@ -309,7 +310,7 @@ public class FilmController_updateFilm {
     }
 
     @Test
-    public void updateFilm_trailer_13() throws Exception {
+    public void updateFilm_trailer_19() throws Exception {
         Film filmDTO = new Film();
         filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
@@ -340,7 +341,7 @@ public class FilmController_updateFilm {
     }
 
     @Test
-    public void updateFilm_vipSeatPrice_13() throws Exception {
+    public void updateFilm_vipSeatPrice_19() throws Exception {
         Film filmDTO = new Film();
         filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
@@ -374,7 +375,7 @@ public class FilmController_updateFilm {
 
 
     @Test
-    public void updateFilm_imgFilm_14() throws Exception {
+    public void updateFilm_imgFilm_20() throws Exception {
         Film filmDTO = new Film();
         filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("");
@@ -405,7 +406,7 @@ public class FilmController_updateFilm {
     }
 
     @Test
-    public void updateFilm_actor_14() throws Exception {
+    public void updateFilm_actor_20() throws Exception {
         Film filmDTO = new Film();
         filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
@@ -436,7 +437,7 @@ public class FilmController_updateFilm {
     }
 
     @Test
-    public void updateFilm_describeFilm_14() throws Exception {
+    public void updateFilm_describeFilm_20() throws Exception {
         Film filmDTO = new Film();
         filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
@@ -467,7 +468,7 @@ public class FilmController_updateFilm {
     }
 
     @Test
-    public void updateFilm_director_14() throws Exception {
+    public void updateFilm_director_20() throws Exception {
         Film filmDTO = new Film();
         filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
@@ -498,7 +499,7 @@ public class FilmController_updateFilm {
     }
 
     @Test
-    public void updateFilm_movieLabel_14() throws Exception {
+    public void updateFilm_movieLabel_20() throws Exception {
         Film filmDTO = new Film();
         filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
@@ -529,7 +530,7 @@ public class FilmController_updateFilm {
     }
 
     @Test
-    public void updateFilm_nameFilm_14() throws Exception {
+    public void updateFilm_nameFilm_20() throws Exception {
         Film filmDTO = new Film();
         filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
@@ -560,7 +561,7 @@ public class FilmController_updateFilm {
     }
 
     @Test
-    public void updateFilm_normalSeatPrice_16() throws Exception {
+    public void updateFilm_normalSeatPrice_22() throws Exception {
         Film filmDTO = new Film();
         filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
@@ -591,7 +592,7 @@ public class FilmController_updateFilm {
     }
 
     @Test
-    public void updateFilm_studioFilm_14() throws Exception {
+    public void updateFilm_studioFilm_20() throws Exception {
         Film filmDTO = new Film();
         filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
@@ -622,7 +623,7 @@ public class FilmController_updateFilm {
     }
 
     @Test
-    public void updateFilm_timeFilm_16() throws Exception {
+    public void updateFilm_timeFilm_22() throws Exception {
         Film filmDTO = new Film();
         filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
@@ -653,7 +654,7 @@ public class FilmController_updateFilm {
     }
 
     @Test
-    public void updateFilm_trailer_14() throws Exception {
+    public void updateFilm_trailer_20() throws Exception {
         Film filmDTO = new Film();
         filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
@@ -684,7 +685,7 @@ public class FilmController_updateFilm {
     }
 
     @Test
-    public void updateFilm_vipSeatPrice_16() throws Exception {
+    public void updateFilm_vipSeatPrice_22() throws Exception {
         Film filmDTO = new Film();
         filmDTO.setIdFilm(1);
         filmDTO.setImgFilm("a");
@@ -700,6 +701,126 @@ public class FilmController_updateFilm {
         filmDTO.setTimeFilm(120);
         filmDTO.setTrailer("a");
         filmDTO.setVipSeatPrice(-3.0);
+        TypeFilm typeFilm = new TypeFilm();
+        typeFilm.setIdTypeFilm(1);
+        filmDTO.setTypeFilm(typeFilm);
+        ShowTime showTime = new ShowTime();
+        showTime.setIdShowTime(1);
+        filmDTO.setShowTime(showTime);
+
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/api/film/1")
+                        .content(this.objectMapper.writeValueAsString(filmDTO))
+                        .contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andDo(print())
+                .andExpect(status().is4xxClientError());
+    }
+    @Test
+    public void updateFilm_nameFilm_23() throws Exception {
+        FilmDTO filmDTO = new FilmDTO();
+        filmDTO.setIdFilm(1);
+        filmDTO.setImgFilm("a");
+        filmDTO.setActor("a");
+        filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDateStartFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDescribeFilm("a");
+        filmDTO.setDirector("a");
+        filmDTO.setMovieLabel("a");
+        filmDTO.setNameFilm("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        filmDTO.setNormalSeatPrice(-3.0);
+        filmDTO.setStudioFilm("a");
+        filmDTO.setTimeFilm(120);
+        filmDTO.setTrailer("a");
+        filmDTO.setVipSeatPrice(15.0);
+        TypeFilm typeFilm = new TypeFilm();
+        typeFilm.setIdTypeFilm(1);
+        filmDTO.setTypeFilm(typeFilm);
+        ShowTime showTime = new ShowTime();
+        showTime.setIdShowTime(1);
+        filmDTO.setShowTime(showTime);
+
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/api/film/create")
+                        .content(this.objectMapper.writeValueAsString(filmDTO))
+                        .contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andDo(print())
+                .andExpect(status().is4xxClientError());
+    }
+    @Test
+    public void updateFilm_director_23() throws Exception {
+        FilmDTO filmDTO = new FilmDTO();
+        filmDTO.setIdFilm(1);
+        filmDTO.setImgFilm("a");
+        filmDTO.setActor("a");
+        filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDateStartFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDescribeFilm("a");
+        filmDTO.setDirector("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        filmDTO.setMovieLabel("a");
+        filmDTO.setNameFilm("a");
+        filmDTO.setNormalSeatPrice(3.0);
+        filmDTO.setStudioFilm("a");
+        filmDTO.setTimeFilm(120);
+        filmDTO.setTrailer("a");
+        filmDTO.setVipSeatPrice(15.0);
+        TypeFilm typeFilm = new TypeFilm();
+        typeFilm.setIdTypeFilm(1);
+        filmDTO.setTypeFilm(typeFilm);
+        ShowTime showTime = new ShowTime();
+        showTime.setIdShowTime(1);
+        filmDTO.setShowTime(showTime);
+
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/api/film/create")
+                        .content(this.objectMapper.writeValueAsString(filmDTO))
+                        .contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andDo(print())
+                .andExpect(status().is4xxClientError());
+    }
+    @Test
+    public void updateFilm_studioFilm_23() throws Exception {
+        FilmDTO filmDTO = new FilmDTO();
+        filmDTO.setIdFilm(1);
+        filmDTO.setImgFilm("a");
+        filmDTO.setActor("a");
+        filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDateStartFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDescribeFilm("a");
+        filmDTO.setDirector("a");
+        filmDTO.setMovieLabel("a");
+        filmDTO.setNameFilm("a");
+        filmDTO.setNormalSeatPrice(3.0);
+        filmDTO.setStudioFilm("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        filmDTO.setTimeFilm(120);
+        filmDTO.setTrailer("a");
+        filmDTO.setVipSeatPrice(15.0);
+        TypeFilm typeFilm = new TypeFilm();
+        typeFilm.setIdTypeFilm(1);
+        filmDTO.setTypeFilm(typeFilm);
+        ShowTime showTime = new ShowTime();
+        showTime.setIdShowTime(1);
+        filmDTO.setShowTime(showTime);
+
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/api/film/create")
+                        .content(this.objectMapper.writeValueAsString(filmDTO))
+                        .contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andDo(print())
+                .andExpect(status().is4xxClientError());
+    }
+    @Test
+    public void updateFilm_actor_23() throws Exception {
+        FilmDTO filmDTO = new FilmDTO();
+        filmDTO.setIdFilm(1);
+        filmDTO.setImgFilm("a");
+        filmDTO.setActor("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDateStartFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDescribeFilm("a");
+        filmDTO.setDirector("a");
+        filmDTO.setMovieLabel("a");
+        filmDTO.setNameFilm("a");
+        filmDTO.setNormalSeatPrice(3.0);
+        filmDTO.setStudioFilm("a");
+        filmDTO.setTimeFilm(120);
+        filmDTO.setTrailer("a");
+        filmDTO.setVipSeatPrice(15.0);
         TypeFilm typeFilm = new TypeFilm();
         typeFilm.setIdTypeFilm(1);
         filmDTO.setTypeFilm(typeFilm);

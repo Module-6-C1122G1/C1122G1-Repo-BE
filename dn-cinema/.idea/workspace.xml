@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/TypeFilmDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/film/FilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/film/FilmController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/FilmDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/FilmDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/film/IFilmRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/film/IFilmRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/film/IFilmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/film/IFilmService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/film/impl/FilmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/film/impl/FilmService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Film.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/FilmController_createFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/FilmController_createFilm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/FilmController_updateFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/FilmController_updateFilm.java" afterDir="false" />
     </list>
@@ -79,7 +74,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Desktop/dn-cinema-api/dn-cinema/src/main/java/com/example&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Desktop/New folder (6)/dn-cinema-api/dn-cinema&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -102,8 +97,8 @@
       <recent name="C:\Users\Admin\Desktop\dn-cinema-api\dn-cinema\src\main\java\com\example\dncinema" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.FilmController_createFilm.createFilm_vipSeatPrice_16">
-    <configuration name="FilmController_createFilm.createFilm_normalSeatPrice_16" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.FilmController_createFilm.createFilm_dateEndFilm_15">
+    <configuration name="FilmController_createFilm.createFilm_actor_17" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -116,7 +111,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.dncinema.controller.FilmController_createFilm.createFilm_normalSeatPrice_16&quot;" />
+            <option value="&quot;com.example.dncinema.controller.FilmController_createFilm.createFilm_actor_17&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -126,7 +121,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="FilmController_createFilm.createFilm_timeFilm_16" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FilmController_createFilm.createFilm_dateEndFilm_15" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -139,7 +134,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.dncinema.controller.FilmController_createFilm.createFilm_timeFilm_16&quot;" />
+            <option value="&quot;com.example.dncinema.controller.FilmController_createFilm.createFilm_dateEndFilm_15&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -149,7 +144,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="FilmController_createFilm.createFilm_vipSeatPrice_16" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FilmController_createFilm.createFilm_director_17" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -162,7 +157,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.dncinema.controller.FilmController_createFilm.createFilm_vipSeatPrice_16&quot;" />
+            <option value="&quot;com.example.dncinema.controller.FilmController_createFilm.createFilm_director_17&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -172,7 +167,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="FilmController_updateFilm" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FilmController_createFilm.createFilm_studioFilm_17" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -185,7 +180,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.dncinema.controller.FilmController_updateFilm&quot;" />
+            <option value="&quot;com.example.dncinema.controller.FilmController_createFilm.createFilm_studioFilm_17&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -195,7 +190,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="FilmController_updateFilm.updateFilm_trailer_14" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FilmController_updateFilm.updateFilm_nameFilm_23" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -208,7 +203,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.dncinema.controller.FilmController_updateFilm.updateFilm_trailer_14&quot;" />
+            <option value="&quot;com.example.dncinema.controller.FilmController_updateFilm.updateFilm_nameFilm_23&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -227,11 +222,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.FilmController_createFilm.createFilm_vipSeatPrice_16" />
-        <item itemvalue="Gradle.FilmController_createFilm.createFilm_normalSeatPrice_16" />
-        <item itemvalue="Gradle.FilmController_createFilm.createFilm_timeFilm_16" />
-        <item itemvalue="Gradle.FilmController_updateFilm" />
-        <item itemvalue="Gradle.FilmController_updateFilm.updateFilm_trailer_14" />
+        <item itemvalue="Gradle.FilmController_createFilm.createFilm_dateEndFilm_15" />
+        <item itemvalue="Gradle.FilmController_updateFilm.updateFilm_nameFilm_23" />
+        <item itemvalue="Gradle.FilmController_createFilm.createFilm_actor_17" />
+        <item itemvalue="Gradle.FilmController_createFilm.createFilm_studioFilm_17" />
+        <item itemvalue="Gradle.FilmController_createFilm.createFilm_director_17" />
       </list>
     </recent_temporary>
   </component>
@@ -249,7 +244,10 @@
       <workItem from="1684933669914" duration="2191000" />
       <workItem from="1684938421420" duration="2324000" />
       <workItem from="1684977565782" duration="17388000" />
-      <workItem from="1685064450824" duration="9787000" />
+      <workItem from="1685064450824" duration="17437000" />
+      <workItem from="1685255573543" duration="1561000" />
+      <workItem from="1685323432815" duration="1507000" />
+      <workItem from="1685341622336" duration="18000" />
     </task>
     <servers />
   </component>
@@ -261,22 +259,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/FilmController_createFilm.java</url>
-          <line>703</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/FilmController_createFilm.java</url>
           <line>21</line>
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/FilmController_createFilm.java</url>
-          <line>265</line>
-          <properties class="com.example.dncinema.controller.FilmController_createFilm" method="createFilm_timeFilm_16">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

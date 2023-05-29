@@ -262,35 +262,7 @@ public class FilmController_createFilm {
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
-    @Test
-    public void createFilm_timeFilm_16() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
-        filmDTO.setImgFilm("a");
-        filmDTO.setActor("a");
-        filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
-        filmDTO.setDateStartFilm(LocalDate.parse("2023-06-10"));
-        filmDTO.setDescribeFilm("a");
-        filmDTO.setDirector("a");
-        filmDTO.setMovieLabel("a");
-        filmDTO.setNameFilm("a");
-        filmDTO.setNormalSeatPrice(10.0);
-        filmDTO.setStudioFilm("a");
-        filmDTO.setTimeFilm(-3);
-        filmDTO.setTrailer("a");
-        filmDTO.setVipSeatPrice(15.0);
-        TypeFilm typeFilm = new TypeFilm();
-        typeFilm.setIdTypeFilm(1);
-        filmDTO.setTypeFilm(typeFilm);
-        ShowTime showTime = new ShowTime();
-        showTime.setIdShowTime(1);
-        filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/create")
-                        .content(this.objectMapper.writeValueAsString(filmDTO))
-                        .contentType(MediaType.APPLICATION_JSON_VALUE))
-                .andDo(print())
-                .andExpect(status().is4xxClientError());
-    }
     @Test
     public void createFilm_studioFilm_13() throws Exception {
         FilmDTO filmDTO = new FilmDTO();
@@ -378,35 +350,7 @@ public class FilmController_createFilm {
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
-    @Test
-    public void createFilm_vipSeatPrice_16() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
-        filmDTO.setImgFilm("a");
-        filmDTO.setActor("a");
-        filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
-        filmDTO.setDateStartFilm(LocalDate.parse("2023-06-10"));
-        filmDTO.setDescribeFilm("a");
-        filmDTO.setDirector("a");
-        filmDTO.setMovieLabel("a");
-        filmDTO.setNameFilm("a");
-        filmDTO.setNormalSeatPrice(10.0);
-        filmDTO.setStudioFilm("a");
-        filmDTO.setTimeFilm(120);
-        filmDTO.setTrailer("a");
-        filmDTO.setVipSeatPrice(-3.0);
-        TypeFilm typeFilm = new TypeFilm();
-        typeFilm.setIdTypeFilm(1);
-        filmDTO.setTypeFilm(typeFilm);
-        ShowTime showTime = new ShowTime();
-        showTime.setIdShowTime(1);
-        filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/create")
-                        .content(this.objectMapper.writeValueAsString(filmDTO))
-                        .contentType(MediaType.APPLICATION_JSON_VALUE))
-                .andDo(print())
-                .andExpect(status().is4xxClientError());
-    }
 
 
     @Test
@@ -583,35 +527,7 @@ public class FilmController_createFilm {
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
-    @Test
-    public void createFilm_normalSeatPrice_16() throws Exception {
-        FilmDTO filmDTO = new FilmDTO();
-        filmDTO.setImgFilm("a");
-        filmDTO.setActor("a");
-        filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
-        filmDTO.setDateStartFilm(LocalDate.parse("2023-06-10"));
-        filmDTO.setDescribeFilm("a");
-        filmDTO.setDirector("a");
-        filmDTO.setMovieLabel("a");
-        filmDTO.setNameFilm("a");
-        filmDTO.setNormalSeatPrice(-3.0);
-        filmDTO.setStudioFilm("a");
-        filmDTO.setTimeFilm(120);
-        filmDTO.setTrailer("a");
-        filmDTO.setVipSeatPrice(15.0);
-        TypeFilm typeFilm = new TypeFilm();
-        typeFilm.setIdTypeFilm(1);
-        filmDTO.setTypeFilm(typeFilm);
-        ShowTime showTime = new ShowTime();
-        showTime.setIdShowTime(1);
-        filmDTO.setShowTime(showTime);
 
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/create")
-                        .content(this.objectMapper.writeValueAsString(filmDTO))
-                        .contentType(MediaType.APPLICATION_JSON_VALUE))
-                .andDo(print())
-                .andExpect(status().is4xxClientError());
-    }
     @Test
     public void createFilm_studioFilm_14() throws Exception {
         FilmDTO filmDTO = new FilmDTO();
@@ -670,8 +586,239 @@ public class FilmController_createFilm {
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
+    @Test
+    public void createFilm_dateEndFilm_15() throws Exception {
+        FilmDTO filmDTO = new FilmDTO();
+        filmDTO.setImgFilm("a");
+        filmDTO.setActor("a");
+        filmDTO.setDateEndFilm(LocalDate.parse("2023-25-10"));
+        filmDTO.setDateStartFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDescribeFilm("a");
+        filmDTO.setDirector("a");
+        filmDTO.setMovieLabel("a");
+        filmDTO.setNameFilm("a");
+        filmDTO.setNormalSeatPrice(9.0);
+        filmDTO.setStudioFilm("a");
+        filmDTO.setTimeFilm(120);
+        filmDTO.setTrailer("a");
+        filmDTO.setVipSeatPrice(15.0);
+        TypeFilm typeFilm = new TypeFilm();
+        typeFilm.setIdTypeFilm(1);
+        filmDTO.setTypeFilm(typeFilm);
+        ShowTime showTime = new ShowTime();
+        showTime.setIdShowTime(1);
+        filmDTO.setShowTime(showTime);
 
+        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/create")
+                        .content(this.objectMapper.writeValueAsString(filmDTO))
+                        .contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andDo(print())
+                .andExpect(status().is4xxClientError());
+    }
+    @Test
+    public void createFilm_timeFilm_16() throws Exception {
+        FilmDTO filmDTO = new FilmDTO();
+        filmDTO.setImgFilm("a");
+        filmDTO.setActor("a");
+        filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDateStartFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDescribeFilm("a");
+        filmDTO.setDirector("a");
+        filmDTO.setMovieLabel("a");
+        filmDTO.setNameFilm("a");
+        filmDTO.setNormalSeatPrice(10.0);
+        filmDTO.setStudioFilm("a");
+        filmDTO.setTimeFilm(-3);
+        filmDTO.setTrailer("a");
+        filmDTO.setVipSeatPrice(15.0);
+        TypeFilm typeFilm = new TypeFilm();
+        typeFilm.setIdTypeFilm(1);
+        filmDTO.setTypeFilm(typeFilm);
+        ShowTime showTime = new ShowTime();
+        showTime.setIdShowTime(1);
+        filmDTO.setShowTime(showTime);
 
+        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/create")
+                        .content(this.objectMapper.writeValueAsString(filmDTO))
+                        .contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andDo(print())
+                .andExpect(status().is4xxClientError());
+    }
+
+    @Test
+    public void createFilm_vipSeatPrice_16() throws Exception {
+        FilmDTO filmDTO = new FilmDTO();
+        filmDTO.setImgFilm("a");
+        filmDTO.setActor("a");
+        filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDateStartFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDescribeFilm("a");
+        filmDTO.setDirector("a");
+        filmDTO.setMovieLabel("a");
+        filmDTO.setNameFilm("a");
+        filmDTO.setNormalSeatPrice(10.0);
+        filmDTO.setStudioFilm("a");
+        filmDTO.setTimeFilm(120);
+        filmDTO.setTrailer("a");
+        filmDTO.setVipSeatPrice(-3.0);
+        TypeFilm typeFilm = new TypeFilm();
+        typeFilm.setIdTypeFilm(1);
+        filmDTO.setTypeFilm(typeFilm);
+        ShowTime showTime = new ShowTime();
+        showTime.setIdShowTime(1);
+        filmDTO.setShowTime(showTime);
+
+        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/create")
+                        .content(this.objectMapper.writeValueAsString(filmDTO))
+                        .contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andDo(print())
+                .andExpect(status().is4xxClientError());
+    }
+    @Test
+    public void createFilm_normalSeatPrice_16() throws Exception {
+        FilmDTO filmDTO = new FilmDTO();
+        filmDTO.setImgFilm("a");
+        filmDTO.setActor("a");
+        filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDateStartFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDescribeFilm("a");
+        filmDTO.setDirector("a");
+        filmDTO.setMovieLabel("a");
+        filmDTO.setNameFilm("a");
+        filmDTO.setNormalSeatPrice(-3.0);
+        filmDTO.setStudioFilm("a");
+        filmDTO.setTimeFilm(120);
+        filmDTO.setTrailer("a");
+        filmDTO.setVipSeatPrice(15.0);
+        TypeFilm typeFilm = new TypeFilm();
+        typeFilm.setIdTypeFilm(1);
+        filmDTO.setTypeFilm(typeFilm);
+        ShowTime showTime = new ShowTime();
+        showTime.setIdShowTime(1);
+        filmDTO.setShowTime(showTime);
+
+        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/create")
+                        .content(this.objectMapper.writeValueAsString(filmDTO))
+                        .contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andDo(print())
+                .andExpect(status().is4xxClientError());
+    }
+    @Test
+    public void createFilm_nameFilm_17() throws Exception {
+        FilmDTO filmDTO = new FilmDTO();
+        filmDTO.setImgFilm("a");
+        filmDTO.setActor("a");
+        filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDateStartFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDescribeFilm("a");
+        filmDTO.setDirector("a");
+        filmDTO.setMovieLabel("a");
+        filmDTO.setNameFilm("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        filmDTO.setNormalSeatPrice(-3.0);
+        filmDTO.setStudioFilm("a");
+        filmDTO.setTimeFilm(120);
+        filmDTO.setTrailer("a");
+        filmDTO.setVipSeatPrice(15.0);
+        TypeFilm typeFilm = new TypeFilm();
+        typeFilm.setIdTypeFilm(1);
+        filmDTO.setTypeFilm(typeFilm);
+        ShowTime showTime = new ShowTime();
+        showTime.setIdShowTime(1);
+        filmDTO.setShowTime(showTime);
+
+        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/create")
+                        .content(this.objectMapper.writeValueAsString(filmDTO))
+                        .contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andDo(print())
+                .andExpect(status().is4xxClientError());
+    }
+    @Test
+    public void createFilm_director_17() throws Exception {
+        FilmDTO filmDTO = new FilmDTO();
+        filmDTO.setImgFilm("a");
+        filmDTO.setActor("a");
+        filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDateStartFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDescribeFilm("a");
+        filmDTO.setDirector("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        filmDTO.setMovieLabel("a");
+        filmDTO.setNameFilm("a");
+        filmDTO.setNormalSeatPrice(3.0);
+        filmDTO.setStudioFilm("a");
+        filmDTO.setTimeFilm(120);
+        filmDTO.setTrailer("a");
+        filmDTO.setVipSeatPrice(15.0);
+        TypeFilm typeFilm = new TypeFilm();
+        typeFilm.setIdTypeFilm(1);
+        filmDTO.setTypeFilm(typeFilm);
+        ShowTime showTime = new ShowTime();
+        showTime.setIdShowTime(1);
+        filmDTO.setShowTime(showTime);
+
+        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/create")
+                        .content(this.objectMapper.writeValueAsString(filmDTO))
+                        .contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andDo(print())
+                .andExpect(status().is4xxClientError());
+    }
+    @Test
+    public void createFilm_studioFilm_17() throws Exception {
+        FilmDTO filmDTO = new FilmDTO();
+        filmDTO.setImgFilm("a");
+        filmDTO.setActor("a");
+        filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDateStartFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDescribeFilm("a");
+        filmDTO.setDirector("a");
+        filmDTO.setMovieLabel("a");
+        filmDTO.setNameFilm("a");
+        filmDTO.setNormalSeatPrice(3.0);
+        filmDTO.setStudioFilm("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        filmDTO.setTimeFilm(120);
+        filmDTO.setTrailer("a");
+        filmDTO.setVipSeatPrice(15.0);
+        TypeFilm typeFilm = new TypeFilm();
+        typeFilm.setIdTypeFilm(1);
+        filmDTO.setTypeFilm(typeFilm);
+        ShowTime showTime = new ShowTime();
+        showTime.setIdShowTime(1);
+        filmDTO.setShowTime(showTime);
+
+        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/create")
+                        .content(this.objectMapper.writeValueAsString(filmDTO))
+                        .contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andDo(print())
+                .andExpect(status().is4xxClientError());
+    }
+    @Test
+    public void createFilm_actor_17() throws Exception {
+        FilmDTO filmDTO = new FilmDTO();
+        filmDTO.setImgFilm("a");
+        filmDTO.setActor("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        filmDTO.setDateEndFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDateStartFilm(LocalDate.parse("2023-06-10"));
+        filmDTO.setDescribeFilm("a");
+        filmDTO.setDirector("a");
+        filmDTO.setMovieLabel("a");
+        filmDTO.setNameFilm("a");
+        filmDTO.setNormalSeatPrice(3.0);
+        filmDTO.setStudioFilm("a");
+        filmDTO.setTimeFilm(120);
+        filmDTO.setTrailer("a");
+        filmDTO.setVipSeatPrice(15.0);
+        TypeFilm typeFilm = new TypeFilm();
+        typeFilm.setIdTypeFilm(1);
+        filmDTO.setTypeFilm(typeFilm);
+        ShowTime showTime = new ShowTime();
+        showTime.setIdShowTime(1);
+        filmDTO.setShowTime(showTime);
+
+        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/film/create")
+                        .content(this.objectMapper.writeValueAsString(filmDTO))
+                        .contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andDo(print())
+                .andExpect(status().is4xxClientError());
+    }
 
     @Test
     public void createFilm_18() throws Exception {
