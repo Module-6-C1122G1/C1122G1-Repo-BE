@@ -23,7 +23,8 @@ public class DiscountService implements IDiscountService {
     /**
      * Author: TuanLT.
      * Date: 24/05/2023.
-     * @param name "Tham số name dùng để tìm kiếm trong danh sách khuyến mãi".
+     *
+     * @param name     "Tham số name dùng để tìm kiếm trong danh sách khuyến mãi".
      * @param pageable "Tham số pageable dùng để phân trang".
      * @return "Trả về danh sách khuyến mãi ban đầu có phân trang, nếu người dùng tiến hành tìm kiếm thì sẽ trả về 1 danh sách sau khi người dùng search (có phân trang)."
      */
@@ -52,17 +53,6 @@ public class DiscountService implements IDiscountService {
     }
 
     /**
-     * Author: TuanLT.
-     * Date: 24/05/2023.
-     * @param id "Tham số id - Nhằm tìm kiếm id của khuyến mãi mà người dùng muốn xóa".
-     */
-//    @Override
-//    public void delete(Long id) {
-//        Discount discount = discountRepository.findById(id);
-//        discount.setDeleted(true);
-//        discountRepository.save(discount);
-//    }
-    /**
      * Create by: HoangPT,
      * Date create : 24/05/2023
      * Function : Add new discount
@@ -77,23 +67,28 @@ public class DiscountService implements IDiscountService {
     public void createDiscount(String nameDiscount, String dateStart, String dateEnd, String describeDiscount, Double percentDiscount) {
         discountRepository.createDiscount(nameDiscount, dateStart, dateEnd, describeDiscount, percentDiscount);
     }
+
     /**
      * Create by: HoangPT,
      * Date create : 24/05/2023
      * Function : Find discount information by id
      *
-     * @param idDiscount
+     * @param id
      */
     @Override
     public boolean delete(int id) {
         try {
-          discountRepository.deleteById(id);
+            discountRepository.deleteById(id);
         } catch (IllegalArgumentException e) {
             return false;
-        } return true;
+        }
+        return true;
+    }
+
     public Discount findDiscountById(int idDiscount) {
         return discountRepository.findDiscountById(idDiscount);
     }
+
     /**
      * Create by: HoangPT,
      * Date create : 24/05/2023

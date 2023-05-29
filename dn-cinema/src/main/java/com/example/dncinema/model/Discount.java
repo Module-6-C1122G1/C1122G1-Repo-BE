@@ -15,9 +15,9 @@ public class Discount {
     @Column(name = "image_discount", columnDefinition = "varchar(255)")
     private String imageDiscount;
     @Column(name = "date_start", columnDefinition = "date")
-    private LocalDate dateStart;
+    private String dateStart;
     @Column(name = "date_end", columnDefinition = "date")
-    private LocalDate dateEnd;
+    private String dateEnd;
     @Column(name = "describe_discount", columnDefinition = "varchar(255)")
     private String describeDiscount;
     @Column(name = "percent_discount")
@@ -52,19 +52,19 @@ public class Discount {
         this.imageDiscount = imageDiscount;
     }
 
-    public LocalDate getDateStart() {
+    public String getDateStart() {
         return dateStart;
     }
 
-    public void setDateStart(LocalDate dateStart) {
+    public void setDateStart(String dateStart) {
         this.dateStart = dateStart;
     }
 
-    public LocalDate getDateEnd() {
+    public String getDateEnd() {
         return dateEnd;
     }
 
-    public void setDateEnd(LocalDate dateEnd) {
+    public void setDateEnd(String dateEnd) {
         this.dateEnd = dateEnd;
     }
 

@@ -56,6 +56,21 @@ public class DiscountDTO implements Validator {
         this.nameDiscount = nameDiscount;
     }
 
+    public String getDateStart() {
+        return dateStart;
+    }
+
+    public void setDateStart(String dateStart) {
+        this.dateStart = dateStart;
+    }
+
+    public String getDateEnd() {
+        return dateEnd;
+    }
+
+    public void setDateEnd(String dateEnd) {
+        this.dateEnd = dateEnd;
+    }
 
     public String getDescribeDiscount() {
         return describeDiscount;
