@@ -12,7 +12,17 @@ public class SeatService implements ISeatService {
     @Autowired
     private ISeatRepository iSeatRepository;
     @Override
-    public List<Seat> findAllSeat() {
-        return iSeatRepository.findAll();
+    public List<Seat> findAllListSeatByIdShowRoom(Integer id) {
+        return iSeatRepository.findAllListSeatByIdShowRoom(id);
+    }
+
+    @Override
+    public void updateStatusSeatByIdShowRoom(Integer id) {
+        iSeatRepository.updateStatusSeatByIdShowRoom(id);
+    }
+
+    @Override
+    public void resetStatusSeatByIdShowRoom(Integer id) {
+        iSeatRepository.resetStatusSeatByIdShowRoom(id);
     }
 }

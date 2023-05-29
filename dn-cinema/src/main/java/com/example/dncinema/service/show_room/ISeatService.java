@@ -6,5 +6,7 @@ import com.example.dncinema.model.StatusSeat;
 import java.util.List;
 
 public interface ISeatService {
-    List<Seat> findAllSeat();
+    List<Seat> findAllListSeatByIdShowRoom(Integer id);
+    void updateStatusSeatByIdShowRoom(Integer id);
+    void resetStatusSeatByIdShowRoom(Integer id);
 }
