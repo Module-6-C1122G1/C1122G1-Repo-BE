@@ -23,16 +23,20 @@ public class Seat {
     @ManyToOne
     @JoinColumn(name = "id_show_room")
     private ShowRoom showRoom;
+    @ManyToOne
+    @JoinColumn(name = "id_show_time")
+    private ShowTime showTime;
 
     public Seat() {
     }
 
-    public Seat(Integer idSeat, String nameSeat, StatusSeat seat, TypeSeat typeSeat, ShowRoom showRoom) {
+    public Seat(Integer idSeat, String nameSeat, StatusSeat seat, TypeSeat typeSeat, ShowRoom showRoom, ShowTime showTime) {
         this.idSeat = idSeat;
         this.nameSeat = nameSeat;
         this.seat = seat;
         this.typeSeat = typeSeat;
         this.showRoom = showRoom;
+        this.showTime = showTime;
     }
 
     public Integer getIdSeat() {
@@ -73,5 +77,13 @@ public class Seat {
 
     public void setShowRoom(ShowRoom showRoom) {
         this.showRoom = showRoom;
+    }
+
+    public ShowTime getShowTime() {
+        return showTime;
+    }
+
+    public void setShowTime(ShowTime showTime) {
+        this.showTime = showTime;
     }
 }
