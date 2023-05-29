@@ -24,7 +24,7 @@ public class CustomerController_findAllCustomerPointHistory {
      */
     @Test
     public void findAllCustomerPointHistory_7() throws Exception {
-        this.mockMvc.perform(MockMvcRequestBuilders.get("/customer/ticket/history/null"))
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/api/public/history/null"))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
@@ -36,7 +36,7 @@ public class CustomerController_findAllCustomerPointHistory {
      */
     @Test
     public void findAllCustomerPointHistory_8() throws Exception {
-        this.mockMvc.perform(MockMvcRequestBuilders.get("/customer/ticket/history/''"))
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/api/public/history/''"))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
@@ -48,7 +48,7 @@ public class CustomerController_findAllCustomerPointHistory {
      */
     @Test
     public void findAllCustomerPointHistory_9() throws Exception {
-        this.mockMvc.perform(MockMvcRequestBuilders.get("/customer/ticket/history/10"))
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/api/public/history/10"))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
@@ -60,18 +60,13 @@ public class CustomerController_findAllCustomerPointHistory {
      */
     @Test
     public void findAllCustomerPointHistory_11() throws Exception {
-        this.mockMvc.perform(MockMvcRequestBuilders.get("/customer/ticket/history?page=0"))
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/api/public/history?page=0"))
                 .andDo(print())
                 .andExpect(status().is2xxSuccessful())
                 .andExpect(jsonPath("totalPages").value(1))
                 .andExpect(jsonPath("totalElements").value(3))
-                .andExpect(jsonPath("content[0].nameCustomer").value("Trường"))
-                .andExpect(jsonPath("content[0].pointCustomer").value("7000.0"))
-                .andExpect(jsonPath("content[0].gender").value("Nam"))
-                .andExpect(jsonPath("content[0].phone").value("096452199"))
-                .andExpect(jsonPath("content[0].address").value("Hải Lăng"))
-                .andExpect(jsonPath("content[0].email").value("gdfgfd@gmail.com"))
-                .andExpect(jsonPath("content[0].identityCard").value("646478452122"))
-                .andExpect(jsonPath("content[0].typeCustomer.idTypeCustomer").value(1));
+                .andExpect(jsonPath("content[0].nameFilm").value("VỆ BINH DẢI NGÂN HÀ 3 (C13)"))
+                .andExpect(jsonPath("content[0].dateBooking").value("2023-04-15"))
+                .andExpect(jsonPath("content[0].pointCustomer").value("7000.0"));
     }
 }

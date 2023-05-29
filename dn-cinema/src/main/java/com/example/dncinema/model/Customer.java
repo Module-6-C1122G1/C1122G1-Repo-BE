@@ -9,19 +9,19 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_customer")
     private Integer idCustomer;
-    @Column(name = "name_customer",columnDefinition = "varchar(255)")
+    @Column(name = "name_customer", columnDefinition = "varchar(255)")
     private String nameCustomer;
     @Column(name = "point_customer")
     private Double pointCustomer;
-    @Column(name = "gender",columnDefinition = "varchar(45)")
+    @Column(name = "gender", columnDefinition = "varchar(45)")
     private String gender;
-    @Column(name = "phone",columnDefinition = "varchar(25)")
+    @Column(name = "phone", columnDefinition = "varchar(25)")
     private String phone;
-    @Column(name = "address",columnDefinition = "varchar(255)")
+    @Column(name = "address", columnDefinition = "varchar(255)")
     private String address;
-    @Column(name = "email",columnDefinition = "varchar(255)")
+    @Column(name = "email", columnDefinition = "varchar(255)")
     private String email;
-    @Column(name = "identity_card",columnDefinition = "varchar(45)")
+    @Column(name = "identity_card", columnDefinition = "varchar(45)")
     private String identityCard;
 
     @ManyToOne

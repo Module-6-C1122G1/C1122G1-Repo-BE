@@ -5,7 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/ticketManagement/TicketManagementController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/CustomerPointDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/ICustomerPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/ITicketManagement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/TicketManagementDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/TicketManagement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/ITicketManagementRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/ITicketRepositoryDong.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/tickketManagement/ITicketManagementService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/tickketManagement/impl/TicketManagementService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/customer/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/customer/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Film.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Seat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Seat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/ShowTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/ShowTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/ICustomerRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/customer/ICustomerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/customer/impl/CustomerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/impl/CustomerService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/CustomerController_findAllCustomerPointHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/CustomerController_findAllCustomerPointHistory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/CustomerController_findAllCustomerTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/CustomerController_findAllCustomerTicket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/CustomerController_findAllPlusPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/CustomerController_findAllPlusPoint.java" afterDir="false" />
@@ -44,8 +68,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -80,24 +104,27 @@
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="Gradle.CustomerController_findAllUsePoint.findAllUserPoint_7">
-    <configuration name="CustomerController_findAllPlusPoint.findAllCustomerPointHistory_11" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Spring Boot.DnCinemaApplication">
+    <configuration name="CustomerController_findAllCustomerPointHistory.findAllCustomerPointHistory_11" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.controller.CustomerController_findAllPlusPoint.findAllCustomerPointHistory_11&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.controller.CustomerController_findAllCustomerPointHistory.findAllCustomerPointHistory_11&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -113,12 +140,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="CustomerController_findAllPlusPoint.findAllPlusPoint_10" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CustomerController_findAllCustomerPointHistory.findAllCustomerPointHistory_7" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.controller.CustomerController_findAllPlusPoint.findAllPlusPoint_10&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.controller.CustomerController_findAllCustomerPointHistory.findAllCustomerPointHistory_7&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -134,12 +161,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="CustomerController_findAllPlusPoint.findAllPlusPoint_8" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CustomerController_findAllCustomerPointHistory.findAllCustomerPointHistory_8" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.controller.CustomerController_findAllPlusPoint.findAllPlusPoint_8&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.controller.CustomerController_findAllCustomerPointHistory.findAllCustomerPointHistory_8&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -155,12 +182,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="CustomerController_findAllPlusPoint.findAllPlusPoint_9" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CustomerController_findAllCustomerPointHistory.findAllCustomerPointHistory_9" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.controller.CustomerController_findAllPlusPoint.findAllPlusPoint_9&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.controller.CustomerController_findAllCustomerPointHistory.findAllCustomerPointHistory_9&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -176,12 +203,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="CustomerController_findAllUsePoint.findAllUserPoint_7" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CustomerController_findAllCustomerTicket.findAllCustomerTicket_11" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.controller.CustomerController_findAllUsePoint.findAllUserPoint_7&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.controller.CustomerController_findAllCustomerTicket.findAllCustomerTicket_11&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -206,11 +233,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.CustomerController_findAllUsePoint.findAllUserPoint_7" />
-        <item itemvalue="Gradle.CustomerController_findAllPlusPoint.findAllCustomerPointHistory_11" />
-        <item itemvalue="Gradle.CustomerController_findAllPlusPoint.findAllPlusPoint_10" />
-        <item itemvalue="Gradle.CustomerController_findAllPlusPoint.findAllPlusPoint_9" />
-        <item itemvalue="Gradle.CustomerController_findAllPlusPoint.findAllPlusPoint_8" />
+        <item itemvalue="Gradle.CustomerController_findAllCustomerPointHistory.findAllCustomerPointHistory_11" />
+        <item itemvalue="Gradle.CustomerController_findAllCustomerTicket.findAllCustomerTicket_11" />
+        <item itemvalue="Gradle.CustomerController_findAllCustomerPointHistory.findAllCustomerPointHistory_9" />
+        <item itemvalue="Gradle.CustomerController_findAllCustomerPointHistory.findAllCustomerPointHistory_8" />
+        <item itemvalue="Gradle.CustomerController_findAllCustomerPointHistory.findAllCustomerPointHistory_7" />
       </list>
     </recent_temporary>
   </component>
@@ -227,7 +254,13 @@
       <workItem from="1684918773391" duration="4934000" />
       <workItem from="1684933669914" duration="2191000" />
       <workItem from="1684936561099" duration="2475000" />
-      <workItem from="1684977356415" duration="19181000" />
+      <workItem from="1684977356415" duration="19778000" />
+      <workItem from="1685019834314" duration="2689000" />
+      <workItem from="1685160135720" duration="3978000" />
+      <workItem from="1685181899410" duration="594000" />
+      <workItem from="1685242774928" duration="25589000" />
+      <workItem from="1685322879278" duration="2693000" />
+      <workItem from="1685326260097" duration="19059000" />
     </task>
     <task id="LOCAL-00001" summary="service repository">
       <created>1684988654791</created>
@@ -245,5 +278,20 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="service repository" />
     <option name="LAST_COMMIT_MESSAGE" value="service repository" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.hibernate.loader.custom.NonUniqueDiscoveredSqlAliasException" package="org.hibernate.loader.custom" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.springframework.data.domain.PageRequest" memberName="size" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
