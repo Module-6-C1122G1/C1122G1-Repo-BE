@@ -9,6 +9,9 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+
+import java.util.List;
+
 @Repository
 public interface IMovieRepository extends JpaRepository<Film, Integer> {
     @Query(value = "select * from film \n" +
@@ -20,4 +23,8 @@ public interface IMovieRepository extends JpaRepository<Film, Integer> {
             "join type_film on film.id_type_film = type_film.id_type_film\n" +
             "where id_film = :id;", nativeQuery = true)
     Film findFilmById(@Param("id") Integer id);
+
+    @Query(value = "select * from film", nativeQuery = true)
+    List<Film> findAllListFilm();
 }
+
