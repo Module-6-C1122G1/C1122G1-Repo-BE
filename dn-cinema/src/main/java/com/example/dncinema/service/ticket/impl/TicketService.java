@@ -7,9 +7,9 @@ import com.example.dncinema.model.StatusSeat;
 import com.example.dncinema.model.Ticket;
 import com.example.dncinema.repository.ICustomerRepository;
 import com.example.dncinema.repository.IMovieRepository;
-import com.example.dncinema.repository.ISeatRepository;
 
 import com.example.dncinema.repository.ITicketRepository;
+import com.example.dncinema.repository.seat.ISeatRepository;
 import com.example.dncinema.repository.show_room.IStatusSeatRepository;
 import com.example.dncinema.service.ticket.ITicketService;
 import org.springframework.beans.BeanUtils;

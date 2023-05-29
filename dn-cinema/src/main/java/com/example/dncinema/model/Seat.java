@@ -31,9 +31,9 @@ public class Seat {
     @ManyToOne
     @JoinColumn(name = "id_show_time")
     private ShowTime showTime;
-    @JsonBackReference
-    @OneToOne(mappedBy = "seat")
-    private Ticket ticket;
+//    @JsonBackReference
+//    @OneToOne(mappedBy = "seat")
+//    private Ticket ticket;
     public Seat() {
     }
 
@@ -45,13 +45,13 @@ public class Seat {
         this.showRoom = showRoom;
     }
 
-    public Ticket getTicket() {
-        return ticket;
-    }
-
-    public void setTicket(Ticket ticket) {
-        this.ticket = ticket;
-    }
+//    public Ticket getTicket() {
+//        return ticket;
+//    }
+//
+//    public void setTicket(Ticket ticket) {
+//        this.ticket = ticket;
+//    }
 
 
     public ShowTime getShowTime() {
