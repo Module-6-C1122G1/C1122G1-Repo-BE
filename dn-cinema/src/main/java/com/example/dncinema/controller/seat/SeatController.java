@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/seat")
+@RequestMapping("/api/public/seat")
 @CrossOrigin("*")
 public class SeatController {
     @Autowired
