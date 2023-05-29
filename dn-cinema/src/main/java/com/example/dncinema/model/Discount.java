@@ -28,7 +28,8 @@ public class Discount {
     public Discount() {
     }
 
-    public int getIdDiscount() {
+
+    public Integer getIdDiscount() {
         return idDiscount;
     }
 

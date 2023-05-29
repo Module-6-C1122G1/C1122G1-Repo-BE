@@ -21,13 +21,13 @@ public interface IDiscountService {
      * Date create : 24/05/2023
      * Function : Add new discount
      *
-     * @Param("nameDiscount") String nameDiscount,
-     * @Param("dateStart") LocalDate dateStart,
-     * @Param("dateEnd") LocalDate dateEnd,
-     * @Param("describeDiscount") String describeDiscount,
-     * @Param("percentDiscount") Double percentDiscount
+     * @Param nameDiscount,
+     * @Param dateStart,
+     * @Param dateEnd,
+     * @Param describeDiscount,
+     * @Param percentDiscount
      */
-    void createDiscount(String nameDiscount, String dateStart, String dateEnd, String describeDiscount,
+    void createDiscount(String nameDiscount, String dateStart, String dateEnd,String img, String describeDiscount,
                         Double percentDiscount);
     /**
      * Create by: HoangPT,
@@ -36,9 +36,8 @@ public interface IDiscountService {
      *
      * @param idDiscount
      */
-    @Query(value = "select name_discount, date_start,date_end, describe_discount, percent_discount " +
-            "from discount where id_discount = :idDiscount", nativeQuery = true)
-    Discount findDiscountById(@Param("idDiscount") int idDiscount);
+
+    Discount findDiscountById(int idDiscount);
 
     boolean delete(int id);
     /**
@@ -46,22 +45,14 @@ public interface IDiscountService {
      * Date create : 24/05/2023
      * Function : Edit information a discount
      *
-     * @Param("idDiscount") Integer idDiscount
-     * @Param("nameDiscount") String nameDiscount
-     * @Param("dateStart") LocalDate dateStart
-     * @Param("dateEnd") LocalDate dateEnd
-     * @Param("describeDiscount") String describeDiscount
-     * @Param("percentDiscount") Double percentDiscount
+     * @Param Integer idDiscount
+     * @Param String nameDiscount
+     * @Param LocalDate dateStart
+     * @Param LocalDate dateEnd
+     * @Param String describeDiscount
+     * @Param Double percentDiscount
      */
-    @Query(value = "update discount " +
-            "set idDiscount = :idDiscount," +
-            "name_discount = :nameDiscount," +
-            "date_start = :dateStart," +
-            "date_end = :dateEnd," +
-            "describe_discount = :describeDiscount," +
-            "percent_discount = :percentDiscount" +
-            " WHERE id_discount = :idDiscount",
-            nativeQuery = true)
-    void updateDiscount(Integer idDiscount, String nameDiscount, String dateStart, String dateEnd,
+
+    void updateDiscount(Integer idDiscount, String nameDiscount, String dateStart, String dateEnd, String img,
                         String describeDiscount, Double percentDiscount);
 }
