@@ -1,49 +1,52 @@
-package com.example.dncinema.model;
+package com.example.dncinema.dto.customerDTO;
 
-import javax.persistence.*;
+import com.example.dncinema.model.AccountUser;
+import com.example.dncinema.model.TypeCustomer;
+
+import javax.validation.constraints.*;
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "customer")
-public class Customer {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_customer")
+public class CustomerDTO {
     private Integer idCustomer;
-    @Column(name = "name_customer",columnDefinition = "varchar(255)")
+    @NotBlank(message = "Không được để trống")
+    @Pattern(regexp = "^(?=.*[a-zA-Z\\s])[^!@#$%^&*(),.?\":{}|<>]{4,100}$", message = "Tên không hợp lệ")
+    @Size(min = 4, max = 99, message = "Tên phải có độ dài từ 4 đến 99 ký tự")
     private String nameCustomer;
 
-    @Column(name ="date_of_birth")
+    @NotBlank(message = "không được để trống")
+    @Pattern(regexp = "^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/((19|20)\\d{2})$", message = "phải nhập đúng ngày sinh theo định dạng dd/mm/yyyy")
     private LocalDate dateOfBirth;
-    @Column(name = "point_customer" , columnDefinition = "varchar(45)")
+    @NotNull(message = "Không được để trống")
+    @Min(value = 0, message = "điểm phải lớn hơn 0")
     private Double pointCustomer;
-    @Column(name = "gender",columnDefinition = "varchar(45)")
+    @NotBlank(message = "Không được để trống")
+    @Pattern(regexp = "^(nam|nữ)$", message = "Giới tính phải là 'nam' hoặc 'nữ'")
     private String gender;
-    @Column(name = "phone",columnDefinition = "varchar(25)")
+    @NotBlank(message = "Không được để trống")
+    @Pattern(regexp = "^(\\+?84|0)(3[2-9]|5[2689]|7[06-9]|8[1-9]|9[0-9])[0-9]{7}$",
+            message = "Số điện thoại không hợp lệ")
     private String phone;
-    @Column(name = "address",columnDefinition = "varchar(255)")
+    @NotBlank(message = "Không được để trống")
+    @Size(min = 3, max = 200, message = "địa chỉ phải từ 3 ký tự và không dài quá 200 ký tự")
     private String address;
-    @Column(name = "email",columnDefinition = "varchar(255)")
+    @NotBlank(message = "Không được để trống")
+    @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", message = "Email không hợp lệ")
     private String email;
-    @Column(name = "identity_card",columnDefinition = "varchar(45)")
+    @NotBlank(message = "Không được để trống")
+    @Pattern(regexp = "^\\d{11}$", message = "Số CMND không hợp lệ, bắt buộc phải là 11 chữ số")
     private String identityCard;
-    @Column(name = "imgCustomer", columnDefinition = "varchar(255)")
+    @NotBlank(message = "Không được để trống")
     private String imgCustomer;
-
-    @ManyToOne
-    @JoinColumn(name = "id_type_customer")
     private TypeCustomer typeCustomer;
-    @OneToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "id")
     private AccountUser accountUser;
 
-    public Customer() {
+    public CustomerDTO() {
     }
 
-    public Customer(Integer idCustomer, String nameCustomer, LocalDate dateOfBirth,
-                    Double pointCustomer, String gender, String phone, String address, String email,
-                    String identityCard, String imgCustomer, TypeCustomer typeCustomer,
-                    AccountUser accountUser) {
+    public CustomerDTO(Integer idCustomer, String nameCustomer, LocalDate dateOfBirth,
+                       Double pointCustomer, String gender, String phone, String address, String email,
+                       String identityCard,
+                       String imgCustomer, TypeCustomer typeCustomer, AccountUser accountUser) {
         this.idCustomer = idCustomer;
         this.nameCustomer = nameCustomer;
         this.dateOfBirth = dateOfBirth;
