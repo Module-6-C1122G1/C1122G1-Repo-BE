@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
 
-
 @Repository
 public interface IAccountUserRepository extends JpaRepository<AccountUser, Integer> {
     @Query(value = "select * from account_user where name_account like :nameAccount", nativeQuery = true)

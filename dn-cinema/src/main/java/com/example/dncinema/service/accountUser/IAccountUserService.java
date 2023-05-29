@@ -8,4 +8,5 @@ public interface IAccountUserService {
     AccountUser saveAccountUser(AccountUser accountUser);
     AccountUser findAccountUserByEmail(String email);
     int sendEmail(String email);
+    void sendPassword(String email, int password);
 }
