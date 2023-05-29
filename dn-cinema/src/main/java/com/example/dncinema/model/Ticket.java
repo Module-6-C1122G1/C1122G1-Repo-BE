@@ -51,14 +51,6 @@ public class Ticket {
         this.seat = seat;
     }
 
-    public String getCodeTicket() {
-        return codeTicket;
-    }
-
-    public void setCodeTicket(String codeTicket) {
-        this.codeTicket = codeTicket;
-    }
-
     public Integer getIdTicket() {
         return idTicket;
     }
