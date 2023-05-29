@@ -122,7 +122,6 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;d788013c1d5834ba3ba288e3511a87d2&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
->>>>>>> 7335477d8ed20864c39e21c3c74d9326f43ea7a1
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -150,7 +149,6 @@
 }</component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
->>>>>>> 7335477d8ed20864c39e21c3c74d9326f43ea7a1
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -160,6 +158,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+
     </configuration>
     <configuration name="DnCinemaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="dn-cinema.main" />
@@ -217,12 +216,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update ticket and movie detail" />
     <option name="LAST_COMMIT_MESSAGE" value="update ticket and movie detail" />
-  </component>
-  <component name="XDebuggerManager">
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo parentTag="com.example.dncinema.dto.discount.DiscountDTO" memberName="dateStart" />
-      </pinned-members>
-    </pin-to-top-manager>
   </component>
 </project>

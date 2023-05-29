@@ -1,7 +1,12 @@
 package com.example.dncinema.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "show_time")
@@ -18,20 +23,18 @@ public class ShowTime {
     @ManyToOne
     @JoinColumn(name = "id_show_room")
     private ShowRoom showRoom;
-
     @ManyToOne
-    @JoinColumn(name = "id_seat")
-    private Seat seat;
-
+    @JoinColumn(name = "id_film")
+    private Film film;
     public ShowTime() {
     }
 
-    public ShowTime(Integer idShowTime, LocalDate showDate, String showTime, ShowRoom showRoom, Seat seat) {
+    public ShowTime(Integer idShowTime, LocalDate showDate, String showTime, ShowRoom showRoom) {
         this.idShowTime = idShowTime;
         this.showDate = showDate;
         this.showTime = showTime;
         this.showRoom = showRoom;
-        this.seat = seat;
+
     }
 
     public Integer getIdShowTime() {
@@ -50,6 +53,14 @@ public class ShowTime {
         this.showDate = showDate;
     }
 
+    public Film getFilm() {
+        return film;
+    }
+
+    public void setFilm(Film film) {
+        this.film = film;
+    }
+
     public String getShowTime() {
         return showTime;
     }
@@ -66,11 +77,5 @@ public class ShowTime {
         this.showRoom = showRoom;
     }
 
-    public Seat getSeat() {
-        return seat;
-    }
 
-    public void setSeat(Seat seat) {
-        this.seat = seat;
-    }
 }

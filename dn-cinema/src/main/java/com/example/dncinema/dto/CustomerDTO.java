@@ -3,6 +3,8 @@ package com.example.dncinema.dto;
 import javax.persistence.Column;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
+import javax.validation.constraints.PositiveOrZero;
 
 public class CustomerDTO {
     private Integer idCustomer;
@@ -11,8 +13,9 @@ public class CustomerDTO {
     private String gender;
     private String phone;
     private String address;
-    private String email;
     private String identityCard;
+    private String email;
+    private TypeCustomerDTO typeCustomerDTO;
 
     public CustomerDTO() {
     }
@@ -90,5 +93,11 @@ public class CustomerDTO {
 
     public void setIdentityCard(String identityCard) {
         this.identityCard = identityCard;
+    public TypeCustomerDTO getTypeCustomerDTO() {
+        return typeCustomerDTO;
+    }
+
+    public void setTypeCustomerDTO(TypeCustomerDTO typeCustomerDTO) {
+        this.typeCustomerDTO = typeCustomerDTO;
     }
 }
