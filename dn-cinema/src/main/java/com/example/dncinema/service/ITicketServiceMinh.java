@@ -9,7 +9,6 @@ public interface ITicketServiceMinh {
     void saveTicket(TicketDTO ticketDTO) throws UnsupportedEncodingException;
     void sendEmail(String email, String path);
     Discount findDiscount(String nameDiscount);
-    String pay(long amount) throws UnsupportedEncodingException;
-    void createQR(String data, int a, String path);
-
+    String pay(TicketDTO ticketDTO) throws UnsupportedEncodingException;
+    void createQR(String data, String path);
 }

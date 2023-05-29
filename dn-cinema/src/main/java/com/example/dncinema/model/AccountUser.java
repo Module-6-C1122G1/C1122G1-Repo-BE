@@ -1,5 +1,6 @@
 package com.example.dncinema.model;
 
+import com.example.dncinema.model.Roles;
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
