@@ -1,16 +1,13 @@
 package com.example.dncinema.service.accountUser.impl;
 
 import com.example.dncinema.dto.accounUserDTO.AccountUserDTO;
-import com.example.dncinema.dto.customerDTO.CustomerDTO;
 import com.example.dncinema.model.AccountUser;
-import com.example.dncinema.model.Customer;
 import com.example.dncinema.repository.IAccountUserRepository;
 import com.example.dncinema.service.accountUser.IAccountUserService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.mail.MessagingException;
@@ -37,7 +34,6 @@ public class accountUserService implements IAccountUserService {
     private IAccountUserRepository accountUserRepository;
     @Autowired
     private JavaMailSender javaMailSender;
-
     @Override
     public AccountUser findAccountUserByNameAccount(String name) {
         AccountUser accountUser = accountUserRepository.findAccountUserByNameAccount(name);
@@ -93,6 +89,33 @@ public class accountUserService implements IAccountUserService {
             throw new RuntimeException(e);
         }
         return numberRandom;
+    }
+    @Override
+    public void sendPassword(String email, int password) {
+        MimeMessage mimeMessage = javaMailSender.createMimeMessage();
+        MimeMessageHelper message;
+        try {
+            message = new MimeMessageHelper(mimeMessage, true);
+            message.setTo(email);
+            message.setSubject("Mã QR");
+            message.setText("Kính gửi Quý khách hàng,<br><br>"
+                            + "<div style=\"font-weight:bold\">Đây là mật khẩu của bạn:</div>"
+                            + "<h3 class=\"font-weight:bold\">" + password + "</h3>"
+                            + "<br>"
+                            + "Cảm ơn quý khách đã sử dụng dịch vụ của chúng tôi. "
+                            + "Vui lòng không chia sẻ mã này với bất kỳ ai, "
+                            + "vì nó được sử dụng để đăng nhập tài khoản của bạn sau này."
+                            + "<br>"
+                            + "Nếu bạn không yêu cầu mã, "
+                            + "vui lòng bỏ qua email này hoặc liên hệ với chúng tôi để được hỗ trợ."
+                            + "<br><br>"
+                            + "Trân trọng,<br>"
+                            + "<div style=\"color:#183661; font-size:20px; font-weight:bold\">DN Cinema</div>",
+                    true);
+            javaMailSender.send(message.getMimeMessage());
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override

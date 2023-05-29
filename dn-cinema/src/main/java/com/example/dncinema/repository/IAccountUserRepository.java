@@ -13,7 +13,6 @@ import javax.transaction.Transactional;
 public interface IAccountUserRepository extends JpaRepository<AccountUser, Integer> {
     @Query(value = "select * from account_user where name_account like :nameAccount", nativeQuery = true)
     AccountUser findAccountUserByNameAccount(String nameAccount);
-
     @Query(value = "select * from account_user where name_account like :email", nativeQuery = true)
     AccountUser findAccountUserByEmail(String email);
 
