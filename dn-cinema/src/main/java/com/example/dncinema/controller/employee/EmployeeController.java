@@ -14,7 +14,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/employee")
+@RequestMapping("/api/employee")
 @CrossOrigin("*")
 public class EmployeeController {
     @Autowired
@@ -56,7 +56,7 @@ public class EmployeeController {
      * @return
      */
     @ResponseStatus(HttpStatus.OK)
-    @PutMapping("/{id}")
+    @PatchMapping("/{id}")
     public ResponseEntity<?> updateEmployeeWithAccount(@Valid @RequestBody EmployeeDTO employeeDTO,
                                                        @PathVariable("id") Integer id, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {

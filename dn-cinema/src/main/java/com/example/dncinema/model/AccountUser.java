@@ -16,7 +16,7 @@ public class AccountUser {
     private int id;
     @Column(name = "name_account", columnDefinition = "varchar(255)")
     private String nameAccount;
-    @Column(name = "password_account", columnDefinition = "varchar(255)")
+    @Column(name = "password_account", colu mnDefinition = "varchar(255)")
     private String passwordAccount;
     @ManyToMany(fetch = FetchType.EAGER , cascade = CascadeType.ALL)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "account_id"),

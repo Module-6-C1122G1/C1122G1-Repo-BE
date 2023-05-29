@@ -9,12 +9,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/config/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/employee/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/employee/EmployeeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/EmployeeDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/EmployeeDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/IEmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/IEmployeeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/employee/IEmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/employee/IEmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/employee/impl/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/employee/impl/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/AccountUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/AccountUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/employee/EmployeeController_createEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/employee/EmployeeController_createEmployee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/employee/EmployeeController_updateEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/employee/EmployeeController_updateEmployee.java" afterDir="false" />
     </list>
@@ -100,8 +98,8 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="Gradle.EmployeeController_createEmployee.createEmployee_email_13">
-    <configuration name="EmployeeController_createEmployee.createEmployee_18" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Spring Boot.DnCinemaApplication">
+    <configuration name="EmployeeController_createEmployee.createEmployee_address_15" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -114,7 +112,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.dncinema.controller.employee.EmployeeController_createEmployee.createEmployee_18&quot;" />
+            <option value="&quot;com.example.dncinema.controller.employee.EmployeeController_createEmployee.createEmployee_address_15&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -125,7 +123,7 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="EmployeeController_createEmployee.createEmployee_dateOfBirth_13" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="EmployeeController_createEmployee.createEmployee_email_16" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -138,7 +136,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.dncinema.controller.employee.EmployeeController_createEmployee.createEmployee_dateOfBirth_13&quot;" />
+            <option value="&quot;com.example.dncinema.controller.employee.EmployeeController_createEmployee.createEmployee_email_16&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -149,7 +147,7 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="EmployeeController_createEmployee.createEmployee_email_13" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="EmployeeController_createEmployee.createEmployee_identityCard_16" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -162,7 +160,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.dncinema.controller.employee.EmployeeController_createEmployee.createEmployee_email_13&quot;" />
+            <option value="&quot;com.example.dncinema.controller.employee.EmployeeController_createEmployee.createEmployee_identityCard_16&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -173,7 +171,7 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="EmployeeController_createEmployee.createEmployee_nameAccount_13" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="EmployeeController_createEmployee.createEmployee_phone_15" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -186,7 +184,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.dncinema.controller.employee.EmployeeController_createEmployee.createEmployee_nameAccount_13&quot;" />
+            <option value="&quot;com.example.dncinema.controller.employee.EmployeeController_createEmployee.createEmployee_phone_15&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -197,7 +195,7 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="EmployeeController_updateEmployee.updateEmployee_18" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="EmployeeController_createEmployee.createEmployee_phone_16" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -210,7 +208,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.dncinema.controller.employee.EmployeeController_updateEmployee.updateEmployee_18&quot;" />
+            <option value="&quot;com.example.dncinema.controller.employee.EmployeeController_createEmployee.createEmployee_phone_16&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -230,11 +228,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.EmployeeController_createEmployee.createEmployee_email_13" />
-        <item itemvalue="Gradle.EmployeeController_createEmployee.createEmployee_nameAccount_13" />
-        <item itemvalue="Gradle.EmployeeController_createEmployee.createEmployee_dateOfBirth_13" />
-        <item itemvalue="Gradle.EmployeeController_updateEmployee.updateEmployee_18" />
-        <item itemvalue="Gradle.EmployeeController_createEmployee.createEmployee_18" />
+        <item itemvalue="Gradle.EmployeeController_createEmployee.createEmployee_email_16" />
+        <item itemvalue="Gradle.EmployeeController_createEmployee.createEmployee_phone_16" />
+        <item itemvalue="Gradle.EmployeeController_createEmployee.createEmployee_identityCard_16" />
+        <item itemvalue="Gradle.EmployeeController_createEmployee.createEmployee_address_15" />
+        <item itemvalue="Gradle.EmployeeController_createEmployee.createEmployee_phone_15" />
       </list>
     </recent_temporary>
   </component>
@@ -250,7 +248,8 @@
       <workItem from="1684894781635" duration="240000" />
       <workItem from="1684918773391" duration="4934000" />
       <workItem from="1684933669914" duration="2191000" />
-      <workItem from="1685020689911" duration="21587000" />
+      <workItem from="1685020689911" duration="28310000" />
+      <workItem from="1685254188739" duration="2954000" />
     </task>
     <task id="LOCAL-00001" summary="update-NghiaTT">
       <created>1685065050107</created>
@@ -259,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685065050107</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update-NghiaTT">
+      <created>1685074109621</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685074109621</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
