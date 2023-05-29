@@ -28,16 +28,19 @@ public class CustomerDTO {
     @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", message = "Email không hợp lệ")
     private String email;
     @NotBlank(message = "Không được để trống")
-    @Pattern(regexp = "^\\d{9}$", message = "Số CMND không hợp lệ, bắt buộc phải là 9 chữ số")
+    @Pattern(regexp = "^\\d{11}$", message = "Số CMND không hợp lệ, bắt buộc phải là 11 chữ số")
     private String identityCard;
+    @NotBlank(message = "Không được để trống")
+    private String imgCustomer;
     private TypeCustomer typeCustomer;
     private AccountUser accountUser;
 
     public CustomerDTO() {
     }
 
-    public CustomerDTO(Integer idCustomer, String nameCustomer, Double pointCustomer, String gender, String phone, String address,
-                       String email, String identityCard, TypeCustomer typeCustomer, AccountUser accountUser) {
+    public CustomerDTO(Integer idCustomer, String nameCustomer, Double pointCustomer, String gender,
+                       String phone, String address, String email, String identityCard,
+                       String imgCustomer, TypeCustomer typeCustomer, AccountUser accountUser) {
         this.idCustomer = idCustomer;
         this.nameCustomer = nameCustomer;
         this.pointCustomer = pointCustomer;
@@ -46,6 +49,7 @@ public class CustomerDTO {
         this.address = address;
         this.email = email;
         this.identityCard = identityCard;
+        this.imgCustomer = imgCustomer;
         this.typeCustomer = typeCustomer;
         this.accountUser = accountUser;
     }
@@ -112,6 +116,14 @@ public class CustomerDTO {
 
     public void setIdentityCard(String identityCard) {
         this.identityCard = identityCard;
+    }
+
+    public String getImgCustomer() {
+        return imgCustomer;
+    }
+
+    public void setImgCustomer(String imgCustomer) {
+        this.imgCustomer = imgCustomer;
     }
 
     public TypeCustomer getTypeCustomer() {

@@ -10,6 +10,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.mail.MessagingException;
@@ -36,6 +37,9 @@ public class accountUserService implements IAccountUserService {
     private IAccountUserRepository accountUserRepository;
     @Autowired
     private JavaMailSender javaMailSender;
+    @Autowired
+    PasswordEncoder passwordEncoder;
+
     @Override
     public AccountUser findAccountUserByNameAccount(String name) {
         AccountUser accountUser = accountUserRepository.findAccountUserByNameAccount(name);
@@ -102,8 +106,6 @@ public class accountUserService implements IAccountUserService {
                 accountUserDTO.getId()
         );
     }
-
-
     @Override
     public AccountUser findById(int id) {
         return accountUserRepository.findAccountUserById(id);

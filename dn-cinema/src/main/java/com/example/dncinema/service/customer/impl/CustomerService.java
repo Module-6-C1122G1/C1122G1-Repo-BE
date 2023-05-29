@@ -72,6 +72,7 @@ public class CustomerService implements ICustomerService {
                 customer.getAddress(),
                 customer.getEmail(),
                 customer.getIdentityCard(),
+                customer.getImgCustomer(),
                 customer.getTypeCustomer().getIdTypeCustomer(),
                 accountUser.getId()
         );
@@ -89,7 +90,7 @@ public class CustomerService implements ICustomerService {
         AccountUser accountUser = iAccountUserRepository
                 .findAccountUserByNameAccount(customerDTO.getAccountUser().getNameAccount());
 
-//        iAccountUserRepository.updateAccount(customerDTO.getAccountUser().getNameAccount(), customerDTO.getAccountUser().getPasswordAccount(),
+//        iAccountUserRepository.savePassword( passwordEncoder.encode(customerDTO.getAccountUser().getPasswordAccount()),
 //                accountUser.getId());
         Customer customer = iCustomerRepository.findByIdCustomer(id);
         BeanUtils.copyProperties(customerDTO, customer);
@@ -101,6 +102,7 @@ public class CustomerService implements ICustomerService {
                 customerDTO.getAddress(),
                 customerDTO.getEmail(),
                 customerDTO.getIdentityCard(),
+                customerDTO.getImgCustomer(),
                 customerDTO.getTypeCustomer().getIdTypeCustomer(),
                 accountUser.getId(),
                 customerDTO.getIdCustomer()

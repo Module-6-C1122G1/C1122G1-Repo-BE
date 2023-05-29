@@ -18,7 +18,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/public")
+@RequestMapping("api/customer")
 @CrossOrigin("*")
 public class RegisterCustomerController {
     @Autowired
@@ -84,21 +84,19 @@ public class RegisterCustomerController {
      * Function: Update password  into Database
      *
      * @param accountUserDTO
-     * @param id
      * @param bindingResult
      * @return
      */
     @ResponseStatus(HttpStatus.OK)
     @PatchMapping("/resetPassword/{id}")
-    public ResponseEntity<?> resetPasswordAccount(@Valid @RequestBody AccountUserDTO accountUserDTO,
-                                                   @PathVariable("id") Integer id, BindingResult bindingResult) {
+    public ResponseEntity<?> resetPasswordAccount(@Valid @RequestBody AccountUserDTO accountUserDTO, BindingResult bindingResult) {
         if(bindingResult.hasErrors()){
             return new ResponseEntity<>(bindingResult.getAllErrors(),HttpStatus.BAD_REQUEST);
         }
-        AccountUser accountUser = accountUserService.findById(id);
+        AccountUser accountUser = new AccountUser();
+
         BeanUtils.copyProperties(accountUserDTO, accountUser);
-        accountUserService.updatePassword(accountUserDTO,id);
+        accountUserService.updatePassword(accountUserDTO,accountUserDTO.getId());
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
 }

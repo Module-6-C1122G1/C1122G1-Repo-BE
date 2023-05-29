@@ -23,6 +23,8 @@ public class Customer {
     private String email;
     @Column(name = "identity_card",columnDefinition = "varchar(45)")
     private String identityCard;
+    @Column(name = "imgCustomer", columnDefinition = "varchar(255)")
+    private String imgCustomer;
 
     @ManyToOne
     @JoinColumn(name = "id_type_customer")
@@ -34,7 +36,9 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(Integer idCustomer, String nameCustomer, Double pointCustomer, String gender, String phone, String address, String email, String identityCard, TypeCustomer typeCustomer, AccountUser accountUser) {
+    public Customer(Integer idCustomer, String nameCustomer, Double pointCustomer, String gender,
+                    String phone, String address, String email, String identityCard,
+                    String imgCustomer, TypeCustomer typeCustomer, AccountUser accountUser) {
         this.idCustomer = idCustomer;
         this.nameCustomer = nameCustomer;
         this.pointCustomer = pointCustomer;
@@ -43,6 +47,7 @@ public class Customer {
         this.address = address;
         this.email = email;
         this.identityCard = identityCard;
+        this.imgCustomer = imgCustomer;
         this.typeCustomer = typeCustomer;
         this.accountUser = accountUser;
     }
@@ -109,6 +114,14 @@ public class Customer {
 
     public void setIdentityCard(String identityCard) {
         this.identityCard = identityCard;
+    }
+
+    public String getImgCustomer() {
+        return imgCustomer;
+    }
+
+    public void setImgCustomer(String imgCustomer) {
+        this.imgCustomer = imgCustomer;
     }
 
     public TypeCustomer getTypeCustomer() {
