@@ -1,6 +1,9 @@
 package com.example.dncinema.model;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import javax.persistence.*;
+import java.io.File;
 import java.time.LocalDate;
 @Entity
 @Table(name = "discount")
@@ -15,11 +18,12 @@ public class Discount {
     private String dateStart;
     @Column(name = "date_end", columnDefinition = "varchar(255)")
     private String dateEnd;
+    @Column(name = "img", columnDefinition = "varchar(255)")
+    private String img;
     @Column(name = "describe_discount", columnDefinition = "varchar(255)")
     private String describeDiscount;
     @Column(name = "percent_discount")
     private Double percentDiscount;
-
 
 
     @Column(columnDefinition = "boolean default false")
@@ -88,6 +92,14 @@ public class Discount {
 
     public boolean isDeleted() {
         return isDeleted;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public void setDeleted(boolean deleted) {

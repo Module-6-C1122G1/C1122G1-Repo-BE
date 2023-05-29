@@ -31,13 +31,14 @@ public interface IDiscountRepository extends JpaRepository<Discount, Integer> {
      */
     @Transactional
     @Modifying
-    @Query(value = "insert into discount(name_discount, date_start,date_end, describe_discount, percent_discount) " +
-            "values (:nameDiscount,:dateStart,:dateEnd,:describeDiscount,:percentDiscount)",
+    @Query(value = "insert into discount(name_discount, date_start,date_end,img, describe_discount, percent_discount) " +
+            "values (:nameDiscount,:dateStart,:dateEnd,:img,:describeDiscount,:percentDiscount)",
             nativeQuery = true)
     void createDiscount(
             @Param("nameDiscount") String nameDiscount,
             @Param("dateStart") String dateStart,
             @Param("dateEnd") String dateEnd,
+            @Param("img") String img,
             @Param("describeDiscount") String describeDiscount,
             @Param("percentDiscount") Double percentDiscount
     );
@@ -49,7 +50,7 @@ public interface IDiscountRepository extends JpaRepository<Discount, Integer> {
      *
      * @param idDiscount
      */
-    @Query(value = "select id_discount, name_discount, date_start,date_end, describe_discount, percent_discount,is_deleted " +
+    @Query(value = "select id_discount, name_discount, date_start,date_end,img, describe_discount, percent_discount,is_deleted " +
             "from discount where id_discount = :idDiscount", nativeQuery = true)
     Discount findDiscountById(int idDiscount);
 
@@ -71,12 +72,18 @@ public interface IDiscountRepository extends JpaRepository<Discount, Integer> {
             "name_discount = :nameDiscount," +
             "date_start = :dateStart," +
             "date_end = :dateEnd," +
+            "img=:img,"+
             "describe_discount = :describeDiscount," +
             "percent_discount = :percentDiscount" +
             " WHERE id_discount = :idDiscount",
             nativeQuery = true)
     void updateDiscount(
-             Integer idDiscount,String nameDiscount,String dateStart, String dateEnd,
-             String describeDiscount, Double percentDiscount
+            @Param("idDiscount")Integer idDiscount,
+            @Param("nameDiscount") String nameDiscount,
+            @Param("dateStart") String dateStart,
+            @Param("dateEnd") String dateEnd,
+            @Param("img") String img,
+            @Param("describeDiscount") String describeDiscount,
+            @Param("percentDiscount") Double percentDiscount
     );
 }

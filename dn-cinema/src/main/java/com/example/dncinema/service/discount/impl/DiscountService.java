@@ -64,8 +64,8 @@ public class DiscountService implements IDiscountService {
      * @Param("percentDiscount") Double percentDiscount
      */
     @Override
-    public void createDiscount(String nameDiscount, String dateStart, String dateEnd, String describeDiscount, Double percentDiscount) {
-        discountRepository.createDiscount(nameDiscount, dateStart, dateEnd, describeDiscount, percentDiscount);
+    public void createDiscount(String nameDiscount, String dateStart, String dateEnd,String img, String describeDiscount, Double percentDiscount) {
+        discountRepository.createDiscount(nameDiscount, dateStart, dateEnd, img,describeDiscount, percentDiscount);
     }
     /**
      * Create by: HoangPT,
@@ -91,7 +91,7 @@ public class DiscountService implements IDiscountService {
      * @Param("percentDiscount") String percentDiscount
      */
     @Override
-    public void updateDiscount(Integer idDiscount, String nameDiscount, String dateStart, String dateEnd, String describeDiscount, Double percentDiscount) {
-        discountRepository.updateDiscount(idDiscount, nameDiscount, dateStart, dateEnd, describeDiscount, percentDiscount);
+    public void updateDiscount(Integer idDiscount, String nameDiscount, String dateStart, String dateEnd,String img, String describeDiscount, Double percentDiscount) {
+        discountRepository.updateDiscount(idDiscount, nameDiscount, dateStart, dateEnd, img,describeDiscount, percentDiscount);
     }
 }

@@ -63,13 +63,13 @@ public class DiscountController {
      * @Return if has errors then return HttpStatus.Not_FOUND else add data into Database
      */
     @PostMapping(value = "/create")
-    public ResponseEntity<?> createDiscount(@Valid @ModelAttribute DiscountDTO discountDTO, BindingResult bindingResult) {
+    public ResponseEntity<?> createDiscount(@Valid @RequestBody DiscountDTO discountDTO, BindingResult bindingResult) {
         new DiscountDTO().validate(discountDTO,bindingResult);
         if (bindingResult.hasErrors()) {
             return new ResponseEntity<>(bindingResult.getAllErrors(), HttpStatus.BAD_REQUEST);
         }
         discountService.createDiscount(discountDTO.getNameDiscount(), discountDTO.getDateStart(),
-                discountDTO.getDateEnd(), discountDTO.getDescribeDiscount(), discountDTO.getPercentDiscount());
+                discountDTO.getDateEnd(), discountDTO.getImg(),discountDTO.getDescribeDiscount(),  discountDTO.getPercentDiscount());
         return new ResponseEntity<>(HttpStatus.OK);
     }
     /**
@@ -101,7 +101,7 @@ public class DiscountController {
      * @Param("percentDiscount") String percentDiscount
      */
     @PutMapping("/update/{idDiscount}")
-    public ResponseEntity<?> updateDiscount(@PathVariable Integer idDiscount ,@Valid @ModelAttribute DiscountDTO discountDTO, BindingResult bindingResult) {
+    public ResponseEntity<?> updateDiscount(@PathVariable Integer idDiscount ,@Valid @RequestBody DiscountDTO discountDTO, BindingResult bindingResult) {
         new DiscountDTO().validate(discountDTO,bindingResult);
         discountDTO.setIdDiscount(idDiscount);
         if (bindingResult.hasErrors()) {
@@ -112,7 +112,7 @@ public class DiscountController {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         discountService.updateDiscount(discountDTO.getIdDiscount(),discountDTO.getNameDiscount(), discountDTO.getDateStart(),
-                discountDTO.getDateEnd(), discountDTO.getDescribeDiscount(), discountDTO.getPercentDiscount());
+                discountDTO.getDateEnd(), discountDTO.getImg(),discountDTO.getDescribeDiscount(), discountDTO.getPercentDiscount());
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
