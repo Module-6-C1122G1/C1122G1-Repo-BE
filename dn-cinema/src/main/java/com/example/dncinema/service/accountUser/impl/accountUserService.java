@@ -35,7 +35,6 @@ public class accountUserService implements IAccountUserService {
     @Override
     public AccountUser findAccountUserByNameAccount(String name) {
         AccountUser accountUser = accountUserRepository.findAccountUserByNameAccount(name);
-        System.out.println(accountUser);
         return accountUser;
     }
 

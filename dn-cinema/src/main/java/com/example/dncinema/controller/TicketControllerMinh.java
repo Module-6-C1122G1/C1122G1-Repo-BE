@@ -5,7 +5,7 @@ import com.example.dncinema.model.Customer;
 import com.example.dncinema.model.Discount;
 import com.example.dncinema.model.Seat;
 import com.example.dncinema.repository.ICustomerRepository;
-import com.example.dncinema.repository.ISeatRepositoryMinh;
+import com.example.dncinema.repository.seat.ISeatRepository;
 import com.example.dncinema.service.ITicketServiceMinh;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.*;
 import java.io.UnsupportedEncodingException;
 
 @RestController
-@RequestMapping("/api/customer/ticket/")
+@RequestMapping("/api/user/ticket/")
 public class TicketControllerMinh {
     @Autowired
     private ITicketServiceMinh iTicketServiceMinh;
     @Autowired
-    private ISeatRepositoryMinh iSeatRepository;
+    private ISeatRepository iSeatRepository;
     @Autowired
     private ICustomerRepository iCustomerRepository;
 

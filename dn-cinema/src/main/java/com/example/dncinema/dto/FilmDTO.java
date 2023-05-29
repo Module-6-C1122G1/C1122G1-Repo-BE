@@ -2,23 +2,50 @@ package com.example.dncinema.dto;
 
 import com.example.dncinema.model.ShowTime;
 import com.example.dncinema.model.TypeFilm;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.hibernate.validator.constraints.Length;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 public class FilmDTO {
     private Integer idFilm;
+    @NotBlank(message = "Tên phim không được để trống")
+    @Length(max = 255)
     private String nameFilm;
+    @NotBlank(message = "Đạo diễn không được để trống")
+    @Length(max = 255)
     private String director;
+    @NotBlank(message = "Hãng phim không được để trống")
+    @Length(max = 255)
     private String studioFilm;
+    @NotBlank(message = "Trailer không được để trống")
+    @Length(max = 255)
     private String trailer;
+    @NotBlank(message = "Nội dung phim không được để trống")
     private String describeFilm;
+    @NotBlank(message = "Diễn viên không được để trống")
+    @Length(max = 255)
     private String actor;
+    @NotNull(message = "Giá ghế thường không được để trống")
+    @Min(value = 0, message = "Giá ghế thường phải lớn hơn 0")
     private Double normalSeatPrice;
+    @NotNull(message = "Giá ghế vip không được để trống")
+    @Min(value = 0, message = "Giá ghế vip phải lớn hơn 0")
     private Double vipSeatPrice;
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateStartFilm;
+
     private LocalDate dateEndFilm;
+    @NotBlank(message = "Ảnh phim không được để trống")
     private String imgFilm;
+    @NotNull(message = "Thời lượng phim không được để trống")
+    @Min(value = 0, message = "Thời lượng phim không được nhỏ hơn 0")
     private Integer timeFilm;
+    @NotBlank(message = "Nhãn phim không được để trống")
+    @Length(max = 255)
     private String movieLabel;
     private TypeFilm typeFilm;
     private ShowTime showTime;

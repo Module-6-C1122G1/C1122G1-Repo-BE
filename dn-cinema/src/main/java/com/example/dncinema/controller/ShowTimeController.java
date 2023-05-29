@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/showtime")
+@RequestMapping("/api/public/showtime")
 @CrossOrigin("*")
 public class ShowTimeController {
     @Autowired

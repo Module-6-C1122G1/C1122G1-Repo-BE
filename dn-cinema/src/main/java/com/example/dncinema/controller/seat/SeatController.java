@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/seat")
+@RequestMapping("/api/public/seat")
 @CrossOrigin("*")
 public class SeatController {
     @Autowired
@@ -24,8 +24,24 @@ public class SeatController {
      * @return ResponseEntity<>(ListSeat, HttpStatus.OK)
      */
     @GetMapping("/{id}")
-    public ResponseEntity<List<Seat>> getAllListSeatByIdRoom(@PathVariable Integer id){
-        return new ResponseEntity<>(seatService.findAllListSeatByIdRoom(id), HttpStatus.OK);
+    public ResponseEntity<List<Seat>> getAllListSeatByIdShowTime(@PathVariable Integer id){
+        return new ResponseEntity<>(seatService.findAllListSeatByIdShowTime(id), HttpStatus.OK);
+    }
+
+    @PutMapping("/update_status")
+    public ResponseEntity<?> updateStatusSeatByIdShowTime(@RequestBody String[] listId) {
+        for (String id : listId) {
+            seatService.updateStatusSeatByIdShowTime(Integer.parseInt(id));
+        }
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PutMapping("/reset_status")
+    public ResponseEntity<?> resetStatusSeatByIdShowTime(@RequestBody String[] listId) {
+        for (String id : listId) {
+            seatService.resetStatusSeatByIdShowTime(Integer.parseInt(id));
+        }
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
 
