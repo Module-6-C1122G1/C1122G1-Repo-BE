@@ -7,8 +7,7 @@
     <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="DatLVP up">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/TicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/TicketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/dncinema/TicketController_cancelTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/TicketController_cancelTicket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/dncinema/TicketController_findAllTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/dncinema/controller/TicketController_findAllTicket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Ticket.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,32 +63,32 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelOrder2&quot;: &quot;2&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth2&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/dn-cinema/dn-cinema-api/dn-cinema&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;d788013c1d5834ba3ba288e3511a87d2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelOrder2": "2",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RequestMappingsPanelWidth2": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/dn-cinema/dn-cinema-reactjs",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "d788013c1d5834ba3ba288e3511a87d2",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
-  <component name="RunManager" selected="Gradle.TicketController_findAllTicket.findAllTicket_9">
+}]]></component>
+  <component name="RunManager" selected="Spring Boot.DnCinemaApplication">
     <configuration name="TicketController_findAllTicket" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -214,10 +213,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TicketController_findAllTicket.findAllTicket_11" />
         <item itemvalue="Gradle.TicketController_findAllTicket.findAllTicket_9" />
         <item itemvalue="Gradle.TicketController_findAllTicket.findAllTicket_8" />
         <item itemvalue="Gradle.TicketController_findAllTicket.findAllTicket_7" />
-        <item itemvalue="Gradle.TicketController_findAllTicket.findAllTicket_11" />
         <item itemvalue="Gradle.TicketController_findAllTicket" />
       </list>
     </recent_temporary>
@@ -240,7 +239,8 @@
       <workItem from="1684999609049" duration="173000" />
       <workItem from="1685000841533" duration="7454000" />
       <workItem from="1685025666837" duration="9931000" />
-      <workItem from="1685064492705" duration="7995000" />
+      <workItem from="1685064492705" duration="10456000" />
+      <workItem from="1685322937247" duration="9601000" />
     </task>
     <task id="LOCAL-00001" summary="DatLVP up">
       <created>1684977293169</created>
@@ -284,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685070938729</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="DatLVP up">
+      <created>1685087940746</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1685087940746</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

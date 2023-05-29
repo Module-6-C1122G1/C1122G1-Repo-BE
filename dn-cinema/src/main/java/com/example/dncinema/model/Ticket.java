@@ -17,8 +17,7 @@ import java.time.LocalDate;
                         "   or customer.phone like concat('%', :search, '%')\n" +
                         "   or customer.identity_card like concat('%', :search, '%')\n" +
                         "   or film.name_film like concat('%', :search, '%'))\n" +
-                        "   and ticket.is_delete = false\n" +
-                        "   group by ticket.id_ticket",
+                        "   and ticket.is_delete = false",
         resultSetMapping = "list_ticket_dto"
 )
 @SqlResultSetMapping(
