@@ -18,7 +18,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/customer")
+@RequestMapping("api/user")
 @CrossOrigin("*")
 public class RegisterCustomerController {
     @Autowired

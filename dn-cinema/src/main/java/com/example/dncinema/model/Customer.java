@@ -1,6 +1,7 @@
 package com.example.dncinema.model;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "customer")
@@ -11,6 +12,9 @@ public class Customer {
     private Integer idCustomer;
     @Column(name = "name_customer",columnDefinition = "varchar(255)")
     private String nameCustomer;
+
+    @Column(name ="date_of_birth")
+    private LocalDate dateOfBirth;
     @Column(name = "point_customer" , columnDefinition = "varchar(45)")
     private Double pointCustomer;
     @Column(name = "gender",columnDefinition = "varchar(45)")
@@ -36,11 +40,13 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(Integer idCustomer, String nameCustomer, Double pointCustomer, String gender,
-                    String phone, String address, String email, String identityCard,
-                    String imgCustomer, TypeCustomer typeCustomer, AccountUser accountUser) {
+    public Customer(Integer idCustomer, String nameCustomer, LocalDate dateOfBirth,
+                    Double pointCustomer, String gender, String phone, String address, String email,
+                    String identityCard, String imgCustomer, TypeCustomer typeCustomer,
+                    AccountUser accountUser) {
         this.idCustomer = idCustomer;
         this.nameCustomer = nameCustomer;
+        this.dateOfBirth = dateOfBirth;
         this.pointCustomer = pointCustomer;
         this.gender = gender;
         this.phone = phone;
@@ -66,6 +72,14 @@ public class Customer {
 
     public void setNameCustomer(String nameCustomer) {
         this.nameCustomer = nameCustomer;
+    }
+
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public Double getPointCustomer() {

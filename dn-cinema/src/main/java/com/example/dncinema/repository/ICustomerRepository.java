@@ -51,9 +51,10 @@ public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
      */
     @Modifying
     @Transactional
-    @Query(value = "insert into customer(name_customer , point_customer , gender , phone , address , email , identity_card ,img_customer, id_type_customer, id)" +
-            " values (:name_customer,:point_customer,:gender,:phone , :address , :email , :identity_card, :img_customer , :id_type, :id_account)", nativeQuery = true)
+    @Query(value = "insert into customer(name_customer , date_of_birth, point_customer , gender , phone , address , email , identity_card ,img_customer, id_type_customer, id)" +
+            " values (:name_customer,:date_of_birth, :point_customer,:gender,:phone , :address , :email , :identity_card, :img_customer , :id_type, :id_account)", nativeQuery = true)
     void saveCustomer(@Param("name_customer") String nameCustomer,
+                      @Param("date_of_birth") LocalDate date_of_birth,
                       @Param("point_customer") Double point_customer,
                       @Param("gender") String gender,
                       @Param("phone") String phone,
@@ -79,10 +80,11 @@ public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
      */
     @Modifying
     @Transactional
-    @Query(value = "update customer set name_customer = :name_customer, point_customer = :point_customer ," +
+    @Query(value = "update customer set name_customer = :name_customer,date_of_birth=:date_of_birth, point_customer = :point_customer ," +
             " gender = :gender ,phone = :phone,address = :address ,email = :email,identity_card = :identity_card, img_customer=:img_customer," +
             "id_type_customer=:id_type,id=:id_account WHERE id_customer = :id_customer", nativeQuery = true)
     void updateCustomerAccount(@Param("name_customer") String nameCustomer,
+                               @Param("date_of_birth") LocalDate date_of_birth,
                                @Param("point_customer") Double point_customer,
                                @Param("gender") String gender,
                                @Param("phone") String phone,

@@ -66,6 +66,7 @@ public class CustomerService implements ICustomerService {
         BeanUtils.copyProperties(customerDTO, customer);
         iCustomerRepository.saveCustomer(
                 customer.getNameCustomer(),
+                customer.getDateOfBirth(),
                 customer.getPointCustomer(),
                 customer.getGender(),
                 customer.getPhone(),
@@ -96,6 +97,7 @@ public class CustomerService implements ICustomerService {
         BeanUtils.copyProperties(customerDTO, customer);
         iCustomerRepository.updateCustomerAccount(
                 customerDTO.getNameCustomer(),
+                customerDTO.getDateOfBirth(),
                 customerDTO.getPointCustomer(),
                 customerDTO.getGender(),
                 customerDTO.getPhone(),

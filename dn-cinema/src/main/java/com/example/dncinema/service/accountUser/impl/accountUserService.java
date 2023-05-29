@@ -37,8 +37,6 @@ public class accountUserService implements IAccountUserService {
     private IAccountUserRepository accountUserRepository;
     @Autowired
     private JavaMailSender javaMailSender;
-    @Autowired
-    PasswordEncoder passwordEncoder;
 
     @Override
     public AccountUser findAccountUserByNameAccount(String name) {

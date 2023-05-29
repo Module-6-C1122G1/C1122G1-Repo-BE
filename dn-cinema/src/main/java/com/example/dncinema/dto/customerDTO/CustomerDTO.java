@@ -4,6 +4,7 @@ import com.example.dncinema.model.AccountUser;
 import com.example.dncinema.model.TypeCustomer;
 
 import javax.validation.constraints.*;
+import java.time.LocalDate;
 
 public class CustomerDTO {
     private Integer idCustomer;
@@ -11,6 +12,10 @@ public class CustomerDTO {
     @Pattern(regexp = "^(?=.*[a-zA-Z\\s])[^!@#$%^&*(),.?\":{}|<>]{4,100}$", message = "Tên không hợp lệ")
     @Size(min = 4, max = 99, message = "Tên phải có độ dài từ 4 đến 99 ký tự")
     private String nameCustomer;
+
+    @NotBlank(message = "không được để trống")
+    @Pattern(regexp = "^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/((19|20)\\d{2})$", message = "phải nhập đúng ngày sinh theo định dạng dd/mm/yyyy")
+    private LocalDate dateOfBirth;
     @NotNull(message = "Không được để trống")
     @Min(value = 0, message = "điểm phải lớn hơn 0")
     private Double pointCustomer;
@@ -38,11 +43,13 @@ public class CustomerDTO {
     public CustomerDTO() {
     }
 
-    public CustomerDTO(Integer idCustomer, String nameCustomer, Double pointCustomer, String gender,
-                       String phone, String address, String email, String identityCard,
+    public CustomerDTO(Integer idCustomer, String nameCustomer, LocalDate dateOfBirth,
+                       Double pointCustomer, String gender, String phone, String address, String email,
+                       String identityCard,
                        String imgCustomer, TypeCustomer typeCustomer, AccountUser accountUser) {
         this.idCustomer = idCustomer;
         this.nameCustomer = nameCustomer;
+        this.dateOfBirth = dateOfBirth;
         this.pointCustomer = pointCustomer;
         this.gender = gender;
         this.phone = phone;
@@ -68,6 +75,14 @@ public class CustomerDTO {
 
     public void setNameCustomer(String nameCustomer) {
         this.nameCustomer = nameCustomer;
+    }
+
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public Double getPointCustomer() {
