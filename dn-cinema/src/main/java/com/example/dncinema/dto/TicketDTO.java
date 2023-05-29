@@ -13,17 +13,17 @@ public class TicketDTO {
 
     private Integer idFilm;
     private Integer[] listSeat;
-    private Discount discount;
+    private Integer idDiscount;
     private long price;
 
     public TicketDTO() {
     }
 
-    public TicketDTO(Integer idCustomer, Integer idFilm, Integer[] listSeat, Discount discount, long price) {
+    public TicketDTO(Integer idCustomer, Integer idFilm, Integer[] listSeat, Integer idDiscount, long price) {
         IdCustomer = idCustomer;
         this.idFilm = idFilm;
         this.listSeat = listSeat;
-        this.discount = discount;
+        this.idDiscount = idDiscount;
         this.price = price;
     }
 
@@ -51,12 +51,12 @@ public class TicketDTO {
         this.listSeat = listSeat;
     }
 
-    public Discount getDiscount() {
-        return discount;
+    public Integer getIdDiscount() {
+        return idDiscount;
     }
 
-    public void setDiscount(Discount discount) {
-        this.discount = discount;
+    public void setIdDiscount(Integer idDiscount) {
+        this.idDiscount = idDiscount;
     }
 
     public long getPrice() {

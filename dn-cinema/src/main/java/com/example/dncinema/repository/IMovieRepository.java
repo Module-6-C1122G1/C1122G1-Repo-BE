@@ -1,8 +1,5 @@
 package com.example.dncinema.repository;
 
-<<<<<<< HEAD:dn-cinema/src/main/java/com/example/dncinema/repository/IMovieRepositoryMinh.java
-public interface IMovieRepositoryMinh {
-=======
 import com.example.dncinema.model.Film;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,7 +9,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
 
 @Repository
 public interface IMovieRepository extends JpaRepository<Film, Integer> {
@@ -30,5 +26,4 @@ public interface IMovieRepository extends JpaRepository<Film, Integer> {
 
     @Query(value = "select * from film", nativeQuery = true)
     List<Film> findAllListFilm();
->>>>>>> 49a1c67a5c5b36af56d0d58eed6b4e4ca883eb8e:dn-cinema/src/main/java/com/example/dncinema/repository/IMovieRepository.java
 }

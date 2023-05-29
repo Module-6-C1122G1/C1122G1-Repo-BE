@@ -40,22 +40,22 @@ TicketServiceMinh implements ITicketServiceMinh {
     @Autowired
     private ICustomerRepository iCustomerRepository;
     @Autowired
-    JavaMailSender javaMailSender;
+    private JavaMailSender javaMailSender;
     @Autowired
-    IDiscountRepositoryMinh iDiscountRepository;
+    private IDiscountRepositoryMinh iDiscountRepository;
     @Autowired
-    ISeatRepositoryMinh iSeatRepository;
+    private ISeatRepositoryMinh iSeatRepository;
 
     /**
      * save ticket information to the database
-     * @author MinhNV
+     *
      * @param ticketDTO
      * @throws UnsupportedEncodingException
+     * @author MinhNV
      */
 
     @Override
     public void saveTicket(TicketDTO ticketDTO) throws UnsupportedEncodingException {
-<<<<<<< HEAD
         UUID uuid = UUID.randomUUID();
         String seats = "";
         for (int i = 0; i < ticketDTO.getListSeat().length; i++) {
@@ -64,12 +64,6 @@ TicketServiceMinh implements ITicketServiceMinh {
         String data = "Seat" + " " + seats;
         String path = "C:\\Users\\ADMIN\\Desktop\\du_an_be\\dn-cinema-api\\dn-cinema\\src\\main\\resources\\qr\\QR" + uuid + ".png";
         createQR(data, path);
-=======
-        int a = 0;
-        a++;
-        String path = "\\src\\main\\resources\\qr\\QR" + a + ".png";
-        createQR(ticketDTO.toString(), a, path);
->>>>>>> 49a1c67a5c5b36af56d0d58eed6b4e4ca883eb8e
         Ticket ticket;
         for (int i = 0; i < ticketDTO.getListSeat().length; i++) {
 
@@ -77,9 +71,15 @@ TicketServiceMinh implements ITicketServiceMinh {
 
             Customer customer = iCustomerRepository.getByIdCus(ticketDTO.getIdCustomer());
 
-            ticket = new Ticket("45", false, ticketDTO.getPrice(), LocalDate.now(), path, ticketDTO.getDiscount(), null, customer, seat);
+            Discount discount = iDiscountRepository.findById(ticketDTO.getIdDiscount()).get();
+
+            ticket = new Ticket("45", false, ticketDTO.getPrice(), LocalDate.now(), path, discount, null, customer, seat);
 
             iTicketRepository.save(ticket);
+
+            setPointCustomer(ticketDTO.getIdCustomer());
+
+            setTypeCustomer(ticketDTO.getIdCustomer());
         }
         Customer cus = iCustomerRepository.getByIdCus(ticketDTO.getIdCustomer());
         pay(ticketDTO);
@@ -89,9 +89,10 @@ TicketServiceMinh implements ITicketServiceMinh {
 
     /**
      * Create the Qr code through the input data and save it in the path
-     * @author MinhNV
+     *
      * @param data
      * @param path
+     * @author MinhNV
      * @since 27/05/2023
      */
 
@@ -117,9 +118,10 @@ TicketServiceMinh implements ITicketServiceMinh {
 
     /**
      * Get QRCode and send email to param email passed in
-     * @author MinhNV
+     *
      * @param email
      * @param path
+     * @author MinhNV
      * @since 27/05/2023
      */
 
@@ -153,9 +155,9 @@ TicketServiceMinh implements ITicketServiceMinh {
     }
 
     /**
-     * @Author MinhNV
      * @param name
      * @return object Discount
+     * @Author MinhNV
      * @since 27/05/2023
      */
     public Discount findDiscount(String name) {
@@ -163,10 +165,41 @@ TicketServiceMinh implements ITicketServiceMinh {
     }
 
     /**
+     * Plus points for customers
+     *
+     * @param idCus
      * @author MinhNV
+     * @since 29/05/2023
+     */
+
+    public void setPointCustomer(Integer idCus) {
+        Customer customer = iCustomerRepository.findById(idCus).get();
+        customer.setPointCustomer(customer.getPointCustomer() + 15);
+        iCustomerRepository.save(customer);
+    }
+
+    /**
+     * Update customer type
+     *
+     * @param idCus
+     * @author MinhNV
+     * @since 29/05/2023
+     */
+
+    public void setTypeCustomer(Integer idCus) {
+        Customer customer = iCustomerRepository.findById(idCus).get();
+        if (customer.getPointCustomer() > 100) {
+            iCustomerRepository.updateGold(customer);
+        } else if (customer.getPointCustomer() > 200) {
+            iCustomerRepository.updateDiamond(customer);
+        }
+    }
+
+    /**
      * @param ticketDTO
      * @return Return url to check out page
      * @throws UnsupportedEncodingException
+     * @author MinhNV
      * @since 27/05/2023
      */
     public String pay(TicketDTO ticketDTO) throws UnsupportedEncodingException {
@@ -193,7 +226,7 @@ TicketServiceMinh implements ITicketServiceMinh {
         vnp_Params.put("vnp_OrderInfo", "Thanh toan don hang:" + vnp_TxnRef);
         vnp_Params.put("vnp_Locale", "vn");
         vnp_Params.put("vnp_ReturnUrl", Config.vnp_Returnurl + "?idCus=" + ticketDTO.getIdCustomer() + "&idFilm="
-                + ticketDTO.getIdFilm() + "&idDiscount=" + ticketDTO.getDiscount().getIdDiscount() + "&seat=" +seat + "&price=" + ticketDTO.getPrice());
+                + ticketDTO.getIdFilm() + "&idDiscount=" + ticketDTO.getIdDiscount() + "&seat=" + seat + "&price=" + ticketDTO.getPrice());
         Calendar cld = Calendar.getInstance(TimeZone.getTimeZone("Etc/GMT+7"));
         SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
         String vnp_CreateDate = formatter.format(cld.getTime());
