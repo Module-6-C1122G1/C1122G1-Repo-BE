@@ -3,8 +3,11 @@ package com.example.dncinema.controller;
 import com.example.dncinema.model.AccountUser;
 import com.example.dncinema.model.Roles;
 import com.example.dncinema.security.jwt.JwtProvider;
+import com.example.dncinema.security.request.EmailConfirm;
+import com.example.dncinema.security.request.ResetPassword;
 import com.example.dncinema.security.request.SignInForm;
 import com.example.dncinema.security.request.SignUpForm;
+import com.example.dncinema.security.response.ErrorMessage;
 import com.example.dncinema.security.response.JwtResponse;
 import com.example.dncinema.security.response.ResponseMessage;
 import com.example.dncinema.security.userPrincipal.UserPrinciple;
@@ -18,10 +21,13 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -74,6 +80,7 @@ public class SecurityController {
             }
         });
         users.setRoles(roles);
+        System.out.println(users);
         AccountUser accountUser = accountUserService.saveAccountUser(users);
         if (accountUser != null) {
             return new ResponseEntity<>(new ResponseMessage("Create user success!!!"), HttpStatus.CREATED);
@@ -82,11 +89,40 @@ public class SecurityController {
     }
 
     @PostMapping("/signin")
-    public ResponseEntity<?> login(@Valid @RequestBody SignInForm signInForm) {
+    public ResponseEntity<?> login(@Valid @RequestBody SignInForm signInForm, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            List<ErrorMessage> errorMessages = new ArrayList<>();
+            bindingResult
+                    .getFieldErrors()
+                    .stream()
+                    .forEach(f -> errorMessages.add(new ErrorMessage(f.getField(), f.getDefaultMessage())));
+            return new ResponseEntity<>(errorMessages, HttpStatus.BAD_REQUEST);
+        }
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(signInForm.getUsername(), signInForm.getPassword()));
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String token = jwtProvider.createToken(authentication);
         UserPrinciple userPrinciple = (UserPrinciple) authentication.getPrincipal();
-        return ResponseEntity.ok(new JwtResponse(token, userPrinciple.getUsername(), userPrinciple.getAuthorities()));
+        return new ResponseEntity<>(new JwtResponse(token, userPrinciple.getUsername(), userPrinciple.getAuthorities()), HttpStatus.OK);
+    }
+    @PostMapping("/confirm-email")
+    public ResponseEntity<?> confirmEmailSignup(@RequestBody EmailConfirm emailConfirm) {
+        AccountUser users = accountUserService.findAccountUserByEmail(emailConfirm.getEmail());
+        System.out.println(users);
+        if (users != null) {
+            int code = accountUserService.sendEmail(emailConfirm.getEmail());
+            return new ResponseEntity<>(new ResponseMessage(String.valueOf(code)), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(new ResponseMessage("Email không tồn tại."),HttpStatus.NOT_FOUND);
+        }
+    }
+    @PostMapping("/reset-password")
+    public ResponseEntity<?> resetPassword(@RequestBody ResetPassword resetPassword ) {
+        AccountUser accountUser = accountUserService.findAccountUserByNameAccount(resetPassword.getEmail());
+        accountUser.setPasswordAccount(passwordEncoder.encode(resetPassword.getPassword()));
+        AccountUser newAccountUser = accountUserService.saveAccountUser(accountUser);
+        if (newAccountUser == null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

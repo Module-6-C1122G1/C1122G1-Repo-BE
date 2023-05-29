@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/movie")
 @CrossOrigin("*")
@@ -34,5 +36,21 @@ public class MovieController {
         return new ResponseEntity<>(films,HttpStatus.OK);
     }
 
+
+
+    @GetMapping("/detail/{id}")
+    public ResponseEntity<?> findFilmById(@PathVariable Integer id) {
+        Film film = movieService.findFilmById(id);
+        if (film == null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>(film, HttpStatus.OK);
+
+    }
+
+    @GetMapping("/list")
+    public ResponseEntity<List<Film>> getAllFilms(){
+        return new ResponseEntity<>(movieService.findAllListFilm(),HttpStatus.OK);
+    }
 
 }

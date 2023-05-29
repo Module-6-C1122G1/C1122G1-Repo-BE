@@ -1,5 +1,8 @@
 package com.example.dncinema.repository;
 
+<<<<<<< HEAD:dn-cinema/src/main/java/com/example/dncinema/repository/IMovieRepositoryMinh.java
+public interface IMovieRepositoryMinh {
+=======
 import com.example.dncinema.model.Film;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -8,6 +11,9 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
+
 @Repository
 public interface IMovieRepository extends JpaRepository<Film, Integer> {
     @Query(value = "select * from film \n" +
@@ -15,8 +21,14 @@ public interface IMovieRepository extends JpaRepository<Film, Integer> {
             "where name_film like concat('%', :search, '%')", nativeQuery = true)
     Page<Film> findAllFilm(String search, Pageable pageable);
 
+
     @Query(value = "select * from film \n" +
             "join type_film on film.id_type_film = type_film.id_type_film\n" +
             "where id_film = :id;", nativeQuery = true)
     Film findFilmById(@Param("id") Integer id);
+
+
+    @Query(value = "select * from film", nativeQuery = true)
+    List<Film> findAllListFilm();
+>>>>>>> 49a1c67a5c5b36af56d0d58eed6b4e4ca883eb8e:dn-cinema/src/main/java/com/example/dncinema/repository/IMovieRepository.java
 }
