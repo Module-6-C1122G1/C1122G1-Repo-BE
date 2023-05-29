@@ -1,5 +1,6 @@
 package com.example.dncinema.model;
 
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -9,6 +10,7 @@ import java.time.LocalDate;
 public class Ticket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     @Column(name = "id_ticket")
     private Integer idTicket;
     @Column(name = "code_ticket")
@@ -53,6 +55,19 @@ public class Ticket {
         this.customer = customer;
         this.seat = seat;
     }
+
+    public Ticket(String codeTicket, boolean statusTicket, long priceAfterDiscount, LocalDate dateBooking, String idQr, Discount discount, Employee employee, Customer customer, Seat seat) {
+        this.codeTicket = codeTicket;
+        this.statusTicket = statusTicket;
+        this.priceAfterDiscount = priceAfterDiscount;
+        this.dateBooking = dateBooking;
+        this.idQr = idQr;
+        this.discount = discount;
+        this.employee = employee;
+        this.customer = customer;
+        this.seat = seat;
+    }
+
 
     public String getCodeTicket() {
         return codeTicket;

@@ -27,7 +27,5 @@ public class SeatController {
     public ResponseEntity<List<Seat>> getAllListSeatByIdRoom(@PathVariable Integer id){
         return new ResponseEntity<>(seatService.findAllListSeatByIdRoom(id), HttpStatus.OK);
     }
-
-
 }
 

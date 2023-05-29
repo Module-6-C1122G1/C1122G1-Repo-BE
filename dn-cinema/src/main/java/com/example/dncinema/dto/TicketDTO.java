@@ -2,56 +2,45 @@ package com.example.dncinema.dto;
 
 import com.example.dncinema.model.*;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 public class TicketDTO {
-    private Customer customer;
-    private Employee employee;
-    private Film film;
+
+    @Valid
+    private Integer IdCustomer;
+
+    private Integer idFilm;
     private Integer[] listSeat;
-    private Discount discount;
+    private Integer idDiscount;
     private long price;
 
     public TicketDTO() {
     }
 
-    public TicketDTO(Customer customer, Employee employee, Film film, Integer[] listSeat, Discount discount, long price) {
-        this.customer = customer;
-        this.employee = employee;
-        this.film = film;
+    public TicketDTO(Integer idCustomer, Integer idFilm, Integer[] listSeat, Integer idDiscount, long price) {
+        IdCustomer = idCustomer;
+        this.idFilm = idFilm;
         this.listSeat = listSeat;
-        this.discount = discount;
+        this.idDiscount = idDiscount;
         this.price = price;
     }
 
-    public long getPrice() {
-        return price;
+    public Integer getIdCustomer() {
+        return IdCustomer;
     }
 
-    public void setPrice(long price) {
-        this.price = price;
+    public void setIdCustomer(Integer idCustomer) {
+        IdCustomer = idCustomer;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public Integer getIdFilm() {
+        return idFilm;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
-
-    public Employee getEmployee() {
-        return employee;
-    }
-
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
-
-    public Film getFilm() {
-        return film;
-    }
-
-    public void setFilm(Film film) {
-        this.film = film;
+    public void setIdFilm(Integer idFilm) {
+        this.idFilm = idFilm;
     }
 
     public Integer[] getListSeat() {
@@ -62,11 +51,19 @@ public class TicketDTO {
         this.listSeat = listSeat;
     }
 
-    public Discount getDiscount() {
-        return discount;
+    public Integer getIdDiscount() {
+        return idDiscount;
     }
 
-    public void setDiscount(Discount discount) {
-        this.discount = discount;
+    public void setIdDiscount(Integer idDiscount) {
+        this.idDiscount = idDiscount;
+    }
+
+    public long getPrice() {
+        return price;
+    }
+
+    public void setPrice(long price) {
+        this.price = price;
     }
 }

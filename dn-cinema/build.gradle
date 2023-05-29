@@ -22,7 +22,6 @@ dependencies {
     runtimeOnly 'com.mysql:mysql-connector-j'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-
     implementation group: 'com.google.zxing', name: 'javase', version: '1.7'
 
 //    Security jwt implementation
@@ -37,7 +36,6 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind'
 //    Send email implementation
     implementation 'org.springframework.boot:spring-boot-starter-mail'
-
 }
 
 tasks.named('test') {
