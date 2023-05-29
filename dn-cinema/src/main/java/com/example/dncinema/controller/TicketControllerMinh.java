@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.UnsupportedEncodingException;
 
 @RestController
-@RequestMapping("/api/ticket/")
+@RequestMapping("/api/customer/ticket/")
 public class TicketControllerMinh {
     @Autowired
     private ITicketServiceMinh iTicketServiceMinh;
