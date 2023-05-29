@@ -78,10 +78,9 @@ public class TicketServiceMinh implements ITicketServiceMinh {
 
             setPointCustomer(ticketDTO.getIdCustomer());
 
-            setTypeCustomer(ticketDTO.getIdCustomer());
+//            setTypeCustomer(ticketDTO.getIdCustomer());
         }
         Customer cus = iCustomerRepository.getByIdCus(ticketDTO.getIdCustomer());
-        pay(ticketDTO);
         sendEmail(cus.getEmail(), path);
 
     }

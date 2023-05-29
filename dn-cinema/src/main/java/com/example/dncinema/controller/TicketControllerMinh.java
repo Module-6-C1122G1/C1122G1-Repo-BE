@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.UnsupportedEncodingException;
 
 @RestController
-@RequestMapping("/api/customer/ticket/")
+@RequestMapping("/api/user/ticket/")
 public class TicketControllerMinh {
     @Autowired
     private ITicketServiceMinh iTicketServiceMinh;
@@ -66,7 +66,7 @@ public class TicketControllerMinh {
         }
     }
 
-    @PostMapping("pay")
+    @PostMapping("/pay")
     public ResponseEntity<?> pay(@RequestBody TicketDTO ticketDTO) throws UnsupportedEncodingException {
         String url = iTicketServiceMinh.pay(ticketDTO);
         return new ResponseEntity<>(url, HttpStatus.OK);
