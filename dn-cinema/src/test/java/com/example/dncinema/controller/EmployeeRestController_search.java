@@ -68,7 +68,7 @@ public class EmployeeRestController_search {
     @Test
     public void search_code_4() throws Exception {
         this.mockMvc.perform(
-                        MockMvcRequestBuilders.get("/employee?searchCode=NV-001"))
+                        MockMvcRequestBuilders.get("/employee?searchCode=NV"))
                 .andDo(print())
                 .andExpect(status().is2xxSuccessful());
     }
@@ -119,7 +119,6 @@ public class EmployeeRestController_search {
     @Test
     public void search_name_4() throws Exception {
         this.mockMvc.perform(
-//                        MockMvcRequestBuilders.get("/api/customer?searchName=Trần%20Bá%20Tài"))
                         MockMvcRequestBuilders.get("/employee?searchName=Tiến"))
                 .andDo(print())
                 .andExpect(status().is2xxSuccessful());

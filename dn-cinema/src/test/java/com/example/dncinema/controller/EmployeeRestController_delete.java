@@ -56,7 +56,7 @@ public class EmployeeRestController_delete {
     @Test
     public void delete_id_28() throws Exception {
         this.mockMvc.perform(
-                        MockMvcRequestBuilders.delete("/employee/{id}", 1))
+                        MockMvcRequestBuilders.delete("/employee/{id}", 2))
                 .andDo(print())
                 .andExpect(status().is2xxSuccessful());
     }

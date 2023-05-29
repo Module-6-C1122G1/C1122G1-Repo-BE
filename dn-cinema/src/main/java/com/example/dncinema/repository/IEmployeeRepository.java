@@ -24,14 +24,19 @@ public interface IEmployeeRepository extends JpaRepository<Employee, Integer> {
      * @param phoneNumber
      * @return
      */
-    @Query(value = "SELECT * FROM employee e JOIN accout_user a WHERE (a.name_account LIKE CONCAT('%', :code, '%') " +
+    @Query(value = "SELECT * FROM employee e JOIN account_user a WHERE a.name_account LIKE CONCAT('%', :code, '%') " +
             "OR e.name_employee LIKE CONCAT('%', :name, '%') " +
-            "OR e.phone LIKE CONCAT('%', :phoneNumber, '%')) " +
-            "AND c.is_delete = false", nativeQuery = true)
+            "OR e.phone LIKE CONCAT('%', :phoneNumber, '%') " +
+            "AND e.is_delete = false",
+            countQuery = "SELECT * FROM employee e JOIN account_user a WHERE (a.name_account LIKE CONCAT('%', :code, '%') " +
+                    "OR e.name_employee LIKE CONCAT('%', :name, '%')    " +
+                    "OR e.phone LIKE CONCAT('%', :phoneNumber, '%') " +
+                    "AND e.is_delete = false"
+                    ,nativeQuery = true)
     Page<Employee> searchEmployeeInfo(Pageable pageable,
-                                      @Param("code") String code,
-                                      @Param("name") String name,
-                                      @Param("phoneNumber") String phoneNumber);
+                                      @Param("code") String searchCode,
+                                      @Param("name") String searchName,
+                                      @Param("phoneNumber") String searchPhoneNumber);
 
 
     /**

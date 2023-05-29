@@ -2,6 +2,7 @@ package com.example.dncinema.dto;
 
 import com.example.dncinema.model.AccountUser;
 
+import javax.persistence.Column;
 import javax.validation.constraints.NotBlank;
 
 public class EmployeeDTO {
@@ -15,7 +16,11 @@ public class EmployeeDTO {
 
     @NotBlank(message = "Không được để trống!")
     private String address;
+
     private String gender;
+
+    @Column(name = "date_of_birth", columnDefinition = "varchar(45)")
+    private String dateOfBirth;
 
     @NotBlank(message = "Không được để trống!")
     private String imgEmployee;
@@ -30,12 +35,13 @@ public class EmployeeDTO {
     public EmployeeDTO() {
     }
 
-    public EmployeeDTO(Integer idEmployee, String nameEmployee, String phone, String address, String gender, String imgEmployee, String email, String identityCard, AccountUser accountUser) {
+    public EmployeeDTO(Integer idEmployee, String nameEmployee, String phone, String address, String gender, String dateOfBirth, String imgEmployee, String email, String identityCard, AccountUser accountUser) {
         this.idEmployee = idEmployee;
         this.nameEmployee = nameEmployee;
         this.phone = phone;
         this.address = address;
         this.gender = gender;
+        this.dateOfBirth = dateOfBirth;
         this.imgEmployee = imgEmployee;
         this.email = email;
         this.identityCard = identityCard;
@@ -80,6 +86,14 @@ public class EmployeeDTO {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getImgEmployee() {

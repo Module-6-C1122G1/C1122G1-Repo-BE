@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("/employee")
+@RequestMapping("api/employee")
 @CrossOrigin("*")
 public class EmployeeController {
     @Autowired
@@ -22,16 +22,15 @@ public class EmployeeController {
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("")
     public ResponseEntity<Page<EmployeeDTO>> search(@PageableDefault(sort = {"id"},direction = Sort.Direction.DESC, size = 5) Pageable pageable,
-                                                    @RequestParam(required = false, defaultValue = "") String searchCode,
-                                                    @RequestParam(required = false, defaultValue = "") String searchName,
-                                                    @RequestParam(required = false, defaultValue = "") String searchPhoneNumber) {
+                                                    @RequestParam(required = false) String searchCode,
+                                                    @RequestParam(required = false)  String searchName,
+                                                    @RequestParam(required = false) String searchPhoneNumber) {
 
         Page<EmployeeDTO> employeeDTOS = this.iEmployeeService.searchEmployee(pageable, searchCode, searchName, searchPhoneNumber);
 
         if (employeeDTOS.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-
         return new ResponseEntity<>(employeeDTOS, HttpStatus.OK);
     }
 

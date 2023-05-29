@@ -22,6 +22,9 @@ public class Employee {
     @Column(name = "gender", columnDefinition = "varchar(45)")
     private String gender;
 
+    @Column(name = "date_of_birth", columnDefinition = "varchar(45)")
+    private String dateOfBirth;
+
     @Column(name = "img_employee", columnDefinition = "varchar(255)")
     private String imgEmployee;
 
@@ -30,6 +33,8 @@ public class Employee {
 
     @Column(name = "identity_card", columnDefinition = "varchar(255)")
     private String identityCard;
+
+
 
     private Boolean isDelete = false;
 
@@ -40,12 +45,13 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(Integer idEmployee, String nameEmployee, String phone, String address, String gender, String imgEmployee, String email, String identityCard, Boolean isDelete, AccountUser accountUser) {
+    public Employee(Integer idEmployee, String nameEmployee, String phone, String address, String gender, String dateOfBirth, String imgEmployee, String email, String identityCard, Boolean isDelete, AccountUser accountUser) {
         this.idEmployee = idEmployee;
         this.nameEmployee = nameEmployee;
         this.phone = phone;
         this.address = address;
         this.gender = gender;
+        this.dateOfBirth = dateOfBirth;
         this.imgEmployee = imgEmployee;
         this.email = email;
         this.identityCard = identityCard;
@@ -93,6 +99,14 @@ public class Employee {
         this.gender = gender;
     }
 
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
     public String getImgEmployee() {
         return imgEmployee;
     }
@@ -117,19 +131,19 @@ public class Employee {
         this.identityCard = identityCard;
     }
 
-    public AccountUser getAccountUser() {
-        return accountUser;
-    }
-
-    public void setAccountUser(AccountUser accountUser) {
-        this.accountUser = accountUser;
-    }
-
     public Boolean getDelete() {
         return isDelete;
     }
 
     public void setDelete(Boolean delete) {
         isDelete = delete;
+    }
+
+    public AccountUser getAccountUser() {
+        return accountUser;
+    }
+
+    public void setAccountUser(AccountUser accountUser) {
+        this.accountUser = accountUser;
     }
 }
