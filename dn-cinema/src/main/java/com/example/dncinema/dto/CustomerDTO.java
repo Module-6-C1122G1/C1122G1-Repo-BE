@@ -93,6 +93,8 @@ public class CustomerDTO {
 
     public void setIdentityCard(String identityCard) {
         this.identityCard = identityCard;
+    }
+
     public TypeCustomerDTO getTypeCustomerDTO() {
         return typeCustomerDTO;
     }
