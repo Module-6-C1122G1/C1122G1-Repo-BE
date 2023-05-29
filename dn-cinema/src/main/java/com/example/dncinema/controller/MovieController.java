@@ -1,6 +1,7 @@
 package com.example.dncinema.controller;
 
 import com.example.dncinema.model.Film;
+import com.example.dncinema.model.ShowTime;
 import com.example.dncinema.service.movie.IMovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -11,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/movie")
+@RequestMapping("/api/public/movie")
 @CrossOrigin("*")
 public class MovieController {
     @Autowired
@@ -34,7 +35,12 @@ public class MovieController {
         return new ResponseEntity<>(films,HttpStatus.OK);
     }
 
-
+    /**
+     * @Author QuynhHTN
+     * @Param id
+     * @Return new ResponseEntity<>
+     * @Usage_method findById to show detail film
+     */
     @GetMapping("/detail/{id}")
     public ResponseEntity<?> findFilmById(@PathVariable Integer id) {
         Film film = movieService.findFilmById(id);
