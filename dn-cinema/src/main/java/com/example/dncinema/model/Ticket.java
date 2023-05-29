@@ -3,7 +3,6 @@ package com.example.dncinema.model;
 import javax.persistence.*;
 import java.time.LocalDate;
 
-
 @Entity
 @Table(name = "ticket")
 public class Ticket {
@@ -11,18 +10,16 @@ public class Ticket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_ticket")
     private Integer idTicket;
-    @Column(name = "code_ticket")
-    private String codeTicket;
-    @Column(name = "status_ticket")
-    private boolean statusTicket;
+    @Column(name = "status_ticket", columnDefinition = "varchar(255)")
+    private String statusTicket;
     @Column(name = "price_after_discount")
-    private long priceAfterDiscount;
+    private Double priceAfterDiscount;
     @Column(name = "date_booking", columnDefinition = "date")
     private LocalDate dateBooking;
     @Column(name = "id_qr")
-    private String idQr;
+    private Integer idQr;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "id_discount")
     private Discount discount;
 
@@ -41,7 +38,7 @@ public class Ticket {
     public Ticket() {
     }
 
-    public Ticket(Integer idTicket, String codeTicket, boolean statusTicket, long priceAfterDiscount, LocalDate dateBooking, String idQr, Discount discount, Employee employee, Customer customer, Seat seat) {
+    public Ticket(Integer idTicket, String statusTicket, Double priceAfterDiscount, LocalDate dateBooking, Integer idQr, Discount discount, Employee employee, Customer customer, Seat seat) {
         this.idTicket = idTicket;
         this.codeTicket = codeTicket;
         this.statusTicket = statusTicket;
@@ -70,19 +67,19 @@ public class Ticket {
         this.idTicket = idTicket;
     }
 
-    public boolean getStatusTicket() {
+    public String getStatusTicket() {
         return statusTicket;
     }
 
-    public void setStatusTicket(boolean statusTicket) {
+    public void setStatusTicket(String statusTicket) {
         this.statusTicket = statusTicket;
     }
 
-    public long getPriceAfterDiscount() {
+    public Double getPriceAfterDiscount() {
         return priceAfterDiscount;
     }
 
-    public void setPriceAfterDiscount(long priceAfterDiscount) {
+    public void setPriceAfterDiscount(Double priceAfterDiscount) {
         this.priceAfterDiscount = priceAfterDiscount;
     }
 
@@ -94,11 +91,11 @@ public class Ticket {
         this.dateBooking = dateBooking;
     }
 
-    public String getIdQr() {
+    public Integer getIdQr() {
         return idQr;
     }
 
-    public void setIdQr(String idQr) {
+    public void setIdQr(Integer idQr) {
         this.idQr = idQr;
     }
 
