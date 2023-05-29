@@ -2,6 +2,7 @@ package com.example.dncinema.controller.discount;
 
 import com.example.dncinema.dto.discount.DiscountDTO;
 import com.example.dncinema.repository.discount.IDiscountRepository;
+import com.example.dncinema.model.Discount;
 import com.example.dncinema.service.discount.IDiscountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -11,6 +12,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 
 @RestController
 @RequestMapping("/discount")
@@ -53,4 +55,5 @@ public class DiscountController {
         discountService.delete(id);
         return new ResponseEntity<>("Xóa thành công!", HttpStatus.OK);
     }
+
 }

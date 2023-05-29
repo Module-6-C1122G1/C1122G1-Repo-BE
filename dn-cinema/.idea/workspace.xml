@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="" />
+    <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="update ticket and movie detail">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/discount/DiscountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/discount/DiscountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/discount/DiscountDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/discount/DiscountDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Discount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Discount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/discount/IDiscountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/discount/IDiscountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/discount/IDiscountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/discount/IDiscountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/discount/impl/DiscountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/discount/impl/DiscountService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,19 +82,27 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="RunManager" selected="JUnit.DiscountRestController_getListDiscount.getListDiscount_5">
-    <configuration name="DiscountRestController_getDeleteDiscount.delete_id_26" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="PropertiesComponent">
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager" selected="Gradle.DiscountRestController_updateDiscount.updateDiscount">
+    <configuration name="DiscountRestController_findDiscountById.findDiscountById_4" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.DiscountRestController_getDeleteDiscount.delete_id_26&quot;" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
             <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.dncinema.controller.DiscountRestController_updateDiscount.updateDiscount_name_1&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -95,18 +112,20 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="DiscountRestController_getDeleteDiscount.delete_id_27" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DiscountRestController_findDiscountById.findDiscountById_id_3" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.DiscountRestController_getDeleteDiscount.delete_id_27&quot;" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
             <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.dncinema.controller.DiscountRestController_findDiscountById.findDiscountById_4&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -116,18 +135,20 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="DiscountRestController_getDeleteDiscount.delete_id_28" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DiscountRestController_updateDiscount.updateDiscount" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.DiscountRestController_getDeleteDiscount.delete_id_28&quot;" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
             <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.dncinema.controller.DiscountRestController_findDiscountById.findDiscountById_id_3&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -137,18 +158,20 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="DiscountRestController_getListDiscount.getListDiscount_6" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DiscountRestController_updateDiscount.updateDiscount_name_1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.DiscountRestController_getListDiscount.getListDiscount_6&quot;" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
             <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.dncinema.controller.DiscountRestController_updateDiscount.updateDiscount&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -158,21 +181,28 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="DiscountRestController_getListDiscount.getListDiscount_5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="dn-cinema.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.dncinema.discount.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.dncinema.discount" />
-      <option name="MAIN_CLASS_NAME" value="com.example.dncinema.discount.DiscountRestController_getListDiscount" />
-      <option name="METHOD_NAME" value="getListDiscount_5" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="DiscountRestController_updateDiscount.updateDiscount_name_2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.dncinema.controller.DiscountRestController_updateDiscount.updateDiscount_name_2&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
     <configuration name="DnCinemaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="dn-cinema.main" />
@@ -183,11 +213,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DiscountRestController_getListDiscount.getListDiscount_5" />
-        <item itemvalue="Gradle.DiscountRestController_getListDiscount.getListDiscount_6" />
-        <item itemvalue="Gradle.DiscountRestController_getDeleteDiscount.delete_id_28" />
-        <item itemvalue="Gradle.DiscountRestController_getDeleteDiscount.delete_id_27" />
-        <item itemvalue="Gradle.DiscountRestController_getDeleteDiscount.delete_id_26" />
+        <item itemvalue="Gradle.DiscountRestController_updateDiscount.updateDiscount" />
+        <item itemvalue="Gradle.DiscountRestController_updateDiscount.updateDiscount_name_2" />
+        <item itemvalue="Gradle.DiscountRestController_updateDiscount.updateDiscount_name_1" />
+        <item itemvalue="Gradle.DiscountRestController_findDiscountById.findDiscountById_4" />
+        <item itemvalue="Gradle.DiscountRestController_findDiscountById.findDiscountById_id_3" />
       </list>
     </recent_temporary>
   </component>
@@ -221,14 +251,7 @@
       <option name="project" value="LOCAL" />
       <updated>1684997099784</updated>
     </task>
-    <task id="LOCAL-00003" summary="update ticket and movie detail">
-      <created>1685260347571</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1685260347571</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
