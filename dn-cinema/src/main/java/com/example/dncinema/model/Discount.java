@@ -8,8 +8,8 @@ import java.time.LocalDate;
 public class Discount {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int id;
+    @Column(name = "idDiscount")
+    private int idDiscount;
     @Column(name = "name_discount", columnDefinition = "varchar(255)")
     private String nameDiscount;
     @Column(name = "image_discount", columnDefinition = "varchar(255)")
@@ -28,12 +28,12 @@ public class Discount {
     public Discount() {
     }
 
-    public int getId() {
-        return id;
+    public int getIdDiscount() {
+        return idDiscount;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdDiscount(int idDiscount) {
+        this.idDiscount = idDiscount;
     }
 
     public String getNameDiscount() {
