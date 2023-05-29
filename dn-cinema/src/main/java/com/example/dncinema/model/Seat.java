@@ -1,11 +1,6 @@
 package com.example.dncinema.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "seat")
@@ -31,38 +26,17 @@ public class Seat {
     @ManyToOne
     @JoinColumn(name = "id_show_time")
     private ShowTime showTime;
-    @JsonBackReference
-    @OneToOne(mappedBy = "seat")
-    private Ticket ticket;
+
     public Seat() {
     }
 
-    public Seat(Integer idSeat, String nameSeat, StatusSeat seat, TypeSeat typeSeat, ShowRoom showRoom) {
+    public Seat(Integer idSeat, String nameSeat, StatusSeat seat, TypeSeat typeSeat, ShowRoom showRoom, ShowTime showTime) {
         this.idSeat = idSeat;
         this.nameSeat = nameSeat;
         this.seat = seat;
         this.typeSeat = typeSeat;
         this.showRoom = showRoom;
-    }
-
-    public Ticket getTicket() {
-        return ticket;
-    }
-
-    public void setTicket(Ticket ticket) {
-        this.ticket = ticket;
-    }
-
-
-    public ShowTime getShowTime() {
-        return showTime;
-    }
-
-    public void setShowTime(ShowTime showTime) {
         this.showTime = showTime;
-    }
-
-    public Seat(Integer idSeat) {
     }
 
     public Integer getIdSeat() {
@@ -103,5 +77,13 @@ public class Seat {
 
     public void setShowRoom(ShowRoom showRoom) {
         this.showRoom = showRoom;
+    }
+
+    public ShowTime getShowTime() {
+        return showTime;
+    }
+
+    public void setShowTime(ShowTime showTime) {
+        this.showTime = showTime;
     }
 }
