@@ -22,8 +22,6 @@ public class DiscountDTO implements Validator {
     @NotNull(message = "Ngày kết thúc không được để trống")
     @DateTimeFormat(fallbackPatterns = "yyyy-MM-dd")
     private String dateEnd;
-    @NotNull(message = "Hình ảnh không được để trống")
-    private String img;
     @NotBlank(message = "Chi tiết khuyến mãi không được để trống")
     private String describeDiscount;
     @NotNull(message = "Phần trăm giảm giá không được để trống")
@@ -74,13 +72,7 @@ public class DiscountDTO implements Validator {
         this.dateEnd = dateEnd;
     }
 
-    public String getImg() {
-        return img;
-    }
 
-    public void setImg(String img) {
-        this.img = img;
-    }
 
     public String getDescribeDiscount() {
         return describeDiscount;

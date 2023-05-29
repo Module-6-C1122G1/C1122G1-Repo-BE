@@ -80,7 +80,7 @@ public class DiscountController {
             return new ResponseEntity<>(bindingResult.getAllErrors(), HttpStatus.BAD_REQUEST);
         }
         discountService.createDiscount(discountDTO.getNameDiscount(), discountDTO.getDateStart(),
-                discountDTO.getDateEnd(), discountDTO.getImg(),discountDTO.getDescribeDiscount(),  discountDTO.getPercentDiscount());
+                discountDTO.getDateEnd(), discountDTO.getImageDiscount(),discountDTO.getDescribeDiscount(),  discountDTO.getPercentDiscount());
         return new ResponseEntity<>(HttpStatus.OK);
     }
     /**
@@ -123,7 +123,7 @@ public class DiscountController {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         discountService.updateDiscount(discountDTO.getIdDiscount(),discountDTO.getNameDiscount(), discountDTO.getDateStart(),
-                discountDTO.getDateEnd(), discountDTO.getImg(),discountDTO.getDescribeDiscount(), discountDTO.getPercentDiscount());
+                discountDTO.getDateEnd(), discountDTO.getImageDiscount(),discountDTO.getDescribeDiscount(), discountDTO.getPercentDiscount());
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
