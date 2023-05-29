@@ -11,6 +11,7 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,9 +21,10 @@ public class DiscountService implements IDiscountService {
     private IDiscountRepository discountRepository;
 
     /**
-     * Create: TuanLT.
+     * Author: TuanLT.
      * Date: 24/05/2023.
-     * @param name "Tham số name dùng để tìm kiếm trong danh sách khuyến mãi".
+     *
+     * @param name     "Tham số name dùng để tìm kiếm trong danh sách khuyến mãi".
      * @param pageable "Tham số pageable dùng để phân trang".
      * @return "Trả về danh sách khuyến mãi ban đầu có phân trang, nếu người dùng tiến hành tìm kiếm thì sẽ trả về 1 danh sách sau khi người dùng search (có phân trang)."
      */
@@ -40,15 +42,67 @@ public class DiscountService implements IDiscountService {
         return new PageImpl<>(discountDTOList, discountPage.getPageable(), discountPage.getTotalElements());
     }
 
+    @Override
+    public Discount findById(int id) {
+        return discountRepository.findById(id).get();
+    }
+
+    @Override
+    public void save(Discount discount) {
+        discountRepository.save(discount);
+    }
+
     /**
-     * Create: TuanLT.
-     * Date: 24/05/2023.
-     * @param id "Tham số id - Nhằm tìm kiếm id của khuyến mãi mà người dùng muốn xóa".
+     * Create by: HoangPT,
+     * Date create : 24/05/2023
+     * Function : Add new discount
+     *
+     * @Param("nameDiscount") String nameDiscount,
+     * @Param("dateStart") LocalDate dateStart,
+     * @Param("dateEnd") LocalDate dateEnd,
+     * @Param("describeDiscount") String describeDiscount,
+     * @Param("percentDiscount") Double percentDiscount
      */
     @Override
-    public void delete(Long id) {
-        Discount discount = discountRepository.findById(id);
-        discount.setDeleted(true);
-        discountRepository.save(discount);
+    public void createDiscount(String nameDiscount, String dateStart, String dateEnd, String describeDiscount, Double percentDiscount) {
+        discountRepository.createDiscount(nameDiscount, dateStart, dateEnd, describeDiscount, percentDiscount);
+    }
+
+    /**
+     * Create by: HoangPT,
+     * Date create : 24/05/2023
+     * Function : Find discount information by id
+     *
+     * @param id
+     */
+    @Override
+    public boolean delete(int id) {
+        try {
+            discountRepository.deleteById(id);
+        } catch (IllegalArgumentException e) {
+            return false;
+        }
+        return true;
+    }
+
+    public Discount findDiscountById(int idDiscount) {
+        return discountRepository.findDiscountById(idDiscount);
+    }
+
+    /**
+     * Create by: HoangPT,
+     * Date create : 24/05/2023
+     * Function : Edit information a discount in database
+     *
+     * @Param("idDiscount") Integer idDiscount
+     * @Param("nameDiscount") String nameDiscount
+     * @Param("dateStart") LocalDate dateStart
+     * @Param("dateEnd") LocalDate dateEnd
+     * @Param("describeDiscount") String describeDiscount
+     * @Param("percentDiscount") String percentDiscount
+     */
+    @Override
+    public void updateDiscount(Integer idDiscount, String nameDiscount, String dateStart, String dateEnd, String describeDiscount, Double percentDiscount) {
+        discountRepository.updateDiscount(idDiscount, nameDiscount, dateStart, dateEnd, describeDiscount, percentDiscount);
     }
 }

@@ -40,14 +40,14 @@ public class Film {
     @JoinColumn(name = "id_type_film")
     private TypeFilm typeFilm;
 
-    @ManyToOne
-    @JoinColumn(name = "id_show_time")
-    private ShowTime showTime;
+//    @ManyToOne
+//    @JoinColumn(name = "id_show_time")
+//    private ShowTime showTime;
 
     public Film() {
     }
 
-    public Film(Integer idFilm, String nameFilm, String director, String studioFilm, String trailer, String describeFilm, String actor, Double normalSeatPrice, Double vipSeatPrice, LocalDate dateStartFilm, LocalDate dateEndFilm, String imgFilm, Integer timeFilm, String movieLabel, TypeFilm typeFilm, ShowTime showTime) {
+    public Film(Integer idFilm, String nameFilm, String director, String studioFilm, String trailer, String describeFilm, String actor, Double normalSeatPrice, Double vipSeatPrice, LocalDate dateStartFilm, LocalDate dateEndFilm, String imgFilm, Integer timeFilm, String movieLabel, TypeFilm typeFilm) {
         this.idFilm = idFilm;
         this.nameFilm = nameFilm;
         this.director = director;
@@ -63,7 +63,6 @@ public class Film {
         this.timeFilm = timeFilm;
         this.movieLabel = movieLabel;
         this.typeFilm = typeFilm;
-        this.showTime = showTime;
     }
 
     public Integer getIdFilm() {
@@ -186,11 +185,4 @@ public class Film {
         this.typeFilm = typeFilm;
     }
 
-    public ShowTime getShowTime() {
-        return showTime;
-    }
-
-    public void setShowTime(ShowTime showTime) {
-        this.showTime = showTime;
-    }
 }

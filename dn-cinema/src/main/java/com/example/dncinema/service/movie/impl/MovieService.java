@@ -8,6 +8,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MovieService implements IMovieService {
     @Autowired
@@ -22,6 +24,11 @@ public class MovieService implements IMovieService {
     @Override
     public Film findFilmById(Integer id) {
         return movieRepository.findFilmById(id);
+    }
+
+    @Override
+    public List<Film> findAllListFilm() {
+        return movieRepository.findAllListFilm();
     }
 
 }
