@@ -2,10 +2,12 @@ package com.example.dncinema.controller.show_room;
 
 import com.example.dncinema.dto.ShowRoomDTO;
 import com.example.dncinema.model.Seat;
+import com.example.dncinema.model.ShowRoom;
 import com.example.dncinema.service.show_room.ISeatService;
 import com.example.dncinema.service.show_room.IShowRoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
@@ -34,19 +36,20 @@ public class ShowRoomController {
 
     /**
      * @param pageable
-     * @param name
+     * @param search
      * @return ResponseEntity<>(listShowRoom, HttpStatus.OK;
      * Phương thức sử dụng để tìm kiếm kết hợp danh sách phòng chiếu
      * @author LanhNM
      */
     @GetMapping("/list")
-    public Page<ShowRoomDTO> list(@PageableDefault(size = 3) Pageable pageable,
-                                  @RequestParam(required = false, defaultValue = "") String name) {
-        Page<ShowRoomDTO> listShowRoom = iShowRoomService.findShowRoomByName(pageable, name);
+    public ResponseEntity<?> list(@PageableDefault (value = 2) Pageable pageable,@RequestParam("page") int page,
+                                  @RequestParam(required = false, defaultValue = "") String search) {
+        pageable = PageRequest.of(page, 2);
+        Page<ShowRoomDTO> listShowRoom = iShowRoomService.findShowRoomByName(pageable, search);
         if (listShowRoom.isEmpty()) {
-            return new ResponseEntity<>(listShowRoom, HttpStatus.BAD_REQUEST).getBody();
+            return new ResponseEntity<>(listShowRoom, HttpStatus.BAD_REQUEST);
         }
-        return new ResponseEntity<>(listShowRoom, HttpStatus.OK).getBody();
+        return new ResponseEntity<>(listShowRoom, HttpStatus.OK);
     }
 
     /**
@@ -93,9 +96,9 @@ public class ShowRoomController {
      * @author LanhNM
      */
 
-    @GetMapping("/list/{id}")
+    @GetMapping("/detail")
     @ResponseStatus(HttpStatus.OK)
-    public ShowRoomDTO findByIdShowRoom(@PathVariable Integer id) {
+    public ShowRoomDTO findByIdShowRoom(@RequestParam(value = "id") Integer id) {
         ShowRoomDTO showRoomDTO = iShowRoomService.findShowRoomById(id);
         if (showRoomDTO == null) {
             return (ShowRoomDTO) new ResponseEntity<>(HttpStatus.BAD_REQUEST).getBody();
@@ -127,5 +130,17 @@ public class ShowRoomController {
         }
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @GetMapping("/list/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<ShowRoom> getlByIdShowRoom(@PathVariable Integer id) {
+        ShowRoom showRoom = iShowRoomService.getShowRoomById(id);
+        System.out.println(showRoom.getNameShowRoom());
+        if (showRoom == null) {
+            return  new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>(showRoom, HttpStatus.OK);
+    }
+
 }
 

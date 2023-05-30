@@ -12,8 +12,8 @@ import org.springframework.data.repository.query.Param;
 import javax.transaction.Transactional;
 
 public interface IShowRoomRepository extends JpaRepository<ShowRoom, Integer> {
-    @Query(value = "select id_show_room, name_show_room,quantity_seat from show_room where show_room.name_show_room like concat('%', :name, '%') ", nativeQuery = true)
-    Page<ShowRoom> findShowRoomByName(Pageable pageable, @Param("name") String name);
+    @Query(value = "select id_show_room, name_show_room,quantity_seat from show_room where show_room.name_show_room like concat('%', :search, '%') ", nativeQuery = true)
+    Page<ShowRoom> findShowRoomByName(Pageable pageable, @Param("search") String search);
 
     @Modifying
     @Transactional
@@ -35,4 +35,7 @@ public interface IShowRoomRepository extends JpaRepository<ShowRoom, Integer> {
     void updateShowRoom(@Param("name") String name,
                         @Param("quantity") Integer quantity,
                         @Param("id") Integer id);
+
+
+    ShowRoom findByIdShowRoom(int id);
 }

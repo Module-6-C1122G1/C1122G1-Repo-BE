@@ -18,7 +18,7 @@ public class Film {
     private String studioFilm;
     @Column(name = "trailer", columnDefinition = "varchar(255)")
     private String trailer;
-    @Column(name = "describe_film", columnDefinition = "varchar(255)")
+    @Column(name = "describe_film", columnDefinition = "mediumtext")
     private String describeFilm;
     @Column(name = "actor", columnDefinition = "varchar(255)")
     private String actor;
@@ -39,15 +39,16 @@ public class Film {
     @ManyToOne
     @JoinColumn(name = "id_type_film")
     private TypeFilm typeFilm;
+    @Column(name = "nation", columnDefinition = "varchar(255)")
+    private String nation;
 
-    @ManyToOne
-    @JoinColumn(name = "id_show_time")
-    private ShowTime showTime;
+
+
 
     public Film() {
     }
 
-    public Film(Integer idFilm, String nameFilm, String director, String studioFilm, String trailer, String describeFilm, String actor, Double normalSeatPrice, Double vipSeatPrice, LocalDate dateStartFilm, LocalDate dateEndFilm, String imgFilm, Integer timeFilm, String movieLabel, TypeFilm typeFilm, ShowTime showTime) {
+    public Film(Integer idFilm, String nameFilm, String director, String studioFilm, String trailer, String describeFilm, String actor, Double normalSeatPrice, Double vipSeatPrice, LocalDate dateStartFilm, LocalDate dateEndFilm, String imgFilm, Integer timeFilm, String movieLabel, TypeFilm typeFilm, String nation) {
         this.idFilm = idFilm;
         this.nameFilm = nameFilm;
         this.director = director;
@@ -63,7 +64,7 @@ public class Film {
         this.timeFilm = timeFilm;
         this.movieLabel = movieLabel;
         this.typeFilm = typeFilm;
-        this.showTime = showTime;
+        this.nation = nation;
     }
 
     public Integer getIdFilm() {
@@ -186,11 +187,11 @@ public class Film {
         this.typeFilm = typeFilm;
     }
 
-    public ShowTime getShowTime() {
-        return showTime;
+    public String getNation() {
+        return nation;
     }
 
-    public void setShowTime(ShowTime showTime) {
-        this.showTime = showTime;
+    public void setNation(String nation) {
+        this.nation = nation;
     }
 }

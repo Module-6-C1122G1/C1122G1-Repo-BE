@@ -1,6 +1,7 @@
 package com.example.dncinema.controller.show_room;
 
 import com.example.dncinema.model.Seat;
+import com.example.dncinema.repository.show_room.ISeatRepository;
 import com.example.dncinema.service.show_room.ISeatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,11 +16,13 @@ import java.util.List;
 public class SeatController {
     @Autowired
     private ISeatService iSeatService;
+    @Autowired
+    private ISeatRepository iSeatRepository;
 
 
-    @GetMapping("/{id}")
+    @GetMapping("/list/{id}")
     public ResponseEntity<List<Seat>> getAllListSeatByIdShowRoom(@PathVariable Integer id){
-        return new ResponseEntity<>(iSeatService.findAllListSeatByIdShowRoom(id), HttpStatus.OK);
+        return new ResponseEntity<>(iSeatRepository.findByShowRoom_IdShowRoom(id), HttpStatus.OK);
     }
 
     @PutMapping("/update_status")
