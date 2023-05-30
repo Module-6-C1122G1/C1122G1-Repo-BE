@@ -64,13 +64,18 @@ public class TicketServiceMinh implements ITicketServiceMinh {
         String path = "C:\\Users\\ADMIN\\Desktop\\du_an_be\\dn-cinema-api\\dn-cinema\\src\\main\\resources\\qr\\QR" + uuid + ".png";
         createQR(data, path);
         Ticket ticket;
+        Discount discount;
+        if (ticketDTO.getIdDiscount()==null){
+            discount=new Discount();
+        }else {
+            discount = iDiscountRepository.findById(ticketDTO.getIdDiscount()).get();
+        }
         for (int i = 0; i < ticketDTO.getListSeat().length; i++) {
 
             Seat seat = iSeatRepository.getByIdSeat(ticketDTO.getListSeat()[i]);
 
-            Customer customer = iCustomerRepository.getByIdCus(ticketDTO.getIdCustomer());
+            Customer customer = iCustomerRepository.findByIdCustomer(ticketDTO.getIdCustomer());
 
-            Discount discount = iDiscountRepository.findById(ticketDTO.getIdDiscount()).get();
 
             ticket = new Ticket("45", false, ticketDTO.getPrice(), LocalDate.now(), path, false, discount, null, customer, seat);
 
@@ -80,7 +85,9 @@ public class TicketServiceMinh implements ITicketServiceMinh {
 
 //            setTypeCustomer(ticketDTO.getIdCustomer());
         }
+
         Customer cus = iCustomerRepository.getByIdCus(ticketDTO.getIdCustomer());
+
         sendEmail(cus.getEmail(), path);
 
     }
