@@ -1,10 +1,9 @@
 package com.example.dncinema.model;
-
 import com.example.dncinema.dto.ListTicketDTO;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-
 @NamedNativeQuery(
         name = "Ticket.find_list_ticket",
         query =
@@ -43,20 +42,21 @@ import java.time.LocalDate;
 public class Ticket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     @Column(name = "id_ticket")
     private Integer idTicket;
-    @Column(name = "status_ticket", columnDefinition = "varchar(255)")
-    private String statusTicket;
+    @Column(name = "code_ticket")
+    private String codeTicket;
+    @Column(name = "status_ticket")
+    private boolean statusTicket;
     @Column(name = "price_after_discount")
-    private Double priceAfterDiscount;
+    private long priceAfterDiscount;
     @Column(name = "date_booking", columnDefinition = "date")
     private LocalDate dateBooking;
     @Column(name = "id_qr")
-    private Integer idQr;
-
-    @Column(name="is_delete")
+    private String idQr;
+    @Column(name = "is_delete")
     private Boolean isDelete;
-
     @OneToOne
     @JoinColumn(name = "id_discount")
     private Discount discount;
@@ -76,19 +76,22 @@ public class Ticket {
     public Ticket() {
     }
 
-    public Ticket(Integer idTicket, String statusTicket, Double priceAfterDiscount, LocalDate dateBooking, Integer idQr, Discount discount, Employee employee, Customer customer, Seat seat) {
-        this.idTicket = idTicket;
+
+    public Ticket(String codeTicket, Boolean statusTicket, long priceAfterDiscount, LocalDate dateBooking, String idQr,Boolean isDelete, Discount discount, Employee employee, Customer customer, Seat seat) {
+        this.codeTicket = codeTicket;
         this.statusTicket = statusTicket;
         this.priceAfterDiscount = priceAfterDiscount;
         this.dateBooking = dateBooking;
         this.idQr = idQr;
+        this.isDelete = isDelete;
         this.discount = discount;
         this.employee = employee;
         this.customer = customer;
         this.seat = seat;
     }
 
-    public Ticket(Integer idTicket, String statusTicket, Double priceAfterDiscount, LocalDate dateBooking, Integer idQr, Boolean isDelete, Discount discount, Employee employee, Customer customer, Seat seat) {
+
+    public Ticket(Integer idTicket, Boolean statusTicket, Long priceAfterDiscount, LocalDate dateBooking, String idQr, Boolean isDelete, Discount discount, Employee employee, Customer customer, Seat seat) {
         this.idTicket = idTicket;
         this.statusTicket = statusTicket;
         this.priceAfterDiscount = priceAfterDiscount;
@@ -101,14 +104,6 @@ public class Ticket {
         this.seat = seat;
     }
 
-    public Boolean getDelete() {
-        return isDelete;
-    }
-
-    public void setDelete(Boolean delete) {
-        isDelete = delete;
-    }
-
     public Integer getIdTicket() {
         return idTicket;
     }
@@ -117,19 +112,28 @@ public class Ticket {
         this.idTicket = idTicket;
     }
 
-    public String getStatusTicket() {
+    public Boolean getDelete() {
+        return isDelete;
+    }
+
+    public void setDelete(Boolean delete) {
+        isDelete = delete;
+    }
+
+
+    public Boolean getStatusTicket() {
         return statusTicket;
     }
 
-    public void setStatusTicket(String statusTicket) {
+    public void setStatusTicket(boolean statusTicket) {
         this.statusTicket = statusTicket;
     }
 
-    public Double getPriceAfterDiscount() {
+    public long getPriceAfterDiscount() {
         return priceAfterDiscount;
     }
 
-    public void setPriceAfterDiscount(Double priceAfterDiscount) {
+    public void setPriceAfterDiscount(long priceAfterDiscount) {
         this.priceAfterDiscount = priceAfterDiscount;
     }
 
@@ -141,11 +145,11 @@ public class Ticket {
         this.dateBooking = dateBooking;
     }
 
-    public Integer getIdQr() {
+    public String getIdQr() {
         return idQr;
     }
 
-    public void setIdQr(Integer idQr) {
+    public void setIdQr(String idQr) {
         this.idQr = idQr;
     }
 
