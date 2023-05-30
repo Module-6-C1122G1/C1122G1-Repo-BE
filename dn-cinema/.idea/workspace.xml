@@ -4,36 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="AnhNQ update MovieController">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-=======
-    <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="Merge branch 'develop' of https://github.com/Module-6-C1122G1/dn-cinema-api into develop&#10;&#10;# Conflicts:&#10;#&#9;dn-cinema/.idea/workspace.xml&#10;#&#9;dn-cinema/build.gradle">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" afterDir="false" />
+    <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="DatLVP up">
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/MovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/ShowTimeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/ShowTimeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/seat/SeatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/seat/SeatController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/AccountUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/AccountUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Film.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/UserRole.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/IMovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/IMovieRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/film/IFilmRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/film/IFilmRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/film/IFilmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/film/IFilmService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/film/impl/FilmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/film/impl/FilmService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/TicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/TicketController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ticket/ITicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ticket/ITicketService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ticket/impl/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ticket/impl/TicketService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
->>>>>>> f7c294ec56312a4e6876320be991f69687b56fde
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -48,7 +34,12 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="dn-cinema" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -64,81 +55,50 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/film/FilmController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/film/IFilmRepository.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2QGnxBC818waB1MASIz4gkcr7BH" />
+  <component name="ProjectId" id="2Q8ArGhjGOeUdfIvtFuDfptmx86" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelOrder2&quot;: &quot;2&quot;,
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth2&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Desktop/dn-cinema-api/dn-cinema&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/code/dn-cinema-api/dn-cinema&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;d788013c1d5834ba3ba288e3511a87d2&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-=======
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/DELL/Downloads/cxxg-spring-boot-junit-5/cxxg-spring-boot-junit-5",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "d788013c1d5834ba3ba288e3511a87d2",
-    "vue.rearranger.settings.migration": "true"
->>>>>>> f7c294ec56312a4e6876320be991f69687b56fde
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-<<<<<<< HEAD
 }</component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-=======
-}]]></component>
   <component name="RunManager" selected="Spring Boot.DnCinemaApplication">
-    <configuration name="MovieRestController_getAllFilms" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TicketController_findAllTicket" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -151,7 +111,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.dncinema.MovieRestController_getAllFilms&quot;" />
+            <option value="&quot;com.example.dncinema.controller.TicketController_findAllTicket&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -161,7 +121,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="SeatRestController_getAllListSeatByIdRoom" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TicketController_findAllTicket.findAllTicket_11" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -174,7 +134,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.dncinema.SeatRestController_getAllListSeatByIdRoom&quot;" />
+            <option value="&quot;com.example.dncinema.controller.TicketController_findAllTicket.findAllTicket_11&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -184,7 +144,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_11" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TicketController_findAllTicket.findAllTicket_7" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -197,7 +157,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.dncinema.SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_11&quot;" />
+            <option value="&quot;com.example.dncinema.controller.TicketController_findAllTicket.findAllTicket_7&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -207,7 +167,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_9" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TicketController_findAllTicket.findAllTicket_8" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -220,7 +180,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.dncinema.SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_9&quot;" />
+            <option value="&quot;com.example.dncinema.controller.TicketController_findAllTicket.findAllTicket_8&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -230,7 +190,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ShowTimeRestController_getAllDateByIdFilm.getAllDateByIdFilm_11" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TicketController_findAllTicket.findAllTicket_9" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -243,7 +203,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.dncinema.ShowTimeRestController_getAllDateByIdFilm.getAllDateByIdFilm_11&quot;" />
+            <option value="&quot;com.example.dncinema.controller.TicketController_findAllTicket.findAllTicket_9&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -252,7 +212,6 @@
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
->>>>>>> f7c294ec56312a4e6876320be991f69687b56fde
     </configuration>
     <configuration name="DnCinemaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="dn-cinema.main" />
@@ -261,92 +220,88 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-<<<<<<< HEAD
-=======
-    <list>
-      <item itemvalue="Gradle.MovieRestController_getAllFilms" />
-      <item itemvalue="Gradle.SeatRestController_getAllListSeatByIdRoom" />
-      <item itemvalue="Gradle.SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_11" />
-      <item itemvalue="Gradle.SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_9" />
-      <item itemvalue="Gradle.ShowTimeRestController_getAllDateByIdFilm.getAllDateByIdFilm_11" />
-      <item itemvalue="Spring Boot.DnCinemaApplication" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ShowTimeRestController_getAllDateByIdFilm.getAllDateByIdFilm_11" />
-        <item itemvalue="Gradle.MovieRestController_getAllFilms" />
-        <item itemvalue="Gradle.SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_11" />
-        <item itemvalue="Gradle.SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_9" />
-        <item itemvalue="Gradle.SeatRestController_getAllListSeatByIdRoom" />
+        <item itemvalue="Gradle.TicketController_findAllTicket.findAllTicket_11" />
+        <item itemvalue="Gradle.TicketController_findAllTicket.findAllTicket_9" />
+        <item itemvalue="Gradle.TicketController_findAllTicket.findAllTicket_8" />
+        <item itemvalue="Gradle.TicketController_findAllTicket.findAllTicket_7" />
+        <item itemvalue="Gradle.TicketController_findAllTicket" />
       </list>
     </recent_temporary>
->>>>>>> f7c294ec56312a4e6876320be991f69687b56fde
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="update" />
-      <created>1684989030611</created>
+      <changelist id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="" />
+      <created>1684725035536</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-<<<<<<< HEAD
       <updated>1684725035536</updated>
       <workItem from="1684725037272" duration="2620000" />
       <workItem from="1684894781635" duration="240000" />
       <workItem from="1684918773391" duration="4934000" />
-      <workItem from="1684928763049" duration="8698000" />
-      <workItem from="1684940849214" duration="111000" />
-      <workItem from="1684978160331" duration="53000" />
-      <workItem from="1684984181807" duration="3085000" />
-      <workItem from="1684996359463" duration="5391000" />
-      <workItem from="1685003483531" duration="2647000" />
-      <workItem from="1685007274519" duration="57000" />
-      <workItem from="1685366569401" duration="43000" />
-      <workItem from="1685366638872" duration="10000" />
-      <workItem from="1685366656747" duration="1358000" />
-      <workItem from="1685368044794" duration="1757000" />
-      <workItem from="1685409283164" duration="316000" />
-=======
-      <updated>1684989030611</updated>
-      <workItem from="1684989032737" duration="82000" />
-      <workItem from="1684989299290" duration="13247000" />
-      <workItem from="1685017076929" duration="599000" />
-      <workItem from="1685022211690" duration="1744000" />
-      <workItem from="1685032790808" duration="13339000" />
-      <workItem from="1685065408635" duration="8957000" />
-      <workItem from="1685083096098" duration="848000" />
-      <workItem from="1685151096312" duration="5983000" />
-      <workItem from="1685168594047" duration="5640000" />
-      <workItem from="1685191220022" duration="2835000" />
-      <workItem from="1685203679932" duration="1263000" />
-      <workItem from="1685205357235" duration="99000" />
-      <workItem from="1685205688241" duration="1002000" />
-      <workItem from="1685229241206" duration="821000" />
-      <workItem from="1685245257201" duration="4632000" />
-      <workItem from="1685263727243" duration="1211000" />
-      <workItem from="1685284219866" duration="490000" />
-      <workItem from="1685284762811" duration="4008000" />
-      <workItem from="1685324574592" duration="755000" />
-      <workItem from="1685325538369" duration="9903000" />
-      <workItem from="1685345691096" duration="534000" />
-      <workItem from="1685346260840" duration="380000" />
->>>>>>> f7c294ec56312a4e6876320be991f69687b56fde
+      <workItem from="1684933669914" duration="2191000" />
+      <workItem from="1684944985023" duration="3575000" />
+      <workItem from="1684977228613" duration="4315000" />
+      <workItem from="1684987191689" duration="2722000" />
+      <workItem from="1684999609049" duration="173000" />
+      <workItem from="1685000841533" duration="7454000" />
+      <workItem from="1685025666837" duration="9931000" />
+      <workItem from="1685064492705" duration="10456000" />
+      <workItem from="1685322937247" duration="9601000" />
+      <workItem from="1685413766296" duration="2447000" />
     </task>
-    <task id="LOCAL-00001" summary="update">
-      <created>1685284085890</created>
+    <task id="LOCAL-00001" summary="DatLVP up">
+      <created>1684977293169</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1685284085890</updated>
+      <updated>1684977293169</updated>
     </task>
-    <task id="LOCAL-00002" summary="AnhNQ update MovieController">
-      <created>1685409490329</created>
+    <task id="LOCAL-00002" summary="DatLVP up">
+      <created>1684997647644</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1685409490329</updated>
+      <updated>1684997647644</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="DatLVP up">
+      <created>1684997708032</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1684997708032</updated>
+    </task>
+    <task id="LOCAL-00004" summary="DatLVP up">
+      <created>1685031834334</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685031834334</updated>
+    </task>
+    <task id="LOCAL-00005" summary="DatLVP up">
+      <created>1685065234175</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1685065234175</updated>
+    </task>
+    <task id="LOCAL-00006" summary="DatLVP up">
+      <created>1685070938729</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1685070938729</updated>
+    </task>
+    <task id="LOCAL-00007" summary="DatLVP up">
+      <created>1685087940746</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1685087940746</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,37 +319,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-<<<<<<< HEAD
-    <MESSAGE value="update ticket and movie detail" />
-    <MESSAGE value="AnhNQ update MovieController" />
-    <option name="LAST_COMMIT_MESSAGE" value="AnhNQ update MovieController" />
-=======
-    <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/com/example/dncinema/ShowTimeRestController_getAllDateByIdFilm.java</url>
-          <line>48</line>
-          <properties class="com.example.dncinema.ShowTimeRestController_getAllDateByIdFilm" method="getAllDateByIdFilm_9">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/dncinema/service/film/impl/FilmService.java</url>
-          <line>26</line>
-          <properties class="com.example.dncinema.service.film.impl.FilmService">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
->>>>>>> f7c294ec56312a4e6876320be991f69687b56fde
+    <MESSAGE value="DatLVP up" />
+    <option name="LAST_COMMIT_MESSAGE" value="DatLVP up" />
   </component>
 </project>
