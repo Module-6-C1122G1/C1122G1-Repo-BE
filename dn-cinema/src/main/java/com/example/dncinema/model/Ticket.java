@@ -15,7 +15,7 @@ public class Ticket {
     @Column(name = "status_ticket", columnDefinition = "varchar(255)")
     private String statusTicket;
     @Column(name = "price_after_discount")
-    private Long priceAfterDiscount;
+    private long priceAfterDiscount;
     @Column(name = "date_booking", columnDefinition = "date")
     private LocalDate dateBooking;
     @Column(name = "id_qr")
@@ -41,7 +41,7 @@ public class Ticket {
     public Ticket() {
     }
 
-    public Ticket(Integer idTicket, String statusTicket, Long priceAfterDiscount, LocalDate dateBooking, String idQr, Discount discount, Employee employee, Customer customer, Seat seat) {
+    public Ticket(Integer idTicket, String statusTicket, long priceAfterDiscount, LocalDate dateBooking, String idQr, Discount discount, Employee employee, Customer customer, Seat seat) {
         this.idTicket = idTicket;
         this.statusTicket = statusTicket;
         this.priceAfterDiscount = priceAfterDiscount;
@@ -53,7 +53,7 @@ public class Ticket {
         this.seat = seat;
     }
 
-    public Ticket(Integer idTicket, String statusTicket, Long priceAfterDiscount, LocalDate dateBooking, String idQr, Boolean isDelete, Discount discount, Employee employee, Customer customer, Seat seat) {
+    public Ticket(Integer idTicket, String statusTicket, long priceAfterDiscount, LocalDate dateBooking, String idQr, Boolean isDelete, Discount discount, Employee employee, Customer customer, Seat seat) {
         this.idTicket = idTicket;
         this.statusTicket = statusTicket;
         this.priceAfterDiscount = priceAfterDiscount;
@@ -90,11 +90,11 @@ public class Ticket {
         this.statusTicket = statusTicket;
     }
 
-    public Long getPriceAfterDiscount() {
+    public long getPriceAfterDiscount() {
         return priceAfterDiscount;
     }
 
-    public void setPriceAfterDiscount(Long priceAfterDiscount) {
+    public void setPriceAfterDiscount(long priceAfterDiscount) {
         this.priceAfterDiscount = priceAfterDiscount;
     }
 
