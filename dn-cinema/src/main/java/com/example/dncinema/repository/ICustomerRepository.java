@@ -110,10 +110,14 @@ public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
      */
     @Transactional
     @Query(value = "select * from customer where id_customer = :id_customer", nativeQuery = true)
-    Customer findByIdCustomer(@Param("id_customer") Integer customerId);
+    Customer findByIdCustomer(@Param("id_customer") Integer  customerId);
 
-    @Query(value = "select * from customer where email like :email", nativeQuery = true)
-    Customer findByEmail(@Param("email") String email);
+    /**
+     * @author ChinhLV
+     * @param email
+     * @return đối tượng có tên Customer được tìm thấy dựa theo email
+     */
+    Customer findCustomersByEmail(String email);
 };
 
 
