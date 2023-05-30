@@ -223,7 +223,7 @@ public class TicketServiceMinh implements ITicketServiceMinh {
         vnp_Params.put("vnp_Version", vnp_Version);
         vnp_Params.put("vnp_Command", vnp_Command);
         vnp_Params.put("vnp_TmnCode", vnp_TmnCode);
-        vnp_Params.put("vnp_Amount", String.valueOf(ticketDTO.getPrice()));
+        vnp_Params.put("vnp_Amount", String.valueOf(ticketDTO.getPrice()*100));
         vnp_Params.put("vnp_CurrCode", "VND");
         vnp_Params.put("vnp_BankCode", "NCB");
 
