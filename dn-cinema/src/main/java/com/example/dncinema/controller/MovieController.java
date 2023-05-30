@@ -76,31 +76,31 @@ public class MovieController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    /**
-     * @param filmDTO
-     * @param idFilm
-     * @param bindingResult
-     * @return new ResponseEntity<>
-     * @author AnhNQ
-     * @dateCreated 29/05/2023
-     */
-    @PutMapping("/${idFilm}")
-    public ResponseEntity<?> updateFilm(@Valid @RequestBody FilmDTO filmDTO, @PathVariable Integer idFilm, BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-        }
-        Film film = new Film();
-        Optional<Film> filmOptional = movieService.findById(idFilm);
-        BeanUtils.copyProperties(filmOptional, filmDTO);
-        filmDTO.setIdFilm(idFilm);
-        BeanUtils.copyProperties(filmDTO, film);
-        film.setTypeFilm(filmDTO.getTypeFilm());
-        movieService.save(film);
-        return new ResponseEntity<>(HttpStatus.OK);
+//    /**
+//     * @param filmDTO
+//     * @param idFilm
+//     * @param bindingResult
+//     * @return new ResponseEntity<>
+//     * @author AnhNQ
+//     * @dateCreated 29/05/2023
+//     */
+//    @PutMapping("/${idFilm}")
+//    public ResponseEntity<?> updateFilm(@Valid @RequestBody FilmDTO filmDTO, @PathVariable Integer idFilm, BindingResult bindingResult) {
+//        if (bindingResult.hasErrors()) {
+//            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+//        }
+//        Film film = new Film();
+//        Optional<Film> filmOptional = movieService.findById(idFilm);
+//        BeanUtils.copyProperties(filmOptional, filmDTO);
+//        filmDTO.setIdFilm(idFilm);
+//        BeanUtils.copyProperties(filmDTO, film);
+//        film.setTypeFilm(filmDTO.getTypeFilm());
+//        movieService.save(film);
+//        return new ResponseEntity<>(HttpStatus.OK);
 
 //    @GetMapping("/list")
 //    public ResponseEntity<List<Film>> getAllFilms(){
 //        return new ResponseEntity<>(movieService.findAllListFilm(),HttpStatus.OK);
 //    }
-    }
+//    }
 }
