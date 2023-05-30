@@ -1,13 +1,9 @@
 package com.example.dncinema.dto;
 
-import com.example.dncinema.model.ShowTime;
 import com.example.dncinema.model.TypeFilm;
-import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
 
 public class FilmDTO {
     private Integer idFilm;
@@ -26,12 +22,11 @@ public class FilmDTO {
     private String nation;
     private String movieLabel;
     private TypeFilm typeFilm;
-    private Set<ShowTime> showTimeSet = new HashSet<>();
 
     public FilmDTO() {
     }
 
-    public FilmDTO(Integer idFilm, String nameFilm, String director, String studioFilm, String trailer, String describeFilm, String actor, Double normalSeatPrice, Double vipSeatPrice, LocalDate dateStartFilm, LocalDate dateEndFilm, String imgFilm, Integer timeFilm, String nation, String movieLabel, TypeFilm typeFilm, Set<ShowTime> showTimeSet) {
+    public FilmDTO(Integer idFilm, String nameFilm, String director, String studioFilm, String trailer, String describeFilm, String actor, Double normalSeatPrice, Double vipSeatPrice, LocalDate dateStartFilm, LocalDate dateEndFilm, String imgFilm, Integer timeFilm, String nation, String movieLabel, TypeFilm typeFilm) {
         this.idFilm = idFilm;
         this.nameFilm = nameFilm;
         this.director = director;
@@ -48,7 +43,6 @@ public class FilmDTO {
         this.nation = nation;
         this.movieLabel = movieLabel;
         this.typeFilm = typeFilm;
-        this.showTimeSet = showTimeSet;
     }
 
     public Integer getIdFilm() {
@@ -177,13 +171,5 @@ public class FilmDTO {
 
     public void setTypeFilm(TypeFilm typeFilm) {
         this.typeFilm = typeFilm;
-    }
-
-    public Set<ShowTime> getShowTimeSet() {
-        return showTimeSet;
-    }
-
-    public void setShowTimeSet(Set<ShowTime> showTimeSet) {
-        this.showTimeSet = showTimeSet;
     }
 }

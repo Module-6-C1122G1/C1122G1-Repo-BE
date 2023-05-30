@@ -1,12 +1,7 @@
 package com.example.dncinema.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "film")
@@ -41,20 +36,20 @@ public class Film {
     private Integer timeFilm;
     @Column(name = "nation", columnDefinition = "varchar(255)")
     private String nation;
-
     @Column(name = "movie_label", columnDefinition = "varchar(255)")
     private String movieLabel;
     @ManyToOne
     @JoinColumn(name = "id_type_film")
     private TypeFilm typeFilm;
-    @JsonBackReference
-    @OneToMany(mappedBy = "film")
-    private Set<ShowTime> showTimeSet = new HashSet<>();
+
+//    @ManyToOne
+//    @JoinColumn(name = "id_show_time")
+//    private ShowTime showTime;
 
     public Film() {
     }
 
-    public Film(Integer idFilm, String nameFilm, String director, String studioFilm, String trailer, String describeFilm, String actor, Double normalSeatPrice, Double vipSeatPrice, LocalDate dateStartFilm, LocalDate dateEndFilm, String imgFilm, Integer timeFilm, String nation, String movieLabel, TypeFilm typeFilm, Set<ShowTime> showTimeSet) {
+    public Film(Integer idFilm, String nameFilm, String director, String studioFilm, String trailer, String describeFilm, String actor, Double normalSeatPrice, Double vipSeatPrice, LocalDate dateStartFilm, LocalDate dateEndFilm, String imgFilm, Integer timeFilm, String nation, String movieLabel, TypeFilm typeFilm) {
         this.idFilm = idFilm;
         this.nameFilm = nameFilm;
         this.director = director;
@@ -71,15 +66,6 @@ public class Film {
         this.nation = nation;
         this.movieLabel = movieLabel;
         this.typeFilm = typeFilm;
-        this.showTimeSet = showTimeSet;
-    }
-
-    public Set<ShowTime> getShowTimeSet() {
-        return showTimeSet;
-    }
-
-    public void setShowTimeSet(Set<ShowTime> showTimeSet) {
-        this.showTimeSet = showTimeSet;
     }
 
     public Integer getIdFilm() {
@@ -186,6 +172,14 @@ public class Film {
         this.timeFilm = timeFilm;
     }
 
+    public String getNation() {
+        return nation;
+    }
+
+    public void setNation(String nation) {
+        this.nation = nation;
+    }
+
     public String getMovieLabel() {
         return movieLabel;
     }
@@ -201,13 +195,4 @@ public class Film {
     public void setTypeFilm(TypeFilm typeFilm) {
         this.typeFilm = typeFilm;
     }
-
-    public String getNation() {
-        return nation;
-    }
-
-    public void setNation(String nation) {
-        this.nation = nation;
-    }
 }
-
