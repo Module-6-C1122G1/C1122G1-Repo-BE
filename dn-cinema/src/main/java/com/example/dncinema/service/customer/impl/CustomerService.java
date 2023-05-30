@@ -90,9 +90,6 @@ public class CustomerService implements ICustomerService {
     public void updateRegisterCustomer(CustomerDTO customerDTO, Integer id) {
         AccountUser accountUser = iAccountUserRepository
                 .findAccountUserByNameAccount(customerDTO.getAccountUser().getNameAccount());
-
-//        iAccountUserRepository.savePassword( passwordEncoder.encode(customerDTO.getAccountUser().getPasswordAccount()),
-//                accountUser.getId());
         Customer customer = iCustomerRepository.findByIdCustomer(id);
         BeanUtils.copyProperties(customerDTO, customer);
         iCustomerRepository.updateCustomerAccount(

@@ -72,7 +72,7 @@ public class TicketServiceMinh implements ITicketServiceMinh {
 
             Discount discount = iDiscountRepository.findById(ticketDTO.getIdDiscount()).get();
 
-            ticket = new Ticket("45", false, ticketDTO.getPrice(), LocalDate.now(), path, discount, null, customer, seat);
+            ticket = new Ticket("45", false, ticketDTO.getPrice(), LocalDate.now(), path,false, discount, null, customer, seat);
 
             iTicketRepository.save(ticket);
 

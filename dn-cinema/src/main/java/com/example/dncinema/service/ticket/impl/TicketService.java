@@ -1,13 +1,14 @@
 package com.example.dncinema.service.ticket.impl;
 
 import com.example.dncinema.dto.*;
+import com.example.dncinema.dto.customerDTO.CustomerDTO;
 import com.example.dncinema.model.Customer;
 import com.example.dncinema.model.Seat;
 import com.example.dncinema.model.StatusSeat;
 import com.example.dncinema.model.Ticket;
 import com.example.dncinema.repository.ICustomerRepository;
 import com.example.dncinema.repository.IMovieRepository;
-import com.example.dncinema.repository.ISeatRepository;
+import com.example.dncinema.repository.ISeatRepositoryQuynh;
 
 import com.example.dncinema.repository.ITicketRepository;
 import com.example.dncinema.repository.show_room.IStatusSeatRepository;
@@ -26,7 +27,7 @@ public class TicketService implements ITicketService {
     @Autowired
     private ICustomerRepository customerRepository;
     @Autowired
-    private ISeatRepository seatRepository;
+    private ISeatRepositoryQuynh seatRepository;
     @Autowired
     private IStatusSeatRepository statusSeatRepository;
     @Autowired

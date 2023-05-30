@@ -13,8 +13,7 @@ public class CustomerDTO {
     @Size(min = 4, max = 99, message = "Tên phải có độ dài từ 4 đến 99 ký tự")
     private String nameCustomer;
 
-    @NotBlank(message = "không được để trống")
-    @Pattern(regexp = "^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/((19|20)\\d{2})$", message = "phải nhập đúng ngày sinh theo định dạng dd/mm/yyyy")
+    @NotNull(message = "không được để trống")
     private LocalDate dateOfBirth;
     @NotNull(message = "Không được để trống")
     @Min(value = 0, message = "điểm phải lớn hơn 0")

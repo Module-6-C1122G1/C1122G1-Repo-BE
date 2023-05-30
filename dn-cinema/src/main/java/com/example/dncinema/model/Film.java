@@ -1,7 +1,6 @@
 package com.example.dncinema.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -44,8 +43,6 @@ public class Film {
 
     @Column(name = "movie_label", columnDefinition = "varchar(255)")
     private String movieLabel;
-    @Column(name = "nation")
-    private String nation;
     @ManyToOne
     @JoinColumn(name = "id_type_film")
     private TypeFilm typeFilm;
@@ -212,11 +209,4 @@ public class Film {
         this.typeFilm = typeFilm;
     }
 
-    public ShowTime getShowTime() {
-        return showTime;
-    }
-
-    public void setShowTime(ShowTime showTime) {
-        this.showTime = showTime;
-    }
 }

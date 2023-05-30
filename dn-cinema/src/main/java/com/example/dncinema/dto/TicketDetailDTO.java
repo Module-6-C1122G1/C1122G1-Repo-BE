@@ -1,5 +1,6 @@
 package com.example.dncinema.dto;
 
+import com.example.dncinema.dto.customerDTO.CustomerDTO;
 import com.example.dncinema.model.Discount;
 
 import java.time.LocalDate;
@@ -23,6 +24,19 @@ public class TicketDetailDTO {
     private SeatDTO seatDTO;
 
     public TicketDetailDTO() {
+    }
+
+    public TicketDetailDTO(Integer idTicket, String statusTicket, Long priceAfterDiscount, LocalDate dateBooking, String idQr,
+                           Discount discount, EmployeeDTO employeeDTO, CustomerDTO customerDTO, SeatDTO seatDTO) {
+        this.idTicket = idTicket;
+        this.statusTicket = statusTicket;
+        this.priceAfterDiscount = priceAfterDiscount;
+        this.dateBooking = dateBooking;
+        this.idQr = idQr;
+        this.discount = discount;
+        this.employeeDTO = employeeDTO;
+        this.customerDTO = customerDTO;
+        this.seatDTO = seatDTO;
     }
 
     public Integer getIdTicket() {

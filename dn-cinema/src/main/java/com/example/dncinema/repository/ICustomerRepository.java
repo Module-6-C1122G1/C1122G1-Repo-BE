@@ -13,7 +13,9 @@ import javax.transaction.Transactional;
 import java.time.LocalDate;
 
 @Repository
-public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
+public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
+    @Query(value = "select * from customer where id_customer= :id", nativeQuery = true)
+    Customer getByIdCus(@Param("id") Integer id);
 
     @Query(value = "select * from customer\n" +
             "join ticket on ticket.id_customer = customer.id_customer\n" +
@@ -42,6 +44,7 @@ public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
     void updateDiamond(Customer customer);
 
     Customer findByAccountUser_NameAccount(String nameAcc);
+
     /**
      * @param nameCustomer
      * @param point_customer

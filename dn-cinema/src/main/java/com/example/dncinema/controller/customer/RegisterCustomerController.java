@@ -46,7 +46,7 @@ public class RegisterCustomerController {
     @PostMapping("/create")
     public ResponseEntity<?> createCustomerAccount(@Valid @RequestBody CustomerDTO customerDTO) {
         if (accountUserService.existByNameAccount(customerDTO.getAccountUser().getNameAccount())) {
-            return new ResponseEntity<>(new ResponseMessage("The username existed !!, Try again"), HttpStatus.OK);
+            return new ResponseEntity<>(new ResponseMessage("The account existed !!, Try again"), HttpStatus.OK);
         }
         if (customerService.existByEmail(customerDTO.getEmail())){
             return new ResponseEntity<>(new ResponseMessage("The email existed!!, Try again"), HttpStatus.OK);
@@ -98,5 +98,12 @@ public class RegisterCustomerController {
         BeanUtils.copyProperties(accountUserDTO, accountUser);
         accountUserService.updatePassword(accountUserDTO,accountUserDTO.getId());
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/check-account/{nameAccount}")
+    public ResponseEntity<Boolean> checkAccountExistence(@PathVariable("nameAccount") String nameAccount) {
+        boolean exists = accountUserService.existByNameAccount(nameAccount);
+        return ResponseEntity.ok(exists);
     }
 }

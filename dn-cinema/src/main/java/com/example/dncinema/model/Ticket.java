@@ -45,31 +45,21 @@ public class Ticket {
     public Ticket() {
     }
 
-    public Ticket(Integer idTicket, String codeTicket, boolean statusTicket, long priceAfterDiscount, LocalDate dateBooking, String idQr, Discount discount, Employee employee, Customer customer, Seat seat) {
-        this.idTicket = idTicket;
+    public Ticket( String codeTicket, boolean statusTicket, long priceAfterDiscount, LocalDate dateBooking, String idQr,Boolean isDelete, Discount discount, Employee employee, Customer customer, Seat seat) {
         this.codeTicket = codeTicket;
         this.statusTicket = statusTicket;
         this.priceAfterDiscount = priceAfterDiscount;
         this.dateBooking = dateBooking;
         this.idQr = idQr;
+        this.isDelete=isDelete;
         this.discount = discount;
         this.employee = employee;
         this.customer = customer;
         this.seat = seat;
     }
 
-    public Ticket(Integer idTicket, String statusTicket, Long priceAfterDiscount, LocalDate dateBooking, String idQr, Boolean isDelete, Discount discount, Employee employee, Customer customer, Seat seat) {
-        this.idTicket = idTicket;
-        this.statusTicket = statusTicket;
-        this.priceAfterDiscount = priceAfterDiscount;
-        this.dateBooking = dateBooking;
-        this.idQr = idQr;
-        this.isDelete = isDelete;
-        this.discount = discount;
-        this.employee = employee;
-        this.customer = customer;
-        this.seat = seat;
-    }
+
+
 
     public Integer getIdTicket() {
         return idTicket;
@@ -87,7 +77,7 @@ public class Ticket {
         isDelete = delete;
     }
 
-    public String getStatusTicket() {
+    public boolean getStatusTicket() {
         return statusTicket;
     }
 
