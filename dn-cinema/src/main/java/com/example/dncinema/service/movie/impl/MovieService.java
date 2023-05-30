@@ -50,9 +50,9 @@ public class MovieService implements IMovieService {
 
 
 
-//    public List<Film> findAllListFilm() {
-//        return movieRepository.findAllListFilm();
-//    }
+    public List<Film> findAllListFilm() {
+        return movieRepository.findAllListFilm();
+    }
 
 
 }

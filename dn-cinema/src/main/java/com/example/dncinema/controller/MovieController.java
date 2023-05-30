@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
+import java.util.List;
 import java.util.Optional;
 
 
@@ -78,29 +79,28 @@ public class MovieController {
 
     /**
      * @param filmDTO
-     * @param idFilm
+     * @param id
      * @param bindingResult
      * @return new ResponseEntity<>
      * @author AnhNQ
      * @dateCreated 29/05/2023
      */
-    @PutMapping("/${idFilm}")
-    public ResponseEntity<?> updateFilm(@Valid @RequestBody FilmDTO filmDTO, @PathVariable Integer idFilm, BindingResult bindingResult) {
+    @PutMapping("/{id}")
+    public ResponseEntity<?> updateFilm(@Valid @RequestBody FilmDTO filmDTO, @PathVariable Integer id, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         Film film = new Film();
-        Optional<Film> filmOptional = movieService.findById(idFilm);
+        Optional<Film> filmOptional = movieService.findById(id);
         BeanUtils.copyProperties(filmOptional, filmDTO);
-        filmDTO.setIdFilm(idFilm);
+        filmDTO.setIdFilm(id);
         BeanUtils.copyProperties(filmDTO, film);
         film.setTypeFilm(filmDTO.getTypeFilm());
         movieService.save(film);
         return new ResponseEntity<>(HttpStatus.OK);
-
-//    @GetMapping("/list")
-//    public ResponseEntity<List<Film>> getAllFilms(){
-//        return new ResponseEntity<>(movieService.findAllListFilm(),HttpStatus.OK);
-//    }
+    }
+    @GetMapping("/list")
+    public ResponseEntity<List<Film>> getAllFilms(){
+        return new ResponseEntity<>(movieService.findAllListFilm(),HttpStatus.OK);
     }
 }

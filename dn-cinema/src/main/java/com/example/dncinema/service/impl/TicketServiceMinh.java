@@ -68,7 +68,7 @@ public class TicketServiceMinh implements ITicketServiceMinh {
 
             Seat seat = iSeatRepository.getByIdSeat(ticketDTO.getListSeat()[i]);
 
-            Customer customer = iCustomerRepository.getByIdCus(ticketDTO.getIdCustomer());
+            Customer customer = iCustomerRepository.findByIdCustomer(ticketDTO.getIdCustomer());
 
             Discount discount = iDiscountRepository.findById(ticketDTO.getIdDiscount()).get();
 
@@ -80,7 +80,7 @@ public class TicketServiceMinh implements ITicketServiceMinh {
 
 //            setTypeCustomer(ticketDTO.getIdCustomer());
         }
-        Customer cus = iCustomerRepository.getByIdCus(ticketDTO.getIdCustomer());
+        Customer cus = iCustomerRepository.findByIdCustomer(ticketDTO.getIdCustomer());
         sendEmail(cus.getEmail(), path);
 
     }
