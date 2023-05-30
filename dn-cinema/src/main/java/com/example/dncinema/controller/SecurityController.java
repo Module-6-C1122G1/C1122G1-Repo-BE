@@ -1,14 +1,17 @@
 package com.example.dncinema.controller;
 
 import com.example.dncinema.model.AccountUser;
+import com.example.dncinema.model.Customer;
 import com.example.dncinema.model.Roles;
 import com.example.dncinema.security.jwt.JwtProvider;
 import com.example.dncinema.security.request.*;
+import com.example.dncinema.security.response.ConfirmEmailSuccess;
 import com.example.dncinema.security.response.ErrorMessage;
 import com.example.dncinema.security.response.JwtResponse;
 import com.example.dncinema.security.response.ResponseMessage;
 import com.example.dncinema.security.userPrincipal.UserPrinciple;
 import com.example.dncinema.service.accountUser.IAccountUserService;
+import com.example.dncinema.service.customer.ICustomerService;
 import com.example.dncinema.service.roles.IRolesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -41,6 +44,8 @@ public class SecurityController {
     AuthenticationManager authenticationManager;
     @Autowired
     JwtProvider jwtProvider;
+    @Autowired
+    ICustomerService iCustomerService;
     /**
      * @author ChinhLV
      * @body signInForm
@@ -111,11 +116,10 @@ public class SecurityController {
      */
     @PostMapping("/confirm-email")
     public ResponseEntity<?> confirmEmailSignup(@RequestBody EmailConfirm emailConfirm) {
-        AccountUser users = accountUserService.findAccountUserByEmail(emailConfirm.getEmail());
-        System.out.println(users);
-        if (users != null) {
+        Boolean flag = iCustomerService.existByEmail(emailConfirm.getEmail());
+        if (flag) {
             int code = accountUserService.sendEmail(emailConfirm.getEmail());
-            return new ResponseEntity<>(new ResponseMessage(String.valueOf(code)), HttpStatus.OK);
+            return new ResponseEntity<>(new ConfirmEmailSuccess("Xác nhận email thành công.",String.valueOf(code), emailConfirm.getEmail()), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(new ResponseMessage("Email không tồn tại."),HttpStatus.NOT_FOUND);
         }
@@ -129,7 +133,8 @@ public class SecurityController {
      */
     @PostMapping("/reset-password")
     public ResponseEntity<?> resetPassword(@RequestBody ResetPassword resetPassword ) {
-        AccountUser accountUser = accountUserService.findAccountUserByNameAccount(resetPassword.getEmail());
+        Customer customer = iCustomerService.findCustomerByEmail(resetPassword.getEmail());
+        AccountUser accountUser = customer.getAccountUser();
         accountUser.setPasswordAccount(passwordEncoder.encode(resetPassword.getPassword()));
         AccountUser newAccountUser = accountUserService.saveAccountUser(accountUser);
         if (newAccountUser == null) {
