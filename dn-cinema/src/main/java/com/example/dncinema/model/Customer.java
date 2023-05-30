@@ -1,6 +1,7 @@
 package com.example.dncinema.model;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "customer")
@@ -11,6 +12,8 @@ public class Customer {
     private Integer idCustomer;
     @Column(name = "name_customer", columnDefinition = "varchar(255)")
     private String nameCustomer;
+    @Column(name = "date_of_birth")
+    private LocalDate dateOfBirth;
     @Column(name = "point_customer")
     private Double pointCustomer;
     @Column(name = "gender", columnDefinition = "varchar(45)")
@@ -23,6 +26,8 @@ public class Customer {
     private String email;
     @Column(name = "identity_card", columnDefinition = "varchar(45)")
     private String identityCard;
+    @Column(name = "img_customer")
+    private String imgCustomer;
 
     @ManyToOne
     @JoinColumn(name = "id_type_customer")
@@ -34,17 +39,35 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(Integer idCustomer, String nameCustomer, Double pointCustomer, String gender, String phone, String address, String email, String identityCard, TypeCustomer typeCustomer, AccountUser accountUser) {
+    public Customer(Integer idCustomer, String nameCustomer, LocalDate dateOfBirth, Double pointCustomer, String gender, String phone, String address, String email, String identityCard, String imgCustomer, TypeCustomer typeCustomer, AccountUser accountUser) {
         this.idCustomer = idCustomer;
         this.nameCustomer = nameCustomer;
+        this.dateOfBirth = dateOfBirth;
         this.pointCustomer = pointCustomer;
         this.gender = gender;
         this.phone = phone;
         this.address = address;
         this.email = email;
         this.identityCard = identityCard;
+        this.imgCustomer = imgCustomer;
         this.typeCustomer = typeCustomer;
         this.accountUser = accountUser;
+    }
+
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getImgCustomer() {
+        return imgCustomer;
+    }
+
+    public void setImgCustomer(String imgCustomer) {
+        this.imgCustomer = imgCustomer;
     }
 
     public Integer getIdCustomer() {
