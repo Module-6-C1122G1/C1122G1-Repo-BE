@@ -127,10 +127,15 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public Boolean existByEmail(String email) {
-        Customer customer = iCustomerRepository.findByEmail(email);
+        Customer customer = iCustomerRepository.findCustomersByEmail(email);
         if (customer != null) {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public Customer findCustomerByEmail(String email) {
+        return iCustomerRepository.findCustomersByEmail(email);
     }
 }
