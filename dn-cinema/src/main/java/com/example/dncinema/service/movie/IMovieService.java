@@ -5,6 +5,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public interface IMovieService {
     Page<Film> findAllFilm(String search, Pageable pageable);
@@ -17,4 +19,7 @@ public interface IMovieService {
      * @Usage_method findById to show detail film
      */
     Film findFilmById(Integer id);
+
+    Optional<Film> findById(Integer idFilm);
+    void save(Film film);
 }

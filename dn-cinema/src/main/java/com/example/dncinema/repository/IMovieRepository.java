@@ -25,4 +25,6 @@ public interface IMovieRepository extends JpaRepository<Film, Integer> {
      */
     @Query(value = "select * from film where film.id_film = :id ", nativeQuery = true)
     Film findFilmById(@Param("id") Integer id);
+
+
 }
