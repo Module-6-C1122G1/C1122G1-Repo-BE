@@ -17,5 +17,7 @@ public interface IMovieService {
      * @Usage_method findById to show detail film
      */
     Film findFilmById(Integer id);
+
     List<Film> findAllListFilm();
+
 }

@@ -1,6 +1,7 @@
 package com.example.dncinema.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -22,7 +23,7 @@ public class Film {
     private String studioFilm;
     @Column(name = "trailer", columnDefinition = "varchar(255)")
     private String trailer;
-    @Column(name = "describe_film", columnDefinition = "text")
+    @Column(name = "describe_film", columnDefinition = "mediumtext")
     private String describeFilm;
     @Column(name = "actor", columnDefinition = "varchar(255)")
     private String actor;
@@ -40,7 +41,6 @@ public class Film {
     private Integer timeFilm;
     @Column(name = "nation", columnDefinition = "varchar(255)")
     private String nation;
-
     @Column(name = "movie_label", columnDefinition = "varchar(255)")
     private String movieLabel;
     @ManyToOne
@@ -53,7 +53,7 @@ public class Film {
     public Film() {
     }
 
-    public Film(Integer idFilm, String nameFilm, String director, String studioFilm, String trailer, String describeFilm, String actor, Double normalSeatPrice, Double vipSeatPrice, LocalDate dateStartFilm, LocalDate dateEndFilm, String imgFilm, Integer timeFilm, String nation, String movieLabel, TypeFilm typeFilm, Set<ShowTime> showTimeSet) {
+    public Film(Integer idFilm, String nameFilm, String director, String studioFilm, String trailer, String describeFilm, String actor, Double normalSeatPrice, Double vipSeatPrice, LocalDate dateStartFilm, LocalDate dateEndFilm, String imgFilm, Integer timeFilm, String nation, String movieLabel, TypeFilm typeFilm) {
         this.idFilm = idFilm;
         this.nameFilm = nameFilm;
         this.director = director;
@@ -70,23 +70,6 @@ public class Film {
         this.nation = nation;
         this.movieLabel = movieLabel;
         this.typeFilm = typeFilm;
-    }
-
-    public String getNation() {
-        return nation;
-    }
-
-    public void setNation(String nation) {
-        this.nation = nation;
-        this.showTimeSet = showTimeSet;
-    }
-
-    public Set<ShowTime> getShowTimeSet() {
-        return showTimeSet;
-    }
-
-    public void setShowTimeSet(Set<ShowTime> showTimeSet) {
-        this.showTimeSet = showTimeSet;
     }
 
     public Integer getIdFilm() {
@@ -191,6 +174,14 @@ public class Film {
 
     public void setTimeFilm(Integer timeFilm) {
         this.timeFilm = timeFilm;
+    }
+
+    public String getNation() {
+        return nation;
+    }
+
+    public void setNation(String nation) {
+        this.nation = nation;
     }
 
     public String getMovieLabel() {

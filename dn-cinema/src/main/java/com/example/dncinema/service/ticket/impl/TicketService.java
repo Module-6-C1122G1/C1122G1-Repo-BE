@@ -8,8 +8,8 @@ import com.example.dncinema.model.StatusSeat;
 import com.example.dncinema.model.Ticket;
 import com.example.dncinema.repository.ICustomerRepository;
 import com.example.dncinema.repository.IMovieRepository;
-import com.example.dncinema.repository.ISeatRepositoryQuynh;
 
+import com.example.dncinema.repository.ISeatRepositoryQuynh;
 import com.example.dncinema.repository.ITicketRepository;
 import com.example.dncinema.repository.show_room.IStatusSeatRepository;
 import com.example.dncinema.service.ticket.ITicketService;
