@@ -16,6 +16,8 @@ import com.example.dncinema.repository.show_room.IStatusSeatRepository;
 import com.example.dncinema.service.ticket.ITicketService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -90,5 +92,14 @@ public class TicketService implements ITicketService {
             ticketDetailDTOS.add(ticketDetailDTO);
         }
         return ticketDetailDTOS;
+    }
+    @Override
+    public Page<ListTicketDTO> findAllTicket(String search, Pageable pageable) {
+        return iTicketRepository.find_list_ticket(search, pageable);
+    }
+
+    @Override
+    public void cancelTicket(Integer id) {
+        iTicketRepository.cancelTicket(id);
     }
 }
