@@ -16,6 +16,7 @@ import java.io.UnsupportedEncodingException;
 
 @RestController
 @RequestMapping("/api/user/ticket/")
+@CrossOrigin("*")
 public class TicketControllerMinh {
     @Autowired
     private ITicketServiceMinh iTicketServiceMinh;
@@ -66,7 +67,7 @@ public class TicketControllerMinh {
         }
     }
 
-    @PostMapping("pay")
+    @PostMapping("/pay")
     public ResponseEntity<?> pay(@RequestBody TicketDTO ticketDTO) throws UnsupportedEncodingException {
         String url = iTicketServiceMinh.pay(ticketDTO);
         return new ResponseEntity<>(url, HttpStatus.OK);
