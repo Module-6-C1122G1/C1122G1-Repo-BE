@@ -34,5 +34,6 @@ public interface IMovieRepository extends JpaRepository<Film, Integer> {
 
     @Query(value = "select * from film", nativeQuery = true)
     List<Film> findAllListFilm();
+
 }
 

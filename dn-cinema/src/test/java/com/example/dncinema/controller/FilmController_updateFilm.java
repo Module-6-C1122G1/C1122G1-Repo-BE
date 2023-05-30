@@ -1,6 +1,5 @@
 package com.example.dncinema.controller;
 
-import com.example.dncinema.dto.FilmDTO;
 import com.example.dncinema.model.Film;
 import com.example.dncinema.model.ShowTime;
 import com.example.dncinema.model.TypeFilm;
