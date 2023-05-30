@@ -32,10 +32,12 @@ public class CustomerController {
      * <p>
      * the pagination parameters for retrieving the list of customers.
      */
-    @ResponseStatus(HttpStatus.OK)
+
     @GetMapping("")
-    public List<Customer> showAll() {
-        return customerService.findAll();
+    public ResponseEntity<List<Customer>> showAll(@RequestParam(defaultValue = "", required = false) String nameSearch) {
+
+        List<Customer> customerList = customerService.findAllAndSearch(nameSearch);
+        return new ResponseEntity<>(customerList, HttpStatus.OK);
     }
 
 
@@ -55,13 +57,6 @@ public class CustomerController {
         return new ResponseEntity<>(customer, HttpStatus.OK);
     }
 
-
-//    @ResponseStatus(HttpStatus.OK)
-//    @PutMapping("/{id}")
-//    public void updateCustomer(@RequestBody CustomerDTO customerDTO,
-//                                          @PathVariable("id") Integer id) {
-//        customerService.updateCustomer(customerDTO, id);
-//    }
 
     /**
      * Created by: ThanhNV

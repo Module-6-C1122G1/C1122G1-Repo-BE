@@ -26,9 +26,8 @@ public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
      * @return a Page object containing the requested subset of customer information.
      *
      */
-    @Query(value = "select * from dn_cinema.customer", nativeQuery = true)
-//    Page<Customer> searchCustomerInfo(Pageable pageable);
-    List<Customer> searchCustomerInfo();
+    @Query(value = "select * from dn_cinema.customer where name_customer like %:nameSearch%", nativeQuery = true)
+    List<Customer> findAllAndSearch(@Param("nameSearch") String nameSearch);
 
     /**
      * @param idCustomer
@@ -64,7 +63,6 @@ public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
      * @param idCustomer ID of the customer to search.
      * @return The client corresponds to the provided ID.
      */
-    @Transactional
     @Query(value = "select * from dn_cinema.customer where id_customer = :id_customer", nativeQuery = true)
     Customer findByIdCustomer(@Param("id_customer") Integer idCustomer);
 

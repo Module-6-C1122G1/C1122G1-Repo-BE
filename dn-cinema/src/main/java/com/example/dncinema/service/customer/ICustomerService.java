@@ -10,7 +10,8 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface ICustomerService {
-    List<Customer> findAll();
+    List<Customer> findAllAndSearch(String nameSearch);
+
 
     void updateCustomer(
             String nameCustomer,

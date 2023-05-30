@@ -21,8 +21,8 @@ public class CustomerService implements ICustomerService {
 
 
     @Override
-    public List<Customer> findAll( ) {
-        return iCustomerRepository.searchCustomerInfo();
+    public List<Customer> findAllAndSearch(String nameSearch) {
+        return iCustomerRepository.findAllAndSearch(nameSearch);
     }
 
     @Override
