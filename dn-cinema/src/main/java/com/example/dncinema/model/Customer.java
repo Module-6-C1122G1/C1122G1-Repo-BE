@@ -1,6 +1,7 @@
 package com.example.dncinema.model;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "customer")
@@ -11,6 +12,10 @@ public class Customer {
     private Integer idCustomer;
     @Column(name = "name_customer",columnDefinition = "varchar(255)")
     private String nameCustomer;
+    @Column(name ="date_of_birth")
+    private LocalDate dateOfBirth;
+    @Column(name = "imgCustomer", columnDefinition = "varchar(255)")
+    private String imgCustomer;
     @Column(name = "point_customer")
     private Double pointCustomer;
     @Column(name = "gender",columnDefinition = "varchar(45)")
@@ -45,6 +50,22 @@ public class Customer {
         this.identityCard = identityCard;
         this.typeCustomer = typeCustomer;
         this.accountUser = accountUser;
+    }
+
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getImgCustomer() {
+        return imgCustomer;
+    }
+
+    public void setImgCustomer(String imgCustomer) {
+        this.imgCustomer = imgCustomer;
     }
 
     public Integer getIdCustomer() {

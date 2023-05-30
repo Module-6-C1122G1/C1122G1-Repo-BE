@@ -12,6 +12,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Repository
 public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
@@ -21,12 +22,13 @@ public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
      * Retrieves a paginated list of customer information from the database.
      *
      * Use a query to call a list from the database to perform the list function
-     * @param pageable
+     * @param
      * @return a Page object containing the requested subset of customer information.
      *
      */
     @Query(value = "select * from dn_cinema.customer", nativeQuery = true)
-    Page<Customer> searchCustomerInfo(Pageable pageable);
+//    Page<Customer> searchCustomerInfo(Pageable pageable);
+    List<Customer> searchCustomerInfo();
 
 //    /**
 //     * @param idCustomer

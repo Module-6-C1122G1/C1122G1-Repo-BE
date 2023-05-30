@@ -6,12 +6,9 @@ import com.example.dncinema.service.customer.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,14 +28,14 @@ public class CustomerController {
      *  This method is used to display the list of customers in a paginated manner. It returns a Page object containing
      *  a subset of customers based on the provided pagination parameters.
      *
-     * @param pageable the pagination parameters for retrieving the list of customers.
+     *   the pagination parameters for retrieving the list of customers.
      * @return a Page object containing the requested subset of customers.
      * The method used to display the list of members
      */
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/list")
-    public Page<Customer> showAll(@PageableDefault(size = 2) Pageable pageable) {
-        return customerService.findAll(pageable);
+    @GetMapping("")
+    public List<Customer> showAll() {
+        return customerService.findAll();
     }
 
 
@@ -48,7 +45,7 @@ public class CustomerController {
      * @param id
      * @return ResponseEntity<Customer>;
      */
-    @GetMapping("list/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Customer> findByCustomerId(@PathVariable Integer id) {
         Customer customer = customerService.findById(id);
         if (customer == null) {
