@@ -16,6 +16,7 @@ import java.io.UnsupportedEncodingException;
 
 @RestController
 @RequestMapping("/api/user/ticket/")
+@CrossOrigin("*")
 public class TicketControllerMinh {
     @Autowired
     private ITicketServiceMinh iTicketServiceMinh;

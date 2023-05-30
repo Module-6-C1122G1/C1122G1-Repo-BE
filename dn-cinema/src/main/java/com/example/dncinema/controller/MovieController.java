@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
+import java.util.List;
 import java.util.Optional;
 
 
@@ -98,9 +99,8 @@ public class MovieController {
 //        movieService.save(film);
 //        return new ResponseEntity<>(HttpStatus.OK);
 
-//    @GetMapping("/list")
-//    public ResponseEntity<List<Film>> getAllFilms(){
-//        return new ResponseEntity<>(movieService.findAllListFilm(),HttpStatus.OK);
-//    }
-//    }
+    @GetMapping("/list")
+    public ResponseEntity<List<Film>> getAllFilms(){
+        return new ResponseEntity<>(movieService.findAllListFilm(),HttpStatus.OK);
+    }
 }
