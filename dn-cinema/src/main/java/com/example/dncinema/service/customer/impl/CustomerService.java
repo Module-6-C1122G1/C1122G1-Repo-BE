@@ -2,6 +2,7 @@ package com.example.dncinema.service.customer.impl;
 
 import com.example.dncinema.dto.CustomerDTO;
 import com.example.dncinema.model.Customer;
+import com.example.dncinema.model.TypeCustomer;
 import com.example.dncinema.repository.ICustomerRepository;
 import com.example.dncinema.service.customer.ICustomerService;
 import org.springframework.beans.BeanUtils;
@@ -25,7 +26,13 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public void updateCustomer(CustomerDTO customerDTO, Integer id) {
+    public void updateCustomer(String nameCustomer, String phone, String address, String email, Integer idCustomer, String identityCard) {
+        iCustomerRepository.updateCustomer(nameCustomer, phone, address, email, idCustomer, identityCard);
+    }
+
+
+//    @Override
+//    public void updateCustomer(CustomerDTO customerDTO, Integer id) {
 //        Customer customer = iCustomerRepository.findByIdCustomer(id);
 //        BeanUtils.copyProperties(customerDTO, customer);
 //        iCustomerRepository.updateCustomer(
@@ -40,7 +47,7 @@ public class CustomerService implements ICustomerService {
 //                , customer.getIdCustomer()
 //                , customer.getAccountUser()
 //        );
-    }
+//    }
 
     /**
      * @author ThanhNV

@@ -22,15 +22,15 @@ public class CustomerController {
     ICustomerService customerService;
 
     /**
-     * @author ThanhNV
-     *  Retrieves a paginated list of customers.
-     *
-     *  This method is used to display the list of customers in a paginated manner. It returns a Page object containing
-     *  a subset of customers based on the provided pagination parameters.
-     *
-     *   the pagination parameters for retrieving the list of customers.
      * @return a Page object containing the requested subset of customers.
      * The method used to display the list of members
+     * @author ThanhNV
+     * Retrieves a paginated list of customers.
+     * <p>
+     * This method is used to display the list of customers in a paginated manner. It returns a Page object containing
+     * a subset of customers based on the provided pagination parameters.
+     * <p>
+     * the pagination parameters for retrieving the list of customers.
      */
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("")
@@ -41,9 +41,10 @@ public class CustomerController {
 
     /**
      * Search and return customer information based on id.
-     * @author ThanhNV
+     *
      * @param id
      * @return ResponseEntity<Customer>;
+     * @author ThanhNV
      */
     @GetMapping("/{id}")
     public ResponseEntity<Customer> findByCustomerId(@PathVariable Integer id) {
@@ -65,7 +66,7 @@ public class CustomerController {
     /**
      * Created by: ThanhNV
      * Date created: 05/25/2023
-     * @param id
+     * <p>
      * Function: edit customer data if ID is not found then return HttpStatus.NOT_FOUND,
      * if found ID then edit data in DB and return HttpStatus.OK
      *
@@ -73,20 +74,11 @@ public class CustomerController {
      * Phương thức sử dụng để chỉnh sửa danh sách thành viên
      */
 
-//    @PatchMapping("/update/{id}")
-//    public ResponseEntity<?> updateCustomer(@PathVariable("id") Integer id, @Validated @RequestBody CustomerDTO customerDTO, BindingResult bindingResult) {
-//        new CustomerDTO().validate(customerDTO, bindingResult);
-//        customerDTO.setIdCustomer(id);
-//        if (bindingResult.hasErrors()) {
-//            return new ResponseEntity<>(bindingResult.getAllErrors(), HttpStatus.BAD_REQUEST);
-//        }
-//        Customer customer = customerService.findById(id);
-//        if (customer == null) {
-//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-//        } else {
-//            customerService.updateCustomer(String.valueOf(customerDTO.getIdCustomer()),customerDTO.getNameCustomer(),customerDTO.getGender(),customerDTO.getPhone(),
-//                    customerDTO.getAddress(),customerDTO.getEmail(),customerDTO.getIdentityCard(),customerDTO.getPointCustomer(),customerDTO.getCustomerTypeDTO().getIdTypeCustomer(),id);
-//            return new ResponseEntity<>(HttpStatus.OK);
-//        }
-//    }
+    @PatchMapping("/update")
+    public ResponseEntity<?> updateCustomer(@RequestBody Customer customer) {
+        customerService.updateCustomer(customer.getNameCustomer(),
+                customer.getPhone(), customer.getAddress(), customer.getEmail(), customer.getIdCustomer(), customer.getIdentityCard());
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

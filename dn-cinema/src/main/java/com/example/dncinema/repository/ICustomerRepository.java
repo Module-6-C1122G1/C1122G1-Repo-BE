@@ -30,58 +30,33 @@ public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
 //    Page<Customer> searchCustomerInfo(Pageable pageable);
     List<Customer> searchCustomerInfo();
 
-//    /**
-//     * @param idCustomer
-//     * @param nameCustomer
-//     * @param gender
-//     * @param address
-//     * @param email
-//     * @param phone
-//     * @param pointCustomer
-//     * @param typeCustomer
-//     * @param identityCard
-//     * @param id
-//     */
-//    @Modifying
-//    @Transactional
-//    @Query(value = "update customers set id_customer = :id_customer,  name_customer = :name_customer, " +
-//            "gender = :gender ,  point = : point, phone = :phone,  address = :address,  email = :email, \n" +
-//            "total_amount = :total_amount,  id_type_customer = :id_type_customer,  identity_card = :identity_card" +
-//            "WHERE id_customer = :id_customer",
-//            nativeQuery = true)
-//
-//    void updateCustomer(
-//            @Param("idCustomer") String idCustomer,
-//            @Param("nameCustomer") String nameCustomer,
-//            @Param("gender") String gender,
-//            @Param("address") String address,
-//            @Param("email") Double email,
-//            @Param("phone") String phone,
-//            @Param("pointCustomer") TypeCustomer pointCustomer,
-//            @Param("typeCustomer") String typeCustomer,
-//            @Param("identityCard") Integer identityCard,
-//            @Param("id") AccountUser id
-//    );
-//
-//    @Modifying
-//    @Transactional
-//    @Query(value = "insert into customers( id_customer, name_customer, gender, address, email, phone,total_amount, point,id_type_customer) " +
-//            "value " +
-//            "(:id_customer, :name_customer, :gender, :address, :email, :phone, :total_amount, :point,:id_type_customer)",
-//            nativeQuery = true)
-//    void saveCustomer(
-//            @Param("idCustomer") String idCustomer,
-//            @Param("nameCustomer") String nameCustomer,
-//            @Param("gender") String gender,
-//            @Param("address") String address,
-//            @Param("email") String email,
-//            @Param("phone") String phone,
-//            @Param("pointCustomer") double pointCustomer,
-//            @Param("typeCustomer") Integer typeCustomer,
-//            @Param("identityCard") String identityCard)
-//            ;
-//
-//
+    /**
+     * @param idCustomer
+     * @param nameCustomer
+     * @param gender
+     * @param address
+     * @param email
+     * @param phone
+     * @param pointCustomer
+     * @param typeCustomer
+     * @param identityCard
+     */
+    @Modifying
+    @Transactional
+    @Query(value = "update dn_cinema.customer set name_customer = :nameCustomer, phone = :phone,\n" +
+            "            address = :address,\n" +
+            "            email = :email,\n" +
+            "            identity_card = :identityCard "+
+            "            where id_customer = :idCustomer", nativeQuery = true)
+
+    void updateCustomer(
+            @Param("nameCustomer") String nameCustomer,
+            @Param("phone") String phone,
+            @Param("address") String address,
+            @Param("email") String email,
+            @Param("idCustomer") Integer idCustomer,
+            @Param("identityCard") String identityCard);
+
 
     /**
      * @author ThanhNV
