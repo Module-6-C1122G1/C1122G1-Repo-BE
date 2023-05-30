@@ -8,38 +8,41 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
+
 import java.time.LocalDate;
 
 @Repository
 public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
+    @Query(value = "select * from customer where id_customer= :id", nativeQuery = true)
+    Customer getByIdCus(@Param("id") Integer id);
 
     @Query(value = "select * from customer\n" +
             "join ticket on ticket.id_customer = customer.id_customer\n" +
             "join seat on ticket.id_seat = seat.id_seat\n" +
             "join show_time on show_time.id_seat = seat.id_seat\n" +
             "join film on film.id_show_time = show_time.id_show_time", nativeQuery = true)
-    Page<Customer> findAllCustomerTicket(Pageable pageable);
+    Page<Customer> findAllCustomerTicket(@Param("pageable") Pageable pageable);
 
     @Query(value = "select * from customer\n" +
             "join ticket on ticket.id_customer = customer.id_customer\n" +
             "join seat on ticket.id_seat = seat.id_seat\n" +
             "join show_time on show_time.id_seat = seat.id_seat\n" +
             "join film on film.id_show_time = show_time.id_show_time", nativeQuery = true)
-    Page<Customer> findAllCustomerPointHistory(Pageable pageable);
+    Page<Customer> findAllCustomerPointHistory(@Param("pageable") Pageable pageable);
 
     @Query(value = "select date_booking from ticket where date_booking between '2023-01-01' and '2023-12-30'", nativeQuery = true)
-    Page<Customer> findAllPlusPoint(Pageable pageable, LocalDate startDate, LocalDate dateEnd);
+    Page<Customer> findAllPlusPoint(@Param("pageable") Pageable pageable,@Param("startDate") LocalDate startDate,@Param("dateEnd") LocalDate dateEnd);
 
     @Query(value = "select date_booking from ticket where date_booking between '2023-01-01' and '2023-12-30'", nativeQuery = true)
-    Page<Customer> findAllUsePoint(Pageable pageable, LocalDate startDate, LocalDate dateEnd);
+    Page<Customer> findAllUsePoint(@Param("pageable") Pageable pageable,@Param("startDate")  LocalDate startDate,@Param("dateEnd")  LocalDate dateEnd);
 
     @Query(value = "update product set id_type_customer=2 where id=:customer.idCustomer", nativeQuery = true)
-    void updateGold(Customer customer);
+    void updateGold(@Param("customer") Customer customer);
 
     @Query(value = "update product set id_type_customer=3 where id=:customer.idCustomer", nativeQuery = true)
-    void updateDiamond(Customer customer);
+    void updateDiamond(@Param("customer") Customer customer);
 
     Customer findByAccountUser_NameAccount(String nameAcc);
     /**
@@ -110,7 +113,7 @@ public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
     Customer findByIdCustomer(@Param("id_customer") Integer customerId);
 
     @Query(value = "select * from customer where email like :email", nativeQuery = true)
-    Customer findByEmail(String email);
+    Customer findByEmail(@Param("email") String email);
 };
 
 
