@@ -1,12 +1,14 @@
 package com.example.dncinema.dto;
 
+import javax.persistence.Column;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.PositiveOrZero;
 
 public class CustomerDTO {
     private Integer idCustomer;
     private String nameCustomer;
-    @PositiveOrZero(message = "Không được là số âm")
     private Double pointCustomer;
     private String gender;
     private String phone;
@@ -16,6 +18,17 @@ public class CustomerDTO {
     private TypeCustomerDTO typeCustomerDTO;
 
     public CustomerDTO() {
+    }
+
+    public CustomerDTO(Integer idCustomer, String nameCustomer, Double pointCustomer, String gender, String phone, String address, String email, String identityCard) {
+        this.idCustomer = idCustomer;
+        this.nameCustomer = nameCustomer;
+        this.pointCustomer = pointCustomer;
+        this.gender = gender;
+        this.phone = phone;
+        this.address = address;
+        this.email = email;
+        this.identityCard = identityCard;
     }
 
     public Integer getIdCustomer() {
@@ -66,14 +79,6 @@ public class CustomerDTO {
         this.address = address;
     }
 
-    public String getIdentityCard() {
-        return identityCard;
-    }
-
-    public void setIdentityCard(String identityCard) {
-        this.identityCard = identityCard;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -82,10 +87,17 @@ public class CustomerDTO {
         this.email = email;
     }
 
+    public String getIdentityCard() {
+        return identityCard;
+    }
+
+    public void setIdentityCard(String identityCard) {
+        this.identityCard = identityCard;
+    }
+
     public TypeCustomerDTO getTypeCustomerDTO() {
         return typeCustomerDTO;
     }
-
 
     public void setTypeCustomerDTO(TypeCustomerDTO typeCustomerDTO) {
         this.typeCustomerDTO = typeCustomerDTO;

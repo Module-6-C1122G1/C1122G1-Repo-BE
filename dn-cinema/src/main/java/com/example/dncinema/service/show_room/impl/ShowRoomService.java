@@ -61,4 +61,9 @@ public class ShowRoomService implements IShowRoomService {
         iShowRoomRepository.updateShowRoom(showRoom.getNameShowRoom(),showRoom.getQuantitySeat(),showRoom.getIdShowRoom());
     }
 
+    @Override
+    public ShowRoom getShowRoomById(int id) {
+        return iShowRoomRepository.findByIdShowRoom(id);
+    }
+
 }

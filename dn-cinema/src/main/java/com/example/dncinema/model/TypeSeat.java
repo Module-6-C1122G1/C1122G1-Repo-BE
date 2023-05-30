@@ -15,6 +15,11 @@ public class TypeSeat {
     public TypeSeat() {
     }
 
+    public TypeSeat(Integer idTypeSeat) {
+        this.idTypeSeat = idTypeSeat;
+    }
+
+
     public TypeSeat(Integer idTypeSeat, String nameTypeSeat) {
         this.idTypeSeat = idTypeSeat;
         this.nameTypeSeat = nameTypeSeat;

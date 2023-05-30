@@ -18,4 +18,6 @@ public interface IShowRoomService {
 
     void updateShowRoom(ShowRoomDTO showRoomDTO);
 
+    ShowRoom getShowRoomById(int id);
+
 }

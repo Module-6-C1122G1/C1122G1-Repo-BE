@@ -4,10 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Positive;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 public class ShowRoomDTO {
 
@@ -17,9 +14,9 @@ public class ShowRoomDTO {
     @Size(max = 10, message = "Tên phòng chiếu không dài quá 10 ký tự")
     private String nameShowRoom;
 
-
-    @Positive(message = "Số lượng ghế phải là số nguyên dương")
-    @Digits(fraction = 0, message = "Số lượng ghế phải là số nguyên", integer = 50)
+    @NotNull
+//    @Min(value = 1,message = "Số lượng ghế không được nhỏ hơn 0 ")
+//    @Max(value = 50,message = "Số lượng ghế không được lớn hơn 50 ")
     private Integer quantitySeat;
 
     public ShowRoomDTO() {
