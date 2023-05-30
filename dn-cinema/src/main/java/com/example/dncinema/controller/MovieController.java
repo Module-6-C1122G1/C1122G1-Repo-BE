@@ -72,7 +72,7 @@ public class MovieController {
         }
         Film film = new Film();
         BeanUtils.copyProperties(filmDTO, film);
-        film.setTypeFilm(filmDTO.getTypeFilm());
+        film.getTypeFilm().setIdTypeFilm(filmDTO.getTypeFilm().getIdTypeFilm());
         movieService.save(film);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
@@ -96,7 +96,7 @@ public class MovieController {
         BeanUtils.copyProperties(filmOptional, filmDTO);
         filmDTO.setIdFilm(id);
         BeanUtils.copyProperties(filmDTO, film);
-        film.setTypeFilm(filmDTO.getTypeFilm());
+        film.getTypeFilm().setIdTypeFilm(filmDTO.getTypeFilm().getIdTypeFilm());
         movieService.save(film);
         return new ResponseEntity<>(HttpStatus.OK);
     }
