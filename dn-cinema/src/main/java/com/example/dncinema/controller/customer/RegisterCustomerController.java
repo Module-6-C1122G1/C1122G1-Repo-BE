@@ -27,7 +27,7 @@ public class RegisterCustomerController {
     private IAccountUserService accountUserService;
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/user")
+    @GetMapping("/user/customer-list")
     public List<Customer> findAll() {
         return customerService.findAll();
     }
