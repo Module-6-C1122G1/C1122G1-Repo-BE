@@ -34,7 +34,7 @@ public class TicketManagementController {
      * @return list customer , status OK
      * @author DongPV
      */
-    @GetMapping("")
+    @GetMapping("/ticket-customer")
     public ResponseEntity<?> findAllCustomerTicket(@PageableDefault(size = 3) Pageable pageable) {
         Page<ITicketManagement> ticketManagementDTOS = iTicketManagementService.findAllCustomerTicket(pageable);
         if (ticketManagementDTOS.isEmpty()) {
