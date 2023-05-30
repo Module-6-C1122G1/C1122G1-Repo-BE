@@ -26,7 +26,9 @@ public class ShowTime {
     public ShowTime() {
     }
 
+
     public ShowTime(Integer idShowTime, LocalDate showDate, String showTime, ShowRoom showRoom, Film film) {
+
         this.idShowTime = idShowTime;
         this.showDate = showDate;
         this.showTime = showTime;
@@ -65,6 +67,7 @@ public class ShowTime {
     public void setShowRoom(ShowRoom showRoom) {
         this.showRoom = showRoom;
     }
+
 
     public Film getFilm() {
         return film;

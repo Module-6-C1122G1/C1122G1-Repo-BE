@@ -10,36 +10,40 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_customer")
     private Integer idCustomer;
-    @Column(name = "name_customer", columnDefinition = "varchar(255)")
+    @Column(name = "name_customer",columnDefinition = "varchar(255)")
     private String nameCustomer;
-    @Column(name = "date_of_birth")
+
+    @Column(name ="date_of_birth")
     private LocalDate dateOfBirth;
-    @Column(name = "point_customer")
+    @Column(name = "point_customer" , columnDefinition = "varchar(45)")
     private Double pointCustomer;
-    @Column(name = "gender", columnDefinition = "varchar(45)")
+    @Column(name = "gender",columnDefinition = "varchar(45)")
     private String gender;
-    @Column(name = "phone", columnDefinition = "varchar(25)")
+    @Column(name = "phone",columnDefinition = "varchar(25)")
     private String phone;
-    @Column(name = "address", columnDefinition = "varchar(255)")
+    @Column(name = "address",columnDefinition = "varchar(255)")
     private String address;
-    @Column(name = "email", columnDefinition = "varchar(255)")
+    @Column(name = "email",columnDefinition = "varchar(255)")
     private String email;
-    @Column(name = "identity_card", columnDefinition = "varchar(45)")
+    @Column(name = "identity_card",columnDefinition = "varchar(45)")
     private String identityCard;
-    @Column(name = "img_customer")
+    @Column(name = "imgCustomer", columnDefinition = "varchar(255)")
     private String imgCustomer;
 
     @ManyToOne
     @JoinColumn(name = "id_type_customer")
     private TypeCustomer typeCustomer;
-    @ManyToOne
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "id")
     private AccountUser accountUser;
 
     public Customer() {
     }
 
-    public Customer(Integer idCustomer, String nameCustomer, LocalDate dateOfBirth, Double pointCustomer, String gender, String phone, String address, String email, String identityCard, String imgCustomer, TypeCustomer typeCustomer, AccountUser accountUser) {
+    public Customer(Integer idCustomer, String nameCustomer, LocalDate dateOfBirth,
+                    Double pointCustomer, String gender, String phone, String address, String email,
+                    String identityCard, String imgCustomer, TypeCustomer typeCustomer,
+                    AccountUser accountUser) {
         this.idCustomer = idCustomer;
         this.nameCustomer = nameCustomer;
         this.dateOfBirth = dateOfBirth;
@@ -52,22 +56,6 @@ public class Customer {
         this.imgCustomer = imgCustomer;
         this.typeCustomer = typeCustomer;
         this.accountUser = accountUser;
-    }
-
-    public LocalDate getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    public String getImgCustomer() {
-        return imgCustomer;
-    }
-
-    public void setImgCustomer(String imgCustomer) {
-        this.imgCustomer = imgCustomer;
     }
 
     public Integer getIdCustomer() {
@@ -84,6 +72,14 @@ public class Customer {
 
     public void setNameCustomer(String nameCustomer) {
         this.nameCustomer = nameCustomer;
+    }
+
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public Double getPointCustomer() {
@@ -132,6 +128,14 @@ public class Customer {
 
     public void setIdentityCard(String identityCard) {
         this.identityCard = identityCard;
+    }
+
+    public String getImgCustomer() {
+        return imgCustomer;
+    }
+
+    public void setImgCustomer(String imgCustomer) {
+        this.imgCustomer = imgCustomer;
     }
 
     public TypeCustomer getTypeCustomer() {

@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="">
+    <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="update">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/ICustomerPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/ICustomerPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Customer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,74 +44,70 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$/.." value="develop" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/film/FilmController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/film/IFilmRepository.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2Q8ArGhjGOeUdfIvtFuDfptmx86" />
+  <component name="ProjectId" id="2QGnxBC818waB1MASIz4gkcr7BH" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelOrder2" value="2" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="RequestMappingsPanelWidth2" value="75" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.example.dncinema.service.tickketManagement.impl" />
-    </key>
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/DELL/Downloads/cxxg-spring-boot-junit-5/cxxg-spring-boot-junit-5&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;d788013c1d5834ba3ba288e3511a87d2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
   <component name="RunManager" selected="Spring Boot.DnCinemaApplication">
-    <configuration name="CustomerController_findAllCustomerPointHistory" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MovieRestController_getAllFilms" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.controller.CustomerController_findAllCustomerPointHistory&quot;" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
             <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.dncinema.MovieRestController_getAllFilms&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -119,18 +117,20 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="CustomerController_findAllCustomerPointHistory.findAllCustomerPointHistory_11" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SeatRestController_getAllListSeatByIdRoom" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.controller.CustomerController_findAllCustomerPointHistory.findAllCustomerPointHistory_11&quot;" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
             <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.dncinema.SeatRestController_getAllListSeatByIdRoom&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -140,18 +140,20 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="CustomerController_findAllCustomerPointHistory.findAllCustomerPointHistory_9" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_11" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.controller.CustomerController_findAllCustomerPointHistory.findAllCustomerPointHistory_9&quot;" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
             <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.dncinema.SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_11&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -161,18 +163,20 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="CustomerController_findAllCustomerTicket" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_9" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.controller.CustomerController_findAllCustomerTicket&quot;" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
             <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.dncinema.SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_9&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -182,18 +186,20 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="CustomerController_findAllCustomerTicket.findAllCustomerTicket_11" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ShowTimeRestController_getAllDateByIdFilm.getAllDateByIdFilm_11" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.dncinema.controller.CustomerController_findAllCustomerTicket.findAllCustomerTicket_11&quot;" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
             <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.dncinema.ShowTimeRestController_getAllDateByIdFilm.getAllDateByIdFilm_11&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -204,51 +210,71 @@
       <method v="2" />
     </configuration>
     <configuration name="DnCinemaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <module name="dn-cinema.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.dncinema.DnCinemaApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Gradle.MovieRestController_getAllFilms" />
+      <item itemvalue="Gradle.SeatRestController_getAllListSeatByIdRoom" />
+      <item itemvalue="Gradle.SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_11" />
+      <item itemvalue="Gradle.SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_9" />
+      <item itemvalue="Gradle.ShowTimeRestController_getAllDateByIdFilm.getAllDateByIdFilm_11" />
+      <item itemvalue="Spring Boot.DnCinemaApplication" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.CustomerController_findAllCustomerTicket" />
-        <item itemvalue="Gradle.CustomerController_findAllCustomerPointHistory" />
-        <item itemvalue="Gradle.CustomerController_findAllCustomerPointHistory.findAllCustomerPointHistory_11" />
-        <item itemvalue="Gradle.CustomerController_findAllCustomerTicket.findAllCustomerTicket_11" />
-        <item itemvalue="Gradle.CustomerController_findAllCustomerPointHistory.findAllCustomerPointHistory_9" />
+        <item itemvalue="Gradle.ShowTimeRestController_getAllDateByIdFilm.getAllDateByIdFilm_11" />
+        <item itemvalue="Gradle.MovieRestController_getAllFilms" />
+        <item itemvalue="Gradle.SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_11" />
+        <item itemvalue="Gradle.SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_9" />
+        <item itemvalue="Gradle.SeatRestController_getAllListSeatByIdRoom" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="" />
-      <created>1684725035536</created>
+      <changelist id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="update" />
+      <created>1684989030611</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1684725035536</updated>
-      <workItem from="1684725037272" duration="2620000" />
-      <workItem from="1684894781635" duration="240000" />
-      <workItem from="1684918773391" duration="4934000" />
-      <workItem from="1684933669914" duration="2191000" />
-      <workItem from="1684936561099" duration="2475000" />
-      <workItem from="1684977356415" duration="19778000" />
-      <workItem from="1685019834314" duration="2689000" />
-      <workItem from="1685160135720" duration="3978000" />
-      <workItem from="1685181899410" duration="594000" />
-      <workItem from="1685242774928" duration="25589000" />
-      <workItem from="1685322879278" duration="2693000" />
-      <workItem from="1685326260097" duration="22279000" />
-      <workItem from="1685369448367" duration="575000" />
-      <workItem from="1685409891331" duration="12656000" />
+      <updated>1684989030611</updated>
+      <workItem from="1684989032737" duration="82000" />
+      <workItem from="1684989299290" duration="13247000" />
+      <workItem from="1685017076929" duration="599000" />
+      <workItem from="1685022211690" duration="1744000" />
+      <workItem from="1685032790808" duration="13339000" />
+      <workItem from="1685065408635" duration="8957000" />
+      <workItem from="1685083096098" duration="848000" />
+      <workItem from="1685151096312" duration="5983000" />
+      <workItem from="1685168594047" duration="5640000" />
+      <workItem from="1685191220022" duration="2835000" />
+      <workItem from="1685203679932" duration="1263000" />
+      <workItem from="1685205357235" duration="99000" />
+      <workItem from="1685205688241" duration="1002000" />
+      <workItem from="1685229241206" duration="821000" />
+      <workItem from="1685245257201" duration="4632000" />
+      <workItem from="1685263727243" duration="1211000" />
+      <workItem from="1685284219866" duration="490000" />
+      <workItem from="1685284762811" duration="4008000" />
+      <workItem from="1685324574592" duration="755000" />
+      <workItem from="1685325538369" duration="9903000" />
+      <workItem from="1685345691096" duration="534000" />
+      <workItem from="1685346260840" duration="380000" />
+      <workItem from="1685371685880" duration="1960000" />
+      <workItem from="1685399428214" duration="16253000" />
     </task>
-    <task id="LOCAL-00001" summary="service repository">
-      <created>1684988654791</created>
+    <task id="LOCAL-00001" summary="update">
+      <created>1685284085890</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1684988654791</updated>
+      <updated>1685284085890</updated>
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
@@ -256,23 +282,44 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="service repository" />
-    <option name="LAST_COMMIT_MESSAGE" value="service repository" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="org.hibernate.loader.custom.NonUniqueDiscoveredSqlAliasException" package="org.hibernate.loader.custom" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/com/example/dncinema/ShowTimeRestController_getAllDateByIdFilm.java</url>
+          <line>48</line>
+          <properties class="com.example.dncinema.ShowTimeRestController_getAllDateByIdFilm" method="getAllDateByIdFilm_9">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/dncinema/service/accountUser/impl/accountUserService.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/SecurityController.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo parentTag="org.springframework.data.domain.PageRequest" memberName="size" />
-      </pinned-members>
-    </pin-to-top-manager>
   </component>
 </project>
