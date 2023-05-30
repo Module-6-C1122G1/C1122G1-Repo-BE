@@ -1,6 +1,7 @@
 package com.example.dncinema.controller.employee;
 
 import com.example.dncinema.dto.EmployeeDTO;
+import com.example.dncinema.model.Employee;
 import com.example.dncinema.service.employee.IEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -39,6 +40,16 @@ public class EmployeeController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteEmployee(@PathVariable Integer id) {
         iEmployeeService.deleteEmployee(id);
+    }
+
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Employee> findByCustomerId(@PathVariable Integer id) {
+        Employee employee = iEmployeeService.findByEmployeeId(id);
+        if (employee == null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>(employee, HttpStatus.OK);
     }
 
 }

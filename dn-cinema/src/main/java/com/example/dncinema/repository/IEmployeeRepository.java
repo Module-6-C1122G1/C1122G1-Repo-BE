@@ -24,13 +24,13 @@ public interface IEmployeeRepository extends JpaRepository<Employee, Integer> {
      * @param phoneNumber
      * @return
      */
-    @Query(value = "SELECT * FROM employee e JOIN account_user a WHERE a.name_account LIKE CONCAT('%', :code, '%') " +
+    @Query(value = "SELECT * FROM employee e JOIN account_user a WHERE (a.name_account LIKE CONCAT('%', :code, '%') " +
             "OR e.name_employee LIKE CONCAT('%', :name, '%') " +
-            "OR e.phone LIKE CONCAT('%', :phoneNumber, '%') " +
+            "OR e.phone LIKE CONCAT('%', :phoneNumber, '%')) " +
             "AND e.is_delete = false",
             countQuery = "SELECT * FROM employee e JOIN account_user a WHERE (a.name_account LIKE CONCAT('%', :code, '%') " +
                     "OR e.name_employee LIKE CONCAT('%', :name, '%')    " +
-                    "OR e.phone LIKE CONCAT('%', :phoneNumber, '%') " +
+                    "OR e.phone LIKE CONCAT('%', :phoneNumber, '%')) " +
                     "AND e.is_delete = false"
                     ,nativeQuery = true)
     Page<Employee> searchEmployeeInfo(Pageable pageable,

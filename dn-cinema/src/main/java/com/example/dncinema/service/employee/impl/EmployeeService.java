@@ -43,4 +43,9 @@ public class EmployeeService implements IEmployeeService {
         employee.setDelete(true);
         iEmployeeRepository.save(employee);
     }
+
+    @Override
+    public Employee findByEmployeeId(Integer id) {
+        return iEmployeeRepository.findByEmployeeId(id);
+    }
 }

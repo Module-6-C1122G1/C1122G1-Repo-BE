@@ -34,8 +34,6 @@ public class Employee {
     @Column(name = "identity_card", columnDefinition = "varchar(255)")
     private String identityCard;
 
-
-
     private Boolean isDelete = false;
 
     @OneToOne
