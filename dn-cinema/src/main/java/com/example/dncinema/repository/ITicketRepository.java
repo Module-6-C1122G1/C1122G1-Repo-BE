@@ -1,6 +1,9 @@
 package com.example.dncinema.repository;
 
+import com.example.dncinema.dto.ListTicketDTO;
 import com.example.dncinema.model.Ticket;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -56,4 +59,8 @@ public interface ITicketRepository extends JpaRepository<Ticket, Integer> {
     @Transactional
     @Query(value = "update ticket set is_delete = true where id_ticket = :id_ticket", nativeQuery = true)
     void cancelTicket(@Param("id_ticket") Integer id);
+
+    @Query(nativeQuery = true)
+    Page<ListTicketDTO> find_list_ticket(@Param("search") String search, Pageable pageable);
+
 }

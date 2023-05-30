@@ -14,6 +14,8 @@ import java.time.LocalDate;
 
 @Repository
 public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
+    @Query(value = "select * from customer where id_customer= :id", nativeQuery = true)
+    Customer getByIdCus(@Param("id") Integer id);
 
     @Query(value = "select * from customer\n" +
             "join ticket on ticket.id_customer = customer.id_customer\n" +
