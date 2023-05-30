@@ -1,6 +1,8 @@
 package com.example.dncinema.controller;
 
 import com.example.dncinema.dto.ListTicketDTO;
+import com.example.dncinema.dto.TicketDetailDTO;
+import com.example.dncinema.dto.TicketUpdateDTO;
 import com.example.dncinema.model.Ticket;
 import com.example.dncinema.service.ticket.ITicketService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,8 @@
 package com.example.dncinema.service.ticket;
 
 import com.example.dncinema.dto.ListTicketDTO;
+import com.example.dncinema.dto.TicketDetailDTO;
+import com.example.dncinema.dto.TicketUpdateDTO;
 import com.example.dncinema.model.Ticket;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
