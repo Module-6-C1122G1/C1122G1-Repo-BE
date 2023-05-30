@@ -9,12 +9,14 @@ import com.example.dncinema.service.tickketManagement.ITicketManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.repository.query.Param;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 @RestController
 @CrossOrigin("*")
@@ -63,24 +65,10 @@ public class TicketManagementController {
      * @author DongPV
      */
     @GetMapping("/plus-point")
-    public ResponseEntity<?> findAllPlusPoint(@PageableDefault(size = 3) Pageable pageable, LocalDate dateStart, LocalDate dateEnd) {
-        Page<CustomerPointDTO> customerPointDTOS = iTicketManagementService.searchPlusPoint(pageable, dateStart, dateEnd);
-        if (customerPointDTOS.isEmpty()) {
-            return new ResponseEntity<>(customerPointDTOS, HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<>(customerPointDTOS, HttpStatus.OK);
-    }
-
-    /**
-     * @param pageable
-     * @param dateStart
-     * @param dateEnd
-     * @return list use point , status OK
-     * @author DongPV
-     */
-    @GetMapping("/use-point")
-    public ResponseEntity<?> findAllUsePoint(@PageableDefault(size = 3) Pageable pageable, LocalDate dateStart, LocalDate dateEnd) {
-        Page<CustomerPointDTO> customerPointDTOS = iTicketManagementService.searchUsePoint(pageable, dateStart, dateEnd);
+    public ResponseEntity<?> findAllPlusPoint(@PageableDefault(size = 3) Pageable pageable,@RequestParam("dateStart") String dateStart,@RequestParam("dateEnd") String dateEnd) {
+        LocalDate start = LocalDate.parse(dateStart, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        LocalDate end = LocalDate.parse(dateEnd, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        Page<ITicketManagement> customerPointDTOS = iTicketManagementService.searchPlusPoint(pageable, start, end);
         if (customerPointDTOS.isEmpty()) {
             return new ResponseEntity<>(customerPointDTOS, HttpStatus.NOT_FOUND);
         }

@@ -43,10 +43,17 @@ public interface ITicketManagementRepository extends JpaRepository<TicketManagem
             nativeQuery = true)
     Page<ICustomerPoint> findAllCustomerPointHistory(Pageable pageable);
 
-    @Query(value = "select * from ticket where date_booking between '2023-01-01' and '2023-12-30'", nativeQuery = true)
-    Page<TicketManagement> findAllPlusPoint(Pageable pageable, LocalDate startDate, LocalDate dateEnd);
+    @Query(value = "select ticket.date_booking as dateBooking, film.name_film as nameFilm, customer.point_customer as pointCustomer from customer " +
+            "join ticket on ticket.id_customer = customer.id_customer " +
+            "join seat on ticket.id_seat = seat.id_seat " +
+            "join show_time on show_time.id_seat = seat.id_seat " +
+            "join film on film.id_show_time = show_time.id_show_time where date_booking between ? and ?",
+            countQuery = "select count(*) from customer " +
+                    "join ticket on ticket.id_customer = customer.id_customer " +
+                    "join seat on ticket.id_seat = seat.id_seat " +
+                    "join show_time on show_time.id_seat = seat.id_seat " +
+                    "join film on film.id_show_time = show_time.id_show_time" ,nativeQuery = true)
+    Page<ITicketManagement> findAllPlusPoint(Pageable pageable,@Param("startDate") LocalDate startDate, @Param("dateEnd")LocalDate dateEnd);
 
-    @Query(value = "select * from ticket where date_booking between '2023-01-01' and '2023-12-30'", nativeQuery = true)
-    Page<TicketManagement> findAllUsePoint(Pageable pageable, LocalDate startDate, LocalDate dateEnd);
 
 }

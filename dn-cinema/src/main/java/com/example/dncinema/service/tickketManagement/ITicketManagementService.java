@@ -14,8 +14,7 @@ import java.time.LocalDate;
 public interface ITicketManagementService {
     Page<ITicketManagement> findAllCustomerTicket(Pageable pageable);
     Page<ICustomerPoint> findAllCustomerPoint(Pageable pageable);
-    Page<CustomerPointDTO> searchPlusPoint(Pageable pageable , LocalDate dateStart, LocalDate dateEnd);
-    Page<CustomerPointDTO> searchUsePoint(Pageable pageable , LocalDate dateStart , LocalDate dateEnd);
+    Page<ITicketManagement> searchPlusPoint(Pageable pageable , LocalDate dateStart, LocalDate dateEnd);
     Ticket findById(Integer id);
     void delete(Integer id);
 }

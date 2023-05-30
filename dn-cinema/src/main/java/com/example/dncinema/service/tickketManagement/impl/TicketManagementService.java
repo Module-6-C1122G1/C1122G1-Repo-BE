@@ -40,29 +40,9 @@ public class TicketManagementService implements ITicketManagementService {
     }
 
     @Override
-    public Page<CustomerPointDTO> searchPlusPoint(Pageable pageable, LocalDate dateStart, LocalDate dateEnd) {
-        Page<com.example.dncinema.model.TicketManagement> ticketManagements = iTicketManagementRepository.findAllPlusPoint(pageable, dateStart, dateEnd);
-        List<CustomerPointDTO> customerPointDTOS = new ArrayList<>();
-        CustomerPointDTO customerPointDTO;
-        for (com.example.dncinema.model.TicketManagement ticketManagement : ticketManagements) {
-            customerPointDTO = new CustomerPointDTO();
-            BeanUtils.copyProperties(ticketManagement, customerPointDTO);
-            customerPointDTOS.add(customerPointDTO);
-        }
-        return new PageImpl<>(customerPointDTOS, pageable, ticketManagements.getTotalElements());
-    }
-
-    @Override
-    public Page<CustomerPointDTO> searchUsePoint(Pageable pageable, LocalDate dateStart, LocalDate dateEnd) {
-        Page<com.example.dncinema.model.TicketManagement> ticketManagements = iTicketManagementRepository.findAllUsePoint(pageable, dateStart, dateEnd);
-        List<CustomerPointDTO> customerPointDTOS = new ArrayList<>();
-        CustomerPointDTO customerPointDTO;
-        for (com.example.dncinema.model.TicketManagement ticketManagement : ticketManagements) {
-            customerPointDTO = new CustomerPointDTO();
-            BeanUtils.copyProperties(ticketManagement, customerPointDTO);
-            customerPointDTOS.add(customerPointDTO);
-        }
-        return new PageImpl<>(customerPointDTOS, pageable, ticketManagements.getTotalElements());
+    public Page<ITicketManagement> searchPlusPoint(Pageable pageable, LocalDate dateStart, LocalDate dateEnd) {
+        Page<ITicketManagement> ticketManagements = iTicketManagementRepository.findAllPlusPoint(pageable,dateStart,dateEnd);
+        return ticketManagements;
     }
 
     @Override
