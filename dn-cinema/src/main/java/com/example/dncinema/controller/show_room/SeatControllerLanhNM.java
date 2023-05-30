@@ -1,8 +1,8 @@
 package com.example.dncinema.controller.show_room;
 
 import com.example.dncinema.model.Seat;
-import com.example.dncinema.repository.show_room.ISeatRepository;
-import com.example.dncinema.service.show_room.ISeatService;
+import com.example.dncinema.repository.show_room.ISeatRepositoryLanhNM;
+import com.example.dncinema.service.show_room.ISeatServiceLanhNM;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,22 +13,22 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/admin/seat")
 @CrossOrigin("*")
-public class SeatController {
+public class SeatControllerLanhNM {
     @Autowired
-    private ISeatService iSeatService;
+    private ISeatServiceLanhNM iSeatServiceLanhNM;
     @Autowired
-    private ISeatRepository iSeatRepository;
+    private ISeatRepositoryLanhNM iSeatRepositoryLanhNM;
 
 
     @GetMapping("/list/{id}")
     public ResponseEntity<List<Seat>> getAllListSeatByIdShowRoom(@PathVariable Integer id){
-        return new ResponseEntity<>(iSeatRepository.findByShowRoom_IdShowRoom(id), HttpStatus.OK);
+        return new ResponseEntity<>(iSeatRepositoryLanhNM.findByShowRoom_IdShowRoom(id), HttpStatus.OK);
     }
 
     @PutMapping("/update_status")
     public ResponseEntity<?> updateStatusSeatByIdShowRoom(@RequestBody String[] listId) {
         for (String id : listId) {
-            iSeatService.updateStatusSeatByIdShowRoom(Integer.parseInt(id));
+            iSeatServiceLanhNM.updateStatusSeatByIdShowRoom(Integer.parseInt(id));
         }
         return new ResponseEntity<>(HttpStatus.OK);
     }
@@ -36,7 +36,7 @@ public class SeatController {
     @PutMapping("/reset_status")
     public ResponseEntity<?> resetStatusSeatByIdShowRoom(@RequestBody String[] listId) {
         for (String id : listId) {
-            iSeatService.resetStatusSeatByIdShowRoom(Integer.parseInt(id));
+            iSeatServiceLanhNM.resetStatusSeatByIdShowRoom(Integer.parseInt(id));
         }
         return new ResponseEntity<>(HttpStatus.OK);
     }

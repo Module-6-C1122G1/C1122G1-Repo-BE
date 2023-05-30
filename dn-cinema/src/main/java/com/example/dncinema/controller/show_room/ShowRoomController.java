@@ -1,9 +1,8 @@
 package com.example.dncinema.controller.show_room;
 
 import com.example.dncinema.dto.ShowRoomDTO;
-import com.example.dncinema.model.Seat;
 import com.example.dncinema.model.ShowRoom;
-import com.example.dncinema.service.show_room.ISeatService;
+import com.example.dncinema.service.show_room.ISeatServiceLanhNM;
 import com.example.dncinema.service.show_room.IShowRoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -31,7 +30,7 @@ public class ShowRoomController {
     private IShowRoomService iShowRoomService;
 
     @Autowired
-    private ISeatService iSeatService;
+    private ISeatServiceLanhNM iSeatServiceLanhNM;
 
 
     /**
@@ -42,7 +41,7 @@ public class ShowRoomController {
      * @author LanhNM
      */
     @GetMapping("/list")
-    public ResponseEntity<?> list(@PageableDefault (value = 2) Pageable pageable,@RequestParam("page") int page,
+    public ResponseEntity<?> list(@PageableDefault (value = 2) Pageable pageable,@RequestParam(value = "page", defaultValue = "0") int page,
                                   @RequestParam(required = false, defaultValue = "") String search) {
         pageable = PageRequest.of(page, 2);
         Page<ShowRoomDTO> listShowRoom = iShowRoomService.findShowRoomByName(pageable, search);
