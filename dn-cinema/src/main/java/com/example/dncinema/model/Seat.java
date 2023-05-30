@@ -23,10 +23,13 @@ public class Seat {
     @ManyToOne
     @JoinColumn(name = "id_show_room")
     private ShowRoom showRoom;
-
     @ManyToOne
     @JoinColumn(name = "id_show_time")
-    ShowTime showTime;
+    private ShowTime showTime;
+//    @JsonBackReference
+//    @OneToOne(mappedBy = "seat")
+//    private Ticket ticket;
+
 
     public Seat() {
     }
@@ -39,6 +42,16 @@ public class Seat {
         this.showRoom = showRoom;
         this.showTime = showTime;
     }
+
+//    public Ticket getTicket() {
+//        return ticket;
+//    }
+//
+//    public void setTicket(Ticket ticket) {
+//        this.ticket = ticket;
+//    }
+
+
 
     public ShowTime getShowTime() {
         return showTime;
@@ -87,4 +100,5 @@ public class Seat {
     public void setShowRoom(ShowRoom showRoom) {
         this.showRoom = showRoom;
     }
+
 }

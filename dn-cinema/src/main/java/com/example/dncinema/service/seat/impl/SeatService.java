@@ -14,8 +14,18 @@ public class SeatService implements ISeatService {
     private ISeatRepository seatRepository;
 
     @Override
-    public List<Seat> findAllListSeatByIdRoom(Integer id) {
-        return seatRepository.findAllListSeatByIdRoom(id);
+    public List<Seat> findAllListSeatByIdShowTime(Integer id) {
+        return seatRepository.findAllListSeatByIdShowTime(id);
+    }
+
+    @Override
+    public void updateStatusSeatByIdShowTime(Integer id) {
+        seatRepository.updateStatusSeatByIdShowTime(id);
+    }
+
+    @Override
+    public void resetStatusSeatByIdShowTime(Integer id) {
+        seatRepository.resetStatusSeatByIdShowTime(id);
     }
 
 

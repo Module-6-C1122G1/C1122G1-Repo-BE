@@ -5,8 +5,8 @@ import com.example.dncinema.dto.TicketDTO;
 import com.example.dncinema.model.*;
 import com.example.dncinema.repository.ICustomerRepository;
 import com.example.dncinema.repository.IDiscountRepositoryMinh;
-import com.example.dncinema.repository.ISeatRepositoryMinh;
 import com.example.dncinema.repository.ITicketRepositoryMinh;
+import com.example.dncinema.repository.seat.ISeatRepository;
 import com.example.dncinema.service.ITicketServiceMinh;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
@@ -43,7 +43,7 @@ public class TicketServiceMinh implements ITicketServiceMinh {
     @Autowired
     private IDiscountRepositoryMinh iDiscountRepository;
     @Autowired
-    private ISeatRepositoryMinh iSeatRepository;
+    private ISeatRepository iSeatRepository;
 
     /**
      * save ticket information to the database
@@ -74,9 +74,10 @@ public class TicketServiceMinh implements ITicketServiceMinh {
 
             Seat seat = iSeatRepository.getByIdSeat(ticketDTO.getListSeat()[i]);
 
-            Customer customer = iCustomerRepository.getByIdCus(ticketDTO.getIdCustomer());
+            Customer customer = iCustomerRepository.findByIdCustomer(ticketDTO.getIdCustomer());
 
-            ticket = new Ticket("45", false, ticketDTO.getPrice(), LocalDate.now(), path, discount, null, customer, seat);
+
+            ticket = new Ticket("45", false, ticketDTO.getPrice(), LocalDate.now(), path, false, discount, null, customer, seat);
 
             iTicketRepository.save(ticket);
 
@@ -84,7 +85,9 @@ public class TicketServiceMinh implements ITicketServiceMinh {
 
 //            setTypeCustomer(ticketDTO.getIdCustomer());
         }
+
         Customer cus = iCustomerRepository.getByIdCus(ticketDTO.getIdCustomer());
+
         sendEmail(cus.getEmail(), path);
 
     }

@@ -1,9 +1,10 @@
 package com.example.dncinema.model;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.time.LocalDate;
-
 
 @Entity
 @Table(name = "ticket")
@@ -23,8 +24,9 @@ public class Ticket {
     private LocalDate dateBooking;
     @Column(name = "id_qr")
     private String idQr;
-
-    @ManyToOne
+    @Column(name = "is_delete")
+    private Boolean isDelete;
+    @OneToOne
     @JoinColumn(name = "id_discount")
     private Discount discount;
 
@@ -43,38 +45,32 @@ public class Ticket {
     public Ticket() {
     }
 
-    public Ticket(Integer idTicket, String codeTicket, boolean statusTicket, long priceAfterDiscount, LocalDate dateBooking, String idQr, Discount discount, Employee employee, Customer customer, Seat seat) {
+
+    public Ticket(String codeTicket, Boolean statusTicket, long priceAfterDiscount, LocalDate dateBooking, String idQr,Boolean isDelete, Discount discount, Employee employee, Customer customer, Seat seat) {
+        this.codeTicket = codeTicket;
+        this.statusTicket = statusTicket;
+        this.priceAfterDiscount = priceAfterDiscount;
+        this.dateBooking = dateBooking;
+        this.idQr = idQr;
+        this.isDelete = isDelete;
+        this.discount = discount;
+        this.employee = employee;
+        this.customer = customer;
+        this.seat = seat;
+    }
+
+
+    public Ticket(Integer idTicket, Boolean statusTicket, Long priceAfterDiscount, LocalDate dateBooking, String idQr, Boolean isDelete, Discount discount, Employee employee, Customer customer, Seat seat) {
         this.idTicket = idTicket;
-        this.codeTicket = codeTicket;
         this.statusTicket = statusTicket;
         this.priceAfterDiscount = priceAfterDiscount;
         this.dateBooking = dateBooking;
         this.idQr = idQr;
+        this.isDelete = isDelete;
         this.discount = discount;
         this.employee = employee;
         this.customer = customer;
         this.seat = seat;
-    }
-
-    public Ticket(String codeTicket, boolean statusTicket, long priceAfterDiscount, LocalDate dateBooking, String idQr, Discount discount, Employee employee, Customer customer, Seat seat) {
-        this.codeTicket = codeTicket;
-        this.statusTicket = statusTicket;
-        this.priceAfterDiscount = priceAfterDiscount;
-        this.dateBooking = dateBooking;
-        this.idQr = idQr;
-        this.discount = discount;
-        this.employee = employee;
-        this.customer = customer;
-        this.seat = seat;
-    }
-
-
-    public String getCodeTicket() {
-        return codeTicket;
-    }
-
-    public void setCodeTicket(String codeTicket) {
-        this.codeTicket = codeTicket;
     }
 
     public Integer getIdTicket() {
@@ -85,7 +81,16 @@ public class Ticket {
         this.idTicket = idTicket;
     }
 
-    public boolean getStatusTicket() {
+    public Boolean getDelete() {
+        return isDelete;
+    }
+
+    public void setDelete(Boolean delete) {
+        isDelete = delete;
+    }
+
+
+    public Boolean getStatusTicket() {
         return statusTicket;
     }
 
