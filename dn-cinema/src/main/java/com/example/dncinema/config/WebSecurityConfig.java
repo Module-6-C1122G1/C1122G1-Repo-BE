@@ -1,10 +1,7 @@
 package com.example.dncinema.config;
 
-import com.example.dncinema.security.jwt.JwtEntryPoint;
 import com.example.dncinema.security.jwt.JwtTokenFilter;
-import com.example.dncinema.security.response.ResponseMessage;
 import com.example.dncinema.security.userPrincipal.UserDetailService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
