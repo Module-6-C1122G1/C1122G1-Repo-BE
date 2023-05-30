@@ -13,7 +13,7 @@ public class Ticket {
     @Column(name = "id_ticket")
     private Integer idTicket;
     @Column(name = "status_ticket", columnDefinition = "varchar(255)")
-    private String statusTicket;
+    private boolean statusTicket;
     @Column(name = "price_after_discount")
     private long priceAfterDiscount;
     @Column(name = "date_booking", columnDefinition = "date")
@@ -41,7 +41,7 @@ public class Ticket {
     public Ticket() {
     }
 
-    public Ticket(Integer idTicket, String statusTicket, long priceAfterDiscount, LocalDate dateBooking, String idQr, Discount discount, Employee employee, Customer customer, Seat seat) {
+    public Ticket(Integer idTicket, boolean statusTicket, long priceAfterDiscount, LocalDate dateBooking, String idQr, Discount discount, Employee employee, Customer customer, Seat seat) {
         this.idTicket = idTicket;
         this.statusTicket = statusTicket;
         this.priceAfterDiscount = priceAfterDiscount;
@@ -53,8 +53,7 @@ public class Ticket {
         this.seat = seat;
     }
 
-    public Ticket(Integer idTicket, String statusTicket, long priceAfterDiscount, LocalDate dateBooking, String idQr, Boolean isDelete, Discount discount, Employee employee, Customer customer, Seat seat) {
-        this.idTicket = idTicket;
+    public Ticket(boolean statusTicket, long priceAfterDiscount, LocalDate dateBooking, String idQr, Boolean isDelete, Discount discount, Employee employee, Customer customer, Seat seat) {
         this.statusTicket = statusTicket;
         this.priceAfterDiscount = priceAfterDiscount;
         this.dateBooking = dateBooking;
@@ -82,11 +81,11 @@ public class Ticket {
         isDelete = delete;
     }
 
-    public String getStatusTicket() {
+    public boolean getStatusTicket() {
         return statusTicket;
     }
 
-    public void setStatusTicket(String statusTicket) {
+    public void setStatusTicket(boolean statusTicket) {
         this.statusTicket = statusTicket;
     }
 
