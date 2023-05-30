@@ -51,5 +51,5 @@ public interface ICustomerService {
     List<Customer> findAll();
 
     Boolean existByEmail(String email);
-
+    Customer findCustomerByEmail(String email);
 }
