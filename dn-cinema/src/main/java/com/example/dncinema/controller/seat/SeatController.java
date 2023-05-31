@@ -27,10 +27,7 @@ public class SeatController {
     @GetMapping("/{id}")
     public ResponseEntity<List<Seat>> getAllListSeatByIdShowTime(@PathVariable Integer id){
         List<Seat> seats = seatService.findAllListSeatByIdShowTime(id);
-        if(seats.isEmpty()){
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(seatService.findAllListSeatByIdShowTime(id), HttpStatus.OK);
+        return new ResponseEntity<>(seats, HttpStatus.OK);
     }
 
     /**

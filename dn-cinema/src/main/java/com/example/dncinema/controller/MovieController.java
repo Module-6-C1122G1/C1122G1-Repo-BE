@@ -100,8 +100,18 @@ public class MovieController {
         movieService.save(film);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    /**
+     * @author HaiPH
+     * @return ResponseEntity<>(films,HttpStatus)
+     * @Usage_method Returns all movies in the database
+     */
     @GetMapping("/list")
     public ResponseEntity<List<Film>> getAllFilms(){
-        return new ResponseEntity<>(movieService.findAllListFilm(),HttpStatus.OK);
+        List<Film> films = movieService.findAllListFilm();
+        if(films.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(films,HttpStatus.OK);
     }
 }
