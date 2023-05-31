@@ -8,6 +8,7 @@ import com.example.dncinema.repository.IEmployeeRepository;
 import com.example.dncinema.service.employee.IEmployeeService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,6 +19,8 @@ public class EmployeeService implements IEmployeeService {
     private IEmployeeRepository iEmployeeRepository;
     @Autowired
     private IAccountUserRepository iAccountUserRepository;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     /**
      * Created by: NghiaTT
@@ -31,7 +34,7 @@ public class EmployeeService implements IEmployeeService {
     public void updateEmployee(EmployeeDTO employeeDTO, Integer id) {
         AccountUser accountUser = iAccountUserRepository
                 .findAccountUserByNameAccount(employeeDTO.getAccountUser().getNameAccount());
-        iAccountUserRepository.updateAccount(employeeDTO.getAccountUser().getNameAccount(), employeeDTO.getAccountUser().getPasswordAccount(), accountUser.getId());
+        iAccountUserRepository.updateAccount(employeeDTO.getAccountUser().getNameAccount(), passwordEncoder.encode(employeeDTO.getAccountUser().getPasswordAccount()), accountUser.getId());
         Employee employee = iEmployeeRepository.findByIdEmployee(id);
         BeanUtils.copyProperties(employeeDTO, employee);
         iEmployeeRepository.updateEmployeeWithAccount(employeeDTO.getNameEmployee()
@@ -61,7 +64,7 @@ public class EmployeeService implements IEmployeeService {
     @Override
     public void create(EmployeeDTO employeeDTO) {
         iAccountUserRepository.createAccountUser(employeeDTO.getAccountUser().getNameAccount(),
-                employeeDTO.getAccountUser().getPasswordAccount());
+                passwordEncoder.encode(employeeDTO.getAccountUser().getPasswordAccount()));
         AccountUser accountUser = iAccountUserRepository
                 .findAccountUserByNameAccount(employeeDTO.getAccountUser().getNameAccount());
         Employee employee = new Employee();

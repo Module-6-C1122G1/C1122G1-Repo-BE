@@ -25,4 +25,5 @@ public interface IAccountUserRepository extends JpaRepository<AccountUser, Integ
             @Param("name_account") String nameAccount
             , @Param("password_account") String passwordAccount
             , @Param("id") Integer id);
+    boolean existsByNameAccount(String username);
 }

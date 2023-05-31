@@ -84,4 +84,9 @@ public interface IEmployeeRepository extends JpaRepository<Employee, Integer> {
     @Transactional
     @Query(value = "select * from employee where id_employee = :id_employee", nativeQuery = true)
     Employee findByIdEmployee(@Param("id_employee") Integer employeeId);
+
+    boolean existsEmployeeByIdentityCard(String identityCard);
+    boolean existsEmployeeByPhone(String phone);
+    boolean existsEmployeeByEmail(String email);
+
 }

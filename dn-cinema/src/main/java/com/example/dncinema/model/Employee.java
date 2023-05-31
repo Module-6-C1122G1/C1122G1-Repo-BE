@@ -1,7 +1,5 @@
 package com.example.dncinema.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import javax.persistence.*;
 
 @Entity
@@ -29,7 +27,6 @@ public class Employee {
     private String identityCard;
     @OneToOne(cascade = CascadeType.MERGE )
     @JoinColumn(name = "id")
-    @JsonManagedReference
     private AccountUser accountUser;
 
     public Employee() {
