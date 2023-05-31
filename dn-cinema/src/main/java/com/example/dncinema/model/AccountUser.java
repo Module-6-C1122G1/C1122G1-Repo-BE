@@ -1,5 +1,6 @@
 package com.example.dncinema.model;
 
+import com.example.dncinema.model.Roles;
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -67,5 +68,13 @@ public class AccountUser {
     public void setRoles(Set<Roles> roles) {
         this.roles = roles;
     }
-
+    @Override
+    public String toString() {
+        return "AccountUser{" +
+                "id=" + id +
+                ", nameAccount='" + nameAccount + '\'' +
+                ", passwordAccount='" + passwordAccount + '\'' +
+                ", roles=" + roles +
+                '}';
+    }
 }
