@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
@@ -14,26 +15,36 @@ import java.util.List;
 @CrossOrigin("*")
 public class ShowTimeController {
     @Autowired
-    IShowTimeService showTimeService;
+    private IShowTimeService showTimeService;
 
     /**
-     * @author HaiPH
      * @param id
-     * @return ResponseEntity<>(ListShowTime, HttpStatus.OK)
+     * @return ResponseEntity<>(showTimes, HttpStatus.OK)
+     * @author HaiPH
+     * @Usage_method Returns all showtimes by idFilm in the database
      */
     @GetMapping("/{id}")
-    public ResponseEntity<List<ShowTime>> getAllDateByIdFilm(@PathVariable Integer id){
+    public ResponseEntity<List<ShowTime>> getAllDateByIdFilm(@PathVariable Integer id) {
+        List<ShowTime> showTimes = showTimeService.findAllDateByIdFilm(id);
+        if (showTimes.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
         return new ResponseEntity<>(showTimeService.findAllDateByIdFilm(id), HttpStatus.OK);
     }
 
     /**
-     * @author HaiPH
      * @param id
      * @param showDate
      * @return ResponseEntity<>(ListShowTime, HttpStatus.OK)
+     * @author HaiPH
+     * @Usage_method Returns all showtimes by idFilm and showDate in the database
      */
     @GetMapping("/{id}/{showDate}")
-    public ResponseEntity<List<ShowTime>> getAllTimeByIdFilmAndShowDate(@PathVariable Integer id,@PathVariable String showDate){
-        return new ResponseEntity<>(showTimeService.findAllTimeByIdFilmAndShowDate(id,showDate), HttpStatus.OK);
+    public ResponseEntity<List<ShowTime>> getAllTimeByIdFilmAndShowDate(@PathVariable Integer id, @PathVariable String showDate) {
+        List<ShowTime> showTimes = showTimeService.findAllTimeByIdFilmAndShowDate(id, showDate);
+        if (showTimes.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(showTimeService.findAllTimeByIdFilmAndShowDate(id, showDate), HttpStatus.OK);
     }
 }
