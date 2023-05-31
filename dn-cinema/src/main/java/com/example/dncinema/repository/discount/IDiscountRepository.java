@@ -12,6 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.time.LocalDate;
+import java.util.List;
+
 @Repository
 public interface IDiscountRepository extends JpaRepository<Discount, Integer> {
     /**
@@ -95,4 +97,6 @@ public interface IDiscountRepository extends JpaRepository<Discount, Integer> {
             @Param("describeDiscount") String describeDiscount,
             @Param("percentDiscount") Double percentDiscount
     );
+    @Query(value = "SELECT * FROM discount ", nativeQuery = true)
+    List<Discount> findAllDiscount();
 }
