@@ -1,8 +1,5 @@
 package com.example.dncinema.dto;
 
-import com.example.dncinema.model.Employee;
-import com.example.dncinema.model.TypeSeat;
-
 public class TicketUpdateDTO {
     private Integer idTicket;
     private Integer idCustomer;
@@ -10,6 +7,7 @@ public class TicketUpdateDTO {
     private String nameTypeSeat;
 
     public TicketUpdateDTO() {
+        // default implementation ignored
     }
 
     public Integer getIdTicket() {

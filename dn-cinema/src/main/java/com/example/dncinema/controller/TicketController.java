@@ -34,7 +34,7 @@ public class TicketController {
      * @Usage_method use method findAll ticket
      */
     @GetMapping("")
-    public ResponseEntity<?> findAll() {
+    public ResponseEntity<List<TicketDetailDTO>> findAll() {
         List<TicketDetailDTO> ticketDetailDTOS = iTicketService.findAll();
         return new ResponseEntity<>(ticketDetailDTOS, HttpStatus.OK);
     }
@@ -47,7 +47,7 @@ public class TicketController {
      * @Usage_method findById to show detail ticket
      */
     @GetMapping("/detail/{id}")
-    public ResponseEntity<?> findTicketById(@PathVariable Integer id) {
+    public ResponseEntity< Ticket> findTicketById(@PathVariable Integer id) {
 
         Ticket ticket = iTicketService.findTicketById(id);
         if (ticket == null) {
@@ -55,9 +55,6 @@ public class TicketController {
         }
         return new ResponseEntity<>(ticket, HttpStatus.OK);
     }
-
-
-    // array id seat mong muon tra lai ve | array id ticket | customer_id
 
     /**
      * @Author QuynhHTN
@@ -69,7 +66,7 @@ public class TicketController {
      * @Usage_method use method update ticket when customers change ticket
      */
     @PutMapping("/update")
-    public ResponseEntity<?> updateTicket(@Validated @RequestBody TicketUpdateDTO ticketUpdateDTO, BindingResult bindingResult) {
+    public ResponseEntity<Map<String, String>> updateTicket(@Validated @RequestBody TicketUpdateDTO ticketUpdateDTO, BindingResult bindingResult) {
         if (!bindingResult.hasErrors()) {
             ticketUpdateDTO.setIdTicket(ticketUpdateDTO.getIdTicket());
             iTicketService.update(ticketUpdateDTO);

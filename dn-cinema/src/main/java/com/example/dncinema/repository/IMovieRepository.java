@@ -11,9 +11,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-
-import java.util.List;
-
 @Repository
 public interface IMovieRepository extends JpaRepository<Film, Integer> {
     @Query(value = "select * from film \n" +

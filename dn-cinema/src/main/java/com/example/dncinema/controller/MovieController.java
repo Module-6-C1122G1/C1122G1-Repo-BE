@@ -32,7 +32,7 @@ public class MovieController {
      * @author TruongDM
      */
     @GetMapping
-    public ResponseEntity<?> findAllFilm(@PageableDefault(size = 4) Pageable pageable,
+    public ResponseEntity<Page<Film>> findAllFilm(@PageableDefault(size = 4) Pageable pageable,
                                          @RequestParam(required = false, defaultValue = "") String search) {
         Page<Film> films = movieService.findAllFilm(search, pageable);
         if (films.isEmpty()) {
@@ -48,7 +48,7 @@ public class MovieController {
      * @Usage_method findById to show detail film
      */
     @GetMapping("/detail/{id}")
-    public ResponseEntity<?> findFilmById(@PathVariable Integer id) {
+    public ResponseEntity<Film> findFilmById(@PathVariable Integer id) {
         Film film = movieService.findFilmById(id);
         if (film == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);

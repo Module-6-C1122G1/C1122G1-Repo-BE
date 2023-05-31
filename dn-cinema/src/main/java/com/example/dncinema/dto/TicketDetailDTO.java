@@ -23,6 +23,7 @@ public class TicketDetailDTO {
     private SeatDTO seatDTO;
 
     public TicketDetailDTO() {
+        // default implementation ignored
     }
 
     public Integer getIdTicket() {
