@@ -54,13 +54,13 @@ public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
      * @param email
      * @param identity_card
      * @param img_customer
-     * @param id_type
+     * @param id_type_customer
      * @param id_account
      */
     @Modifying
     @Transactional
-    @Query(value = "insert into customer(name_customer , date_of_birth, point_customer , gender , phone , address , email , identity_card ,img_customer, id_type_customer, id)" +
-            " values (:name_customer,:date_of_birth, :point_customer,:gender,:phone , :address , :email , :identity_card, :img_customer , :id_type, :id_account)", nativeQuery = true)
+    @Query(value = "insert into customer(name_customer , date_of_birth, point_customer , gender , phone , address , email , identity_card ,img_customer, id, id_type_customer)" +
+            " values (:name_customer,:date_of_birth, :point_customer,:gender,:phone , :address , :email , :identity_card, :img_customer , :id_account, :id_type_customer)", nativeQuery = true)
     void saveCustomer(@Param("name_customer") String nameCustomer,
                       @Param("date_of_birth") LocalDate date_of_birth,
                       @Param("point_customer") Double point_customer,
@@ -70,7 +70,7 @@ public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
                       @Param("email") String email,
                       @Param("identity_card") String identity_card,
                       @Param("img_customer") String img_customer,
-                      @Param("id_type") Integer id_type,
+                      @Param("id_type_customer") Integer id_type_customer,
                       @Param("id_account") Integer id_account);
 
 
@@ -83,14 +83,14 @@ public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
      * @param email
      * @param identity_card
      * @param img_customer
-     * @param id_type
+     * @param id_type_customer
      * @param id_account
      */
     @Modifying
     @Transactional
     @Query(value = "update customer set name_customer = :name_customer,date_of_birth=:date_of_birth, point_customer = :point_customer ," +
             " gender = :gender ,phone = :phone,address = :address ,email = :email,identity_card = :identity_card, img_customer=:img_customer," +
-            "id_type_customer=:id_type,id=:id_account WHERE id_customer = :id_customer", nativeQuery = true)
+            "id_type_customer=:id_type_customer,id=:id_account WHERE id_customer = :id_customer", nativeQuery = true)
     void updateCustomerAccount(@Param("name_customer") String nameCustomer,
                                @Param("date_of_birth") LocalDate date_of_birth,
                                @Param("point_customer") Double point_customer,
@@ -100,7 +100,7 @@ public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
                                @Param("email") String email,
                                @Param("identity_card") String identity_card,
                                @Param("img_customer") String img_customer,
-                               @Param("id_type") int id_type,
+                               @Param("id_type_customer") Integer id_type_customer,
                                @Param("id_account") int id_account,
                                @Param("id_customer") int id_customer);
 
@@ -118,6 +118,9 @@ public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
      * @return đối tượng có tên Customer được tìm thấy dựa theo email
      */
     Customer findCustomersByEmail(String email);
+    Customer findCustomersByPhone(String phone);
+    Customer findCustomersByIdentityCard(String identity);
+
 };
 
 

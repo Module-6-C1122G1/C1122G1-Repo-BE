@@ -66,7 +66,7 @@ public class RegisterCustomerController {
      * @return
      */
     @ResponseStatus(HttpStatus.OK)
-    @PatchMapping("/user/{id}")
+    @PatchMapping("/user/update/{id}")
     public ResponseEntity<?> updateCustomerAccount(@Valid @RequestBody CustomerDTO customerDTO,
                                                    @PathVariable("id") Integer id, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
@@ -99,6 +99,14 @@ public class RegisterCustomerController {
         accountUserService.updatePassword(accountUserDTO,accountUserDTO.getId());
         return new ResponseEntity<>(HttpStatus.OK);
     }
+    @GetMapping("/{id}")
+    public ResponseEntity<Customer> findByCustomerId(@PathVariable Integer id) {
+        Customer customer = customerService.findByCustomerId(id);
+        if (customer == null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>(customer, HttpStatus.OK);
+    }
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/check-account/{nameAccount}")
@@ -106,4 +114,24 @@ public class RegisterCustomerController {
         boolean exists = accountUserService.existByNameAccount(nameAccount);
         return ResponseEntity.ok(exists);
     }
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/check-email/{email}")
+    public ResponseEntity<Boolean> checkEmailExistence(@PathVariable("email") String email) {
+        boolean exists = customerService.existByEmail(email);
+        return ResponseEntity.ok(exists);
+    }
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/check-identity/{identity}")
+    public ResponseEntity<Boolean> checkIdentityExistence(@PathVariable("identity") String identity) {
+        boolean exists = customerService.existByIdentity(identity);
+        return ResponseEntity.ok(exists);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/check-phone/{phone}")
+    public ResponseEntity<Boolean> checkPhoneExistence(@PathVariable("phone") String phone) {
+        boolean exists = customerService.existByPhone(phone);
+        return ResponseEntity.ok(exists);
+    }
+
 }

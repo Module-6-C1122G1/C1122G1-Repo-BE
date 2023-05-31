@@ -49,7 +49,11 @@ public interface ICustomerService {
      */
     Customer findById(int id);
     List<Customer> findAll();
+    Customer findByCustomerId(Integer id);
 
     Boolean existByEmail(String email);
     Customer findCustomerByEmail(String email);
+    Boolean existByPhone(String phone);
+    Boolean existByIdentity(String identity);
+
 }

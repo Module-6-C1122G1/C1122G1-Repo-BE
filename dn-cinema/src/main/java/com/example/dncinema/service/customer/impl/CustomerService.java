@@ -3,8 +3,12 @@ package com.example.dncinema.service.customer.impl;
 import com.example.dncinema.dto.customerDTO.CustomerDTO;
 import com.example.dncinema.model.AccountUser;
 import com.example.dncinema.model.Customer;
+import com.example.dncinema.model.Roles;
+import com.example.dncinema.model.TypeCustomer;
 import com.example.dncinema.repository.IAccountUserRepository;
 import com.example.dncinema.repository.ICustomerRepository;
+import com.example.dncinema.repository.ICustomerTypeRepository;
+import com.example.dncinema.repository.IRolesRepository;
 import com.example.dncinema.service.customer.ICustomerService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +19,9 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class CustomerService implements ICustomerService {
@@ -25,8 +31,12 @@ public class CustomerService implements ICustomerService {
     @Autowired
     private IAccountUserRepository iAccountUserRepository;
     @Autowired
+    private ICustomerTypeRepository customerTypeRepository;
+    @Autowired
     private PasswordEncoder passwordEncoder;
 
+    @Autowired
+    private IRolesRepository rolesRepository;
 
     @Override
     public Page<Customer> findAllCustomerTicket(Pageable pageable) {
@@ -40,12 +50,12 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public Page<Customer> searchPlusPoint(Pageable pageable, LocalDate dateStart, LocalDate dateEnd) {
-        return iCustomerRepository.findAllPlusPoint(pageable,dateStart,dateEnd);
+        return iCustomerRepository.findAllPlusPoint(pageable, dateStart, dateEnd);
     }
 
     @Override
     public Page<Customer> searchUsePoint(Pageable pageable, LocalDate dateStart, LocalDate dateEnd) {
-        return iCustomerRepository.findAllUsePoint(pageable,dateStart,dateEnd);
+        return iCustomerRepository.findAllUsePoint(pageable, dateStart, dateEnd);
     }
 
     /**
@@ -61,6 +71,9 @@ public class CustomerService implements ICustomerService {
                 passwordEncoder.encode(customerDTO.getAccountUser().getPasswordAccount()));
         AccountUser accountUser = iAccountUserRepository
                 .findAccountUserByNameAccount(customerDTO.getAccountUser().getNameAccount());
+        Set<Roles> roles = new HashSet<>();
+        roles.add(rolesRepository.findByNameRoles("USER"));
+        accountUser.setRoles(roles);
         Customer customer = new Customer();
         customer.setAccountUser(accountUser);
         BeanUtils.copyProperties(customerDTO, customer);
@@ -78,6 +91,7 @@ public class CustomerService implements ICustomerService {
                 accountUser.getId()
         );
     }
+
     /**
      * Created by: TruongNN
      * Date created: 24/05/2023
@@ -120,9 +134,15 @@ public class CustomerService implements ICustomerService {
     public Customer findById(int id) {
         return iCustomerRepository.findByIdCustomer(id);
     }
+
     @Override
     public List<Customer> findAll() {
         return iCustomerRepository.findAll();
+    }
+
+    @Override
+    public Customer findByCustomerId(Integer id) {
+        return iCustomerRepository.findByIdCustomer(id);
     }
 
     @Override
@@ -138,4 +158,24 @@ public class CustomerService implements ICustomerService {
     public Customer findCustomerByEmail(String email) {
         return iCustomerRepository.findCustomersByEmail(email);
     }
+
+    @Override
+    public Boolean existByPhone(String phone) {
+        Customer customer = iCustomerRepository.findCustomersByPhone(phone);
+        if (customer != null) {
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public Boolean existByIdentity(String identity) {
+        Customer customer = iCustomerRepository.findCustomersByIdentityCard(identity);
+        if (customer != null) {
+            return true;
+        }
+        return false;
+    }
+
+
 }

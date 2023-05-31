@@ -7,4 +7,6 @@ import java.util.List;
 public interface ICustomerTypeService {
 
     List<TypeCustomer> findAll();
+
+    TypeCustomer findTypeByName(String name);
 }
