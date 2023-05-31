@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="update" />
+    <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="update">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/ticketManagement/TicketManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/ticketManagement/TicketManagementController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +53,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2QGnxBC818waB1MASIz4gkcr7BH" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -62,7 +65,13 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager" selected="Spring Boot.DnCinemaApplication">
     <configuration name="MovieRestController_getAllFilms" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -239,6 +248,9 @@
       <workItem from="1685346260840" duration="380000" />
       <workItem from="1685371685880" duration="1960000" />
       <workItem from="1685399428214" duration="16253000" />
+      <workItem from="1685451758557" duration="27000" />
+      <workItem from="1685496348291" duration="669000" />
+      <workItem from="1685497205626" duration="3617000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1685284085890</created>

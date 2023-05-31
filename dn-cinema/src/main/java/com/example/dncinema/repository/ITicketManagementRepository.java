@@ -2,8 +2,6 @@ package com.example.dncinema.repository;
 
 import com.example.dncinema.dto.ICustomerPoint;
 import com.example.dncinema.dto.ITicketManagement;
-import com.example.dncinema.model.Customer;
-import com.example.dncinema.model.Ticket;
 import com.example.dncinema.model.TicketManagement;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -11,9 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-
 import java.time.LocalDate;
-import java.util.Optional;
 
 @Repository
 public interface ITicketManagementRepository extends JpaRepository<TicketManagement, Integer> {
