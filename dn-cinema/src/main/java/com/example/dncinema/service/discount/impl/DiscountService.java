@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DiscountService implements IDiscountService {
@@ -41,8 +42,8 @@ public class DiscountService implements IDiscountService {
     }
 
     @Override
-    public Discount findById(int id) {
-        return discountRepository.findById(id).get();
+    public Optional<Discount> findById(int id) {
+        return discountRepository.findById(id);
     }
 
     @Override

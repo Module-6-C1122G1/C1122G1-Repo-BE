@@ -26,6 +26,7 @@ public class Discount {
     private boolean isDeleted;
 
     public Discount() {
+        // Chỉ tạo phương thức không có tham số!
     }
 
     public int getIdDiscount() {

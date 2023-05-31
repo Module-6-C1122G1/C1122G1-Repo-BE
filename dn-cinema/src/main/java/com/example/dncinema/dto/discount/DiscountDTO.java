@@ -18,6 +18,7 @@ public class DiscountDTO implements Validator {
     private Double percentDiscount;
 
     public DiscountDTO() {
+        //Tạo phương thức DiscountDTO() không có tham số!
     }
 
     public int getIdDiscount() {
@@ -83,6 +84,6 @@ public class DiscountDTO implements Validator {
 
     @Override
     public void validate(Object target, Errors errors) {
-
+        //Chưa có thuộc tính cần Custom Validate!
     }
 }

@@ -19,5 +19,4 @@ public interface IDiscountRepository extends JpaRepository<Discount, Integer> {
     @Query(value = "SELECT * FROM Discount WHERE name_discount like concat('%',:name,'%') and is_deleted = false", nativeQuery = true)
     Page<Discount> searchName(@Param("name") String name, Pageable pageable);
 
-//    Discount findById(int id);
 }

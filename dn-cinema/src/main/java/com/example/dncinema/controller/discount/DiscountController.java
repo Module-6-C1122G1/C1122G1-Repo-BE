@@ -2,7 +2,6 @@ package com.example.dncinema.controller.discount;
 
 import com.example.dncinema.dto.discount.DiscountDTO;
 import com.example.dncinema.repository.discount.IDiscountRepository;
-import com.example.dncinema.model.Discount;
 import com.example.dncinema.service.discount.IDiscountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -36,7 +35,7 @@ public class DiscountController {
     @GetMapping("/list")
     @ResponseStatus(HttpStatus.OK)
     public Page<DiscountDTO> showList(
-            @PageableDefault(direction = Sort.Direction.DESC, size = 5) Pageable pageable,@RequestParam(required = false, defaultValue = "") String name) {
+            @PageableDefault(direction = Sort.Direction.DESC, size = 5) Pageable pageable, @RequestParam(required = false, defaultValue = "") String name) {
         return discountService.findByName(name, pageable);
     }
 
