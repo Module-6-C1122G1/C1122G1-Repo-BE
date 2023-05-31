@@ -1,11 +1,19 @@
 package com.example.dncinema.service.employee.impl;
 
+import com.example.dncinema.dto.EmployeeDTO;
+import com.example.dncinema.model.AccountUser;
+import com.example.dncinema.model.Employee;
+import com.example.dncinema.repository.IAccountUserRepository;
+import com.example.dncinema.repository.IEmployeeRepository;
 import com.example.dncinema.service.employee.IEmployeeService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
+@Service
 public class EmployeeService implements IEmployeeService {
     @Autowired
     private IEmployeeRepository iEmployeeRepository;
@@ -87,4 +95,5 @@ public class EmployeeService implements IEmployeeService {
     public Employee findById(int id) {
         return iEmployeeRepository.findByIdEmployee(id);
     }
+
 }

@@ -6,10 +6,15 @@ import com.example.dncinema.model.Employee;
 import com.example.dncinema.repository.IAccountUserRepository;
 import com.example.dncinema.repository.IEmployeeRepository;
 import com.example.dncinema.service.employee.IEmployeeService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import java.util.List;
 
 
 @RestController
@@ -27,6 +32,16 @@ public class EmployeeController {
     @GetMapping("")
     public List<Employee> findAll() {
         return iEmployeeService.findAll();
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping("/create")
+    public ResponseEntity<?> createEmployeeWithAccount(@Valid @RequestBody EmployeeDTO employeeDTO, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return new ResponseEntity<>(bindingResult.getAllErrors(), HttpStatus.BAD_REQUEST);
+        }
+        iEmployeeService.create(employeeDTO);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     /**
