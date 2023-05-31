@@ -17,8 +17,9 @@ public class AccountUser {
     private String nameAccount;
     @Column(name = "password_account", columnDefinition = "varchar(255)")
     private String passwordAccount;
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "account_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "account_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
     Set<Roles> roles = new HashSet<>();
 
     public AccountUser() {
@@ -67,7 +68,6 @@ public class AccountUser {
     public void setRoles(Set<Roles> roles) {
         this.roles = roles;
     }
-
     @Override
     public String toString() {
         return "AccountUser{" +
