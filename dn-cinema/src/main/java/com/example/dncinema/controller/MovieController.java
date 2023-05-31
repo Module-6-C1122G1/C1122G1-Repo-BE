@@ -74,7 +74,7 @@ public class MovieController {
         BeanUtils.copyProperties(filmDTO, film);
         film.getTypeFilm().setIdTypeFilm(filmDTO.getTypeFilm().getIdTypeFilm());
         movieService.save(film);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        return new ResponseEntity<>(film,HttpStatus.CREATED);
     }
 
 
@@ -103,5 +103,15 @@ public class MovieController {
     @GetMapping("/list")
     public ResponseEntity<List<Film>> getAllFilms(){
         return new ResponseEntity<>(movieService.findAllListFilm(),HttpStatus.OK);
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteFilm(@PathVariable Integer id){
+        movieService.deleteFilm(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+    @GetMapping("/{id}")
+    public ResponseEntity<?> findFilm(@PathVariable Integer id){
+        Film film = movieService.findFilmById(id);
+        return new ResponseEntity<>(film,HttpStatus.OK);
     }
 }

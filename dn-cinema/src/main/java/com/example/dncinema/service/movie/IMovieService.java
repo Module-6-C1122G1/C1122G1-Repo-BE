@@ -28,4 +28,5 @@ public interface IMovieService {
 
     List<Film> findAllListFilm();
 
+    void deleteFilm(Integer id);
 }
