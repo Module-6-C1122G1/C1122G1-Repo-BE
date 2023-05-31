@@ -71,7 +71,7 @@ public class DetailDiscountRestController_list {
     public void getDetail_4() throws Exception {
         this.mockMvc.perform(
                         MockMvcRequestBuilders
-                                .get("http://localhost:8080/discount/detailDiscount?id=17"))
+                                .get("http://localhost:8080/discount/detailDiscount?id=1"))
                 .andDo(print())
                 .andExpect(status().is2xxSuccessful());
     }

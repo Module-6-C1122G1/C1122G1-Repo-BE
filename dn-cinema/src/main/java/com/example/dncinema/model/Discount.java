@@ -23,18 +23,20 @@ public class Discount {
     @Column(name = "percent_discount")
     private Double percentDiscount;
     @Column(columnDefinition = "boolean default false")
-    private boolean isDeleted;
+    private Boolean isDeleted = false;
 
     public Discount() {
     }
 
-    public Discount(Integer idDiscount, String nameDiscount, LocalDate dateStart, LocalDate dateEnd, String describeDiscount, Double percentDiscount) {
+    public Discount(Integer idDiscount, String nameDiscount, String imageDiscount, LocalDate dateStart, LocalDate dateEnd, String describeDiscount, Double percentDiscount, Boolean isDeleted) {
         this.idDiscount = idDiscount;
         this.nameDiscount = nameDiscount;
+        this.imageDiscount = imageDiscount;
         this.dateStart = dateStart;
         this.dateEnd = dateEnd;
         this.describeDiscount = describeDiscount;
         this.percentDiscount = percentDiscount;
+        this.isDeleted = isDeleted;
     }
 
     public Integer getIdDiscount() {
@@ -93,11 +95,11 @@ public class Discount {
         this.percentDiscount = percentDiscount;
     }
 
-    public boolean isDeleted() {
+    public Boolean getDeleted() {
         return isDeleted;
     }
 
-    public void setDeleted(boolean deleted) {
+    public void setDeleted(Boolean deleted) {
         isDeleted = deleted;
     }
 }
