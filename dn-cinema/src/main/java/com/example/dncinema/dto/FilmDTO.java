@@ -1,32 +1,46 @@
 package com.example.dncinema.dto;
 
-import com.example.dncinema.model.ShowTime;
 import com.example.dncinema.model.TypeFilm;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 public class FilmDTO {
     private Integer idFilm;
+    @NotBlank(message = "Tên phim không được trống")
     private String nameFilm;
+    @NotBlank
     private String director;
+    @NotBlank
     private String studioFilm;
+    @NotBlank
     private String trailer;
+    @NotBlank
     private String describeFilm;
+    @NotBlank
     private String actor;
+    @NotNull
     private Double normalSeatPrice;
+    @NotNull
     private Double vipSeatPrice;
     private LocalDate dateStartFilm;
     private LocalDate dateEndFilm;
+    @NotBlank
     private String imgFilm;
+    @NotNull
     private Integer timeFilm;
+    @NotBlank
+    private String nation;
+    @NotBlank
     private String movieLabel;
     private TypeFilm typeFilm;
-    private ShowTime showTime;
 
     public FilmDTO() {
     }
 
-    public FilmDTO(Integer idFilm, String nameFilm, String director, String studioFilm, String trailer, String describeFilm, String actor, Double normalSeatPrice, Double vipSeatPrice, LocalDate dateStartFilm, LocalDate dateEndFilm, String imgFilm, Integer timeFilm, String movieLabel, TypeFilm typeFilm, ShowTime showTime) {
+    public FilmDTO(Integer idFilm, String nameFilm, String director, String studioFilm, String trailer, String describeFilm, String actor, Double normalSeatPrice, Double vipSeatPrice, LocalDate dateStartFilm, LocalDate dateEndFilm, String imgFilm, Integer timeFilm, String nation, String movieLabel, TypeFilm typeFilm) {
         this.idFilm = idFilm;
         this.nameFilm = nameFilm;
         this.director = director;
@@ -40,9 +54,9 @@ public class FilmDTO {
         this.dateEndFilm = dateEndFilm;
         this.imgFilm = imgFilm;
         this.timeFilm = timeFilm;
+        this.nation = nation;
         this.movieLabel = movieLabel;
         this.typeFilm = typeFilm;
-        this.showTime = showTime;
     }
 
     public Integer getIdFilm() {
@@ -149,6 +163,14 @@ public class FilmDTO {
         this.timeFilm = timeFilm;
     }
 
+    public String getNation() {
+        return nation;
+    }
+
+    public void setNation(String nation) {
+        this.nation = nation;
+    }
+
     public String getMovieLabel() {
         return movieLabel;
     }
@@ -163,13 +185,5 @@ public class FilmDTO {
 
     public void setTypeFilm(TypeFilm typeFilm) {
         this.typeFilm = typeFilm;
-    }
-
-    public ShowTime getShowTime() {
-        return showTime;
-    }
-
-    public void setShowTime(ShowTime showTime) {
-        this.showTime = showTime;
     }
 }

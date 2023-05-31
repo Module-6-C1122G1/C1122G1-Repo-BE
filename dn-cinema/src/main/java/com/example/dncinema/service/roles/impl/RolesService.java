@@ -12,6 +12,6 @@ public class RolesService implements IRolesService {
     IRolesRepository rolesRepository;
     @Override
     public Roles findRolesByName(String name) {
-        return rolesRepository.findRolesByName(name);
+        return rolesRepository.findByNameRoles(name);
     }
 }

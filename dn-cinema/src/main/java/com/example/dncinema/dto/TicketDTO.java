@@ -8,8 +8,8 @@ import javax.validation.constraints.NotNull;
 
 public class TicketDTO {
 
-    @Valid
-    private Integer IdCustomer;
+
+    private Integer idCustomer;
 
     private Integer idFilm;
     private Integer[] listSeat;
@@ -20,7 +20,7 @@ public class TicketDTO {
     }
 
     public TicketDTO(Integer idCustomer, Integer idFilm, Integer[] listSeat, Integer idDiscount, long price) {
-        IdCustomer = idCustomer;
+        this.idCustomer = idCustomer;
         this.idFilm = idFilm;
         this.listSeat = listSeat;
         this.idDiscount = idDiscount;
@@ -28,11 +28,11 @@ public class TicketDTO {
     }
 
     public Integer getIdCustomer() {
-        return IdCustomer;
+        return idCustomer;
     }
 
     public void setIdCustomer(Integer idCustomer) {
-        IdCustomer = idCustomer;
+        this.idCustomer = idCustomer;
     }
 
     public Integer getIdFilm() {

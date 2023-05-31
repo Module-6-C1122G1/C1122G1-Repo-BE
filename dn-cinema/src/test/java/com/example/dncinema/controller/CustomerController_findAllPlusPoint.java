@@ -24,7 +24,7 @@ public class CustomerController_findAllPlusPoint {
      */
     @Test
     public void findAllPlusPoint_7() throws Exception {
-        this.mockMvc.perform(MockMvcRequestBuilders.get("/customer/ticket/plus-point/null"))
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/api/public/plus-point/null"))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
@@ -36,7 +36,7 @@ public class CustomerController_findAllPlusPoint {
      */
     @Test
     public void findAllPlusPoint_8() throws Exception {
-        this.mockMvc.perform(MockMvcRequestBuilders.get("/customer/ticket/plus-point/''"))
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/api/public/plus-point/''"))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
@@ -60,7 +60,7 @@ public class CustomerController_findAllPlusPoint {
      */
     @Test
     public void findAllPlusPoint_10() throws Exception {
-        this.mockMvc.perform(MockMvcRequestBuilders.get("/customer/ticket/plus-point?search=2223/04/15"))
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/customer/ticket/plus-point?search="))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
@@ -79,8 +79,8 @@ public class CustomerController_findAllPlusPoint {
                 .andExpect(jsonPath("totalElements").value(3))
                 .andExpect(jsonPath("content[0].date_booking").value("2023-04-15"))
                 .andExpect(jsonPath("content[0].price_after_discount").value("123"))
-                .andExpect(jsonPath("content[0].status_ticket").value(0))
-                .andExpect(jsonPath("content[0].id_customer").value(1))
-                .andExpect(jsonPath("content[0].id_seat").value(1));
+                .andExpect(jsonPath("content[0].status_ticket").value(1))
+                .andExpect(jsonPath("content[0].customer.id_customer").value(1))
+                .andExpect(jsonPath("content[0].seat.id_seat").value(1));
     }
 }

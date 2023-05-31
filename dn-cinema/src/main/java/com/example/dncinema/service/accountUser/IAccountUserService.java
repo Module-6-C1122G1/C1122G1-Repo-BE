@@ -1,5 +1,6 @@
 package com.example.dncinema.service.accountUser;
 
+import com.example.dncinema.dto.accounUserDTO.AccountUserDTO;
 import com.example.dncinema.model.AccountUser;
 
 public interface IAccountUserService {
@@ -9,4 +10,7 @@ public interface IAccountUserService {
     AccountUser findAccountUserByEmail(String email);
     int sendEmail(String email);
     void sendPassword(String email, int password);
+    void updatePassword(AccountUserDTO accountUserDTO, Integer id);
+
+    AccountUser findById(int id);
 }

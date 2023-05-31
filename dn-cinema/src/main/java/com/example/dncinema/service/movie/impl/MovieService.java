@@ -1,3 +1,4 @@
+
 package com.example.dncinema.service.movie.impl;
 
 import com.example.dncinema.model.Film;
@@ -8,7 +9,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+
 import java.util.List;
+import java.util.Optional;
+
 
 @Service
 public class MovieService implements IMovieService {
@@ -34,8 +38,22 @@ public class MovieService implements IMovieService {
     }
 
     @Override
+
+    public Optional<Film> findById(Integer idFilm) {
+        return movieRepository.findById(idFilm);
+    }
+
+    @Override
+    public void save(Film film) {
+        movieRepository.save(film);
+    }
+
+
+
     public List<Film> findAllListFilm() {
         return movieRepository.findAllListFilm();
     }
 
+
 }
+
