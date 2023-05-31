@@ -4,12 +4,10 @@ import com.example.dncinema.model.Employee;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import javax.transaction.Transactional;
 
 @Repository
 public interface IEmployeeRepository extends JpaRepository<Employee, Integer> {
@@ -24,19 +22,16 @@ public interface IEmployeeRepository extends JpaRepository<Employee, Integer> {
      * @param phoneNumber
      * @return
      */
-    @Query(value = "SELECT * FROM employee e JOIN account_user a WHERE (a.name_account LIKE CONCAT('%', :code, '%') " +
-            "OR e.name_employee LIKE CONCAT('%', :name, '%') " +
-            "OR e.phone LIKE CONCAT('%', :phoneNumber, '%')) " +
-            "AND e.is_delete = false",
-            countQuery = "SELECT * FROM employee e JOIN account_user a WHERE (a.name_account LIKE CONCAT('%', :code, '%') " +
-                    "OR e.name_employee LIKE CONCAT('%', :name, '%')    " +
-                    "OR e.phone LIKE CONCAT('%', :phoneNumber, '%')) " +
-                    "AND e.is_delete = false"
-                    ,nativeQuery = true)
+    @Query(value = "SELECT e.* FROM employee e JOIN account_user a WHERE (a.name_account LIKE CONCAT('%', :search, '%')\n" +
+            "    OR e.name_employee LIKE CONCAT('%', :search, '%')\n" +
+            "    OR e.phone LIKE CONCAT('%', :search, '%'))\n" +
+            "                                                 AND e.is_delete = false",
+            countQuery = "select count(*) from (SELECT e.* FROM employee e JOIN account_user a WHERE (a.name_account LIKE CONCAT('%', :search, '%')\n" +
+                    "            OR e.name_employee LIKE CONCAT('%', :search, '%')\n" +
+                    "            OR e.phone LIKE CONCAT('%', :search, '%'))\n" +
+                    "            AND e.is_delete = false ) as abc",nativeQuery = true)
     Page<Employee> searchEmployeeInfo(Pageable pageable,
-                                      @Param("code") String searchCode,
-                                      @Param("name") String searchName,
-                                      @Param("phoneNumber") String searchPhoneNumber);
+                                      @Param("search") String search);
 
 
     /**

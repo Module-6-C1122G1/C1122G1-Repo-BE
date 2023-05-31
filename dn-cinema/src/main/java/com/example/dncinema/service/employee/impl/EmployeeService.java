@@ -22,10 +22,10 @@ public class EmployeeService implements IEmployeeService {
 
 
     @Override
-    public Page<EmployeeDTO> searchEmployee(Pageable pageable, String searchCode, String searchName, String searchPhoneNumber) {
+    public Page<EmployeeDTO> searchEmployee(Pageable pageable, String search) {
         List<EmployeeDTO> employeeDTOList = new ArrayList<>();
         Page<Employee> employeePage = iEmployeeRepository
-                .searchEmployeeInfo(pageable,searchCode,searchName,searchPhoneNumber);
+                .searchEmployeeInfo(pageable,search);
         EmployeeDTO employeeDTO;
         for (Employee employee : employeePage) {
             employeeDTO = new EmployeeDTO();
