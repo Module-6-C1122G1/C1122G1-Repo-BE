@@ -11,6 +11,8 @@ public class DiscountDTO implements Validator {
     private String nameDiscount;
     @NotBlank(message = "Cannot be left blank")
     private String imageDiscount;
+    private String dateStart;
+    private String dateEnd;
     @NotBlank(message = "Describe cannot be left blank")
     private String describeDiscount;
     private Double percentDiscount;
@@ -56,6 +58,22 @@ public class DiscountDTO implements Validator {
 
     public void setPercentDiscount(Double percentDiscount) {
         this.percentDiscount = percentDiscount;
+    }
+
+    public String getDateStart() {
+        return dateStart;
+    }
+
+    public void setDateStart(String dateStart) {
+        this.dateStart = dateStart;
+    }
+
+    public String getDateEnd() {
+        return dateEnd;
+    }
+
+    public void setDateEnd(String dateEnd) {
+        this.dateEnd = dateEnd;
     }
 
     @Override

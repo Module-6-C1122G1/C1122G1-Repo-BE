@@ -35,8 +35,8 @@ public class DiscountController {
 
     @GetMapping("/list")
     @ResponseStatus(HttpStatus.OK)
-    public Page<DiscountDTO> showList(@RequestParam(required = false, defaultValue = "") String name,
-                                      @PageableDefault(direction = Sort.Direction.DESC, size = 5) Pageable pageable) {
+    public Page<DiscountDTO> showList(
+            @PageableDefault(direction = Sort.Direction.DESC, size = 5) Pageable pageable,@RequestParam(required = false, defaultValue = "") String name) {
         return discountService.findByName(name, pageable);
     }
 

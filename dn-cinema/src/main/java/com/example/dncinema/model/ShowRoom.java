@@ -18,15 +18,12 @@ public class ShowRoom {
     public ShowRoom() {
     }
 
-<<<<<<< HEAD
     public ShowRoom(Integer idShowRoom) {
         this.idShowRoom = idShowRoom;
     }
 
-    public ShowRoom(Integer idShowRoom, String nameShowRoom) {
-=======
+    public ShowRoom(Integer idShowRoom, String nameShowRoom) {}
     public ShowRoom(Integer idShowRoom, String nameShowRoom, Integer quantitySeat) {
->>>>>>> 49a1c67a5c5b36af56d0d58eed6b4e4ca883eb8e
         this.idShowRoom = idShowRoom;
         this.nameShowRoom = nameShowRoom;
         this.quantitySeat = quantitySeat;
