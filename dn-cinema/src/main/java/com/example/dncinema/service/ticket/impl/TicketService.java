@@ -1,15 +1,11 @@
 package com.example.dncinema.service.ticket.impl;
 
 import com.example.dncinema.dto.*;
-import com.example.dncinema.dto.customerDTO.CustomerDTO;
-import com.example.dncinema.model.Customer;
-import com.example.dncinema.model.Seat;
-import com.example.dncinema.model.StatusSeat;
-import com.example.dncinema.model.Ticket;
+import com.example.dncinema.model.*;
 import com.example.dncinema.repository.ICustomerRepository;
 import com.example.dncinema.repository.IMovieRepository;
-
 import com.example.dncinema.repository.ISeatRepositoryQuynh;
+
 import com.example.dncinema.repository.ITicketRepository;
 import com.example.dncinema.repository.show_room.IStatusSeatRepository;
 import com.example.dncinema.service.ticket.ITicketService;
@@ -34,7 +30,6 @@ public class TicketService implements ITicketService {
     private IStatusSeatRepository statusSeatRepository;
     @Autowired
     private IMovieRepository iMovieRepository;
-
     /**
      * @Author QuynhHTN
      * Date create: 24/05/2023
@@ -54,12 +49,29 @@ public class TicketService implements ITicketService {
      * @Return
      * @Usage_method use method update ticket when customers change ticket
      */
+//    @Override
+//    public void update(TicketUpdateDTO ticketUpdateDTO) {
+//        Ticket tickets = iTicketRepository.findTicketById(ticketUpdateDTO.getIdTicket());
+//        Customer customer = customerRepository.findById(ticketUpdateDTO.getIdCustomer()).get();
+//        Seat seat = seatRepository.findById(ticketUpdateDTO.getIdSeat()).get();
+//        customer.setPointCustomer(customer.getPointCustomer()-15);
+//        StatusSeat statusSeat = statusSeatRepository.findById(2).get();
+//        seat.setSeat(statusSeat);
+//        seatRepository.save(seat);
+//        customerRepository.save(customer);
+//        tickets.setDelete(true);
+//        iTicketRepository.save(tickets);
+//    }
     @Override
     public void update(TicketUpdateDTO ticketUpdateDTO) {
         Ticket tickets = iTicketRepository.findTicketById(ticketUpdateDTO.getIdTicket());
         Customer customer = customerRepository.findById(ticketUpdateDTO.getIdCustomer()).get();
         Seat seat = seatRepository.findById(ticketUpdateDTO.getIdSeat()).get();
-        customer.setPointCustomer(customer.getPointCustomer()-15);
+        if(ticketUpdateDTO.getNameTypeSeat().equals("VIP")){
+            customer.setPointCustomer(customer.getPointCustomer()-15);
+        }else {
+            customer.setPointCustomer(customer.getPointCustomer()-10);
+        }
         StatusSeat statusSeat = statusSeatRepository.findById(2).get();
         seat.setSeat(statusSeat);
         seatRepository.save(seat);
@@ -92,13 +104,14 @@ public class TicketService implements ITicketService {
         }
         return ticketDetailDTOS;
     }
+
     @Override
     public Page<ListTicketDTO> findAllTicket(String search, Pageable pageable) {
-        return iTicketRepository.find_list_ticket(search, pageable);
+        return null;
     }
 
     @Override
     public void cancelTicket(Integer id) {
-        iTicketRepository.cancelTicket(id);
+
     }
 }

@@ -24,10 +24,19 @@ public interface IAccountUserRepository extends JpaRepository<AccountUser, Integ
 
     @Modifying
     @Transactional
+    @Query(value = "update account_user set name_account = :name_account , password_account = :password_account WHERE id = :id", nativeQuery = true)
+    void updateAccount(
+            @Param("name_account") String nameAccount
+            , @Param("password_account") String passwordAccount
+            , @Param("id") Integer id);
+  
+    boolean existsByNameAccount(String username);
+  
     @Query(value = "update account_user set password_account = :password_account WHERE id = :id", nativeQuery = true)
     void savePassword(
             @Param("password_account") String passwordAccount,
             @Param("id") Integer id);
+  
     @Transactional
     @Query(value = "select * from account_user where id = :id", nativeQuery = true)
     AccountUser findAccountUserById(@Param("id") Integer id);
