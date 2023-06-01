@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -34,6 +35,7 @@ public interface IMovieRepository extends JpaRepository<Film, Integer> {
 
     @Query(value = "select * from film", nativeQuery = true)
     List<Film> findAllListFilm();
-
+    List<Film> findFilmsByDateStartFilmLessThanAndDateEndFilmGreaterThan(LocalDate date, LocalDate date2);
+    List<Film> findFilmsByDateStartFilmGreaterThan(LocalDate localDate);
 }
 

@@ -14,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,8 +31,9 @@ public class MovieController {
      * @param search
      * @return ResponseEntity<>(films,HttpStatus.OK)
      * Phương thức sử dụng để tìm kiếm kết hợp xổ danh sách film
-     * @author TruongDM
+     * @author ChinhLV
      */
+
     @GetMapping("")
     public ResponseEntity<?> list(@PageableDefault (value = 4) Pageable pageable,@RequestParam(value = "page", defaultValue = "0") int page,
                                   @RequestParam(required = false, defaultValue = "") String search) {
@@ -125,5 +127,15 @@ public class MovieController {
     public ResponseEntity<?> findFilm(@PathVariable Integer idFilm){
         Film film = movieService.findById(idFilm).get();
         return new ResponseEntity<>(film,HttpStatus.OK);
+    }
+    @GetMapping("/list-upcoming")
+    public ResponseEntity<?> getAllFilmsUpcoming() {
+        LocalDate now = LocalDate.now();
+        return new ResponseEntity<>(movieService.findFilmsUpcoming(now), HttpStatus.OK);
+    }
+    @GetMapping("/list-playing")
+    public ResponseEntity<?> getAllFilmsPlaying() {
+        LocalDate now = LocalDate.now();
+        return new ResponseEntity<>(movieService.findFilmsPlaying(now, now), HttpStatus.OK);
     }
 }

@@ -42,10 +42,6 @@ public class Film {
     @JoinColumn(name = "id_type_film")
     private TypeFilm typeFilm;
 
-//    @ManyToOne
-//    @JoinColumn(name = "id_show_time")
-//    private ShowTime showTime;
-
     public Film() {
     }
 
