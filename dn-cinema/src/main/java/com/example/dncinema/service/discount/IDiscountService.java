@@ -35,7 +35,7 @@ public interface IDiscountService {
      */
 
     Discount findDiscountById(int idDiscount);
-
+    boolean delete(int id);
     /**
      * Create by: HoangPT,
      * Date create : 24/05/2023

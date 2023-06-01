@@ -12,12 +12,12 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.time.LocalDate;
+import java.util.List;
+
 @Repository
 public interface IDiscountRepository extends JpaRepository<Discount, Integer> {
     @Query(value = "SELECT * FROM Discount WHERE name_discount like concat('%',:name,'%') and is_deleted = false order by id_discount asc", nativeQuery = true)
     Page<Discount> searchName(@Param("name") String name, Pageable pageable);
-
-//    Discount findById(Long id);
     /**
      * Create by: HoangPT,
      * Date create : 24/05/2023
@@ -31,14 +31,14 @@ public interface IDiscountRepository extends JpaRepository<Discount, Integer> {
      */
     @Transactional
     @Modifying
-    @Query(value = "insert into discount(name_discount, date_start,date_end,img, describe_discount, percent_discount) " +
-            "values (:nameDiscount,:dateStart,:dateEnd,:img,:describeDiscount,:percentDiscount)",
+    @Query(value = "insert into discount(name_discount, date_start,date_end,image_discount, describe_discount, percent_discount) " +
+            "values (:nameDiscount,:dateStart,:dateEnd,:imageDiscount,:describeDiscount,:percentDiscount)",
             nativeQuery = true)
     void createDiscount(
             @Param("nameDiscount") String nameDiscount,
             @Param("dateStart") String dateStart,
             @Param("dateEnd") String dateEnd,
-            @Param("img") String img,
+            @Param("imageDiscount") String imageDiscount,
             @Param("describeDiscount") String describeDiscount,
             @Param("percentDiscount") Double percentDiscount
     );
@@ -50,7 +50,7 @@ public interface IDiscountRepository extends JpaRepository<Discount, Integer> {
      *
      * @param idDiscount
      */
-    @Query(value = "select id_discount, name_discount, date_start,date_end,img, describe_discount, percent_discount,is_deleted " +
+    @Query(value = "select id_discount, name_discount, date_start,date_end,image_discount, describe_discount, percent_discount,is_deleted " +
             "from discount where id_discount = :idDiscount", nativeQuery = true)
     Discount findDiscountById(int idDiscount);
 
@@ -72,7 +72,7 @@ public interface IDiscountRepository extends JpaRepository<Discount, Integer> {
             "name_discount = :nameDiscount," +
             "date_start = :dateStart," +
             "date_end = :dateEnd," +
-            "img=:img,"+
+            "image_discount=:imageDiscount,"+
             "describe_discount = :describeDiscount," +
             "percent_discount = :percentDiscount" +
             " WHERE id_discount = :idDiscount",
@@ -82,8 +82,9 @@ public interface IDiscountRepository extends JpaRepository<Discount, Integer> {
             @Param("nameDiscount") String nameDiscount,
             @Param("dateStart") String dateStart,
             @Param("dateEnd") String dateEnd,
-            @Param("img") String img,
+            @Param("imageDiscount") String imageDiscount,
             @Param("describeDiscount") String describeDiscount,
             @Param("percentDiscount") Double percentDiscount
     );
+
 }

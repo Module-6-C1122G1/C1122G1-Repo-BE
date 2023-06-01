@@ -2,6 +2,7 @@ package com.example.dncinema.controller.discount;
 
 import com.example.dncinema.dto.discount.DiscountDTO;
 import com.example.dncinema.model.Discount;
+import com.example.dncinema.repository.discount.IDiscountRepository;
 import com.example.dncinema.service.discount.IDiscountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -12,7 +13,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
 import java.time.LocalDate;
 
@@ -22,6 +22,8 @@ import java.time.LocalDate;
 public class DiscountController {
     @Autowired
     private IDiscountService discountService;
+    @Autowired
+    private IDiscountRepository discountRepository;
 
     /**
      * Create: TuanLT.
@@ -44,23 +46,30 @@ public class DiscountController {
      * @param id "Tìm kiếm id của 1 khuyến mãi và xóa nó".
      */
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> delete(@PathVariable("id") int id) {
+        if (!discountRepository.existsById(id)) {
+            return new ResponseEntity<>("ID không tồn tại!", HttpStatus.NOT_FOUND);
+        }
+        discountService.delete(id);
+        return new ResponseEntity<>("Xóa thành công!", HttpStatus.OK);
 //    @DeleteMapping("")
 //    @ResponseStatus(HttpStatus.OK)
 //    public void delete(@RequestParam(required = false) Long id) {
 //        discountService.delete(id);
-//    }
+    }
 
     /**
      * Create by: HoangPT,
      * Date create : 24/05/2023
      * Function : Add new discount
      *
-     * @Param("nameDiscount") String nameDiscount,
-     * @Param("dateStart") LocalDate dateStart,
-     * @Param("dateEnd") LocalDate dateEnd,
-     * @Param("describeDiscount") String describeDiscount,
-     * @Param("percentDiscount") Double percentDiscount
-     * @Return if has errors then return HttpStatus.Not_FOUND else add data into Database
+     * @Param String nameDiscount,
+     * @Param LocalDate dateStart,
+     * @Param LocalDate dateEnd,
+     * @Param String describeDiscount,
+     * @Param Double percentDiscount
+     * @Return if has errors then return HttpStatus.BAD_REQUEST else add data into Database
      */
     @PostMapping(value = "/create")
     public ResponseEntity<?> createDiscount(@Valid @RequestBody DiscountDTO discountDTO, BindingResult bindingResult) {
@@ -69,7 +78,7 @@ public class DiscountController {
             return new ResponseEntity<>(bindingResult.getAllErrors(), HttpStatus.BAD_REQUEST);
         }
         discountService.createDiscount(discountDTO.getNameDiscount(), discountDTO.getDateStart(),
-                discountDTO.getDateEnd(), discountDTO.getImg(),discountDTO.getDescribeDiscount(),  discountDTO.getPercentDiscount());
+                discountDTO.getDateEnd(), discountDTO.getImageDiscount(),discountDTO.getDescribeDiscount(),  discountDTO.getPercentDiscount());
         return new ResponseEntity<>(HttpStatus.OK);
     }
     /**
@@ -93,26 +102,25 @@ public class DiscountController {
      * Function: edit discount data if ID is not found then return HttpStatus.NOT_FOUND,
      * if found ID then edit data in DB and return HttpStatus.OK
      *
-     * @Param("idDiscount") Integer idDiscount
-     * @Param("nameDiscount") String nameDiscount
-     * @Param("dateStart") LocalDate dateStart
-     * @Param("dateEnd") LocalDate dateEnd
-     * @Param("describeDiscount") String describeDiscount
-     * @Param("percentDiscount") String percentDiscount
+     * @Param Integer idDiscount
+     * @Param String nameDiscount
+     * @Param LocalDate dateStart
+     * @Param LocalDate dateEnd
+     * @Param String describeDiscount
+     * @Param String percentDiscount
      */
     @PutMapping("/update/{idDiscount}")
-    public ResponseEntity<?> updateDiscount(@PathVariable Integer idDiscount ,@Valid @RequestBody DiscountDTO discountDTO, BindingResult bindingResult) {
+    public ResponseEntity<?> updateDiscount(@Valid @RequestBody DiscountDTO discountDTO, BindingResult bindingResult) {
         new DiscountDTO().validate(discountDTO,bindingResult);
-        discountDTO.setIdDiscount(idDiscount);
         if (bindingResult.hasErrors()) {
             return new ResponseEntity<>(bindingResult.getAllErrors(), HttpStatus.BAD_REQUEST);
         }
-        Discount discount=discountService.findDiscountById(idDiscount);
+        Discount discount=discountService.findDiscountById(discountDTO.getIdDiscount());
         if (discount==null){
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         discountService.updateDiscount(discountDTO.getIdDiscount(),discountDTO.getNameDiscount(), discountDTO.getDateStart(),
-                discountDTO.getDateEnd(), discountDTO.getImg(),discountDTO.getDescribeDiscount(), discountDTO.getPercentDiscount());
+                discountDTO.getDateEnd(), discountDTO.getImageDiscount(),discountDTO.getDescribeDiscount(), discountDTO.getPercentDiscount());
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

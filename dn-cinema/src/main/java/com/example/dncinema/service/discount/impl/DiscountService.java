@@ -46,22 +46,25 @@ public class DiscountService implements IDiscountService {
      * Date: 24/05/2023.
      * @param id "Tham số id - Nhằm tìm kiếm id của khuyến mãi mà người dùng muốn xóa".
      */
-//    @Override
-//    public void delete(Long id) {
-//        Discount discount = discountRepository.findById(id);
-//        discount.setDeleted(true);
-//        discountRepository.save(discount);
-//    }
+    @Override
+    public boolean delete(int id) {
+        try {
+            discountRepository.deleteById(id);
+        } catch (IllegalArgumentException e) {
+            return false;
+        }
+        return true;
+    }
     /**
      * Create by: HoangPT,
      * Date create : 24/05/2023
      * Function : Add new discount
      *
-     * @Param("nameDiscount") String nameDiscount,
-     * @Param("dateStart") LocalDate dateStart,
-     * @Param("dateEnd") LocalDate dateEnd,
-     * @Param("describeDiscount") String describeDiscount,
-     * @Param("percentDiscount") Double percentDiscount
+     * @Param String nameDiscount,
+     * @Param LocalDate dateStart,
+     * @Param LocalDate dateEnd,
+     * @Param String describeDiscount,
+     * @Param Double percentDiscount
      */
     @Override
     public void createDiscount(String nameDiscount, String dateStart, String dateEnd,String img, String describeDiscount, Double percentDiscount) {
@@ -83,12 +86,12 @@ public class DiscountService implements IDiscountService {
      * Date create : 24/05/2023
      * Function : Edit information a discount in database
      *
-     * @Param("idDiscount") Integer idDiscount
-     * @Param("nameDiscount") String nameDiscount
-     * @Param("dateStart") LocalDate dateStart
-     * @Param("dateEnd") LocalDate dateEnd
-     * @Param("describeDiscount") String describeDiscount
-     * @Param("percentDiscount") String percentDiscount
+     * @Param Integer idDiscount
+     * @Param String nameDiscount
+     * @Param LocalDate dateStart
+     * @Param LocalDate dateEnd
+     * @Param String describeDiscount
+     * @Param String percentDiscount
      */
     @Override
     public void updateDiscount(Integer idDiscount, String nameDiscount, String dateStart, String dateEnd,String img, String describeDiscount, Double percentDiscount) {

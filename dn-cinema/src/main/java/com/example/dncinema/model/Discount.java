@@ -14,39 +14,28 @@ public class Discount {
     private Integer idDiscount;
     @Column(name = "name_discount", columnDefinition = "varchar(255)")
     private String nameDiscount;
-    @Column(name = "date_start", columnDefinition = "varchar(255)")
+    @Column(name = "image_discount", columnDefinition = "varchar(1000)")
+    private String imageDiscount;
+    @Column(name = "date_start", columnDefinition = "date")
     private String dateStart;
-    @Column(name = "date_end", columnDefinition = "varchar(255)")
+    @Column(name = "date_end", columnDefinition = "date")
     private String dateEnd;
-    @Column(name = "img", columnDefinition = "varchar(255)")
-    private String img;
     @Column(name = "describe_discount", columnDefinition = "varchar(255)")
     private String describeDiscount;
     @Column(name = "percent_discount")
     private Double percentDiscount;
-
-
     @Column(columnDefinition = "boolean default false")
     private boolean isDeleted;
 
     public Discount() {
     }
 
-    public Discount(Integer idDiscount, String nameDiscount, String dateStart, String dateEnd, String describeDiscount, Double percentDiscount, boolean isDeleted) {
-        this.idDiscount = idDiscount;
-        this.nameDiscount = nameDiscount;
-        this.dateStart = dateStart;
-        this.dateEnd = dateEnd;
-        this.describeDiscount = describeDiscount;
-        this.percentDiscount = percentDiscount;
-        this.isDeleted = isDeleted;
-    }
 
     public Integer getIdDiscount() {
         return idDiscount;
     }
 
-    public void setIdDiscount(Integer idDiscount) {
+    public void setIdDiscount(int idDiscount) {
         this.idDiscount = idDiscount;
     }
 
@@ -56,6 +45,14 @@ public class Discount {
 
     public void setNameDiscount(String nameDiscount) {
         this.nameDiscount = nameDiscount;
+    }
+
+    public String getImageDiscount() {
+        return imageDiscount;
+    }
+
+    public void setImageDiscount(String imageDiscount) {
+        this.imageDiscount = imageDiscount;
     }
 
     public String getDateStart() {
@@ -92,14 +89,6 @@ public class Discount {
 
     public boolean isDeleted() {
         return isDeleted;
-    }
-
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
     }
 
     public void setDeleted(boolean deleted) {
