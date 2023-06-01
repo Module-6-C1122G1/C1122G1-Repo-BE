@@ -107,11 +107,10 @@ public class TicketService implements ITicketService {
 
     @Override
     public Page<ListTicketDTO> findAllTicket(String search, Pageable pageable) {
-        return null;
+        return iTicketRepository.find_list_ticket(search, pageable);
     }
-
     @Override
     public void cancelTicket(Integer id) {
-
+        iTicketRepository.cancelTicket(id);
     }
 }
