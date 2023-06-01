@@ -1,5 +1,4 @@
 package com.example.dncinema.config;
-
 import com.example.dncinema.security.jwt.JwtTokenFilter;
 import com.example.dncinema.security.userPrincipal.UserDetailService;
 import org.springframework.context.annotation.Bean;
@@ -57,7 +56,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         httpSecurity.cors().and()
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/api/public/**").permitAll()
+                .antMatchers("/api/public/**","/api/user/ticket/create/**").permitAll()
                 .antMatchers("/api/user/**").hasAnyAuthority("USER","EMPLOYEE", "ADMIN")
                 .antMatchers("/api/employee/**").hasAnyAuthority("EMPLOYEE", "ADMIN")
                 .antMatchers("/api/admin/**").hasAuthority("ADMIN")
@@ -69,3 +68,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         httpSecurity.addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 }
+
