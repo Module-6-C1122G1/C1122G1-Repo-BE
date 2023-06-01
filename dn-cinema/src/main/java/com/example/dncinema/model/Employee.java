@@ -34,8 +34,6 @@ public class Employee {
     @Column(name = "identity_card", columnDefinition = "varchar(255)")
     private String identityCard;
 
-
-
     private Boolean isDelete = false;
 
     @OneToOne
@@ -51,6 +49,7 @@ public class Employee {
         this.phone = phone;
         this.address = address;
         this.gender = gender;
+        this.dateOfBirth = dateOfBirth;
         this.imgEmployee = imgEmployee;
         this.email = email;
         this.identityCard = identityCard;

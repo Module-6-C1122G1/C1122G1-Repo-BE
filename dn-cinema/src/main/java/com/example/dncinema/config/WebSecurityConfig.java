@@ -1,5 +1,4 @@
 package com.example.dncinema.config;
-
 import com.example.dncinema.security.jwt.JwtTokenFilter;
 import com.example.dncinema.security.userPrincipal.UserDetailService;
 import org.springframework.context.annotation.Bean;
@@ -69,3 +68,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         httpSecurity.addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 }
+
