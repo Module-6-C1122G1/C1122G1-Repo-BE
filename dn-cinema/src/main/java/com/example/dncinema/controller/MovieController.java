@@ -6,6 +6,7 @@ import com.example.dncinema.service.movie.IMovieService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
@@ -13,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,11 +31,12 @@ public class MovieController {
      * @param search
      * @return ResponseEntity<>(films,HttpStatus.OK)
      * Phương thức sử dụng để tìm kiếm kết hợp xổ danh sách film
-     * @author TruongDM
+     * @author ChinhLV
      */
     @GetMapping
-    public ResponseEntity<?> findAllFilm(@PageableDefault(size = 4) Pageable pageable,
+    public ResponseEntity<?> findAllFilm(@PageableDefault(size = 8) Pageable pageable,@RequestParam(defaultValue = "0") int page,
                                          @RequestParam(required = false, defaultValue = "") String search) {
+        pageable = PageRequest.of(page, 8);
         Page<Film> films = movieService.findAllFilm(search, pageable);
         if (films.isEmpty()) {
             return new ResponseEntity<>(films, HttpStatus.BAD_REQUEST);
@@ -123,5 +126,15 @@ public class MovieController {
     public ResponseEntity<?> findFilm(@PathVariable Integer id){
         Film film = movieService.findFilmById(id);
         return new ResponseEntity<>(film,HttpStatus.OK);
+    }
+    @GetMapping("/list-upcoming")
+    public ResponseEntity<?> getAllFilmsUpcoming() {
+        LocalDate now = LocalDate.now();
+        return new ResponseEntity<>(movieService.findFilmsUpcoming(now), HttpStatus.OK);
+    }
+    @GetMapping("/list-playing")
+    public ResponseEntity<?> getAllFilmsPlaying() {
+        LocalDate now = LocalDate.now();
+        return new ResponseEntity<>(movieService.findFilmsPlaying(now, now), HttpStatus.OK);
     }
 }
