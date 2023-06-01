@@ -42,9 +42,9 @@ public class Film {
     @JoinColumn(name = "id_type_film")
     private TypeFilm typeFilm;
 
-//    @ManyToOne
-//    @JoinColumn(name = "id_show_time")
-//    private ShowTime showTime;
+    @ManyToOne
+    @JoinColumn(name = "id_show_time")
+    private ShowTime showTime;
 
     public Film() {
     }
@@ -66,6 +66,14 @@ public class Film {
         this.nation = nation;
         this.movieLabel = movieLabel;
         this.typeFilm = typeFilm;
+    }
+
+    public ShowTime getShowTime() {
+        return showTime;
+    }
+
+    public void setShowTime(ShowTime showTime) {
+        this.showTime = showTime;
     }
 
     public Integer getIdFilm() {

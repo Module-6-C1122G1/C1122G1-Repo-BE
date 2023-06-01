@@ -1,5 +1,6 @@
 package com.example.dncinema.controller;
 
+import com.example.dncinema.dto.FilmDTO;
 import com.example.dncinema.model.ShowTime;
 import com.example.dncinema.model.TypeFilm;
 import com.fasterxml.jackson.databind.ObjectMapper;
