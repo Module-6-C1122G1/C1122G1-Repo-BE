@@ -54,6 +54,11 @@ public class MovieService implements IMovieService {
         return movieRepository.findAllListFilm();
     }
 
+    @Override
+    public void deleteFilm(Integer id) {
+        movieRepository.deleteById(id);
+    }
+
 
 }
 
