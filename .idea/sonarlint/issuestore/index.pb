@@ -21,8 +21,6 @@ Jdn-cinema/src/main/java/com/example/dncinema/security/jwt/JwtProvider.java,3\6
 Mdn-cinema/src/main/java/com/example/dncinema/security/jwt/JwtTokenFilter.java,d\d\dde873017f62ddee5422f7e2e3a244a3f1ae04a5
 o
 ?dn-cinema/src/main/java/com/example/dncinema/config/Config.java,2\6\2608288848978c427c3b04b8f44159e62dc66941
-z
-Jdn-cinema/src/main/java/com/example/dncinema/config/WebSecurityConfig.java,e\7\e7bb07c2521d768c7448586815ea5288722941be
 u
 Edn-cinema/src/main/java/com/example/dncinema/DnCinemaApplication.java,6\9\69e80ceb0699eeef6a36083aa3fccea095c90dac
 ‚

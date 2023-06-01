@@ -14,9 +14,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
-@RequestMapping("/api/discount")
+@RequestMapping("/api/public/discount")
 @CrossOrigin("*")
 public class DiscountController {
     @Autowired
@@ -120,4 +121,20 @@ public class DiscountController {
         discountService.delete(id);
         return new ResponseEntity<>("Xóa thành công!", HttpStatus.OK);
     }
+    @GetMapping("")
+    public ResponseEntity<List<Discount>> showListDiscount() {
+        List<Discount> listDiscount = discountService.findAllDiscount();
+        if (listDiscount.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(listDiscount, HttpStatus.OK);
+    }
+//    @GetMapping("/{id}")
+//    public ResponseEntity<Discount> findByIdDiscount(@PathVariable Integer id) {
+//        Discount detailDiscount = discountService.findById(id);
+//        if (detailDiscount == null) {
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//        }
+//        return new ResponseEntity<>(detailDiscount, HttpStatus.OK);
+//    }
 }
