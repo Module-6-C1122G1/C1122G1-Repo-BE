@@ -68,7 +68,6 @@ public class TicketController {
     @PutMapping("/update")
     public ResponseEntity<Map<String, String>> updateTicket(@Validated @RequestBody TicketUpdateDTO ticketUpdateDTO, BindingResult bindingResult) {
         if (!bindingResult.hasErrors()) {
-            ticketUpdateDTO.setIdTicket(ticketUpdateDTO.getIdTicket());
             iTicketService.update(ticketUpdateDTO);
         } else {
             Map<String, String> map = new LinkedHashMap<>();
