@@ -1,5 +1,6 @@
 package com.example.dncinema.service.movie;
 
+import com.example.dncinema.dto.FilmDTO;
 import com.example.dncinema.model.Film;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -11,7 +12,7 @@ import java.util.Optional;
 
 @Service
 public interface IMovieService {
-    Page<Film> findAllFilm(String search, Pageable pageable);
+    Page<FilmDTO> findAllFilm(String search, Pageable pageable);
 
     /**
      * @param id
