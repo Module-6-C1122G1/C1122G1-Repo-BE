@@ -61,11 +61,11 @@ public class TicketManagementController {
      * @return list plus point , status OK
      * @author DongPV
      */
-    @GetMapping("/ticket-customer/plus-point")
-    public ResponseEntity<Page<ITicketManagement>> findAllPlusPoint(@PageableDefault(size = 3) Pageable pageable,@RequestParam("dateStart") String dateStart,@RequestParam("dateEnd") String dateEnd) {
+        @GetMapping("/ticket-customer/plus-point")
+    public ResponseEntity<Page<ICustomerPoint>> findAllPlusPoint(@PageableDefault(size = 3) Pageable pageable,@RequestParam("dateStart") String dateStart,@RequestParam("dateEnd") String dateEnd) {
         LocalDate start = LocalDate.parse(dateStart, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         LocalDate end = LocalDate.parse(dateEnd, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-        Page<ITicketManagement> customerPointDTOS = iTicketManagementService.searchPlusPoint(pageable, start, end);
+        Page<ICustomerPoint> customerPointDTOS = iTicketManagementService.searchPlusPoint(pageable, start, end);
         if (customerPointDTOS.isEmpty()) {
             return new ResponseEntity<>(customerPointDTOS, HttpStatus.NOT_FOUND);
         }

@@ -5,8 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="update">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/ticketManagement/TicketManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/ticketManagement/TicketManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/CustomerPointDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/CustomerPointDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/ICustomerPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/ICustomerPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/ITicketManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/ITicketManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/TicketManagementDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/TicketManagementDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/ITicketManagementRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/ITicketManagementRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/impl/TicketServiceMinh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/impl/TicketServiceMinh.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/tickketManagement/ITicketManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/tickketManagement/ITicketManagementService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/tickketManagement/impl/TicketManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/tickketManagement/impl/TicketManagementService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,7 +263,8 @@
       <workItem from="1685399428214" duration="16253000" />
       <workItem from="1685451758557" duration="27000" />
       <workItem from="1685496348291" duration="669000" />
-      <workItem from="1685497205626" duration="3617000" />
+      <workItem from="1685497205626" duration="6608000" />
+      <workItem from="1685582580606" duration="8680000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1685284085890</created>
@@ -287,7 +301,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/com/example/dncinema/ShowTimeRestController_getAllDateByIdFilm.java</url>
           <line>48</line>
-          <properties class="com.example.dncinema.ShowTimeRestController_getAllDateByIdFilm">
+          <properties class="com.example.dncinema.ShowTimeRestController_getAllDateByIdFilm" method="getAllDateByIdFilm_9">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

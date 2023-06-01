@@ -13,7 +13,7 @@ import java.time.LocalDate;
 
 @Repository
 public interface ITicketManagementRepository extends JpaRepository<TicketManagement, Integer> {
-    @Query(value = "select film.name_film as nameFilm, ticket.id_ticket as idTicket,ticket.date_booking as dateBooking , ticket.price_after_discount as priceAfterDiscount, ticket.status_ticket as statusTicket from customer join " +
+    @Query(value = "select film.name_film as nameFilm,customer.img_customer as imgCustomer , ticket.id_ticket as idTicket,ticket.date_booking as dateBooking , ticket.price_after_discount as priceAfterDiscount, ticket.status_ticket as statusTicket from customer join " +
             "ticket on ticket.id_customer = customer.id_customer join" +
             " seat on ticket.id_seat = seat.id_seat join " +
             "show_time on show_time.id_seat = seat.id_seat join" +
@@ -26,7 +26,7 @@ public interface ITicketManagementRepository extends JpaRepository<TicketManagem
             nativeQuery = true)
     Page<ITicketManagement> findCustomerByTicket(Pageable pageable);
 
-    @Query(value = "select ticket.date_booking as dateBooking, film.name_film as nameFilm, customer.point_customer as pointCustomer from customer " +
+    @Query(value = "select ticket.date_booking as dateBooking,customer.img_customer as imgCustomer, film.name_film as nameFilm, customer.point_customer as pointCustomer from customer " +
             "join ticket on ticket.id_customer = customer.id_customer " +
             "join seat on ticket.id_seat = seat.id_seat " +
             "join show_time on show_time.id_seat = seat.id_seat " +
@@ -39,7 +39,7 @@ public interface ITicketManagementRepository extends JpaRepository<TicketManagem
             nativeQuery = true)
     Page<ICustomerPoint> findAllCustomerPointHistory(Pageable pageable);
 
-    @Query(value = "select ticket.date_booking as dateBooking, film.name_film as nameFilm, customer.point_customer as pointCustomer from customer " +
+    @Query(value = "select ticket.date_booking as dateBooking,customer.img_customer as imgCustomer, film.name_film as nameFilm, customer.point_customer as pointCustomer from customer " +
             "join ticket on ticket.id_customer = customer.id_customer " +
             "join seat on ticket.id_seat = seat.id_seat " +
             "join show_time on show_time.id_seat = seat.id_seat " +
@@ -49,7 +49,7 @@ public interface ITicketManagementRepository extends JpaRepository<TicketManagem
                     "join seat on ticket.id_seat = seat.id_seat " +
                     "join show_time on show_time.id_seat = seat.id_seat " +
                     "join film on film.id_show_time = show_time.id_show_time" ,nativeQuery = true)
-    Page<ITicketManagement> findAllPlusPoint(Pageable pageable,@Param("startDate") LocalDate startDate, @Param("dateEnd")LocalDate dateEnd);
+    Page<ICustomerPoint> findAllPlusPoint(Pageable pageable,@Param("startDate") LocalDate startDate, @Param("dateEnd")LocalDate dateEnd);
 
 
 }

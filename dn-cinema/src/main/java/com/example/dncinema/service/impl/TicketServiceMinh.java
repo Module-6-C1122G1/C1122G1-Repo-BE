@@ -5,6 +5,7 @@ import com.example.dncinema.dto.TicketDTO;
 import com.example.dncinema.model.*;
 import com.example.dncinema.repository.ICustomerRepository;
 import com.example.dncinema.repository.IDiscountRepositoryMinh;
+import com.example.dncinema.repository.IMovieRepository;
 import com.example.dncinema.repository.ITicketRepositoryMinh;
 import com.example.dncinema.repository.seat.ISeatRepository;
 import com.example.dncinema.service.ITicketServiceMinh;
@@ -44,6 +45,8 @@ public class TicketServiceMinh implements ITicketServiceMinh {
     private IDiscountRepositoryMinh iDiscountRepository;
     @Autowired
     private ISeatRepository iSeatRepository;
+    @Autowired
+    private IMovieRepository iMovieRepository;
 
     /**
      * save ticket information to the database
@@ -65,19 +68,30 @@ public class TicketServiceMinh implements ITicketServiceMinh {
         createQR(data, path);
         Ticket ticket;
         Discount discount;
-        if (ticketDTO.getIdDiscount()==null){
-            discount=new Discount();
-        }else {
-            discount = iDiscountRepository.findById(ticketDTO.getIdDiscount()).get();
-        }
+        Film film= iMovieRepository.findFilmById(ticketDTO.getIdFilm());
         for (int i = 0; i < ticketDTO.getListSeat().length; i++) {
 
             Seat seat = iSeatRepository.getByIdSeat(ticketDTO.getListSeat()[i]);
 
             Customer customer = iCustomerRepository.findByIdCustomer(ticketDTO.getIdCustomer());
+            Double price;
+            if (ticketDTO.getIdDiscount() == null) {
+                discount = new Discount();
+                if (seat.getTypeSeat().getIdTypeSeat() == 1) {
+                    price = film.getNormalSeatPrice();
+                } else {
+                    price = film.getVipSeatPrice();
+                }
+            } else {
+                discount = iDiscountRepository.findById(ticketDTO.getIdDiscount()).get();
+                if (seat.getTypeSeat().getIdTypeSeat() == 1) {
+                    price = film.getNormalSeatPrice() - film.getNormalSeatPrice() * discount.getPercentDiscount() / 100;
+                } else {
+                    price = film.getVipSeatPrice() - film.getVipSeatPrice() * discount.getPercentDiscount() / 100;
+                }
+            }
 
-
-            ticket = new Ticket("45", false, ticketDTO.getPrice(), LocalDate.now(), path, false, discount, null, customer, seat);
+            ticket = new Ticket(false, price, LocalDate.now(), path, false, discount, null, customer, seat);
 
             iTicketRepository.save(ticket);
 

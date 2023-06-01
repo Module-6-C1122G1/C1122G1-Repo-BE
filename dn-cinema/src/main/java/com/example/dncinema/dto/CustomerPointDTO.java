@@ -1,11 +1,20 @@
 package com.example.dncinema.dto;
 
 public class CustomerPointDTO {
+    private String imgCustomer;
     private String nameFilm;
     private String dateBooking;
     private String pointCustomer;
 
     public CustomerPointDTO() {
+    }
+
+    public String getImgCustomer() {
+        return imgCustomer;
+    }
+
+    public void setImgCustomer(String imgCustomer) {
+        this.imgCustomer = imgCustomer;
     }
 
     public String getNameFilm() {
