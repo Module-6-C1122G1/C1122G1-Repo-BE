@@ -18,7 +18,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/user")
+@RequestMapping("/api")
 @CrossOrigin("*")
 public class RegisterCustomerController {
     @Autowired
@@ -27,7 +27,7 @@ public class RegisterCustomerController {
     private IAccountUserService accountUserService;
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("")
+    @GetMapping("/user/customer-list")
     public List<Customer> findAll() {
         return customerService.findAll();
     }
@@ -43,7 +43,7 @@ public class RegisterCustomerController {
      */
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/create")
+    @PostMapping("/public/create")
     public ResponseEntity<?> createCustomerAccount(@Valid @RequestBody CustomerDTO customerDTO) {
         if (accountUserService.existByNameAccount(customerDTO.getAccountUser().getNameAccount())) {
             return new ResponseEntity<>(new ResponseMessage("The username existed !!, Try again"), HttpStatus.OK);
@@ -66,7 +66,7 @@ public class RegisterCustomerController {
      * @return
      */
     @ResponseStatus(HttpStatus.OK)
-    @PatchMapping("/{id}")
+    @PatchMapping("/user/{id}")
     public ResponseEntity<?> updateCustomerAccount(@Valid @RequestBody CustomerDTO customerDTO,
                                                    @PathVariable("id") Integer id, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
@@ -88,7 +88,7 @@ public class RegisterCustomerController {
      * @return
      */
     @ResponseStatus(HttpStatus.OK)
-    @PatchMapping("/resetPassword/{id}")
+    @PatchMapping("/user/resetPassword/{id}")
     public ResponseEntity<?> resetPasswordAccount(@Valid @RequestBody AccountUserDTO accountUserDTO, BindingResult bindingResult) {
         if(bindingResult.hasErrors()){
             return new ResponseEntity<>(bindingResult.getAllErrors(),HttpStatus.BAD_REQUEST);

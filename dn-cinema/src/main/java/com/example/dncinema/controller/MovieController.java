@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
+import java.util.List;
 import java.util.Optional;
 
 
@@ -71,36 +72,56 @@ public class MovieController {
         }
         Film film = new Film();
         BeanUtils.copyProperties(filmDTO, film);
-        film.setTypeFilm(filmDTO.getTypeFilm());
+        film.getTypeFilm().setIdTypeFilm(filmDTO.getTypeFilm().getIdTypeFilm());
         movieService.save(film);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        return new ResponseEntity<>(film,HttpStatus.CREATED);
     }
 
-//    /**
-//     * @param filmDTO
-//     * @param idFilm
-//     * @param bindingResult
-//     * @return new ResponseEntity<>
-//     * @author AnhNQ
-//     * @dateCreated 29/05/2023
-//     */
-//    @PutMapping("/${idFilm}")
-//    public ResponseEntity<?> updateFilm(@Valid @RequestBody FilmDTO filmDTO, @PathVariable Integer idFilm, BindingResult bindingResult) {
-//        if (bindingResult.hasErrors()) {
-//            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-//        }
-//        Film film = new Film();
-//        Optional<Film> filmOptional = movieService.findById(idFilm);
-//        BeanUtils.copyProperties(filmOptional, filmDTO);
-//        filmDTO.setIdFilm(idFilm);
-//        BeanUtils.copyProperties(filmDTO, film);
-//        film.setTypeFilm(filmDTO.getTypeFilm());
-//        movieService.save(film);
-//        return new ResponseEntity<>(HttpStatus.OK);
 
-//    @GetMapping("/list")
-//    public ResponseEntity<List<Film>> getAllFilms(){
-//        return new ResponseEntity<>(movieService.findAllListFilm(),HttpStatus.OK);
-//    }
-//    }
+    /**
+     * @param filmDTO
+     * @param id
+     * @param bindingResult
+     * @return new ResponseEntity<>
+     * @author AnhNQ
+     * @dateCreated 29/05/2023
+     */
+    @PutMapping("/{id}")
+    public ResponseEntity<?> updateFilm(@Valid @RequestBody FilmDTO filmDTO, @PathVariable Integer id, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        Film film = new Film();
+        Optional<Film> filmOptional = movieService.findById(id);
+        BeanUtils.copyProperties(filmOptional, filmDTO);
+        filmDTO.setIdFilm(id);
+        BeanUtils.copyProperties(filmDTO, film);
+        film.getTypeFilm().setIdTypeFilm(filmDTO.getTypeFilm().getIdTypeFilm());
+        movieService.save(film);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    /**
+     * @author HaiPH
+     * @return ResponseEntity<>(films,HttpStatus)
+     * @Usage_method Returns all movies in the database
+     */
+    @GetMapping("/list")
+    public ResponseEntity<List<Film>> getAllFilms(){
+        List<Film> films = movieService.findAllListFilm();
+        if(films.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(films,HttpStatus.OK);
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteFilm(@PathVariable Integer id){
+        movieService.deleteFilm(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+    @GetMapping("/{id}")
+    public ResponseEntity<?> findFilm(@PathVariable Integer id){
+        Film film = movieService.findFilmById(id);
+        return new ResponseEntity<>(film,HttpStatus.OK);
+    }
 }

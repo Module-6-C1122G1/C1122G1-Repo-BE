@@ -6,6 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -25,6 +26,7 @@ public interface IMovieService {
     Optional<Film> findById(Integer idFilm);
     void save(Film film);
 
-//    List<Film> findAllListFilm();
+    List<Film> findAllListFilm();
 
+    void deleteFilm(Integer id);
 }

@@ -32,6 +32,7 @@ public class Seat {
     @OneToOne(mappedBy = "seat")
     private Ticket ticket;
 
+
     public Seat() {
     }
 
@@ -41,7 +42,7 @@ public class Seat {
         this.seat = seat;
         this.typeSeat = typeSeat;
         this.showRoom = showRoom;
-        this.showTime=showTime;
+        this.showTime = showTime;
     }
 
     public Ticket getTicket() {
@@ -51,6 +52,7 @@ public class Seat {
     public void setTicket(Ticket ticket) {
         this.ticket = ticket;
     }
+
 
 
     public ShowTime getShowTime() {

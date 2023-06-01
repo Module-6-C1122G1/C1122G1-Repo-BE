@@ -1,10 +1,13 @@
 package com.example.dncinema.dto;
 
+import com.example.dncinema.model.Employee;
+import com.example.dncinema.model.TypeSeat;
+
 public class TicketUpdateDTO {
     private Integer idTicket;
     private Integer idCustomer;
     private Integer idSeat;
-
+    private String nameTypeSeat;
 
     public TicketUpdateDTO() {
     }
@@ -32,4 +35,13 @@ public class TicketUpdateDTO {
     public void setIdSeat(Integer idSeat) {
         this.idSeat = idSeat;
     }
+
+    public String getNameTypeSeat() {
+        return nameTypeSeat;
+    }
+
+    public void setNameTypeSeat(String nameTypeSeat) {
+        this.nameTypeSeat = nameTypeSeat;
+    }
+
 }
