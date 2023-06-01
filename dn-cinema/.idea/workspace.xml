@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ea71894-c5e1-4166-ae78-ea6a74cca2f1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
@@ -243,7 +244,9 @@
       <workItem from="1684977356415" duration="6255000" />
       <workItem from="1685022471409" duration="7052000" />
       <workItem from="1685064855243" duration="13499000" />
-      <workItem from="1685411127025" duration="18401000" />
+      <workItem from="1685411127025" duration="19085000" />
+      <workItem from="1685496872021" duration="4878000" />
+      <workItem from="1685582499295" duration="1817000" />
     </task>
     <servers />
   </component>

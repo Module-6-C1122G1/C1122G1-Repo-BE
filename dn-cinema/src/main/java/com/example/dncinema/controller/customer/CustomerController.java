@@ -1,12 +1,8 @@
 package com.example.dncinema.controller.customer;
 
-import com.example.dncinema.dto.CustomerDTO;
 import com.example.dncinema.model.Customer;
 import com.example.dncinema.service.customer.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -48,6 +44,7 @@ public class CustomerController {
      * @return ResponseEntity<Customer>;
      * @author ThanhNV
      */
+
     @GetMapping("/{id}")
     public ResponseEntity<Customer> findByCustomerId(@PathVariable Integer id) {
         Customer customer = customerService.findById(id);
@@ -56,7 +53,6 @@ public class CustomerController {
         }
         return new ResponseEntity<>(customer, HttpStatus.OK);
     }
-
 
     /**
      * Created by: ThanhNV

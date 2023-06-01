@@ -32,12 +32,9 @@ public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
     /**
      * @param idCustomer
      * @param nameCustomer
-     * @param gender
      * @param address
      * @param email
      * @param phone
-     * @param pointCustomer
-     * @param typeCustomer
      * @param identityCard
      */
     @Modifying
