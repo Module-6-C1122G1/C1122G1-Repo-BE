@@ -94,7 +94,7 @@ public class TicketController {
      */
 
     @GetMapping("/list")
-    public ResponseEntity<Page<IListTicketDTO>> findAllTicket(@PageableDefault(size = 2) Pageable pageable,
+    public ResponseEntity<Page<IListTicketDTO>> findAllTicket(@PageableDefault(size = 5) Pageable pageable,
                                            @RequestParam(required = false, defaultValue = "") String search) {
         Page<IListTicketDTO> tickets = iTicketService.findAllTicket(pageable, search);
         if (tickets.isEmpty()) {

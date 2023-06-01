@@ -15,6 +15,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 /**
  * @author ChinhLV
@@ -34,7 +35,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public JwtTokenFilter jwtTokenFilter() {
         return new JwtTokenFilter();
     }
-
     @Override
     public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
         authenticationManagerBuilder.userDetailsService(userDetailService).passwordEncoder(passwordEncoder());
