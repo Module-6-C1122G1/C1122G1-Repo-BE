@@ -218,6 +218,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Gradle.MovieRestController_getAllFilms" />
+      <item itemvalue="Gradle.SeatRestController_getAllListSeatByIdRoom" />
+      <item itemvalue="Gradle.SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_11" />
+      <item itemvalue="Gradle.SeatRestController_getAllListSeatByIdRoom.getAllListSeatByIdRoom_9" />
+      <item itemvalue="Gradle.ShowTimeRestController_getAllDateByIdFilm.getAllDateByIdFilm_11" />
+      <item itemvalue="Spring Boot.DnCinemaApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.ShowTimeRestController_getAllDateByIdFilm.getAllDateByIdFilm_11" />
