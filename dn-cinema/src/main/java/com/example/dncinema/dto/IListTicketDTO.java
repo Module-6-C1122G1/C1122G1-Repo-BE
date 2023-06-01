@@ -4,10 +4,7 @@ import java.time.LocalDate;
 
 public interface IListTicketDTO {
     Integer getIdTicket();
-
-    Boolean getIsDelete();
-
-    String getCodeTicket();
+    Boolean getDelete();
 
     Boolean getStatusTicket();
 
