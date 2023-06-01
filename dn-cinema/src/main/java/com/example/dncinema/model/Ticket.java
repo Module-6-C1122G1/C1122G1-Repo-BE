@@ -45,19 +45,17 @@ public class Ticket {
 
     @Column(name = "id_ticket")
     private Integer idTicket;
-    @Column(name = "code_ticket")
-    private String codeTicket;
     @Column(name = "status_ticket")
     private boolean statusTicket;
     @Column(name = "price_after_discount")
-    private long priceAfterDiscount;
+    private Double priceAfterDiscount;
     @Column(name = "date_booking", columnDefinition = "date")
     private LocalDate dateBooking;
     @Column(name = "id_qr")
     private String idQr;
     @Column(name = "is_delete")
     private Boolean isDelete;
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "id_discount")
     private Discount discount;
 
@@ -77,8 +75,7 @@ public class Ticket {
     }
 
 
-    public Ticket(String codeTicket, Boolean statusTicket, long priceAfterDiscount, LocalDate dateBooking, String idQr,Boolean isDelete, Discount discount, Employee employee, Customer customer, Seat seat) {
-        this.codeTicket = codeTicket;
+    public Ticket( Boolean statusTicket, Double priceAfterDiscount, LocalDate dateBooking, String idQr,Boolean isDelete, Discount discount, Employee employee, Customer customer, Seat seat) {
         this.statusTicket = statusTicket;
         this.priceAfterDiscount = priceAfterDiscount;
         this.dateBooking = dateBooking;
@@ -91,7 +88,7 @@ public class Ticket {
     }
 
 
-    public Ticket(Integer idTicket, Boolean statusTicket, Long priceAfterDiscount, LocalDate dateBooking, String idQr, Boolean isDelete, Discount discount, Employee employee, Customer customer, Seat seat) {
+    public Ticket(Integer idTicket, Boolean statusTicket, Double priceAfterDiscount, LocalDate dateBooking, String idQr, Boolean isDelete, Discount discount, Employee employee, Customer customer, Seat seat) {
         this.idTicket = idTicket;
         this.statusTicket = statusTicket;
         this.priceAfterDiscount = priceAfterDiscount;
@@ -129,11 +126,11 @@ public class Ticket {
         this.statusTicket = statusTicket;
     }
 
-    public long getPriceAfterDiscount() {
+    public Double getPriceAfterDiscount() {
         return priceAfterDiscount;
     }
 
-    public void setPriceAfterDiscount(long priceAfterDiscount) {
+    public void setPriceAfterDiscount(Double priceAfterDiscount) {
         this.priceAfterDiscount = priceAfterDiscount;
     }
 

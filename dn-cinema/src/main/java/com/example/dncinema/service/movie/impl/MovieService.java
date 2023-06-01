@@ -56,6 +56,11 @@ public class MovieService implements IMovieService {
     }
 
     @Override
+    public void deleteFilm(Integer id) {
+        movieRepository.deleteById(id);
+    }
+
+    @Override
     public List<Film> findFilmsUpcoming(LocalDate localDate) {
         return movieRepository.findFilmsByDateStartFilmGreaterThan(localDate);
     }

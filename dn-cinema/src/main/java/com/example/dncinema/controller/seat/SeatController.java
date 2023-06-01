@@ -21,13 +21,21 @@ public class SeatController {
     /**
      * @author HaiPH
      * @param id
-     * @return ResponseEntity<>(ListSeat, HttpStatus.OK)
+     * @return ResponseEntity<>(seats, HttpStatus)
+     * @Usage_method Returns all seats by idShowTime in the database
      */
     @GetMapping("/{id}")
     public ResponseEntity<List<Seat>> getAllListSeatByIdShowTime(@PathVariable Integer id){
-        return new ResponseEntity<>(seatService.findAllListSeatByIdShowTime(id), HttpStatus.OK);
+        List<Seat> seats = seatService.findAllListSeatByIdShowTime(id);
+        return new ResponseEntity<>(seats, HttpStatus.OK);
     }
 
+    /**
+     * @author HaiPH
+     * @param listId
+     * @return ResponseEntity<>(HttpStatus.OK)
+     * @Usage_method Update available seats to unavailable status
+     */
     @PutMapping("/update_status")
     public ResponseEntity<?> updateStatusSeatByIdShowTime(@RequestBody String[] listId) {
         for (String id : listId) {

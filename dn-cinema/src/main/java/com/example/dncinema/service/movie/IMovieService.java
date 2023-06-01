@@ -28,6 +28,8 @@ public interface IMovieService {
     void save(Film film);
 
     List<Film> findAllListFilm();
+
+    void deleteFilm(Integer id);
     List<Film> findFilmsUpcoming(LocalDate localDate);
     List<Film> findFilmsPlaying(LocalDate localDate, LocalDate localDate2);
 }
