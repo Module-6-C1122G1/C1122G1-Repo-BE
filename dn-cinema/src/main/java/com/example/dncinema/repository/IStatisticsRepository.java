@@ -4,6 +4,7 @@ import com.example.dncinema.dto.StatisticsDTO;
 import com.example.dncinema.model.Ticket;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -14,6 +15,10 @@ public interface IStatisticsRepository extends JpaRepository<Ticket, Integer> {
             "LEFT JOIN show_time ON film.id_film = show_time.id_film\n" +
             "LEFT JOIN seat ON show_time.id_show_time = seat.id_show_time\n" +
             "LEFT JOIN ticket ON seat.id_seat = ticket.id_seat\n" +
-            "GROUP BY film.name_film", nativeQuery = true)
+            "GROUP BY film.name_film\n" +
+            "limit 100", nativeQuery = true)
     List<StatisticsDTO> findCommentSummaryByTitle();
+
+    @Query(value = "select * from statis where namefilm like :namefilm%", nativeQuery = true)
+    StatisticsDTO findStatisticsDTOByNameFilm(@Param("namefilm") String namefilm);
 }

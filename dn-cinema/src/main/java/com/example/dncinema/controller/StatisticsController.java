@@ -7,10 +7,7 @@ import com.example.dncinema.service.IStatisticsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,6 +19,7 @@ public class StatisticsController {
     private IStatisticsService iStatisticsService;
     @Autowired
     private IStatisticsMemberService statisticsMemberService;
+
     /**
      * @author KhaiNLV
      * @body findAllStatisticFilmDTO
@@ -29,6 +27,7 @@ public class StatisticsController {
      * Phương thức sử dụng để thống kê phim
      * Kết quả trả về là 1 object bao gồm: message thành công khi hiển thị danh sách thành công hoặc thất bại
      */
+
     @GetMapping("/film")
     public ResponseEntity<?> findAllStatisticDTO(){
         List<StatisticsDTO> statisticsDTO = iStatisticsService.findCommentSummaryByTitle();
@@ -38,6 +37,7 @@ public class StatisticsController {
         return new ResponseEntity<>(statisticsDTO,HttpStatus.OK);
     }
 
+
     /**
      * @author KhaiNLV
      * @body findAllStatisticMemberDTO
@@ -45,6 +45,7 @@ public class StatisticsController {
      * Phương thức sử dụng để thống kê thành viên
      * Kết quả trả về là 1 object bao gồm: message thành công khi hiển thị danh sách thành công hoặc thất bại
      */
+
     @GetMapping("/member")
 
     public ResponseEntity<?> findAllStatisticMemberDTO(){
@@ -53,6 +54,39 @@ public class StatisticsController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity<>(list,HttpStatus.OK);
+    }
+
+    /**
+     * @author KhaiNLV
+     * @body seachByName
+     * @return return new ResponseEntity<>(statisticsDTO, HttpStatus.OK)
+     * Phương thức sử dụng để tìm kiếm tên phim
+     * Kết quả trả về là 1 object bao gồm: message thành công khi tìm kiếm thành công hoặc thất bại
+     */
+    @GetMapping("/film/search/{filmName}")
+    public ResponseEntity<?> seachByName(@PathVariable String filmName) {
+
+        StatisticsDTO statisticsDTO = iStatisticsService.findStatisticsDTOByNameFilm(filmName);
+        if (statisticsDTO == null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>(statisticsDTO, HttpStatus.OK);
+    }
+    /**
+     * @author KhaiNLV
+     * @body seachByNameMember
+     * @return return new ResponseEntity<>(statisticsDTO, HttpStatus.OK)
+     * Phương thức sử dụng để tìm kiếm tên thành viên
+     * Kết quả trả về là 1 object bao gồm: message thành công khi tìm kiếm thành công hoặc thất bại
+     */
+    @GetMapping("/member/search/{memberName}")
+    public ResponseEntity<?> seachByNameMember(@PathVariable String memberName) {
+
+        StatisticsMemberDTO statisticsDTO = statisticsMemberService.findStatisticsDTOByNameMember(memberName);
+        if (statisticsDTO == null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>(statisticsDTO, HttpStatus.OK);
     }
 
 }

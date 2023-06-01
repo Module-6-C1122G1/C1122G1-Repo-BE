@@ -5,6 +5,7 @@ import com.example.dncinema.dto.TicketDTO;
 import com.example.dncinema.model.*;
 import com.example.dncinema.repository.ICustomerRepository;
 import com.example.dncinema.repository.IDiscountRepositoryMinh;
+import com.example.dncinema.repository.IMovieRepository;
 import com.example.dncinema.repository.ITicketRepositoryMinh;
 import com.example.dncinema.repository.seat.ISeatRepository;
 import com.example.dncinema.service.ITicketServiceMinh;
@@ -44,6 +45,8 @@ public class TicketServiceMinh implements ITicketServiceMinh {
     private IDiscountRepositoryMinh iDiscountRepository;
     @Autowired
     private ISeatRepository iSeatRepository;
+    @Autowired
+    private IMovieRepository iMovieRepository;
 
     /**
      * save ticket information to the database
@@ -60,28 +63,40 @@ public class TicketServiceMinh implements ITicketServiceMinh {
         for (int i = 0; i < ticketDTO.getListSeat().length; i++) {
             seats += ticketDTO.getListSeat()[i].toString() + " ";
         }
+        Film film = iMovieRepository.findFilmById(ticketDTO.getIdFilm());
         String data = "Seat" + " " + seats;
         String path = "C:\\Users\\ADMIN\\Desktop\\du_an_be\\dn-cinema-api\\dn-cinema\\src\\main\\resources\\qr\\QR" + uuid + ".png";
         createQR(data, path);
         Ticket ticket;
         Discount discount;
-        if (ticketDTO.getIdDiscount()==null){
-            discount=new Discount();
-        }else {
-            discount = iDiscountRepository.findById(ticketDTO.getIdDiscount()).get();
-        }
         for (int i = 0; i < ticketDTO.getListSeat().length; i++) {
 
             Seat seat = iSeatRepository.getByIdSeat(ticketDTO.getListSeat()[i]);
 
             Customer customer = iCustomerRepository.findByIdCustomer(ticketDTO.getIdCustomer());
+            Double price;
+            if (ticketDTO.getIdDiscount() == null) {
+                discount = null;
+                if (seat.getTypeSeat().getIdTypeSeat() == 1) {
+                    price = film.getNormalSeatPrice();
+                } else {
+                    price = film.getVipSeatPrice();
+                }
+            } else {
+                discount = iDiscountRepository.findById(ticketDTO.getIdDiscount()).get();
+                if (seat.getTypeSeat().getIdTypeSeat() == 1) {
+                    price = film.getNormalSeatPrice() - film.getNormalSeatPrice() * discount.getPercentDiscount() / 100;
+                } else {
+                    price = film.getVipSeatPrice() - film.getVipSeatPrice() * discount.getPercentDiscount() / 100;
+                }
+            }
 
-
-            ticket = new Ticket("45", false, ticketDTO.getPrice(), LocalDate.now(), path, false, discount, null, customer, seat);
+            ticket = new Ticket(false, price, LocalDate.now(), path, false, discount, null, customer, seat);
 
             iTicketRepository.save(ticket);
 
             setPointCustomer(ticketDTO.getIdCustomer());
+            iSeatRepository.updateStatusSeatSell(ticketDTO.getListSeat()[i]);
 
 //            setTypeCustomer(ticketDTO.getIdCustomer());
         }
@@ -223,7 +238,7 @@ public class TicketServiceMinh implements ITicketServiceMinh {
         vnp_Params.put("vnp_Version", vnp_Version);
         vnp_Params.put("vnp_Command", vnp_Command);
         vnp_Params.put("vnp_TmnCode", vnp_TmnCode);
-        vnp_Params.put("vnp_Amount", String.valueOf(ticketDTO.getPrice()*100));
+        vnp_Params.put("vnp_Amount", String.valueOf(ticketDTO.getPrice() * 100));
         vnp_Params.put("vnp_CurrCode", "VND");
         vnp_Params.put("vnp_BankCode", "NCB");
 
