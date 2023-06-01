@@ -16,4 +16,9 @@ public class StatisticsMemberService implements IStatisticsMemberService {
     public List<StatisticsMemberDTO> findCommentSummaryByTitleMember() {
         return statisticsMemberRepository.findCommentSummaryByTitleMember();
     }
+
+    @Override
+    public StatisticsMemberDTO findStatisticsDTOByNameMember(String membername) {
+        return statisticsMemberRepository.findStatisticsDTOByNameMember(membername);
+    }
 }
