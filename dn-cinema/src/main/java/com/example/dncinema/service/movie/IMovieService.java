@@ -6,6 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,5 +28,6 @@ public interface IMovieService {
     void save(Film film);
 
     List<Film> findAllListFilm();
-
+    List<Film> findFilmsUpcoming(LocalDate localDate);
+    List<Film> findFilmsPlaying(LocalDate localDate, LocalDate localDate2);
 }
