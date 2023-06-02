@@ -21,7 +21,7 @@ public interface IMovieRepository extends JpaRepository<Film, Integer> {
             "join type_film on film.id_type_film = type_film.id_type_film\n" +
             "where name_film like concat('%', :search, '%')", nativeQuery = true)
     Page<Film> findAllFilm(@Param("search") String search,@Param("pageable") Pageable pageable);
-
+    Page<Film> findFilmsByTypeFilm_IdTypeFilm(@Param("id") Integer id, Pageable pageable);
 
     /**
      * @Author QuynhHTN

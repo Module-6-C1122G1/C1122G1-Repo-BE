@@ -23,7 +23,17 @@ public class MovieService implements IMovieService {
 
     @Override
     public Page<Film> findAllFilm(String search, Pageable pageable) {
-        return movieRepository.findAllFilm(search,pageable);
+        return movieRepository.findAllFilm(search, pageable);
+    }
+
+    @Override
+    public Page<Film> findAllFilmSorted(Pageable pageable) {
+        return movieRepository.findAll(pageable);
+    }
+
+    @Override
+    public Page<Film> findFilmsByTypeFilm(int id, Pageable pageable) {
+        return movieRepository.findFilmsByTypeFilm_IdTypeFilm(id, pageable);
     }
 
     /**
