@@ -37,6 +37,7 @@ public class Customer {
     @JoinColumn(name = "id")
     private AccountUser accountUser;
 
+
     public Customer() {
     }
 
