@@ -47,7 +47,7 @@ public interface IEmployeeRepository extends JpaRepository<Employee, Integer> {
      */
     @Modifying
     @Transactional
-    @Query(value = "insert into employee(name_employee , phone , address , gender , date_of_birth , img_employee , email , identity_card , id) values (:name_employee,:phone,:address,:gender ,:date_of_birth , :img_employee , :email , :identity_card , :id)", nativeQuery = true)
+    @Query(value = "insert into employee(name_employee , phone , address , gender , date_of_birth , img_employee , email , identity_card , is_delete , id) values (:name_employee,:phone,:address,:gender ,:date_of_birth , :img_employee , :email , :identity_card , false , :id)", nativeQuery = true)
     void saveEmployee(@Param("name_employee") String nameEmployee
             , @Param("phone") String phone
             , @Param("address") String address
@@ -78,7 +78,7 @@ public interface IEmployeeRepository extends JpaRepository<Employee, Integer> {
      */
     @Modifying
     @Transactional
-    @Query(value = "update employee set name_employee = :name_employee, phone = :phone , address = :address , date_of_birth = :date_of_birth ,gender = :gender,img_employee = :img_employee ,email = :email,identity_card = :identity_card, id = :id WHERE id_employee = :id_employee", nativeQuery = true)
+    @Query(value = "update employee set name_employee = :name_employee, phone = :phone , address = :address , date_of_birth = :date_of_birth ,gender = :gender,img_employee = :img_employee ,email = :email,identity_card = :identity_card, is_delete = false , id = :id WHERE id_employee = :id_employee", nativeQuery = true)
     void updateEmployeeWithAccount(
             @Param("name_employee") String nameEmployee
             , @Param("phone") String phone
