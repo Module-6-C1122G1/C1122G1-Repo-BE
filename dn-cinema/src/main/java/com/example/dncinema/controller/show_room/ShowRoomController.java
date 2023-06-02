@@ -41,7 +41,8 @@ public class ShowRoomController {
      * @author LanhNM
      */
     @GetMapping("/list")
-    public ResponseEntity<?> list(@PageableDefault (value = 2) Pageable pageable,@RequestParam(value = "page", defaultValue = "0") int page,
+    public ResponseEntity<Page<ShowRoomDTO
+            >> list(@PageableDefault (value = 2) Pageable pageable,@RequestParam(value = "page", defaultValue = "0") int page,
                                   @RequestParam(required = false, defaultValue = "") String search) {
         pageable = PageRequest.of(page, 2);
         Page<ShowRoomDTO> listShowRoom = iShowRoomService.findShowRoomByName(pageable, search);
@@ -134,7 +135,6 @@ public class ShowRoomController {
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<ShowRoom> getlByIdShowRoom(@PathVariable Integer id) {
         ShowRoom showRoom = iShowRoomService.getShowRoomById(id);
-        System.out.println(showRoom.getNameShowRoom());
         if (showRoom == null) {
             return  new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }

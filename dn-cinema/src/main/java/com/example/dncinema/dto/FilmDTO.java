@@ -11,29 +11,29 @@ public class FilmDTO {
     private Integer idFilm;
     @NotBlank(message = "Tên phim không được trống")
     private String nameFilm;
-
+    @NotBlank
     private String director;
-
+    @NotBlank
     private String studioFilm;
-
+    @NotBlank
     private String trailer;
-
+    @NotBlank
     private String describeFilm;
-
+    @NotBlank
     private String actor;
-
+    @NotNull
     private Double normalSeatPrice;
-
+    @NotNull
     private Double vipSeatPrice;
     private LocalDate dateStartFilm;
     private LocalDate dateEndFilm;
-
+    @NotBlank
     private String imgFilm;
-
+    @NotNull
     private Integer timeFilm;
-
+    @NotBlank
     private String nation;
-
+    @NotBlank
     private String movieLabel;
     private TypeFilm typeFilm;
 

@@ -22,4 +22,15 @@ public interface ISeatRepositoryLanhNM extends JpaRepository<Seat,Integer> {
     @Query(value = "update seat set id_status_seat = 2 where id_seat = :id", nativeQuery = true)
     void resetStatusSeatByIdShowRoom(@Param("id") Integer id);
     List<Seat> findByShowRoom_IdShowRoom(Integer id);
+
+
+    @Modifying
+    @Transactional
+    @Query(value = "update seat set id_type_seat = 1 where id_seat = :id", nativeQuery = true)
+    void updateTypeSeatVipByIdShowRoom(@Param("id") Integer id);
+
+    @Modifying
+    @Transactional
+    @Query(value = "update seat set id_type_seat = 2 where id_seat = :id", nativeQuery = true)
+    void updateTypeSeatNormalByIdShowRoom(@Param("id") Integer id);
 }

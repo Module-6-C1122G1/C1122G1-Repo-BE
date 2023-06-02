@@ -23,6 +23,19 @@ public class SeatServiceLanhNM implements ISeatServiceLanhNM {
 
     @Override
     public void resetStatusSeatByIdShowRoom(Integer id) {
-        iSeatRepositoryLanhNM.resetStatusSeatByIdShowRoom(id);
+
     }
+
+
+    @Override
+    public void updateTypeSeatVipByIdShowRoom(Integer id) {
+        iSeatRepositoryLanhNM.updateTypeSeatVipByIdShowRoom(id);
+    }
+
+    @Override
+    public void updateTypeSeatNormalByIdShowRoom(Integer id) {
+        iSeatRepositoryLanhNM.updateTypeSeatNormalByIdShowRoom(id);
+    }
+
+
 }

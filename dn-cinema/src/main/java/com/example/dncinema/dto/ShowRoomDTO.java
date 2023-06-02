@@ -15,8 +15,8 @@ public class ShowRoomDTO {
     private String nameShowRoom;
 
     @NotNull
-//    @Min(value = 1,message = "Số lượng ghế không được nhỏ hơn 0 ")
-//    @Max(value = 50,message = "Số lượng ghế không được lớn hơn 50 ")
+    @Min(value = 1,message = "Số lượng ghế không được nhỏ hơn 0 ")
+    @Max(value = 50,message = "Số lượng ghế không được lớn hơn 50 ")
     private Integer quantitySeat;
 
     public ShowRoomDTO() {

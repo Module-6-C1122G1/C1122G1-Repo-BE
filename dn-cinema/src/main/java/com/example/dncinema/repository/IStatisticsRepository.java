@@ -17,6 +17,6 @@ public interface IStatisticsRepository extends JpaRepository<Ticket, Integer> {
             "LEFT JOIN ticket ON seat.id_seat = ticket.id_seat\n" +
             "GROUP BY film.name_film", nativeQuery = true)
     List<StatisticsDTO> findCommentSummaryByTitle();
-    @Query(value = "select * from statis where namefilm like :namefilm%", nativeQuery = true)
-    StatisticsDTO findStatisticsDTOByNameFilm(@Param("namefilm") String namefilm);
+    @Query(value = "select * from statis where namefilm like CONCAT('%', :namefilm, '%')", nativeQuery = true)
+    List<StatisticsDTO> findStatisticsDTOByNameFilm(@Param("namefilm") String namefilm);
 }

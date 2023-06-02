@@ -40,4 +40,20 @@ public class SeatControllerLanhNM {
         }
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @PutMapping("/update_type_vip/{id}")
+    public ResponseEntity<?> updateTypeSeatVipByIdShowRoom(@PathVariable Integer id) {
+
+        iSeatServiceLanhNM.updateTypeSeatVipByIdShowRoom(id);
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PutMapping("/update_type_normal/{id}")
+    public ResponseEntity<?> updateTypeSeatNormalByIdShowRoom(@PathVariable Integer id) {
+
+        iSeatServiceLanhNM.updateTypeSeatNormalByIdShowRoom(id);
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
