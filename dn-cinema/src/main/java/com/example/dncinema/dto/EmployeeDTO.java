@@ -9,11 +9,9 @@ import javax.validation.constraints.Size;
 
 public class EmployeeDTO {
     private Integer idEmployee;
-//    @Pattern(regexp = "^(([a-zA-Z\\\\sÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]*)([a-zA-Z\\\\s\\\\'ÀÁÂÃÈÉÊÌÍÒÓ ÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]*)([a-zA-Z\\\\sÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]))*$", message = "Không chứa kí tự số và kí tự đặc biệt")
     @Size(max = 100)
     @NotBlank(message = "Không được để trống")
     private String nameEmployee;
-//    @Pattern(regexp = "^[+]?[0-9]{1,3}[-\\\\s]?[(]?[0-9]{1,4}[)]?[-\\\\s]?[0-9]{1,4}[-\\\\s]?[0-9]{1,9}$", message = "Nhập không đúng định dạng số điện thoại")
     @NotBlank(message = "Không được để trống")
     private String phone;
     @Pattern(regexp = "^[^!@#$%^&*()+=\\[\\]{};':\"\\\\|.<>?`~]+$", message = "Không chứa kí tự số và kí tự đặc biệt")
