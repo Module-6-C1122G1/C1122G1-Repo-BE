@@ -35,14 +35,15 @@ public class MovieController {
      */
 
     @GetMapping("")
-    public ResponseEntity<?> list(@PageableDefault (value = 4) Pageable pageable,@RequestParam(value = "page", defaultValue = "0") int page,
-                                  @RequestParam(required = false, defaultValue = "") String search) {
-        pageable = PageRequest.of(page, 6);
-        Page<FilmDTO> listFilm = movieService.findAllFilm(search, pageable);
-        if (listFilm.isEmpty()) {
-            return new ResponseEntity<>(listFilm, HttpStatus.BAD_REQUEST);
+    public ResponseEntity<Page<FilmDTO
+            >> list(@PageableDefault (value = 2) Pageable pageable,@RequestParam(value = "page", defaultValue = "0") int page,
+                    @RequestParam(required = false, defaultValue = "") String search) {
+        pageable = PageRequest.of(page, 2);
+        Page<FilmDTO> filmDTOPage = movieService.findAllFilm(pageable, search);
+        if (filmDTOPage.isEmpty()) {
+            return new ResponseEntity<>(filmDTOPage, HttpStatus.BAD_REQUEST);
         }
-        return new ResponseEntity<>(listFilm, HttpStatus.OK);
+        return new ResponseEntity<>(filmDTOPage, HttpStatus.OK);
     }
 
     /**
@@ -84,7 +85,7 @@ public class MovieController {
 
     /**
      * @param filmDTO
-     * @param id
+     * @param idFilm
      * @param bindingResult
      * @return new ResponseEntity<>
      * @author AnhNQ
@@ -102,7 +103,7 @@ public class MovieController {
         BeanUtils.copyProperties(filmDTO, film);
         film.getTypeFilm().setIdTypeFilm(filmDTO.getTypeFilm().getIdTypeFilm());
         movieService.save(film);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(film,HttpStatus.OK);
     }
 
     /**

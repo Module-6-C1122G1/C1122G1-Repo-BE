@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @Service
 public interface IMovieService {
-    Page<FilmDTO> findAllFilm(String search, Pageable pageable);
+    Page<FilmDTO> findAllFilm( Pageable pageable,String search);
 
     /**
      * @param id

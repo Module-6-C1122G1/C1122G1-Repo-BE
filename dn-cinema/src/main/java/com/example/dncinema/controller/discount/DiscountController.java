@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/public/discount")
+@RequestMapping("/api/admin/discount")
 @CrossOrigin("*")
 public class DiscountController {
     @Autowired

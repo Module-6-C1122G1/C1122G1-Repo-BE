@@ -66,4 +66,9 @@ public class ShowRoomService implements IShowRoomService {
         return iShowRoomRepository.findByIdShowRoom(id);
     }
 
+    @Override
+    public List<ShowRoom> getAllShowRoom() {
+        return iShowRoomRepository.findAll();
+    }
+
 }

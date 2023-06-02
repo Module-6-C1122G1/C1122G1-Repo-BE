@@ -28,8 +28,8 @@ public class MovieService implements IMovieService {
 
 
     @Override
-    public Page<FilmDTO> findAllFilm(String search, Pageable pageable) {
-        Page<Film> filmPage = movieRepository.findAllFilm(search, pageable);
+    public Page<FilmDTO> findAllFilm( Pageable pageable,String search) {
+        Page<Film> filmPage = movieRepository.findAllFilm(pageable, search);
         List<FilmDTO> showRoomDTOList = new ArrayList<>();
         FilmDTO filmDTO;
         for (Film film : filmPage) {
