@@ -34,6 +34,7 @@ public class MovieController {
      * Phương thức sử dụng để tìm kiếm kết hợp xổ danh sách film
      * @author ChinhLV
      */
+
     @GetMapping
     public ResponseEntity<?> findAllFilm(@PageableDefault(size = 8) Pageable pageable, @RequestParam(defaultValue = "0") int page,
                                          @RequestParam(value = "sort", defaultValue = "idFilm") String sort, @RequestParam(value = "type_film", defaultValue = "0") int typeFilm) {
@@ -65,7 +66,6 @@ public class MovieController {
         return new ResponseEntity<>(film, HttpStatus.OK);
     }
 
-
     /**
      * @param filmDTO
      * @param bindingResult
@@ -83,27 +83,27 @@ public class MovieController {
         BeanUtils.copyProperties(filmDTO, film);
         film.getTypeFilm().setIdTypeFilm(filmDTO.getTypeFilm().getIdTypeFilm());
         movieService.save(film);
-        return new ResponseEntity<>(film, HttpStatus.CREATED);
+        return new ResponseEntity<>(film,HttpStatus.CREATED);
     }
 
 
     /**
      * @param filmDTO
-     * @param id
+     * @param idFilm
      * @param bindingResult
      * @return new ResponseEntity<>
      * @author AnhNQ
      * @dateCreated 29/05/2023
      */
-    @PutMapping("/{id}")
-    public ResponseEntity<?> updateFilm(@Valid @RequestBody FilmDTO filmDTO, @PathVariable Integer id, BindingResult bindingResult) {
+    @PutMapping("/{idFilm}")
+    public ResponseEntity<?> updateFilm(@Valid @RequestBody FilmDTO filmDTO, @PathVariable Integer idFilm, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         Film film = new Film();
-        Optional<Film> filmOptional = movieService.findById(id);
+        Optional<Film> filmOptional = movieService.findById(idFilm);
         BeanUtils.copyProperties(filmOptional, filmDTO);
-        filmDTO.setIdFilm(id);
+        filmDTO.setIdFilm(idFilm);
         BeanUtils.copyProperties(filmDTO, film);
         film.getTypeFilm().setIdTypeFilm(filmDTO.getTypeFilm().getIdTypeFilm());
         movieService.save(film);
@@ -111,37 +111,33 @@ public class MovieController {
     }
 
     /**
-     * @return ResponseEntity<>(films,HttpStatus)
      * @author HaiPH
+     * @return ResponseEntity<>(films,HttpStatus)
      * @Usage_method Returns all movies in the database
      */
     @GetMapping("/list")
-    public ResponseEntity<List<Film>> getAllFilms() {
+    public ResponseEntity<List<Film>> getAllFilms(){
         List<Film> films = movieService.findAllListFilm();
-        if (films.isEmpty()) {
+        if(films.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-        return new ResponseEntity<>(films, HttpStatus.OK);
+        return new ResponseEntity<>(films,HttpStatus.OK);
     }
-
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteFilm(@PathVariable Integer id) {
+    public ResponseEntity<?> deleteFilm(@PathVariable Integer id){
         movieService.deleteFilm(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<?> findFilm(@PathVariable Integer id) {
-        Film film = movieService.findFilmById(id);
-        return new ResponseEntity<>(film, HttpStatus.OK);
+    @GetMapping("/{idFilm}")
+    public ResponseEntity<?> findFilm(@PathVariable Integer idFilm){
+        Film film = movieService.findById(idFilm).get();
+        return new ResponseEntity<>(film,HttpStatus.OK);
     }
-
     @GetMapping("/list-upcoming")
     public ResponseEntity<?> getAllFilmsUpcoming() {
         LocalDate now = LocalDate.now();
         return new ResponseEntity<>(movieService.findFilmsUpcoming(now), HttpStatus.OK);
     }
-
     @GetMapping("/list-playing")
     public ResponseEntity<?> getAllFilmsPlaying() {
         LocalDate now = LocalDate.now();

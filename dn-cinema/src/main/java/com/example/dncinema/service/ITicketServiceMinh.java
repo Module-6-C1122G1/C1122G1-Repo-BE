@@ -11,4 +11,6 @@ public interface ITicketServiceMinh {
     Discount findDiscount(String nameDiscount);
     String pay(TicketDTO ticketDTO) throws UnsupportedEncodingException;
     void createQR(String data, String path);
+    void setTypeCustomer(Integer idCus);
+    void setPointCustomer(Integer idCus, Integer idTySeat);
 }

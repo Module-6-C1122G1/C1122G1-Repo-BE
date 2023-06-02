@@ -65,6 +65,7 @@ public interface IDiscountRepository extends JpaRepository<Discount, Integer> {
             "from discount where id_discount = :idDiscount", nativeQuery = true)
     Discount findDiscountById(int idDiscount);
 
+
     /**
      * Create by: HoangPT,
      * Date create : 24/05/2023
