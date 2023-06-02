@@ -13,25 +13,19 @@ public class CustomerDTO {
     @Size(min = 4, max = 99, message = "Tên phải có độ dài từ 4 đến 99 ký tự")
     private String nameCustomer;
 
-    @NotNull(message = "không được để trống")
     private LocalDate dateOfBirth;
-    @NotNull(message = "Không được để trống")
     @Min(value = 0, message = "điểm phải lớn hơn 0")
     private Double pointCustomer;
-    @NotBlank(message = "Không được để trống")
     @Pattern(regexp = "^(nam|nữ)$", message = "Giới tính phải là 'nam' hoặc 'nữ'")
     private String gender;
-    @NotBlank(message = "Không được để trống")
     @Pattern(regexp = "^(\\+?84|0)(3[2-9]|5[2689]|7[06-9]|8[1-9]|9[0-9])[0-9]{7}$",
             message = "Số điện thoại không hợp lệ")
     private String phone;
-    @NotBlank(message = "Không được để trống")
     @Size(min = 3, max = 200, message = "địa chỉ phải từ 3 ký tự và không dài quá 200 ký tự")
     private String address;
     @NotBlank(message = "Không được để trống")
     @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", message = "Email không hợp lệ")
     private String email;
-    @NotBlank(message = "Không được để trống")
     @Pattern(regexp = "^\\d{11}$", message = "Số CMND không hợp lệ, bắt buộc phải là 11 chữ số")
     private String identityCard;
     @NotBlank(message = "Không được để trống")

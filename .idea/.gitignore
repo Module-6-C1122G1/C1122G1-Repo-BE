@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+=======
 HELP.md
 .gradle
 build/
@@ -37,3 +47,4 @@ out/
 ### VS Code ###
 .vscode/
 /.idea/
+>>>>>>> a912570b0c717a83d27920ddb223420b8f7de540

@@ -1,6 +1,6 @@
 package com.example.dncinema.repository;
 
-import com.example.dncinema.dto.ListTicketDTO;
+import com.example.dncinema.dto.IListTicketDTO;
 import com.example.dncinema.model.Ticket;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -53,14 +53,36 @@ public interface ITicketRepository extends JpaRepository<Ticket, Integer> {
      * Date create: 24/05/2023
      * @Param id
      * @Return new ResponseEntity<>
-     * @Usage_method  use the delete ticket method to cancel the ticket
+     * @Usage_method use the delete ticket method to cancel the ticket
      */
     @Modifying
     @Transactional
     @Query(value = "update ticket set is_delete = true where id_ticket = :id_ticket", nativeQuery = true)
     void cancelTicket(@Param("id_ticket") Integer id);
 
-    @Query(nativeQuery = true)
-    Page<ListTicketDTO> find_list_ticket(@Param("search") String search, Pageable pageable);
-
+    @Query(value = "SELECT t.id_ticket as idTicket, t.is_delete as isDelete, t.status_ticket as statusTicket, c.id_customer as idCustomer, c.name_customer as nameCustomer, c.phone as phone, c.identity_card as identityCard, f.name_film as nameFilm, st.show_date as showDate, st.show_time as showTime\n" +
+            "FROM ticket t\n" +
+            "JOIN customer c ON t.id_customer = c.id_customer\n" +
+            "JOIN seat s ON t.id_seat = s.id_seat\n" +
+            "JOIN show_time st ON s.id_show_time = st.id_show_time\n" +
+            "JOIN film f ON st.id_film = f.id_film\n" +
+            "WHERE (c.name_customer LIKE CONCAT('%', :search, '%')\n" +
+            "OR c.phone LIKE CONCAT('%', :search, '%')\n" +
+            "OR c.identity_card LIKE CONCAT('%', :search, '%')\n" +
+            "OR f.name_film LIKE CONCAT('%', :search, '%'))\n" +
+            "AND t.is_delete = false\n" +
+            "ORDER BY t.id_ticket",
+            countQuery = "SELECT count(*)\n" +
+                    "FROM ticket t\n" +
+                    "JOIN customer c ON t.id_customer = c.id_customer\n" +
+                    "JOIN seat s ON t.id_seat = s.id_seat\n" +
+                    "JOIN show_time st ON s.id_show_time = st.id_show_time\n" +
+                    "JOIN film f ON st.id_film = f.id_film\n" +
+                    "WHERE (c.name_customer LIKE CONCAT('%', :search, '%')\n" +
+                    "OR c.phone LIKE CONCAT('%', :search, '%')\n" +
+                    "OR c.identity_card LIKE CONCAT('%', :search, '%')\n" +
+                    "OR f.name_film LIKE CONCAT('%', :search, '%'))\n" +
+                    "AND t.is_delete = false\n" +
+                    "ORDER BY t.id_ticket", nativeQuery = true)
+    Page<IListTicketDTO> findAllTicket(Pageable pageable, @Param("search") String search);
 }

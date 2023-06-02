@@ -4,8 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="update">
+    <list default="true" id="643a9c5b-a6b9-4452-be91-d800ca79b37b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/IListTicketDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/show_room/SeatControllerLanhNM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/show_room/SeatControllerLanhNM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/show_room/ShowRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/show_room/ShowRoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/ShowRoomDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/ShowRoomDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/show_room/ISeatRepositoryLanhNM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/show_room/ISeatRepositoryLanhNM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/show_room/ISeatServiceLanhNM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/show_room/ISeatServiceLanhNM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/show_room/impl/SeatServiceLanhNM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/show_room/impl/SeatServiceLanhNM.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/MovieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/TicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/TicketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/ListTicketDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/customerDTO/CustomerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/dto/customerDTO/CustomerDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Film.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Seat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Seat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/model/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/IMovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/IMovieRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/ITicketRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/ITicketRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/movie/IMovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/movie/IMovieService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/movie/impl/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/movie/impl/MovieService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ticket/ITicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ticket/ITicketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ticket/impl/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dncinema/service/ticket/impl/TicketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+>>>>>>> 1c80f0e0c8a424094e2e0bd61c772d5b6b7a7315
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,30 +78,58 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/film/FilmController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/dncinema/repository/film/IFilmRepository.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2QGnxBC818waB1MASIz4gkcr7BH" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+<<<<<<< HEAD
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;d788013c1d5834ba3ba288e3511a87d2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+=======
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/DELL/Downloads/cxxg-spring-boot-junit-5/cxxg-spring-boot-junit-5&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;d788013c1d5834ba3ba288e3511a87d2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+>>>>>>> 1c80f0e0c8a424094e2e0bd61c772d5b6b7a7315
+  }
+}</component>
   <component name="RunManager" selected="Spring Boot.DnCinemaApplication">
     <configuration name="MovieRestController_getAllFilms" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -189,10 +247,10 @@
       <method v="2" />
     </configuration>
     <configuration name="DnCinemaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <module name="dn-cinema.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.dncinema.DnCinemaApplication" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -218,7 +276,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7c58e869-c392-4a88-82ab-530389ef3780" name="Changes" comment="update" />
+      <changelist id="8bde44b2-2a06-4a0a-afb4-b02f7cc2d551" name="Changes" comment="" />
       <created>1684989030611</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -246,12 +304,17 @@
       <workItem from="1685345691096" duration="534000" />
       <workItem from="1685346260840" duration="380000" />
       <workItem from="1685371685880" duration="1960000" />
+<<<<<<< HEAD
       <workItem from="1685399428214" duration="16253000" />
-      <workItem from="1685451758557" duration="27000" />
-      <workItem from="1685496348291" duration="669000" />
-      <workItem from="1685497205626" duration="6608000" />
-      <workItem from="1685582580606" duration="9294000" />
-      <workItem from="1685670791083" duration="514000" />
+      <workItem from="1685496832436" duration="287000" />
+      <workItem from="1685497168543" duration="2314000" />
+      <workItem from="1685582515991" duration="12322000" />
+=======
+      <workItem from="1685399428214" duration="22952000" />
+      <workItem from="1685495892219" duration="1556000" />
+      <workItem from="1685504882141" duration="9305000" />
+      <workItem from="1685581173294" duration="4158000" />
+>>>>>>> 1c80f0e0c8a424094e2e0bd61c772d5b6b7a7315
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1685284085890</created>
@@ -260,7 +323,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685284085890</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update">
+      <created>1685436392666</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685436392666</updated>
+    </task>
+    <task id="LOCAL-00003" summary="update">
+      <created>1685601099576</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1685601099576</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,7 +353,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update" />
@@ -299,17 +375,7 @@
           <line>44</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/dncinema/controller/SecurityController.java</url>
-          <line>118</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo parentTag="org.springframework.data.domain.PageRequest" memberName="size" />
-      </pinned-members>
-    </pin-to-top-manager>
   </component>
 </project>
