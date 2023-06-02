@@ -141,4 +141,16 @@ public class CustomerService implements ICustomerService {
     public Customer findCustomerByEmail(String email) {
         return iCustomerRepository.findCustomersByEmail(email);
     }
+
+    @Override
+    public List<Customer> findAllAndSearch(String nameSearch) {
+        return iCustomerRepository.findAllAndSearch(nameSearch);
+    }
+
+    @Override
+    public void updateCustomer(String nameCustomer, String phone, String address, String email, Integer idCustomer, String identityCard) {
+        iCustomerRepository.updateCustomer(nameCustomer, phone, address, email, idCustomer, identityCard);
+    }
+
+
 }
