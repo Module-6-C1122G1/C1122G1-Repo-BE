@@ -1,12 +1,21 @@
 package com.example.dncinema.dto;
 
 public class TicketManagementDTO {
+    private String imgCustomer;
     private String nameFilm;
     private String dateBooking;
     private String priceAfterDiscount;
     private String statusTicket;
 
     public TicketManagementDTO() {
+    }
+
+    public String getImgCustomer() {
+        return imgCustomer;
+    }
+
+    public void setImgCustomer(String imgCustomer) {
+        this.imgCustomer = imgCustomer;
     }
 
     public String getNameFilm() {
