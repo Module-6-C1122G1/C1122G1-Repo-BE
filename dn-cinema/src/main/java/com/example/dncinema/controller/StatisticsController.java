@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/public/statistics")
+@RequestMapping("/api/admin/statistics")
 @CrossOrigin("*")
 public class StatisticsController {
     @Autowired
@@ -63,10 +63,9 @@ public class StatisticsController {
      * Phương thức sử dụng để tìm kiếm tên phim
      * Kết quả trả về là 1 object bao gồm: message thành công khi tìm kiếm thành công hoặc thất bại
      */
-    @GetMapping("/film/search/{filmName}")
-    public ResponseEntity<?> seachByName(@PathVariable String filmName) {
-
-        StatisticsDTO statisticsDTO = iStatisticsService.findStatisticsDTOByNameFilm(filmName);
+    @GetMapping("/film/search")
+    public ResponseEntity<?> searchByName(@RequestParam(value = "name",defaultValue = "") String name) {
+        List<StatisticsDTO> statisticsDTO = iStatisticsService.findStatisticsDTOByNameFilm(name);
         if (statisticsDTO == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
@@ -79,10 +78,10 @@ public class StatisticsController {
      * Phương thức sử dụng để tìm kiếm tên thành viên
      * Kết quả trả về là 1 object bao gồm: message thành công khi tìm kiếm thành công hoặc thất bại
      */
-    @GetMapping("/member/search/{memberName}")
-    public ResponseEntity<?> seachByNameMember(@PathVariable String memberName) {
+    @GetMapping("/member/search")
+    public ResponseEntity<?> searchByNameMember(@RequestParam(value = "name",defaultValue = "") String nameMember) {
 
-        StatisticsMemberDTO statisticsDTO = statisticsMemberService.findStatisticsDTOByNameMember(memberName);
+        List<StatisticsMemberDTO> statisticsDTO = statisticsMemberService.findStatisticsDTOByNameMember(nameMember);
         if (statisticsDTO == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }

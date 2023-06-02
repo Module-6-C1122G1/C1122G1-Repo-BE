@@ -8,4 +8,8 @@ public interface ISeatServiceLanhNM {
     List<Seat> findAllListSeatByIdShowRoom(Integer id);
     void updateStatusSeatByIdShowRoom(Integer id);
     void resetStatusSeatByIdShowRoom(Integer id);
+
+    void updateTypeSeatVipByIdShowRoom(Integer id);
+
+    void updateTypeSeatNormalByIdShowRoom(Integer id);
 }

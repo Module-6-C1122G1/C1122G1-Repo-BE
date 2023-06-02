@@ -1,7 +1,9 @@
 package com.example.dncinema.controller.customer;
 
 import com.example.dncinema.model.Customer;
+import com.example.dncinema.model.Ticket;
 import com.example.dncinema.service.customer.ICustomerService;
+import com.example.dncinema.service.ticket.ITicketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,11 +13,13 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/customer")
+@RequestMapping("/api/employee/customer")
 public class CustomerController {
 
     @Autowired
     private ICustomerService customerService;
+    @Autowired
+    private ITicketService iTicketService;
 
     /**
      * @return a Page object containing the requested subset of customers.
@@ -70,5 +74,12 @@ public class CustomerController {
         customerService.updateCustomer(customer.getNameCustomer(),
                 customer.getPhone(), customer.getAddress(), customer.getEmail(), customer.getIdCustomer(), customer.getIdentityCard());
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @GetMapping("/detail/{id}")
+    public ResponseEntity<?> detailCustomer(@PathVariable Integer id){
+        Ticket ticket = iTicketService.findTicketById(id);
+        Customer customer = customerService.findById(ticket.getCustomer().getIdCustomer());
+        return new ResponseEntity<>(customer, HttpStatus.OK);
     }
 }
