@@ -105,6 +105,8 @@ public class CustomerService implements ICustomerService {
         AccountUser accountUser = iAccountUserRepository
                 .findAccountUserByNameAccount(customerDTO.getAccountUser().getNameAccount());
         Customer customer = iCustomerRepository.findByIdCustomer(id);
+        iAccountUserRepository.updateAccount(customerDTO.getAccountUser().getNameAccount()
+                , passwordEncoder.encode(customerDTO.getAccountUser().getPasswordAccount()), accountUser.getId());
         BeanUtils.copyProperties(customerDTO, customer);
         iCustomerRepository.updateCustomerAccount(
                 customerDTO.getNameCustomer(),

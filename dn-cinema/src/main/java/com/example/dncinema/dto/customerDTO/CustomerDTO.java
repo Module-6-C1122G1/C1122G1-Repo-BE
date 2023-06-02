@@ -30,7 +30,7 @@ public class CustomerDTO {
     @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", message = "Email không hợp lệ")
     private String email;
     @NotBlank(message = "Không được để trống")
-    @Pattern(regexp = "^\\d{11}$", message = "Số CMND không hợp lệ, bắt buộc phải là 11 chữ số")
+    @Pattern(regexp = "^\\d{10,11}$", message = "Số CMND không hợp lệ, bắt buộc phải là 10 hoặc 11 chữ số")
     private String identityCard;
     private String imgCustomer;
     private TypeCustomer typeCustomer;

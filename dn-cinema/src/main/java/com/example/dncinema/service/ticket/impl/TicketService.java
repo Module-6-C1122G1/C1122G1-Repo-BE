@@ -1,6 +1,7 @@
 package com.example.dncinema.service.ticket.impl;
 
 import com.example.dncinema.dto.*;
+import com.example.dncinema.dto.customerDTO.CustomerDTO;
 import com.example.dncinema.model.*;
 import com.example.dncinema.repository.ICustomerRepository;
 import com.example.dncinema.repository.IMovieRepository;
