@@ -28,16 +28,20 @@ public class MovieService implements IMovieService {
 
 
     @Override
-    public Page<FilmDTO> findAllFilm( Pageable pageable,String search) {
-        Page<Film> filmPage = movieRepository.findAllFilm(pageable, search);
-        List<FilmDTO> showRoomDTOList = new ArrayList<>();
-        FilmDTO filmDTO;
-        for (Film film : filmPage) {
-            filmDTO = new FilmDTO();
-            BeanUtils.copyProperties(film, filmDTO);
-            showRoomDTOList.add(filmDTO);
-        }
-        return new PageImpl<>(showRoomDTOList, pageable, filmPage.getTotalElements());
+
+    public Page<Film> findAllFilm(String search, Pageable pageable) {
+        return movieRepository.findAllFilm(search, pageable);
+    }
+
+    @Override
+    public Page<Film> findAllFilmSorted(Pageable pageable) {
+        return movieRepository.findAll(pageable);
+    }
+
+    @Override
+    public Page<Film> findFilmsByTypeFilm(int id, Pageable pageable) {
+        return movieRepository.findFilmsByTypeFilm_IdTypeFilm(id, pageable);
+
     }
 
     /**
