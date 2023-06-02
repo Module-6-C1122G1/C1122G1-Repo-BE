@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface IStatisticsMemberService {
     List<StatisticsMemberDTO> findCommentSummaryByTitleMember();
-    StatisticsMemberDTO findStatisticsDTOByNameMember(@Param("membername") String membername);
+    List<StatisticsMemberDTO> findStatisticsDTOByNameMember(@Param("membername") String membername);
 }
