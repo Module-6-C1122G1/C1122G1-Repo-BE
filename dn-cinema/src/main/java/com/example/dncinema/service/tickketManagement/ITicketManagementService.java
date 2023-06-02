@@ -12,9 +12,9 @@ import org.springframework.data.domain.Pageable;
 import java.time.LocalDate;
 
 public interface ITicketManagementService {
-    Page<ITicketManagement> findAllCustomerTicket(Pageable pageable);
-    Page<ICustomerPoint> findAllCustomerPoint(Pageable pageable);
-    Page<ITicketManagement> searchPlusPoint(Pageable pageable , LocalDate dateStart, LocalDate dateEnd);
+    Page<ITicketManagement> findAllCustomerTicket(Pageable pageable,Integer idCus);
+    Page<ICustomerPoint> findAllCustomerPoint(Pageable pageable,Integer idCus);
+    Page<ICustomerPoint> searchPlusPoint(Pageable pageable , LocalDate dateStart, LocalDate dateEnd);
     Ticket findById(Integer id);
     void delete(Integer id);
 }
