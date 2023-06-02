@@ -21,6 +21,6 @@ public interface IStatisticsMemberRepository extends JpaRepository<Customer,Inte
             "GROUP BY\n" +
             "    customer.id_customer",nativeQuery = true)
     List<StatisticsMemberDTO> findCommentSummaryByTitleMember();
-    @Query(value = "select * from members where membername like :membername%", nativeQuery = true)
-    StatisticsMemberDTO findStatisticsDTOByNameMember(@Param("membername") String membername);
+    @Query(value = "select * from members where membername like CONCAT('%', :membername, '%')", nativeQuery = true)
+    List<StatisticsMemberDTO> findStatisticsDTOByNameMember(@Param("membername") String membername);
 }

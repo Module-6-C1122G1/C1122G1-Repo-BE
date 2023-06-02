@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface IStatisticsService {
     List<StatisticsDTO> findCommentSummaryByTitle();
-    StatisticsDTO findStatisticsDTOByNameFilm(@Param("namefilm") String namefilm);
+    List<StatisticsDTO> findStatisticsDTOByNameFilm(@Param("namefilm") String namefilm);
 }

@@ -18,7 +18,7 @@ public class StatisticsMemberService implements IStatisticsMemberService {
     }
 
     @Override
-    public StatisticsMemberDTO findStatisticsDTOByNameMember(String membername) {
+    public List<StatisticsMemberDTO> findStatisticsDTOByNameMember(String membername) {
         return statisticsMemberRepository.findStatisticsDTOByNameMember(membername);
     }
 }

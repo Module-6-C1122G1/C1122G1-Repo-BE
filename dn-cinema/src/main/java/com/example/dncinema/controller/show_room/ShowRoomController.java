@@ -141,5 +141,10 @@ public class ShowRoomController {
         return new ResponseEntity<>(showRoom, HttpStatus.OK);
     }
 
+    @GetMapping("/getAll")
+    public ResponseEntity<?> getAll(){
+        List<ShowRoom> showRoomList = iShowRoomService.getAllShowRoom();
+        return new ResponseEntity<>(showRoomList, HttpStatus.OK);
+    }
 }
 
