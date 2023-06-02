@@ -1,63 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9ac6bd6-24b3-447f-97ac-9d58febfe7f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dn-cinema/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/controller/discount/DiscountController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/dto/EmployeeDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/dto/discount/DiscountDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/repository/IEmployeeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/repository/discount/IDiscountRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/service/discount/IDiscountService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/service/discount/impl/DiscountService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dn-cinema/src/test/java/com/example/dncinema/controller/DiscountRestController_createDiscount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dn-cinema/src/test/java/com/example/dncinema/controller/DiscountRestController_findDiscountById.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dn-cinema/src/test/java/com/example/dncinema/controller/DiscountRestController_updateDiscount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dn-cinema/src/test/java/com/example/dncinema/controller/discount/DiscountRestController_getDeleteDiscount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dn-cinema/src/test/java/com/example/dncinema/controller/discount/DiscountRestController_getListDiscount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dn-cinema/src/test/java/com/example/dncinema/controller/employee/EmployeeController_createEmployee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dn-cinema/src/test/java/com/example/dncinema/controller/employee/EmployeeController_updateEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="31e61f44-31f7-49c7-9890-4016d978281b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/dn-cinema/src/main/resources/qr/QR21b13d3e-e95b-4f49-9687-614a7442a051.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dn-cinema/src/main/resources/qr/QR2cb79b16-2755-4f3d-9b9d-d2f4e787ed6b.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dn-cinema/src/main/resources/qr/QR3674639a-ac58-4bd4-bd37-3d7d0070501a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dn-cinema/src/main/resources/qr/QR57391026-cf8d-448f-a4fc-bfafa4b7b2dc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dn-cinema/src/main/resources/qr/QR5f0dddcb-30c9-4f85-99ff-7c7ee2c78222.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dn-cinema/src/main/resources/qr/QR6c048065-9460-46aa-976f-6ead02af762e.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dn-cinema/src/main/resources/qr/QR95b5775e-9bbc-474a-ad59-c1cad3808297.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dn-cinema/src/main/resources/qr/QRae9e8a06-538e-49f2-a331-427b927a7135.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dn-cinema/src/main/resources/qr/QRc5d4e3e0-8cc8-446b-96ba-8626a679e5b6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dn-cinema/src/main/resources/qr/QRdb20bc89-bead-454f-bcba-fed316ff577d.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dn-cinema/src/main/resources/qr/QRe8589135-1522-4b6d-aab1-274067bd7f1f.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dn-cinema/src/main/resources/qr/QReafea671-a6e3-44ff-8f4c-482a18b905eb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dn-cinema/src/main/resources/qr/QRfb028a9d-22e4-4d8e-a5de-b2e31ea08e4b.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/7/e7bb07c2521d768c7448586815ea5288722941be" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dn-cinema/.gradle/7.6.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/.gradle/7.6.1/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dn-cinema/.gradle/7.6.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dn-cinema/.gradle/7.6.1/dependencies-accessors/gc.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dn-cinema/.gradle/7.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/.gradle/7.6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dn-cinema/.gradle/7.6.1/fileChanges/last-build.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dn-cinema/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dn-cinema/.gradle/7.6.1/gc.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dn-cinema/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dn-cinema/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dn-cinema/.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dn-cinema/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dn-cinema/HELP.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dn-cinema/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/config/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/controller/BookingController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/config/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/controller/MovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/controller/TicketController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/controller/TicketControllerMinh.java" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/controller/TicketControllerMinh.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/dto/TicketDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/dto/TicketDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/model/Discount.java" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/model/Discount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/model/ShowTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/model/ShowTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/controller/discount/DiscountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/controller/discount/DiscountController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/model/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/model/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/repository/IAccountUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/repository/IAccountUserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/repository/IMovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/repository/IMovieRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/repository/ITicketRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/repository/ITicketRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/repository/ITicketRepositoryMinh.java" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/repository/ITicketRepositoryMinh.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/repository/IStatisticsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/repository/IStatisticsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/repository/discount/IDiscountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/repository/discount/IDiscountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/repository/seat/ISeatRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/repository/seat/ISeatRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/service/discount/IDiscountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/service/discount/IDiscountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/service/discount/impl/DiscountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/service/discount/impl/DiscountService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/service/impl/TicketServiceMinh.java" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/service/impl/TicketServiceMinh.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/service/movie/IMovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/service/movie/IMovieService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/service/ticket/ITicketService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/service/ticket/impl/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/service/ticket/impl/TicketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/service/movie/impl/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/src/main/java/com/example/dncinema/service/movie/impl/MovieService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dn-cinema/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dn-cinema/src/test/java/com/example/dncinema/DnCinemaApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/dn-cinema/src/test/java/com/example/dncinema/DnCinemaApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/dn-cinema">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/dn-cinema">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="dn-cinema" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="dn-cinema" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="dn-cinema" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -67,6 +88,22 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -75,25 +112,89 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/ADMIN/Desktop/du_an_be/dn-cinema-api/dn-cinema",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunManager" selected="Spring Boot.DnCinemaApplication">
+    <configuration name="dn-cinema [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/dn-cinema" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="dn-cinema [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/dn-cinema" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DnCinemaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="dn-cinema.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.dncinema.DnCinemaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.dn-cinema [build]" />
+        <item itemvalue="Gradle.dn-cinema [clean]" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c9ac6bd6-24b3-447f-97ac-9d58febfe7f6" name="Changes" comment="" />
+      <changelist id="31e61f44-31f7-49c7-9890-4016d978281b" name="Changes" comment="" />
       <created>1684996992964</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684996992964</updated>
       <workItem from="1684996994096" duration="24000" />
       <workItem from="1685333364563" duration="12000" />
+      <workItem from="1685583021620" duration="2852000" />
+      <workItem from="1685585920959" duration="415000" />
     </task>
     <servers />
   </component>

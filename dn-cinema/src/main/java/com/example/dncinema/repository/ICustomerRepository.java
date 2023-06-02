@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Repository
 public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
@@ -120,6 +121,44 @@ public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
     Customer findCustomersByEmail(String email);
     Customer findCustomersByPhone(String phone);
     Customer findCustomersByIdentityCard(String identity);
+
+    /**
+     * ThanhNV
+     * Retrieves a paginated list of customer information from the database.
+     *
+     * Use a query to call a list from the database to perform the list function
+     * @param
+     * @return a Page object containing the requested subset of customer information.
+     *
+     */
+    @Query(value = "select * from dn_cinema.customer where name_customer like %:nameSearch%", nativeQuery = true)
+    List<Customer> findAllAndSearch(@Param("nameSearch") String nameSearch);
+
+    /**
+     * @param idCustomer
+     * @param nameCustomer
+     * @param address
+     * @param email
+     * @param phone
+     * @param identityCard
+     */
+    @Modifying
+    @Transactional
+    @Query(value = "update dn_cinema.customer set name_customer = :nameCustomer, phone = :phone,\n" +
+            "            address = :address,\n" +
+            "            email = :email,\n" +
+            "            identity_card = :identityCard "+
+            "            where id_customer = :idCustomer", nativeQuery = true)
+
+    void updateCustomer(
+            @Param("nameCustomer") String nameCustomer,
+            @Param("phone") String phone,
+            @Param("address") String address,
+            @Param("email") String email,
+            @Param("idCustomer") Integer idCustomer,
+            @Param("identityCard") String identityCard);
+
+
 
 };
 

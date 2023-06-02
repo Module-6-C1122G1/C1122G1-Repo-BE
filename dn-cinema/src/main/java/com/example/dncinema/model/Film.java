@@ -1,12 +1,7 @@
 package com.example.dncinema.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "film")
@@ -46,9 +41,6 @@ public class Film {
     @ManyToOne
     @JoinColumn(name = "id_type_film")
     private TypeFilm typeFilm;
-    @JsonBackReference
-    @OneToMany(mappedBy = "film")
-    private Set<ShowTime> showTimeSet = new HashSet<>();
 
     public Film() {
     }
@@ -199,5 +191,4 @@ public class Film {
     public void setTypeFilm(TypeFilm typeFilm) {
         this.typeFilm = typeFilm;
     }
-
 }

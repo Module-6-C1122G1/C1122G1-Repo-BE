@@ -50,12 +50,12 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public Page<Customer> searchPlusPoint(Pageable pageable, LocalDate dateStart, LocalDate dateEnd) {
-        return iCustomerRepository.findAllPlusPoint(pageable, dateStart, dateEnd);
+        return iCustomerRepository.findAllPlusPoint(pageable,dateStart,dateEnd);
     }
 
     @Override
     public Page<Customer> searchUsePoint(Pageable pageable, LocalDate dateStart, LocalDate dateEnd) {
-        return iCustomerRepository.findAllUsePoint(pageable, dateStart, dateEnd);
+        return iCustomerRepository.findAllUsePoint(pageable,dateStart,dateEnd);
     }
 
     /**
@@ -91,7 +91,6 @@ public class CustomerService implements ICustomerService {
                 accountUser.getId()
         );
     }
-
     /**
      * Created by: TruongNN
      * Date created: 24/05/2023
@@ -136,7 +135,6 @@ public class CustomerService implements ICustomerService {
     public Customer findById(int id) {
         return iCustomerRepository.findByIdCustomer(id);
     }
-
     @Override
     public List<Customer> findAll() {
         return iCustomerRepository.findAll();
@@ -160,6 +158,18 @@ public class CustomerService implements ICustomerService {
     public Customer findCustomerByEmail(String email) {
         return iCustomerRepository.findCustomersByEmail(email);
     }
+
+    @Override
+    public List<Customer> findAllAndSearch(String nameSearch) {
+        return iCustomerRepository.findAllAndSearch(nameSearch);
+    }
+
+    @Override
+    public void updateCustomer(String nameCustomer, String phone, String address, String email, Integer idCustomer, String identityCard) {
+        iCustomerRepository.updateCustomer(nameCustomer, phone, address, email, idCustomer, identityCard);
+    }
+
+
 
     @Override
     public Boolean existByPhone(String phone) {
