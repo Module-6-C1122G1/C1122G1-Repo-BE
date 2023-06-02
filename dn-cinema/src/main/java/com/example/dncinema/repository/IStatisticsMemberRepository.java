@@ -4,6 +4,7 @@ import com.example.dncinema.dto.StatisticsMemberDTO;
 import com.example.dncinema.model.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -20,4 +21,6 @@ public interface IStatisticsMemberRepository extends JpaRepository<Customer,Inte
             "GROUP BY\n" +
             "    customer.id_customer",nativeQuery = true)
     List<StatisticsMemberDTO> findCommentSummaryByTitleMember();
+    @Query(value = "select * from members where membername like CONCAT('%', :membername, '%')", nativeQuery = true)
+    List<StatisticsMemberDTO> findStatisticsDTOByNameMember(@Param("membername") String membername);
 }

@@ -91,6 +91,14 @@ public class EmployeeDTO {
         this.gender = gender;
     }
 
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
     public String getImgEmployee() {
         return imgEmployee;
     }
@@ -122,15 +130,7 @@ public class EmployeeDTO {
     public void setAccountUser(AccountUser accountUser) {
         this.accountUser = accountUser;
     }
-
-    public String getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
+  
     public Boolean getDelete() {
         return isDelete;
     }

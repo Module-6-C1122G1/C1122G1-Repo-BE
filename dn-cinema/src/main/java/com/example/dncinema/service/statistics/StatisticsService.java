@@ -18,4 +18,9 @@ public class StatisticsService implements IStatisticsService {
         return repository.findCommentSummaryByTitle();
     }
 
+    @Override
+    public List<StatisticsDTO> findStatisticsDTOByNameFilm(String namefilm) {
+        return repository.findStatisticsDTOByNameFilm(namefilm);
+    }
+
 }

@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/user/ticket/")
+@RequestMapping("/api/user/ticket")
 @CrossOrigin("*")
 public class TicketControllerMinh {
     @Autowired
@@ -32,19 +32,49 @@ public class TicketControllerMinh {
     @Autowired
     private IMovieRepository iMovieRepository;
 
+    /**
+     * Get discount code from frond end and check, if exists will return discount object if not return 404 status
+     * @author MinhNV
+     * @param discount
+     * @return object Discount
+     * @since 27/04/2023
+     */
+
     @GetMapping("/check-discount")
     public ResponseEntity<Discount> checkDiscount(@RequestParam(name = "nameDiscount") String discount) {
         Discount discount1 = iTicketServiceMinh.findDiscount(discount);
         if (discount1 == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity<>(discount1, HttpStatus.OK);
     }
+
+    /**
+     * Get customer code from frond end and return object corresponding to that code
+     * @author MinhNV
+     * @param useName
+     * @return object Customer and status
+     * @since 27/04/2023
+     */
 
     @GetMapping("/get-customer")
     public ResponseEntity<Customer> getCustomer(@RequestParam(name = "username") String useName) {
         return new ResponseEntity<>(iCustomerRepository.findByAccountUser_NameAccount(useName), HttpStatus.OK);
     }
+
+    /**
+     * Enter the necessary parameters to save the ticket information to the database
+     * @author MinhNV
+     * @param idCus
+     * @param idFilm
+     * @param codeDiscount
+     * @param price
+     * @param seat
+     * @param vnp_ResponseCode
+     * @return status 200 if exist else return status 404
+     * @throws UnsupportedEncodingException
+     * @since 27/05/2023
+     */
 
     @GetMapping("/create")
     public ResponseEntity<?> saveTicket(
@@ -54,7 +84,6 @@ public class TicketControllerMinh {
             @RequestParam(name = "price") String price,
             @RequestParam(name = "seat") String seat,
             @RequestParam(name = "vnp_ResponseCode") String vnp_ResponseCode
-
     ) throws UnsupportedEncodingException {
 
         if (idCus == null || idFilm == null || price == null || seat == null) {
@@ -66,7 +95,13 @@ public class TicketControllerMinh {
             for (int i = 0; i < list.length; i++) {
                 listSeat[i] = Integer.parseInt(list[i]);
             }
-            TicketDTO ticketDTO = new TicketDTO(Integer.parseInt(idCus), Integer.parseInt(idFilm), listSeat, Integer.parseInt(codeDiscount), Long.parseLong(price));
+            TicketDTO ticketDTO=new TicketDTO();
+            if (codeDiscount.equals("null")){
+                 ticketDTO = new TicketDTO(Integer.parseInt(idCus), Integer.parseInt(idFilm), listSeat, null, Long.parseLong(price));
+            }
+            else {
+                 ticketDTO = new TicketDTO(Integer.parseInt(idCus), Integer.parseInt(idFilm), listSeat, Integer.parseInt(codeDiscount), Long.parseLong(price));
+            }
             iTicketServiceMinh.saveTicket(ticketDTO);
             return new ResponseEntity<>(HttpStatus.CREATED);
         } else {
@@ -74,11 +109,29 @@ public class TicketControllerMinh {
         }
     }
 
+    /**
+     * Takes a TicketDTO object and returns the url to the sandbox payment page
+     * @author MinhNV
+     * @param ticketDTO
+     * @return url
+     * @throws UnsupportedEncodingException
+     * @since 27/05/2023
+     */
+
     @PostMapping("/pay")
     public ResponseEntity<?> pay(@RequestBody TicketDTO ticketDTO) throws UnsupportedEncodingException {
         String url = iTicketServiceMinh.pay(ticketDTO);
         return new ResponseEntity<>(url, HttpStatus.OK);
     }
+
+    /**
+     * Takes a list of seat codes and movie codes then returns a SeatPrice object containing the price and seat information
+     * @author MinhNV
+     * @param listSeat
+     * @param idFilm
+     * @return SeatPriceDTO
+     * @since 27/05/2023
+     */
 
     @GetMapping("/find-by-id")
     public ResponseEntity<SeatPriceDTO> getSeatById(@RequestParam(name = "list") String listSeat,

@@ -12,6 +12,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,27 +22,37 @@ import java.util.Optional;
 @CrossOrigin("*")
 public class ShowTimeController {
     @Autowired
-    IShowTimeService showTimeService;
+    private IShowTimeService showTimeService;
 
     /**
      * @author HaiPH
      * @param id
-     * @return ResponseEntity<>(ListShowTime, HttpStatus.OK)
+     * @return ResponseEntity<>(ListShowTime, HttpStatus)
+     * @Usage_method Returns all showTime by idFilm in the database
      */
     @GetMapping("/{id}")
     public ResponseEntity<List<ShowTime>> getAllDateByIdFilm(@PathVariable Integer id){
-        return new ResponseEntity<>(showTimeService.findAllDateByIdFilm(id), HttpStatus.OK);
+        List<ShowTime> showTimes = showTimeService.findAllDateByIdFilm(id);
+        if(showTimes.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(showTimes, HttpStatus.OK);
     }
 
     /**
      * @author HaiPH
      * @param id
      * @param showDate
-     * @return ResponseEntity<>(ListShowTime, HttpStatus.OK)
+     * @return ResponseEntity<>(ListShowTime, HttpStatus)
+     * @Usage_method Returns all showTime by idFilm and date in the database
      */
     @GetMapping("/{id}/{showDate}")
     public ResponseEntity<List<ShowTime>> getAllTimeByIdFilmAndShowDate(@PathVariable Integer id,@PathVariable String showDate){
-        return new ResponseEntity<>(showTimeService.findAllTimeByIdFilmAndShowDate(id,showDate), HttpStatus.OK);
+        List<ShowTime> showTimes = showTimeService.findAllTimeByIdFilmAndShowDate(id,showDate);
+        if(showTimes.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(showTimes, HttpStatus.OK);
     }
     @PostMapping("/create")
     public ResponseEntity<?> createShowTime(@Valid @RequestBody ShowTimeDTO showTimeDTO, BindingResult bindingResult){

@@ -64,8 +64,8 @@ public class DiscountService implements IDiscountService {
      * @Param("percentDiscount") Double percentDiscount
      */
     @Override
-    public void createDiscount(String nameDiscount, String dateStart, String dateEnd,String imageDiscount, String describeDiscount, Double percentDiscount) {
-        discountRepository.createDiscount(nameDiscount, dateStart, dateEnd, imageDiscount,describeDiscount, percentDiscount);
+    public void createDiscount(String nameDiscount, String dateStart, String dateEnd, String imageDiscount, String describeDiscount, Double percentDiscount) {
+        discountRepository.createDiscount(nameDiscount, dateStart, dateEnd, imageDiscount, describeDiscount, percentDiscount);
     }
 
     /**
@@ -102,7 +102,13 @@ public class DiscountService implements IDiscountService {
      * @Param("percentDiscount") String percentDiscount
      */
     @Override
-    public void updateDiscount(Integer idDiscount, String nameDiscount, String dateStart, String dateEnd,String imageDiscount, String describeDiscount, Double percentDiscount) {
-        discountRepository.updateDiscount(idDiscount, nameDiscount, dateStart, dateEnd, imageDiscount,describeDiscount, percentDiscount);
+    public void updateDiscount(Integer idDiscount, String nameDiscount, String dateStart, String dateEnd, String imageDiscount, String describeDiscount, Double percentDiscount) {
+        discountRepository.updateDiscount(idDiscount, nameDiscount, dateStart, dateEnd, imageDiscount, describeDiscount, percentDiscount);
     }
+
+    @Override
+    public List<Discount> findAllDiscount() {
+        return discountRepository.findAllDiscount();
+    }
+
 }
