@@ -7,4 +7,6 @@ public interface ICustomerPoint {
     String getDateBooking();
 
     String getPointCustomer();
+
+    String getImgCustomer();
 }

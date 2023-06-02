@@ -14,6 +14,7 @@ public class DiscountDTO implements Validator {
     @Length(max = 255,message = "Tên khuyến mãi không dài quá 255 từ")
     private String nameDiscount;
     @NotBlank(message = "Hình ảnh không được để trống")
+    @Pattern(regexp = "^.{0,}(.png|.jpg|.jpeg)[?](alt=media&token=).{0,}$",message = "Sai định dạng ảnh, phải có dạng đuôi .jpg, .jpeg, .png")
     private String imageDiscount;
     @NotBlank(message = "Ngày bắt đầu không được để trống")
     @DateTimeFormat(fallbackPatterns = "yyyy-MM-dd")

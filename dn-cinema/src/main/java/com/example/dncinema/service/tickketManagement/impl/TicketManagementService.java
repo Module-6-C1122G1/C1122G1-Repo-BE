@@ -40,8 +40,8 @@ public class TicketManagementService implements ITicketManagementService {
     }
 
     @Override
-    public Page<ITicketManagement> searchPlusPoint(Pageable pageable, LocalDate dateStart, LocalDate dateEnd) {
-        Page<ITicketManagement> ticketManagements = iTicketManagementRepository.findAllPlusPoint(pageable,dateStart,dateEnd);
+    public Page<ICustomerPoint> searchPlusPoint(Pageable pageable, LocalDate dateStart, LocalDate dateEnd) {
+        Page<ICustomerPoint> ticketManagements = iTicketManagementRepository.findAllPlusPoint(pageable,dateStart,dateEnd);
         return ticketManagements;
     }
 

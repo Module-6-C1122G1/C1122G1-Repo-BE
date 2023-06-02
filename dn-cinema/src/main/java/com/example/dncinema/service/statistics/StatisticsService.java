@@ -19,7 +19,7 @@ public class StatisticsService implements IStatisticsService {
     }
 
     @Override
-    public StatisticsDTO findStatisticsDTOByNameFilm(String namefilm) {
+    public List<StatisticsDTO> findStatisticsDTOByNameFilm(String namefilm) {
         return repository.findStatisticsDTOByNameFilm(namefilm);
     }
 
