@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/public/discount")
+@RequestMapping("/api/employee/discount")
 @CrossOrigin("*")
 public class DiscountController {
     @Autowired
@@ -129,14 +129,5 @@ public class DiscountController {
         }
         return new ResponseEntity<>(listDiscount, HttpStatus.OK);
     }
-//    @GetMapping("/{id}")
-//    public ResponseEntity<Discount> findByIdDiscount(@PathVariable Integer id) {
-//        Discount detailDiscount = discountService.findById(id);
-//        if (detailDiscount == null) {
-//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-//        }
-//        return new ResponseEntity<>(detailDiscount, HttpStatus.OK);
-//    }
-
 
 }
