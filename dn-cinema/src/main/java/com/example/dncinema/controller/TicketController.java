@@ -108,4 +108,16 @@ public class TicketController {
     public void cancelTicket(@PathVariable("id") Integer id) {
         iTicketService.cancelTicket(id);
     }
+
+    /**
+     * @Author QuynhHTN
+     * Date create: 02/06/2023
+     * @param id
+     * @return
+     */
+    @PutMapping("/confirm-print/{id}")
+    public ResponseEntity<?> confirmPrintTicket(@PathVariable int id){
+        iTicketService.confirmPrintTicket(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
