@@ -1,7 +1,11 @@
 package com.example.dncinema.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "customer")
@@ -36,7 +40,9 @@ public class Customer {
     @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "id")
     private AccountUser accountUser;
-
+    @JsonManagedReference
+    @OneToMany(mappedBy = "customer")
+    private Set<Ticket> ticketSet = new HashSet<>();
     public Customer() {
     }
 
@@ -56,6 +62,14 @@ public class Customer {
         this.imgCustomer = imgCustomer;
         this.typeCustomer = typeCustomer;
         this.accountUser = accountUser;
+    }
+
+    public Set<Ticket> getTicketSet() {
+        return ticketSet;
+    }
+
+    public void setTicketSet(Set<Ticket> ticketSet) {
+        this.ticketSet = ticketSet;
     }
 
     public Integer getIdCustomer() {

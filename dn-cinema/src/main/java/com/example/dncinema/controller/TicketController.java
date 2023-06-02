@@ -26,7 +26,6 @@ import java.util.Map;
 public class TicketController {
     @Autowired
     ITicketService iTicketService;
-
     /**
      * @return new ResponseEntity
      * @Author QuynhHTN
@@ -48,7 +47,6 @@ public class TicketController {
      */
     @GetMapping("/detail/{id}")
     public ResponseEntity< Ticket> findTicketById(@PathVariable Integer id) {
-
         Ticket ticket = iTicketService.findTicketById(id);
         if (ticket == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);

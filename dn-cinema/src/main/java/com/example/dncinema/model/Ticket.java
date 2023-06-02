@@ -62,7 +62,7 @@ public class Ticket {
     @ManyToOne
     @JoinColumn(name = "id_employee")
     private Employee employee;
-
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "id_customer")
     private Customer customer;

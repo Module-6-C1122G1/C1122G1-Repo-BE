@@ -1,5 +1,4 @@
 package com.example.dncinema.controller.customer;
-
 import com.example.dncinema.dto.accounUserDTO.AccountUserDTO;
 import com.example.dncinema.dto.customerDTO.CustomerDTO;
 import com.example.dncinema.model.AccountUser;
@@ -13,7 +12,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
 import java.util.List;
 
@@ -99,4 +97,6 @@ public class RegisterCustomerController {
         accountUserService.updatePassword(accountUserDTO,accountUserDTO.getId());
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+
 }
