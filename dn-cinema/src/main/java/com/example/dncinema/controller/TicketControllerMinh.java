@@ -110,10 +110,12 @@ public class TicketControllerMinh {
     }
 
     /**
-     *
+     * Takes a TicketDTO object and returns the url to the sandbox payment page
+     * @author MinhNV
      * @param ticketDTO
-     * @return
+     * @return url
      * @throws UnsupportedEncodingException
+     * @since 27/05/2023
      */
 
     @PostMapping("/pay")
@@ -121,6 +123,15 @@ public class TicketControllerMinh {
         String url = iTicketServiceMinh.pay(ticketDTO);
         return new ResponseEntity<>(url, HttpStatus.OK);
     }
+
+    /**
+     * Takes a list of seat codes and movie codes then returns a SeatPrice object containing the price and seat information
+     * @author MinhNV
+     * @param listSeat
+     * @param idFilm
+     * @return SeatPriceDTO
+     * @since 27/05/2023
+     */
 
     @GetMapping("/find-by-id")
     public ResponseEntity<SeatPriceDTO> getSeatById(@RequestParam(name = "list") String listSeat,

@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Repository
 public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
@@ -38,10 +39,10 @@ public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
     @Query(value = "select date_booking from ticket where date_booking between '2023-01-01' and '2023-12-30'", nativeQuery = true)
     Page<Customer> findAllUsePoint(@Param("pageable") Pageable pageable,@Param("startDate")  LocalDate startDate,@Param("dateEnd")  LocalDate dateEnd);
 
-    @Query(value = "update product set id_type_customer=2 where id=:customer.idCustomer", nativeQuery = true)
+    @Query(value = "update customer set id_type_customer=2 where id=:customer.idCustomer", nativeQuery = true)
     void updateGold(@Param("customer") Customer customer);
 
-    @Query(value = "update product set id_type_customer=3 where id=:customer.idCustomer", nativeQuery = true)
+    @Query(value = "update customer set id_type_customer=3 where id=:customer.idCustomer", nativeQuery = true)
     void updateDiamond(@Param("customer") Customer customer);
 
     Customer findByAccountUser_NameAccount(String nameAcc);
@@ -118,6 +119,44 @@ public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
      * @return đối tượng có tên Customer được tìm thấy dựa theo email
      */
     Customer findCustomersByEmail(String email);
+    /**
+     * ThanhNV
+     * Retrieves a paginated list of customer information from the database.
+     *
+     * Use a query to call a list from the database to perform the list function
+     * @param
+     * @return a Page object containing the requested subset of customer information.
+     *
+     */
+    @Query(value = "select * from dn_cinema.customer where name_customer like %:nameSearch%", nativeQuery = true)
+    List<Customer> findAllAndSearch(@Param("nameSearch") String nameSearch);
+
+    /**
+     * @param idCustomer
+     * @param nameCustomer
+     * @param address
+     * @param email
+     * @param phone
+     * @param identityCard
+     */
+    @Modifying
+    @Transactional
+    @Query(value = "update dn_cinema.customer set name_customer = :nameCustomer, phone = :phone,\n" +
+            "            address = :address,\n" +
+            "            email = :email,\n" +
+            "            identity_card = :identityCard "+
+            "            where id_customer = :idCustomer", nativeQuery = true)
+
+    void updateCustomer(
+            @Param("nameCustomer") String nameCustomer,
+            @Param("phone") String phone,
+            @Param("address") String address,
+            @Param("email") String email,
+            @Param("idCustomer") Integer idCustomer,
+            @Param("identityCard") String identityCard);
+
+
+
 };
 
 
