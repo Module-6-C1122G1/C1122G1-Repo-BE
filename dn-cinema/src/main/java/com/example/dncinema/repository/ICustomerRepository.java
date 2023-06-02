@@ -38,10 +38,10 @@ public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
     @Query(value = "select date_booking from ticket where date_booking between '2023-01-01' and '2023-12-30'", nativeQuery = true)
     Page<Customer> findAllUsePoint(@Param("pageable") Pageable pageable,@Param("startDate")  LocalDate startDate,@Param("dateEnd")  LocalDate dateEnd);
 
-    @Query(value = "update product set id_type_customer=2 where id=:customer.idCustomer", nativeQuery = true)
+    @Query(value = "update customer set id_type_customer=2 where id=:customer.idCustomer", nativeQuery = true)
     void updateGold(@Param("customer") Customer customer);
 
-    @Query(value = "update product set id_type_customer=3 where id=:customer.idCustomer", nativeQuery = true)
+    @Query(value = "update customer set id_type_customer=3 where id=:customer.idCustomer", nativeQuery = true)
     void updateDiamond(@Param("customer") Customer customer);
 
     Customer findByAccountUser_NameAccount(String nameAcc);
