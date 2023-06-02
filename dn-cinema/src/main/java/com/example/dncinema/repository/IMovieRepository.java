@@ -19,8 +19,8 @@ import java.util.List;
 public interface IMovieRepository extends JpaRepository<Film, Integer> {
     @Query(value = "select * from film \n" +
             "join type_film on film.id_type_film = type_film.id_type_film\n" +
-            "where film.name_film like concat('%', :search, '%')", nativeQuery = true)
-    Page<Film> findAllFilm(Pageable pageable, @Param("search") String search);
+            "where name_film like concat('%', :search, '%')", nativeQuery = true)
+    Page<Film> findAllFilm(@Param("pageable") Pageable pageable, @Param("search") String search);
 
 
     /**
