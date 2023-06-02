@@ -105,4 +105,10 @@ public class DiscountService implements IDiscountService {
     public void updateDiscount(Integer idDiscount, String nameDiscount, String dateStart, String dateEnd,String imageDiscount, String describeDiscount, Double percentDiscount) {
         discountRepository.updateDiscount(idDiscount, nameDiscount, dateStart, dateEnd, imageDiscount,describeDiscount, percentDiscount);
     }
+
+        @Override
+        public List<Discount> findAllDiscount() {
+            return discountRepository.findAllDiscount();
+        }
+
 }

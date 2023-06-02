@@ -1,6 +1,6 @@
 package com.example.dncinema.service.ticket;
 
-import com.example.dncinema.dto.ListTicketDTO;
+import com.example.dncinema.dto.IListTicketDTO;
 import com.example.dncinema.dto.TicketDetailDTO;
 import com.example.dncinema.dto.TicketUpdateDTO;
 import com.example.dncinema.model.Ticket;
@@ -13,9 +13,10 @@ public interface ITicketService {
     Ticket findTicketById(Integer id);
 
     void update(TicketUpdateDTO ticketUpdateDTO);
+
     List<TicketDetailDTO> findAll();
 
-    Page<ListTicketDTO> findAllTicket(String search, Pageable pageable);
+    Page<IListTicketDTO> findAllTicket(Pageable pageable, String search);
 
     void cancelTicket(Integer id);
 }
