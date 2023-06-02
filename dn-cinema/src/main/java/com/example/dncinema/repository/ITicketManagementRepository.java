@@ -17,27 +17,27 @@ public interface ITicketManagementRepository extends JpaRepository<TicketManagem
             "ticket on ticket.id_customer = customer.id_customer join" +
             " seat on ticket.id_seat = seat.id_seat join " +
             "show_time on show_time.id_seat = seat.id_seat join" +
-            " film on film.id_show_time = show_time.id_show_time",
+            " film on film.id_show_time = show_time.id_show_time where customer.id_customer=:idCus",
             countQuery = "select count(*) from customer " +
                     "join ticket on ticket.id_customer = customer.id_customer " +
                     "join seat on ticket.id_seat = seat.id_seat " +
                     "join show_time on show_time.id_seat = seat.id_seat " +
-                    "join film on film.id_show_time = show_time.id_show_time",
+                    "join film on film.id_show_time = show_time.id_show_time where customer.id_customer=:idCus",
             nativeQuery = true)
-    Page<ITicketManagement> findCustomerByTicket(Pageable pageable);
+    Page<ITicketManagement> findCustomerByTicket(Pageable pageable,Integer idCus);
 
     @Query(value = "select ticket.date_booking as dateBooking,customer.img_customer as imgCustomer, film.name_film as nameFilm, customer.point_customer as pointCustomer from customer " +
             "join ticket on ticket.id_customer = customer.id_customer " +
             "join seat on ticket.id_seat = seat.id_seat " +
             "join show_time on show_time.id_seat = seat.id_seat " +
-            "join film on film.id_show_time = show_time.id_show_time",
+            "join film on film.id_show_time = show_time.id_show_time where customer.id_customer=:idCus",
             countQuery = "select count(*) from customer " +
                     "join ticket on ticket.id_customer = customer.id_customer " +
                     "join seat on ticket.id_seat = seat.id_seat " +
                     "join show_time on show_time.id_seat = seat.id_seat " +
-                    "join film on film.id_show_time = show_time.id_show_time",
+                    "join film on film.id_show_time = show_time.id_show_time where customer.id_customer=:idCus",
             nativeQuery = true)
-    Page<ICustomerPoint> findAllCustomerPointHistory(Pageable pageable);
+    Page<ICustomerPoint> findAllCustomerPointHistory(Pageable pageable,Integer idCus);
 
     @Query(value = "select ticket.date_booking as dateBooking,customer.img_customer as imgCustomer, film.name_film as nameFilm, customer.point_customer as pointCustomer from customer " +
             "join ticket on ticket.id_customer = customer.id_customer " +
@@ -48,7 +48,7 @@ public interface ITicketManagementRepository extends JpaRepository<TicketManagem
                     "join ticket on ticket.id_customer = customer.id_customer " +
                     "join seat on ticket.id_seat = seat.id_seat " +
                     "join show_time on show_time.id_seat = seat.id_seat " +
-                    "join film on film.id_show_time = show_time.id_show_time" ,nativeQuery = true)
+                    "join film on film.id_show_time = show_time.id_show_time where date_booking between ? and ?" ,nativeQuery = true)
     Page<ICustomerPoint> findAllPlusPoint(Pageable pageable,@Param("startDate") LocalDate startDate, @Param("dateEnd")LocalDate dateEnd);
 
 
