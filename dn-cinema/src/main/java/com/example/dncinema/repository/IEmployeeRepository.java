@@ -14,11 +14,11 @@ import javax.transaction.Transactional;
 
 @Repository
 public interface IEmployeeRepository extends JpaRepository<Employee, Integer> {
-    @Query(value = "SELECT e.* FROM employee e JOIN account_user a WHERE (a.name_account LIKE CONCAT('%', :search, '%')\n" +
+    @Query(value = "SELECT e.* FROM employee e JOIN account_user a ON a.id = e.id WHERE (a.name_account LIKE CONCAT('%', :search, '%')\n" +
             "    OR e.name_employee LIKE CONCAT('%', :search, '%')\n" +
             "    OR e.phone LIKE CONCAT('%', :search, '%'))\n" +
             "                                                 AND e.is_delete = false",
-            countQuery = "select count(*) from (SELECT e.* FROM employee e JOIN account_user a WHERE (a.name_account LIKE CONCAT('%', :search, '%')\n" +
+            countQuery = "select count(*) from (SELECT e.* FROM employee e JOIN account_user a ON a.id = e.id WHERE (a.name_account LIKE CONCAT('%', :search, '%')\n" +
                     "            OR e.name_employee LIKE CONCAT('%', :search, '%')\n" +
                     "            OR e.phone LIKE CONCAT('%', :search, '%'))\n" +
                     "            AND e.is_delete = false ) as abc",nativeQuery = true)
