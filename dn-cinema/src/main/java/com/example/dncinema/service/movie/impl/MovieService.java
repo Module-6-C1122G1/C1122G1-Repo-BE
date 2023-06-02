@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,7 +23,17 @@ public class MovieService implements IMovieService {
 
     @Override
     public Page<Film> findAllFilm(String search, Pageable pageable) {
-        return movieRepository.findAllFilm(search,pageable);
+        return movieRepository.findAllFilm(search, pageable);
+    }
+
+    @Override
+    public Page<Film> findAllFilmSorted(Pageable pageable) {
+        return movieRepository.findAll(pageable);
+    }
+
+    @Override
+    public Page<Film> findFilmsByTypeFilm(int id, Pageable pageable) {
+        return movieRepository.findFilmsByTypeFilm_IdTypeFilm(id, pageable);
     }
 
     /**
@@ -54,6 +65,19 @@ public class MovieService implements IMovieService {
         return movieRepository.findAllListFilm();
     }
 
+    @Override
+    public void deleteFilm(Integer id) {
+        movieRepository.deleteById(id);
+    }
 
+    @Override
+    public List<Film> findFilmsUpcoming(LocalDate localDate) {
+        return movieRepository.findFilmsByDateStartFilmGreaterThan(localDate);
+    }
+
+    @Override
+    public List<Film> findFilmsPlaying(LocalDate localDate, LocalDate localDate2) {
+        return movieRepository.findFilmsByDateStartFilmLessThanAndDateEndFilmGreaterThan(localDate, localDate2);
+    }
 }
 

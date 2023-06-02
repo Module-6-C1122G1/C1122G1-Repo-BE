@@ -5,7 +5,6 @@ import com.example.dncinema.model.*;
 import com.example.dncinema.repository.ICustomerRepository;
 import com.example.dncinema.repository.IMovieRepository;
 import com.example.dncinema.repository.ISeatRepositoryQuynh;
-
 import com.example.dncinema.repository.ITicketRepository;
 import com.example.dncinema.repository.show_room.IStatusSeatRepository;
 import com.example.dncinema.service.ticket.ITicketService;
@@ -94,14 +93,16 @@ public class TicketService implements ITicketService {
     }
 
     @Override
-    public Page<ListTicketDTO> findAllTicket(String search, Pageable pageable) {
-        return iTicketRepository.find_list_ticket(search, pageable);
+
+    public Page<IListTicketDTO> findAllTicket(Pageable pageable, String search) {
+        return iTicketRepository.findAllTicket(pageable, search);
     }
 
     @Override
     public void cancelTicket(Integer id) {
         iTicketRepository.cancelTicket(id);
     }
+
 
     /**
      * @Author QuynhHTN
@@ -115,3 +116,4 @@ public class TicketService implements ITicketService {
         iTicketRepository.save(tickets);
     }
 }
+

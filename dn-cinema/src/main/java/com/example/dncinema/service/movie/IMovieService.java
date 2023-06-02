@@ -6,13 +6,15 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public interface IMovieService {
     Page<Film> findAllFilm(String search, Pageable pageable);
-
+    Page<Film> findAllFilmSorted(Pageable pageable);
+    Page<Film> findFilmsByTypeFilm(int id, Pageable pageable);
     /**
      * @param id
      * @return findFilmById
@@ -28,4 +30,7 @@ public interface IMovieService {
 
     List<Film> findAllListFilm();
 
+    void deleteFilm(Integer id);
+    List<Film> findFilmsUpcoming(LocalDate localDate);
+    List<Film> findFilmsPlaying(LocalDate localDate, LocalDate localDate2);
 }

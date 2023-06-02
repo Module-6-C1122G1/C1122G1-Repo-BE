@@ -6,13 +6,17 @@ import com.example.dncinema.service.movie.IMovieService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
 import javax.validation.Valid;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,15 +30,21 @@ public class MovieController {
 
     /**
      * @param pageable
-     * @param search
      * @return ResponseEntity<>(films,HttpStatus.OK)
      * Phương thức sử dụng để tìm kiếm kết hợp xổ danh sách film
-     * @author TruongDM
+     * @author ChinhLV
      */
+
     @GetMapping
-    public ResponseEntity<Page<Film>> findAllFilm(@PageableDefault(size = 4) Pageable pageable,
-                                         @RequestParam(required = false, defaultValue = "") String search) {
-        Page<Film> films = movieService.findAllFilm(search, pageable);
+    public ResponseEntity<?> findAllFilm(@PageableDefault(size = 8) Pageable pageable, @RequestParam(defaultValue = "0") int page,
+                                         @RequestParam(value = "sort", defaultValue = "idFilm") String sort, @RequestParam(value = "type_film", defaultValue = "0") int typeFilm) {
+        pageable = PageRequest.of(page, 8, Sort.by(sort).ascending());
+        Page<Film> films;
+        if (typeFilm == 0) {
+            films = movieService.findAllFilmSorted(pageable);
+        } else {
+            films = movieService.findFilmsByTypeFilm(typeFilm, pageable);
+        }
         if (films.isEmpty()) {
             return new ResponseEntity<>(films, HttpStatus.BAD_REQUEST);
         }
@@ -56,7 +66,6 @@ public class MovieController {
         return new ResponseEntity<>(film, HttpStatus.OK);
     }
 
-
     /**
      * @param filmDTO
      * @param bindingResult
@@ -72,36 +81,66 @@ public class MovieController {
         }
         Film film = new Film();
         BeanUtils.copyProperties(filmDTO, film);
-        film.setTypeFilm(filmDTO.getTypeFilm());
+        film.getTypeFilm().setIdTypeFilm(filmDTO.getTypeFilm().getIdTypeFilm());
         movieService.save(film);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        return new ResponseEntity<>(film,HttpStatus.CREATED);
     }
 
 
     /**
      * @param filmDTO
-     * @param id
+     * @param idFilm
      * @param bindingResult
      * @return new ResponseEntity<>
      * @author AnhNQ
      * @dateCreated 29/05/2023
      */
-    @PutMapping("/{id}")
-    public ResponseEntity<?> updateFilm(@Valid @RequestBody FilmDTO filmDTO, @PathVariable Integer id, BindingResult bindingResult) {
+    @PutMapping("/{idFilm}")
+    public ResponseEntity<?> updateFilm(@Valid @RequestBody FilmDTO filmDTO, @PathVariable Integer idFilm, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         Film film = new Film();
-        Optional<Film> filmOptional = movieService.findById(id);
+        Optional<Film> filmOptional = movieService.findById(idFilm);
         BeanUtils.copyProperties(filmOptional, filmDTO);
-        filmDTO.setIdFilm(id);
+        filmDTO.setIdFilm(idFilm);
         BeanUtils.copyProperties(filmDTO, film);
-        film.setTypeFilm(filmDTO.getTypeFilm());
+        film.getTypeFilm().setIdTypeFilm(filmDTO.getTypeFilm().getIdTypeFilm());
         movieService.save(film);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    /**
+     * @author HaiPH
+     * @return ResponseEntity<>(films,HttpStatus)
+     * @Usage_method Returns all movies in the database
+     */
     @GetMapping("/list")
     public ResponseEntity<List<Film>> getAllFilms(){
-        return new ResponseEntity<>(movieService.findAllListFilm(),HttpStatus.OK);
+        List<Film> films = movieService.findAllListFilm();
+        if(films.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(films,HttpStatus.OK);
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteFilm(@PathVariable Integer id){
+        movieService.deleteFilm(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+    @GetMapping("/{idFilm}")
+    public ResponseEntity<?> findFilm(@PathVariable Integer idFilm){
+        Film film = movieService.findById(idFilm).get();
+        return new ResponseEntity<>(film,HttpStatus.OK);
+    }
+    @GetMapping("/list-upcoming")
+    public ResponseEntity<?> getAllFilmsUpcoming() {
+        LocalDate now = LocalDate.now();
+        return new ResponseEntity<>(movieService.findFilmsUpcoming(now), HttpStatus.OK);
+    }
+    @GetMapping("/list-playing")
+    public ResponseEntity<?> getAllFilmsPlaying() {
+        LocalDate now = LocalDate.now();
+        return new ResponseEntity<>(movieService.findFilmsPlaying(now, now), HttpStatus.OK);
     }
 }

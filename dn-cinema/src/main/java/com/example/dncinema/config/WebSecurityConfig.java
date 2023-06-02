@@ -1,10 +1,6 @@
 package com.example.dncinema.config;
-
-import com.example.dncinema.security.jwt.JwtEntryPoint;
 import com.example.dncinema.security.jwt.JwtTokenFilter;
-import com.example.dncinema.security.response.ResponseMessage;
 import com.example.dncinema.security.userPrincipal.UserDetailService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
@@ -60,11 +56,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         httpSecurity.cors().and()
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/api/**").permitAll()
-//                .antMatchers("/api/public/**").permitAll()
-//                .antMatchers("/api/user/**").hasAnyAuthority("USER","EMPLOYEE", "ADMIN")
-//                .antMatchers("/api/employee/**").hasAnyAuthority("EMPLOYEE", "ADMIN")
-//                .antMatchers("/api/admin/**").hasAuthority("ADMIN")
+                .antMatchers("/api/public/**","/api/user/ticket/create/**").permitAll()
+                .antMatchers("/api/user/**").hasAnyAuthority("USER","EMPLOYEE", "ADMIN")
+                .antMatchers("/api/employee/**").hasAnyAuthority("EMPLOYEE", "ADMIN")
+                .antMatchers("/api/admin/**").hasAuthority("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))

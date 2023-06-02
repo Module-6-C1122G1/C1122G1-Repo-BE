@@ -14,9 +14,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
-@RequestMapping("/api/discount")
+@RequestMapping("/api/public/discount")
 @CrossOrigin("*")
 public class DiscountController {
     @Autowired
@@ -91,20 +92,20 @@ public class DiscountController {
      * @Param("percentDiscount") String percentDiscount
      */
     @PutMapping("/update/{idDiscount}")
-    public ResponseEntity<?> updateDiscount(@PathVariable Integer idDiscount ,@Valid @RequestBody DiscountDTO discountDTO, BindingResult bindingResult) {
+    public ResponseEntity<?> updateDiscount(@Valid @RequestBody DiscountDTO discountDTO, BindingResult bindingResult) {
         new DiscountDTO().validate(discountDTO,bindingResult);
-        discountDTO.setIdDiscount(idDiscount);
         if (bindingResult.hasErrors()) {
             return new ResponseEntity<>(bindingResult.getAllErrors(), HttpStatus.BAD_REQUEST);
         }
-        Discount discount=discountService.findDiscountById(idDiscount);
+        Discount discount=discountService.findDiscountById(discountDTO.getIdDiscount());
         if (discount==null){
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         discountService.updateDiscount(discountDTO.getIdDiscount(),discountDTO.getNameDiscount(), discountDTO.getDateStart(),
                 discountDTO.getDateEnd(), discountDTO.getImageDiscount(),discountDTO.getDescribeDiscount(), discountDTO.getPercentDiscount());
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
     
     /**
      * Create: TuanLT
@@ -120,4 +121,27 @@ public class DiscountController {
         discountService.delete(id);
         return new ResponseEntity<>("Xóa thành công!", HttpStatus.OK);
     }
+
+    /**
+     * @author NghiaLD
+     * @return
+     */
+    @GetMapping("")
+    public ResponseEntity<List<Discount>> showListDiscount() {
+        List<Discount> listDiscount = discountService.findAllDiscount();
+        if (listDiscount.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(listDiscount, HttpStatus.OK);
+    }
+//    @GetMapping("/{id}")
+//    public ResponseEntity<Discount> findByIdDiscount(@PathVariable Integer id) {
+//        Discount detailDiscount = discountService.findById(id);
+//        if (detailDiscount == null) {
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//        }
+//        return new ResponseEntity<>(detailDiscount, HttpStatus.OK);
+//    }
+
+
 }

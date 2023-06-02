@@ -52,4 +52,16 @@ public interface ICustomerService {
 
     Boolean existByEmail(String email);
     Customer findCustomerByEmail(String email);
+
+    List<Customer> findAllAndSearch(String nameSearch);
+
+
+    void updateCustomer(
+            String nameCustomer,
+            String phone,
+            String address,
+            String email,
+            Integer idCustomer,
+            String identityCard);
+
 }

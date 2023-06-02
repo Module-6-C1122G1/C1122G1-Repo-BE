@@ -1,6 +1,6 @@
 package com.example.dncinema.controller;
 
-import com.example.dncinema.dto.ListTicketDTO;
+import com.example.dncinema.dto.IListTicketDTO;
 import com.example.dncinema.dto.TicketDetailDTO;
 import com.example.dncinema.dto.TicketUpdateDTO;
 import com.example.dncinema.model.Ticket;
@@ -88,9 +88,9 @@ public class TicketController {
      */
 
     @GetMapping("/list")
-    public ResponseEntity<?> findAllTicket(@PageableDefault Pageable pageable,
+    public ResponseEntity<Page<IListTicketDTO>> findAllTicket(@PageableDefault(size = 2) Pageable pageable,
                                            @RequestParam(required = false, defaultValue = "") String search) {
-        Page<ListTicketDTO> tickets = iTicketService.findAllTicket(search, pageable);
+        Page<IListTicketDTO> tickets = iTicketService.findAllTicket(pageable, search);
         if (tickets.isEmpty()) {
             return new ResponseEntity<>(tickets, HttpStatus.BAD_REQUEST);
         }

@@ -31,7 +31,10 @@ public interface ISeatRepository extends JpaRepository<Seat, Integer> {
     @Query(value = "update seat set id_status_seat = 3 where id_seat = :id", nativeQuery = true)
     void updateStatusSeatByIdShowTime(@Param("id") Integer id);
 
-
+    @Modifying
+    @Transactional
+    @Query(value = "update seat set id_status_seat = 1 where id_seat = :id", nativeQuery = true)
+    void updateStatusSeatSell(@Param("id") Integer id);
     @Modifying
     @Transactional
     @Query(value = "update seat set id_status_seat = 2 where id_seat = :id", nativeQuery = true)

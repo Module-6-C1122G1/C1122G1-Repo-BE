@@ -1,5 +1,7 @@
 package com.example.dncinema.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -26,10 +28,6 @@ public class Seat {
     @ManyToOne
     @JoinColumn(name = "id_show_time")
     private ShowTime showTime;
-//    @JsonBackReference
-//    @OneToOne(mappedBy = "seat")
-//    private Ticket ticket;
-
 
     public Seat() {
     }
@@ -42,16 +40,6 @@ public class Seat {
         this.showRoom = showRoom;
         this.showTime = showTime;
     }
-
-//    public Ticket getTicket() {
-//        return ticket;
-//    }
-//
-//    public void setTicket(Ticket ticket) {
-//        this.ticket = ticket;
-//    }
-
-
 
     public ShowTime getShowTime() {
         return showTime;
