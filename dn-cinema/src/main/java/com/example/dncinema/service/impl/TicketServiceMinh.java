@@ -95,7 +95,7 @@ public class TicketServiceMinh implements ITicketServiceMinh {
 
             iTicketRepository.save(ticket);
 
-            setPointCustomer(ticketDTO.getIdCustomer());
+            setPointCustomer(ticketDTO.getIdCustomer(), seat.getTypeSeat().getIdTypeSeat());
             iSeatRepository.updateStatusSeatSell(ticketDTO.getListSeat()[i]);
 
 //            setTypeCustomer(ticketDTO.getIdCustomer());
@@ -192,9 +192,13 @@ public class TicketServiceMinh implements ITicketServiceMinh {
      * @since 29/05/2023
      */
 
-    public void setPointCustomer(Integer idCus) {
+    public void setPointCustomer(Integer idCus, Integer idTySeat) {
         Customer customer = iCustomerRepository.findById(idCus).get();
-        customer.setPointCustomer(customer.getPointCustomer() + 15);
+        if (idTySeat == 1) {
+            customer.setPointCustomer(customer.getPointCustomer() + 10);
+        } else {
+            customer.setPointCustomer(customer.getPointCustomer() + 15);
+        }
         iCustomerRepository.save(customer);
     }
 

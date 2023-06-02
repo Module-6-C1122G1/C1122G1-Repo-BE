@@ -29,7 +29,6 @@ public class Seat {
     @JoinColumn(name = "id_show_time")
     private ShowTime showTime;
 
-
     public Seat() {
     }
 
