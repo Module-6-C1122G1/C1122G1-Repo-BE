@@ -26,8 +26,15 @@ public class DiscountController {
     @Autowired
     private IDiscountRepository discountRepository;
 
-
-    @GetMapping("/public")
+    @GetMapping("/public/discount/{id}")
+    public ResponseEntity<Discount> findDiscountById(@PathVariable int id) {
+        Discount discount = discountService.findDiscountById(id);
+        if (discount == null) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(discount, HttpStatus.OK);
+    }
+    @GetMapping("/public/discount-list")
     public ResponseEntity<List<Discount>> showListDiscount() {
         List<Discount> listDiscount = discountService.findAllDiscount();
         if (listDiscount.isEmpty()) {
@@ -44,7 +51,7 @@ public class DiscountController {
      * @return "Trả về Page hiển thị danh sách khuyến mãi, nếu người dùng tiến hành tìm kiếm thì Page này sẽ hiển thị danh sách được tìm kiếm theo tên".
      */
 
-    @GetMapping("admin/discount/list")
+    @GetMapping("/admin/discount/list")
     @ResponseStatus(HttpStatus.OK)
     public Page<DiscountDTO> showList(@RequestParam(required = false, defaultValue = "") String name,
                                       @PageableDefault(direction = Sort.Direction.DESC, size = 5) Pageable pageable) {
@@ -80,7 +87,7 @@ public class DiscountController {
      *
      * @param idDiscount
      */
-    @GetMapping("admin/discount/{idDiscount}")
+    @GetMapping("/admin/discount/{idDiscount}")
     public ResponseEntity<Discount> findDiscountByID(@PathVariable("idDiscount") Integer idDiscount) {
         Discount discount = discountService.findDiscountById(idDiscount);
         if (discount == null) {
@@ -101,7 +108,7 @@ public class DiscountController {
      * @Param("describeDiscount") String describeDiscount
      * @Param("percentDiscount") String percentDiscount
      */
-    @PutMapping("admin/discount/update/{idDiscount}")
+    @PutMapping("/admin/discount/update/{idDiscount}")
     public ResponseEntity<?> updateDiscount(@Valid @RequestBody DiscountDTO discountDTO, BindingResult bindingResult) {
         new DiscountDTO().validate(discountDTO,bindingResult);
         if (bindingResult.hasErrors()) {
@@ -123,7 +130,7 @@ public class DiscountController {
      * @param id "Tìm kiếm id của 1 khuyến mãi và xóa nó".
      */
 
-    @DeleteMapping("admin/discount/{id}")
+    @DeleteMapping("/admin/discount/{id}")
     public ResponseEntity<String> delete(@PathVariable("id") int id) {
         if (!discountRepository.existsById(id)) {
             return new ResponseEntity<>("ID không tồn tại!", HttpStatus.NOT_FOUND);

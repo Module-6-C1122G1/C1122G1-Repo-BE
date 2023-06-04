@@ -119,6 +119,8 @@ public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
      * @return đối tượng có tên Customer được tìm thấy dựa theo email
      */
     Customer findCustomersByEmail(String email);
+    Customer findCustomersByPhone(String phone);
+    Customer findCustomersByIdentityCard(String identity);
     /**
      * ThanhNV
      * Retrieves a paginated list of customer information from the database.

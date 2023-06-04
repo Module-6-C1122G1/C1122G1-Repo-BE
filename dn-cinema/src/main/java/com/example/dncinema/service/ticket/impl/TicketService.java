@@ -112,4 +112,16 @@ public class TicketService implements ITicketService {
     public void cancelTicket(Integer id) {
         iTicketRepository.cancelTicket(id);
     }
+
+    /**
+     * @Author QuynhHTN
+     * Date create: 02/06/2023
+     * @param id
+     */
+    @Override
+    public void confirmPrintTicket(Integer id) {
+        Ticket tickets = iTicketRepository.findTicketById(id);
+        tickets.setDelete(true);
+        iTicketRepository.save(tickets);
+    }
 }

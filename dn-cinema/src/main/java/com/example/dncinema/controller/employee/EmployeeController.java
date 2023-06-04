@@ -21,7 +21,7 @@ import javax.validation.Valid;
 
 
 @RestController
-@RequestMapping("api/employee")
+@RequestMapping("api/admin/employee")
 @CrossOrigin("*")
 public class EmployeeController {
 
@@ -34,7 +34,7 @@ public class EmployeeController {
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("")
-    public ResponseEntity<Page<EmployeeDTO>> search(@PageableDefault(sort = {"id"},direction = Sort.Direction.DESC, size = 5) Pageable pageable,
+    public ResponseEntity<Page<EmployeeDTO>> search(@PageableDefault(sort = {"id"},direction = Sort.Direction.DESC, size = 10) Pageable pageable,
                                                     @RequestParam(required = false) String search) {
 
         Page<EmployeeDTO> employeeDTOS = this.iEmployeeService.searchEmployee(pageable, search);

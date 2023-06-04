@@ -1,5 +1,7 @@
 package com.example.dncinema.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -29,6 +31,7 @@ public class Ticket {
     @JoinColumn(name = "id_employee")
     private Employee employee;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "id_customer")
     private Customer customer;
