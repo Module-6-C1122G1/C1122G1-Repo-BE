@@ -6,6 +6,11 @@ import com.example.dncinema.model.ShowTime;
 import com.example.dncinema.service.showtime.IShowTimeService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -97,9 +102,15 @@ public class ShowTimeController {
         showTimeService.deleteById(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-    @GetMapping("")
-    public ResponseEntity<?> listShowTime(){
-        List<ShowTime> showTimeList = showTimeService.listShowTime();
-        return new ResponseEntity<>(showTimeList,HttpStatus.OK);
+    @GetMapping
+    public ResponseEntity<?> findAllShowTime(@PageableDefault(size = 8) Pageable pageable, @RequestParam(defaultValue = "0") int page,
+                                         @RequestParam(value = "sort", defaultValue = "idFilm") String sort) {
+        pageable = PageRequest.of(page, 8, Sort.by(sort).ascending());
+        Page<ShowTime> showTimes;
+            showTimes = showTimeService.findAll(pageable);
+        if (showTimes.isEmpty()) {
+            return new ResponseEntity<>(showTimes, HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>(showTimes, HttpStatus.OK);
     }
 }

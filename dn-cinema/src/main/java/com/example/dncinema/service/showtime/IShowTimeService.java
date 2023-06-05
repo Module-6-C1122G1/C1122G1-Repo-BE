@@ -1,6 +1,8 @@
 package com.example.dncinema.service.showtime;
 
 import com.example.dncinema.model.ShowTime;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,4 +16,5 @@ public interface IShowTimeService {
     Optional<ShowTime> findById(Integer id);
     void deleteById(Integer id);
     List<ShowTime> listShowTime();
+    Page<ShowTime> findAll(Pageable pageable);
 }

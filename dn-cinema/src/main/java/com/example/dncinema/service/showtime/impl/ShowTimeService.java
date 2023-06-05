@@ -4,6 +4,8 @@ import com.example.dncinema.model.ShowTime;
 import com.example.dncinema.repository.showtime.IShowTimeRepository;
 import com.example.dncinema.service.showtime.IShowTimeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -41,6 +43,11 @@ public class ShowTimeService implements IShowTimeService {
     @Override
     public List<ShowTime> listShowTime() {
         return showTimeRepository.findAll();
+    }
+
+    @Override
+    public Page<ShowTime> findAll(Pageable pageable) {
+        return showTimeRepository.findAll(pageable);
     }
 
 
