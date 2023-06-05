@@ -31,7 +31,7 @@ public class Customer {
     private String email;
     @Column(name = "identity_card",columnDefinition = "varchar(45)")
     private String identityCard;
-    @Column(name = "imgCustomer", columnDefinition = "varchar(255)")
+    @Column(name = "img_customer", columnDefinition = "varchar(255)")
     private String imgCustomer;
 
     @ManyToOne

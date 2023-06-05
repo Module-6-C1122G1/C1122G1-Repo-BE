@@ -20,6 +20,7 @@ public interface IMovieRepository extends JpaRepository<Film, Integer> {
     Page<Film> findAllFilm(@Param("search") String search,@Param("pageable") Pageable pageable);
     Page<Film> findFilmsByTypeFilm_IdTypeFilm(@Param("id") Integer id, Pageable pageable);
 
+
     /**
      * @Author QuynhHTN
      * Date create: 24/05/2023

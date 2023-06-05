@@ -10,4 +10,6 @@ public interface ITicketManagement {
     String getNameFilm();
 
     String getStatusTicket();
+
+    String getImgCustomer();
 }

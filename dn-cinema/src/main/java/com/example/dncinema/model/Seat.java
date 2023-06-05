@@ -41,6 +41,7 @@ public class Seat {
         this.showTime = showTime;
     }
 
+
     public ShowTime getShowTime() {
         return showTime;
     }
