@@ -66,5 +66,5 @@ public interface ICustomerService {
             String email,
             Integer idCustomer,
             String identityCard);
-
+    Customer findCustomerByNameAccount(String nameAccount);
 }

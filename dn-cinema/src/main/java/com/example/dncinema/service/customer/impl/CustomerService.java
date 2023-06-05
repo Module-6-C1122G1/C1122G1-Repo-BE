@@ -181,5 +181,10 @@ public class CustomerService implements ICustomerService {
         iCustomerRepository.updateCustomer(nameCustomer, phone, address, email, idCustomer, identityCard);
     }
 
+    @Override
+    public Customer findCustomerByNameAccount(String nameAccount) {
+        return iCustomerRepository.findByAccountUser_NameAccount(nameAccount);
+    }
+
 
 }

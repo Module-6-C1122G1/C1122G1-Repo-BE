@@ -157,8 +157,6 @@ public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
             @Param("idCustomer") Integer idCustomer,
             @Param("identityCard") String identityCard);
 
-
-
 };
 
 

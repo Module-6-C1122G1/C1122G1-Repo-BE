@@ -113,6 +113,11 @@ public class RegisterCustomerController {
         boolean exists = customerService.existByPhone(phone);
         return ResponseEntity.ok(exists);
     }
+    @GetMapping("/public/find-customer")
+    public ResponseEntity<?> findCustomerByNameAccount(@RequestParam String name) {
+        Customer customer = customerService.findCustomerByNameAccount(name);
+        return new ResponseEntity<>(customer, HttpStatus.OK);
+    }
 }
 
 
