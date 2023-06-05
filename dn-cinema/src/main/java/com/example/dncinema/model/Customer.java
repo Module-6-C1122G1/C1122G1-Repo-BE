@@ -167,4 +167,12 @@ public class Customer {
     public void setAccountUser(AccountUser accountUser) {
         this.accountUser = accountUser;
     }
+
+    public Set<Ticket> getTicketSet() {
+        return ticketSet;
+    }
+
+    public void setTicketSet(Set<Ticket> ticketSet) {
+        this.ticketSet = ticketSet;
+    }
 }

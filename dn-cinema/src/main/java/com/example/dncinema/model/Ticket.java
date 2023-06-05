@@ -30,6 +30,7 @@ public class Ticket {
     @ManyToOne
     @JoinColumn(name = "id_employee")
     private Employee employee;
+
     @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "id_customer")
@@ -41,6 +42,7 @@ public class Ticket {
 
     public Ticket() {
     }
+
 
     public Ticket( Boolean statusTicket, Double priceAfterDiscount, LocalDate dateBooking, String idQr,Boolean isDelete, Discount discount, Employee employee, Customer customer, Seat seat) {
         this.statusTicket = statusTicket;
