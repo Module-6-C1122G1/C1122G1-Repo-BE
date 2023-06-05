@@ -137,5 +137,4 @@ public class RegisterCustomerController {
         boolean exists = customerService.existByPhone(phone);
         return ResponseEntity.ok(exists);
     }
-
 }
