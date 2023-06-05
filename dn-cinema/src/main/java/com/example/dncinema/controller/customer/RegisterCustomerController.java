@@ -4,6 +4,7 @@ import com.example.dncinema.dto.accounUserDTO.AccountUserDTO;
 import com.example.dncinema.dto.customerDTO.CustomerDTO;
 import com.example.dncinema.model.AccountUser;
 import com.example.dncinema.model.Customer;
+import com.example.dncinema.repository.IAccountUserRepository;
 import com.example.dncinema.security.response.ResponseMessage;
 import com.example.dncinema.service.accountUser.IAccountUserService;
 import com.example.dncinema.service.customer.ICustomerService;
@@ -11,6 +12,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -99,7 +101,8 @@ public class RegisterCustomerController {
         accountUserService.updatePassword(accountUserDTO,accountUserDTO.getId());
         return new ResponseEntity<>(HttpStatus.OK);
     }
-    @GetMapping("/{id}")
+
+    @GetMapping("/user/find-account/{id}")
     public ResponseEntity<Customer> findByCustomerId(@PathVariable Integer id) {
         Customer customer = customerService.findByCustomerId(id);
         if (customer == null) {
@@ -109,26 +112,27 @@ public class RegisterCustomerController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/check-account/{nameAccount}")
+    @GetMapping("/public/check-account/{nameAccount}")
     public ResponseEntity<Boolean> checkAccountExistence(@PathVariable("nameAccount") String nameAccount) {
         boolean exists = accountUserService.existByNameAccount(nameAccount);
         return ResponseEntity.ok(exists);
     }
+
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/check-email/{email}")
+    @GetMapping("/public/check-email/{email}")
     public ResponseEntity<Boolean> checkEmailExistence(@PathVariable("email") String email) {
         boolean exists = customerService.existByEmail(email);
         return ResponseEntity.ok(exists);
     }
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/check-identity/{identity}")
+    @GetMapping("/public/check-identity/{identity}")
     public ResponseEntity<Boolean> checkIdentityExistence(@PathVariable("identity") String identity) {
         boolean exists = customerService.existByIdentity(identity);
         return ResponseEntity.ok(exists);
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/check-phone/{phone}")
+    @GetMapping("/public/check-phone/{phone}")
     public ResponseEntity<Boolean> checkPhoneExistence(@PathVariable("phone") String phone) {
         boolean exists = customerService.existByPhone(phone);
         return ResponseEntity.ok(exists);

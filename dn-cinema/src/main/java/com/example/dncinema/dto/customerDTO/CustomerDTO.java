@@ -16,7 +16,6 @@ public class CustomerDTO {
     private LocalDate dateOfBirth;
     @Min(value = 0, message = "điểm phải lớn hơn 0")
     private Double pointCustomer;
-    @Pattern(regexp = "^(nam|nữ)$", message = "Giới tính phải là 'nam' hoặc 'nữ'")
     private String gender;
     @Pattern(regexp = "^(\\+?84|0)(3[2-9]|5[2689]|7[06-9]|8[1-9]|9[0-9])[0-9]{7}$",
             message = "Số điện thoại không hợp lệ")
@@ -26,7 +25,7 @@ public class CustomerDTO {
     @NotBlank(message = "Không được để trống")
     @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", message = "Email không hợp lệ")
     private String email;
-    @Pattern(regexp = "^\\d{11}$", message = "Số CMND không hợp lệ, bắt buộc phải là 11 chữ số")
+    @Pattern(regexp = "^[0-9]{12}$", message = "CCCD không hợp lệ, phải là 12 ký tự số")
     private String identityCard;
     @NotBlank(message = "Không được để trống")
     private String imgCustomer;

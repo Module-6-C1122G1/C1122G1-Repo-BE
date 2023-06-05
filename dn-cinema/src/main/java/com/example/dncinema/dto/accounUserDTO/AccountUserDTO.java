@@ -9,8 +9,6 @@ import java.util.Set;
 public class AccountUserDTO {
     private int id;
     private String nameAccount;
-//    @NotBlank(message = "Không được để trống")
-//    @Size(min = 3, max = 200, message = "password phải từ 3 ký tự và không dài quá 200 ký tự")
     private String passwordAccount;
     private Set<Roles> roles;
 
