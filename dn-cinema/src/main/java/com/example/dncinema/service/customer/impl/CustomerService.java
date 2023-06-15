@@ -3,8 +3,10 @@ package com.example.dncinema.service.customer.impl;
 import com.example.dncinema.dto.customerDTO.CustomerDTO;
 import com.example.dncinema.model.AccountUser;
 import com.example.dncinema.model.Customer;
+import com.example.dncinema.model.Roles;
 import com.example.dncinema.repository.IAccountUserRepository;
 import com.example.dncinema.repository.ICustomerRepository;
+import com.example.dncinema.repository.IRolesRepository;
 import com.example.dncinema.service.customer.ICustomerService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +17,9 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class CustomerService implements ICustomerService {
@@ -27,7 +31,8 @@ public class CustomerService implements ICustomerService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-
+    @Autowired
+    private IRolesRepository rolesRepository;
     @Override
     public Page<Customer> findAllCustomerTicket(Pageable pageable) {
         return iCustomerRepository.findAllCustomerTicket(pageable);
@@ -61,6 +66,9 @@ public class CustomerService implements ICustomerService {
                 passwordEncoder.encode(customerDTO.getAccountUser().getPasswordAccount()));
         AccountUser accountUser = iAccountUserRepository
                 .findAccountUserByNameAccount(customerDTO.getAccountUser().getNameAccount());
+        Set<Roles> roles = new HashSet<>();
+        roles.add(rolesRepository.findByNameRoles("USER"));
+        accountUser.setRoles(roles);
         Customer customer = new Customer();
         customer.setAccountUser(accountUser);
         BeanUtils.copyProperties(customerDTO, customer);
@@ -90,10 +98,9 @@ public class CustomerService implements ICustomerService {
     public void updateRegisterCustomer(CustomerDTO customerDTO, Integer id) {
         AccountUser accountUser = iAccountUserRepository
                 .findAccountUserByNameAccount(customerDTO.getAccountUser().getNameAccount());
-
-//        iAccountUserRepository.savePassword( passwordEncoder.encode(customerDTO.getAccountUser().getPasswordAccount()),
-//                accountUser.getId());
         Customer customer = iCustomerRepository.findByIdCustomer(id);
+        iAccountUserRepository.updateAccount(customerDTO.getAccountUser().getNameAccount()
+                , passwordEncoder.encode(customerDTO.getAccountUser().getPasswordAccount()), accountUser.getId());
         BeanUtils.copyProperties(customerDTO, customer);
         iCustomerRepository.updateCustomerAccount(
                 customerDTO.getNameCustomer(),
@@ -129,6 +136,11 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
+    public Customer findByCustomerId(Integer id) {
+        return iCustomerRepository.findById((id)).get();
+    }
+
+    @Override
     public Boolean existByEmail(String email) {
         Customer customer = iCustomerRepository.findCustomersByEmail(email);
         if (customer != null) {
@@ -137,6 +149,23 @@ public class CustomerService implements ICustomerService {
         return false;
     }
 
+    @Override
+    public Boolean existByPhone(String phone) {
+        Customer customer = iCustomerRepository.findCustomersByPhone(phone);
+        if (customer != null) {
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public Boolean existByIdentity(String identity) {
+        Customer customer = iCustomerRepository.findCustomersByIdentityCard(identity);
+        if (customer != null) {
+            return true;
+        }
+        return false;
+    }
     @Override
     public Customer findCustomerByEmail(String email) {
         return iCustomerRepository.findCustomersByEmail(email);
@@ -150,6 +179,11 @@ public class CustomerService implements ICustomerService {
     @Override
     public void updateCustomer(String nameCustomer, String phone, String address, String email, Integer idCustomer, String identityCard) {
         iCustomerRepository.updateCustomer(nameCustomer, phone, address, email, idCustomer, identityCard);
+    }
+
+    @Override
+    public Customer findCustomerByNameAccount(String nameAccount) {
+        return iCustomerRepository.findByAccountUser_NameAccount(nameAccount);
     }
 
 

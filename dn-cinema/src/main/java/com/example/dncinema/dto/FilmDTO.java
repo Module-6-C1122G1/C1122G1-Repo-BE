@@ -3,6 +3,8 @@ package com.example.dncinema.dto;
 import com.example.dncinema.model.TypeFilm;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
@@ -11,29 +13,35 @@ public class FilmDTO {
     private Integer idFilm;
     @NotBlank(message = "Tên phim không được trống")
     private String nameFilm;
-    @NotBlank
+    @NotBlank(message = "Đạo diễn không được để trống")
     private String director;
-    @NotBlank
+    @NotBlank(message = "Hãng phim không được để trống")
     private String studioFilm;
-    @NotBlank
+    @NotBlank(message = "Trailer không được để trống")
     private String trailer;
-    @NotBlank
+    @NotBlank(message = "Nội dung không được để trống")
     private String describeFilm;
-    @NotBlank
+    @NotBlank(message = "Diễn viên không được để trống")
     private String actor;
-    @NotNull
+    @NotNull(message = "Giá ghế thường không được để trống")
+    @Min(value = 10000, message = "Giá ghế thường không được nhỏ hơn 10000 VNĐ")
+    @Max(value = 1000000000, message = "Giá ghế thường không được lớn hơn 1000000000 VNĐ")
     private Double normalSeatPrice;
-    @NotNull
+    @NotNull(message = "Giá ghế vip không được để trống")
+    @Min(value = 10000, message = "Giá ghế vip không được nhỏ hơn 10000 VNĐ")
+    @Max(value = 1000000000, message = "Giá ghế vip không được lớn hơn 1000000000 VNĐ")
     private Double vipSeatPrice;
     private LocalDate dateStartFilm;
     private LocalDate dateEndFilm;
-    @NotBlank
+    @NotBlank(message = "Ảnh phim không được để trống")
     private String imgFilm;
-    @NotNull
+    @NotNull(message = "Thời lượng phim không được để trống")
+    @Min(value = 0,message = "Thời lượng phim không được nhỏ hơn 0")
+    @Max(value = 200, message = "Thời lượng không được quá 200 phút")
     private Integer timeFilm;
-    @NotBlank
+    @NotBlank(message = "Quốc gia không được để trống")
     private String nation;
-    @NotBlank
+    @NotBlank(message = "Nhãn phim không được để trống")
     private String movieLabel;
     private TypeFilm typeFilm;
 

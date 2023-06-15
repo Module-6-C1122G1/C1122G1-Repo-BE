@@ -36,9 +36,8 @@ public class TicketManagementController {
      * @author DongPV
      */
     @GetMapping("/ticket-customer")
-    public ResponseEntity<Page<ITicketManagement>> findAllCustomerTicket(@PageableDefault(size = 3) Pageable pageable,@RequestParam(name = "username") String username) {
-        Customer customer=iCustomerRepository.findByAccountUser_NameAccount(username);
-        Page<ITicketManagement> ticketManagementDTOS = iTicketManagementService.findAllCustomerTicket(pageable,customer.getIdCustomer());
+    public ResponseEntity<Page<ITicketManagement>> findAllCustomerTicket(@PageableDefault(size = 3) Pageable pageable) {
+        Page<ITicketManagement> ticketManagementDTOS = iTicketManagementService.findAllCustomerTicket(pageable);
         if (ticketManagementDTOS.isEmpty()) {
             return new ResponseEntity<>(ticketManagementDTOS, HttpStatus.NOT_FOUND);
         }
@@ -51,9 +50,8 @@ public class TicketManagementController {
      * @author DongPV
      */
     @GetMapping("/ticket-customer/history")
-    public ResponseEntity<Page<ICustomerPoint>> findAllCustomerPointHistory(@PageableDefault(size = 3) Pageable pageable,@RequestParam(name = "username") String username) {
-        Customer customer=iCustomerRepository.findByAccountUser_NameAccount(username);
-        Page<ICustomerPoint> customerPointDTOS = iTicketManagementService.findAllCustomerPoint(pageable,customer.getIdCustomer());
+    public ResponseEntity<Page<ICustomerPoint>> findAllCustomerPointHistory(@PageableDefault(size = 3) Pageable pageable) {
+        Page<ICustomerPoint> customerPointDTOS = iTicketManagementService.findAllCustomerPoint(pageable);
         if (customerPointDTOS.isEmpty()) {
             return new ResponseEntity<>(customerPointDTOS, HttpStatus.NOT_FOUND);
         }

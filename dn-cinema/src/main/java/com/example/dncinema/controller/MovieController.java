@@ -37,7 +37,7 @@ public class MovieController {
     @GetMapping
     public ResponseEntity<?> findAllFilm(@PageableDefault(size = 8) Pageable pageable, @RequestParam(defaultValue = "0") int page,
                                          @RequestParam(value = "sort", defaultValue = "idFilm") String sort, @RequestParam(value = "type_film", defaultValue = "0") int typeFilm) {
-        pageable = PageRequest.of(page, 8, Sort.by(sort).ascending());
+        pageable = PageRequest.of(page, 8, Sort.by(sort).descending());
         Page<Film> films;
         if (typeFilm == 0) {
             films = movieService.findAllFilmSorted(pageable);
@@ -105,6 +105,7 @@ public class MovieController {
          * @return new ResponseEntity<>
          * @author AnhNQ
          * @dateCreated 29/05/2023
+         * @Usage_method updateFilm to update Film
          */
         @PutMapping("/{idFilm}")
         public ResponseEntity<?> updateFilm (@Valid @RequestBody FilmDTO filmDTO, @PathVariable Integer
@@ -136,14 +137,24 @@ public class MovieController {
             return new ResponseEntity<>(films, HttpStatus.OK);
         }
 
-        @DeleteMapping("/{id}")
+    /**
+     * @author AnhNQ
+     * @param id
+     * @return
+     */
+    @DeleteMapping("/{id}")
         public ResponseEntity<?> deleteFilm (@PathVariable Integer id){
             movieService.deleteFilm(id);
             return new ResponseEntity<>(HttpStatus.OK);
         }
 
 
-        @GetMapping("/{id}")
+    /**
+     * @author AnhNQ
+     * @param id
+     * @return
+     */
+    @GetMapping("/{id}")
         public ResponseEntity<?> findFilm (@PathVariable Integer id){
             Film film = movieService.findFilmById(id);
             return new ResponseEntity<>(film, HttpStatus.OK);

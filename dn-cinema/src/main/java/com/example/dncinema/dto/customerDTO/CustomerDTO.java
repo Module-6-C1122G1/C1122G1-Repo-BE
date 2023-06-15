@@ -9,24 +9,23 @@ import java.time.LocalDate;
 public class CustomerDTO {
     private Integer idCustomer;
     @NotBlank(message = "Không được để trống")
-    @Pattern(regexp = "^(?=.*[a-zA-Z\\s])[^!@#$%^&*(),.?\":{}|<>]{4,100}$", message = "Tên không hợp lệ")
-    @Size(min = 4, max = 99, message = "Tên phải có độ dài từ 4 đến 99 ký tự")
+    @Pattern(regexp = "^(?=.*[a-zA-Z\\s])[^!@#$%^&*(),.?\":{}|<>]{4,100}$", message = "Tên không h?p l?")
+    @Size(min = 4, max = 99, message = "Tên ph?i có ?? dài t? 4 ??n 99 ký t?")
     private String nameCustomer;
 
     private LocalDate dateOfBirth;
-    @Min(value = 0, message = "điểm phải lớn hơn 0")
+    @Min(value = 0, message = "Điểm phải lớn hơn 0")
     private Double pointCustomer;
-    @Pattern(regexp = "^(nam|nữ)$", message = "Giới tính phải là 'nam' hoặc 'nữ'")
     private String gender;
     @Pattern(regexp = "^(\\+?84|0)(3[2-9]|5[2689]|7[06-9]|8[1-9]|9[0-9])[0-9]{7}$",
             message = "Số điện thoại không hợp lệ")
     private String phone;
-    @Size(min = 3, max = 200, message = "địa chỉ phải từ 3 ký tự và không dài quá 200 ký tự")
+    @Size(min = 3, max = 200, message = "Địa chỉ phải từ 3 ký tự và không dài quá 200 ký tự")
     private String address;
     @NotBlank(message = "Không được để trống")
     @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", message = "Email không hợp lệ")
     private String email;
-    @Pattern(regexp = "^\\d{11}$", message = "Số CMND không hợp lệ, bắt buộc phải là 11 chữ số")
+    @Pattern(regexp = "^[0-9]{12}$", message = "CCCD không hợp lệ, phải là 12 chữ số")
     private String identityCard;
     @NotBlank(message = "Không được để trống")
     private String imgCustomer;
@@ -150,3 +149,4 @@ public class CustomerDTO {
         this.accountUser = accountUser;
     }
 }
+

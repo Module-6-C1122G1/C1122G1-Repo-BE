@@ -28,14 +28,14 @@ public class TicketManagementService implements ITicketManagementService {
     private ITicketRepositoryDong iTicketRepositoryDong;
 
     @Override
-    public Page<ITicketManagement> findAllCustomerTicket(Pageable pageable,Integer idCus) {
-        Page<ITicketManagement> ticketManagements = iTicketManagementRepository.findCustomerByTicket(pageable,idCus);
+    public Page<ITicketManagement> findAllCustomerTicket(Pageable pageable) {
+        Page<ITicketManagement> ticketManagements = iTicketManagementRepository.findCustomerByTicket(pageable);
         return ticketManagements;
     }
 
     @Override
-    public Page<ICustomerPoint> findAllCustomerPoint(Pageable pageable,Integer idCus) {
-        Page<ICustomerPoint> customerPoints = iTicketManagementRepository.findAllCustomerPointHistory(pageable,idCus);
+    public Page<ICustomerPoint> findAllCustomerPoint(Pageable pageable) {
+        Page<ICustomerPoint> customerPoints = iTicketManagementRepository.findAllCustomerPointHistory(pageable);
         return customerPoints;
     }
 

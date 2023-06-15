@@ -19,4 +19,5 @@ public interface ITicketService {
     Page<IListTicketDTO> findAllTicket(Pageable pageable, String search);
 
     void cancelTicket(Integer id);
+    void confirmPrintTicket(Integer id);
 }

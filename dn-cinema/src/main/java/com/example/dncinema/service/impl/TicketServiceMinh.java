@@ -65,7 +65,7 @@ public class TicketServiceMinh implements ITicketServiceMinh {
         }
         Film film = iMovieRepository.findFilmById(ticketDTO.getIdFilm());
         String data = "Seat" + " " + seats;
-        String path = "C:\\Users\\ADMIN\\Desktop\\du_an_be\\dn-cinema-api\\dn-cinema\\src\\main\\resources\\qr\\QR" + uuid + ".png";
+        String path = "C:\\CodeGym\\movie-theater\\dn-cinema-api\\dn-cinema\\src\\main\\resources\\qr\\QR" + uuid + ".png";
         createQR(data, path);
         Ticket ticket;
         Discount discount;

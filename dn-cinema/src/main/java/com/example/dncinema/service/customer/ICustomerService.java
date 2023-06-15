@@ -49,8 +49,11 @@ public interface ICustomerService {
      */
     Customer findById(int id);
     List<Customer> findAll();
+    Customer findByCustomerId(Integer id);
 
     Boolean existByEmail(String email);
+    Boolean existByPhone(String phone);
+    Boolean existByIdentity(String identity);
     Customer findCustomerByEmail(String email);
 
     List<Customer> findAllAndSearch(String nameSearch);
@@ -63,5 +66,5 @@ public interface ICustomerService {
             String email,
             Integer idCustomer,
             String identityCard);
-
+    Customer findCustomerByNameAccount(String nameAccount);
 }
