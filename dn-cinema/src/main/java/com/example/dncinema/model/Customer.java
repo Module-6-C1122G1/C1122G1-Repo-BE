@@ -64,14 +64,6 @@ public class Customer {
         this.accountUser = accountUser;
     }
 
-    public Set<Ticket> getTicketSet() {
-        return ticketSet;
-    }
-
-    public void setTicketSet(Set<Ticket> ticketSet) {
-        this.ticketSet = ticketSet;
-    }
-
     public Integer getIdCustomer() {
         return idCustomer;
     }
